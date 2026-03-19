@@ -104,11 +104,11 @@
       </div>
       <div class="product-card">
         <h3>Dual-Transport Architecture</h3>
-        <p>Every platform supports two transport methods (SSH + API) with automatic failover. If one path goes down, collection continues via the other. Fully agentless on both paths.</p>
+        <p>Every platform supports two transport methods (SSH + API) with automatic failover. If one path goes down, collection continues via the other. Fully agentless on both paths. Optional agents also leverage dual transport &mdash; pushing metrics via HTTP API while the core continues agentless SSH/API collection in parallel.</p>
       </div>
       <div class="product-card">
         <h3>Optional Agents for Realtime</h3>
-        <p>Need sub-second metrics or host-level OS data? Deploy lightweight agents (under 100KB, no Java) on specific hosts for higher-frequency collection. Agents are additive &mdash; everything works without them.</p>
+        <p>Deploy lightweight agents (under 100KB, no Java) for realtime status collection &mdash; check-ins every 60 seconds, full host metrics every 5 minutes. Agents report CPU, memory, disk, and network at the OS level, catching issues faster than scheduled agentless sweeps. Agents are additive &mdash; everything works without them.</p>
       </div>
       <div class="product-card">
         <h3>Federated Multi-Site</h3>
