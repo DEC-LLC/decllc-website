@@ -108,7 +108,7 @@
       </div>
       <div class="product-card">
         <h3>Optional Agents for Realtime</h3>
-        <p>Deploy lightweight agents (under 100KB, no Java) for realtime host monitoring with user-configurable intervals and sane defaults. Agents report OS-level CPU, memory, disk, and network metrics, catching host issues faster than scheduled agentless sweeps. Agents push to the core via HTTP and auto-register on first run. Agents are additive &mdash; everything works without them.</p>
+        <p>Deploy lightweight agents (under 100KB, no Java) for realtime host monitoring with user-configurable intervals and sane defaults. Agents report OS-level CPU, memory, disk, and network metrics, catching host issues faster than scheduled agentless sweeps. Agents also collect platform workloads locally via native CLI &mdash; virsh, pvesh, docker, vim-cmd, PowerShell Get-VM, kubectl, incus, and VBoxManage &mdash; so workload inventory stays current between agentless sweeps. Agents push to the core via HTTP and auto-register on first run. Agents are additive &mdash; everything works without them.</p>
       </div>
       <div class="product-card">
         <h3>Federated Multi-Site</h3>
@@ -161,18 +161,19 @@ IVMIA Core
   +-- Agentless collection (as before)
   +-- Agent check-in API
   |
-  +-- Host Agents push metrics
+  +-- Host Agents push metrics + workloads
         +-- Configurable collection intervals
         +-- OS-level host metrics
+        +-- Local workload collection via native CLI
         +-- Auto-register on first run
-        +-- RPM / DEB packages (Windows planned)
+        +-- RPM / DEB / Windows NSIS packages
   |
   +-- Federation (Pro+)
         +-- Sub-Core (remote site)
         +-- Local DB + agentless collectors
         +-- Syncs to central core
         </pre>
-        <p style="font-size:0.85rem;color:var(--text-muted);margin-top:12px;">Agents add realtime host metrics and higher collection frequency. Everything still works if an agent goes offline.</p>
+        <p style="font-size:0.85rem;color:var(--text-muted);margin-top:12px;">Agents add realtime host metrics and local workload collection for higher frequency. Everything still works if an agent goes offline.</p>
       </div>
 
     </div>
