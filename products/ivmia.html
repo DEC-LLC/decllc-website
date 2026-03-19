@@ -99,16 +99,20 @@
         <p>See all hosts, workloads, and metrics across every platform in a single web interface. No more switching between vCenter, Proxmox UI, and kubectl.</p>
       </div>
       <div class="product-card">
+        <h3>Agentless by Default</h3>
+        <p>IVMIA collects inventory, metrics, and manages workloads without installing anything on your hypervisors. The core connects directly via SSH and native platform APIs. No agents to deploy, patch, or secure across your fleet.</p>
+      </div>
+      <div class="product-card">
         <h3>Dual-Transport Architecture</h3>
-        <p>Every platform supports two transport methods (SSH + API) with automatic failover. If one path goes down, collection continues via the other.</p>
+        <p>Every platform supports two transport methods (SSH + API) with automatic failover. If one path goes down, collection continues via the other. Fully agentless on both paths.</p>
+      </div>
+      <div class="product-card">
+        <h3>Optional Agents for Realtime</h3>
+        <p>Need sub-second metrics or host-level OS data? Deploy lightweight agents (under 100KB, no Java) on specific hosts for higher-frequency collection. Agents are additive &mdash; everything works without them.</p>
       </div>
       <div class="product-card">
         <h3>Federated Multi-Site</h3>
-        <p>Deploy sub-cores at remote sites that collect locally and sync to a central core. Works across VPNs and high-latency links.</p>
-      </div>
-      <div class="product-card">
-        <h3>Lightweight Agents</h3>
-        <p>Base agent monitors any Linux or Windows host. Platform extensions add workload-specific collection. Packages under 100KB. No Java, no heavy dependencies.</p>
+        <p>Deploy sub-cores at remote sites that collect locally and sync to a central core. Works across VPNs and high-latency links. Each sub-core is also agentless.</p>
       </div>
       <div class="product-card">
         <h3>Operations Management</h3>
@@ -126,25 +130,51 @@
 <section>
   <div class="container">
     <h2>Architecture</h2>
-    <p class="subtitle">Designed for heterogeneous environments and distributed deployments.</p>
-    <div style="max-width:800px;margin:0 auto;background:#fff;padding:32px;border-radius:var(--radius);box-shadow:var(--shadow);">
-      <pre style="font-size:0.85rem;line-height:1.5;color:var(--text-muted);overflow-x:auto;">
-Central Core (PostgreSQL + Apache/PHP + Python Collectors)
-    |
-    +-- Web UI (dashboards, operations, analysis, search)
-    +-- REST API (FastAPI — agents, federation, RBAC)
-    +-- Super Orchestrator (drives platform-specific collectors)
-    |       +-- VMware ESXi, Proxmox, KVM, Hyper-V
-    |       +-- Docker, Kubernetes, Incus, VirtualBox
-    |
-    +-- Federation Sync <-- Sub-Core (remote site)
-    |                        +-- Local DB + collectors
-    |                        +-- Pushes data to central
-    |
-    +-- Agent Manager <-- Host Agents (RPM/DEB/MSI)
-                          +-- Base: host metrics
-                          +-- Extensions: workload collection
-      </pre>
+    <p class="subtitle">Agentless-first design. Agents are optional. Works in heterogeneous and distributed environments.</p>
+
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;max-width:900px;margin:0 auto;">
+
+      <div style="background:#fff;padding:28px;border-radius:var(--radius);box-shadow:var(--shadow);">
+        <h3 style="color:var(--primary);margin-bottom:12px;">Agentless Mode (default)</h3>
+        <pre style="font-size:0.82rem;line-height:1.5;color:var(--text-muted);overflow-x:auto;margin:0;">
+IVMIA Core
+  +-- SSH / API to hypervisors
+  |     +-- ESXi (vim-cmd + pyVmomi)
+  |     +-- Proxmox (pvesh + REST API)
+  |     +-- KVM (virsh + TLS)
+  |     +-- Hyper-V (PowerShell + WinRM)
+  |     +-- Docker (CLI + SDK)
+  |     +-- Kubernetes (K8s API + kubectl)
+  |     +-- Incus (REST + CLI)
+  |     +-- VirtualBox (VBoxManage)
+  |
+  +-- Web UI + REST API
+  +-- PostgreSQL
+        </pre>
+        <p style="font-size:0.85rem;color:var(--text-muted);margin-top:12px;">Nothing to install on target hosts. Inventory, metrics, and operations all work over the network.</p>
+      </div>
+
+      <div style="background:#fff;padding:28px;border-radius:var(--radius);box-shadow:var(--shadow);">
+        <h3 style="color:var(--primary);margin-bottom:12px;">With Agents (optional)</h3>
+        <pre style="font-size:0.82rem;line-height:1.5;color:var(--text-muted);overflow-x:auto;margin:0;">
+IVMIA Core
+  +-- Agentless collection (as before)
+  +-- Agent check-in API
+  |
+  +-- Host Agents push metrics
+        +-- Higher frequency (every 60s)
+        +-- OS-level host metrics
+        +-- Auto-register on first run
+        +-- RPM / DEB / MSI packages
+  |
+  +-- Federation (Pro+)
+        +-- Sub-Core (remote site)
+        +-- Local DB + agentless collectors
+        +-- Syncs to central core
+        </pre>
+        <p style="font-size:0.85rem;color:var(--text-muted);margin-top:12px;">Agents add realtime host metrics and higher collection frequency. Everything still works if an agent goes offline.</p>
+      </div>
+
     </div>
   </div>
 </section>
@@ -178,9 +208,9 @@ Central Core (PostgreSQL + Apache/PHP + Python Collectors)
 <section style="background:linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);color:#fff;text-align:center;">
   <div class="container">
     <h2 style="color:#fff;">Ready to unify your infrastructure?</h2>
-    <p style="opacity:0.8;max-width:500px;margin:12px auto 24px;">Start free with up to 2 hosts. Professional plans from $330/mo per product.</p>
-    <a href="../index.html#pricing" class="cta" style="background:#fff;color:var(--primary);">View Pricing</a>
-    <a href="mailto:sales@decllc.biz" class="cta-secondary">Contact Sales</a>
+    <p style="opacity:0.8;max-width:500px;margin:12px auto 24px;">Start free with 5 hosts and all base platforms. No agents required. No credit card.</p>
+    <a href="ivmia-pricing.html" class="cta" style="background:#fff;color:var(--primary);margin-right:12px;">View Pricing</a>
+    <a href="ivmia-compare.html" class="cta-secondary">Feature Comparison</a>
   </div>
 </section>
 

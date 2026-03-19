@@ -319,16 +319,23 @@
         <!-- Architecture -->
         <tr class="section-row"><td colspan="5">Architecture</td></tr>
         <tr>
-          <td>Federation (central + sub-cores)</td>
-          <td class="no">&mdash;</td>
-          <td class="no">&mdash;</td>
+          <td>Agentless collection (SSH + API)</td>
+          <td class="yes">Yes</td>
+          <td class="yes">Yes</td>
           <td class="featured-col yes">Yes</td>
           <td class="yes">Yes</td>
         </tr>
         <tr>
-          <td>Remote agents (host-level collection)</td>
+          <td>Optional agents (higher frequency)</td>
           <td class="no">&mdash;</td>
           <td class="yes">Yes</td>
+          <td class="featured-col yes">Yes</td>
+          <td class="yes">Yes</td>
+        </tr>
+        <tr>
+          <td>Federation (central + sub-cores)</td>
+          <td class="no">&mdash;</td>
+          <td class="no">&mdash;</td>
           <td class="featured-col yes">Yes</td>
           <td class="yes">Yes</td>
         </tr>
@@ -413,6 +420,7 @@
     </table>
 
     <ul class="cmp-note">
+      <li><strong>Agentless by default.</strong> IVMIA connects to hypervisors directly via SSH and native APIs. No software to install on target hosts. Optional agents add higher-frequency host metrics.</li>
       <li><strong>Monitor</strong> = inventory collection, metrics, dashboards (read-only). <strong>Manage</strong> = monitor + operations like start/stop/migrate VMs (read-write).</li>
       <li>All plans include a <strong>30-day evaluation period</strong>. No credit card required for Community.</li>
       <li>Add-on platform pricing varies. <a href="mailto:sales@decllc.biz">Contact sales</a> for details.</li>
