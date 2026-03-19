@@ -104,11 +104,11 @@
       </div>
       <div class="product-card">
         <h3>Dual-Transport Architecture</h3>
-        <p>Every platform supports two transport methods (SSH + native API) with automatic failover. If one path goes down, collection continues via the other. Fully agentless on both paths. When agents are deployed, they collect and execute operations locally &mdash; using direct CLI calls and local APIs &mdash; while pushing results to the core via HTTP.</p>
+        <p>Every platform supports two transport methods (SSH + native API) with automatic failover. If one path goes down, collection continues via the other. Fully agentless on both paths.</p>
       </div>
       <div class="product-card">
         <h3>Optional Agents for Realtime</h3>
-        <p>Deploy lightweight agents (under 100KB, no Java) for realtime status collection with user-configurable intervals and sane defaults. Agents collect and manage workloads via local CLI and API calls on the hypervisor itself &mdash; no network round-trips. They report host-level CPU, memory, disk, and network, catching issues faster than scheduled agentless sweeps. Agents are additive &mdash; everything works without them.</p>
+        <p>Deploy lightweight agents (under 100KB, no Java) for realtime host monitoring with user-configurable intervals and sane defaults. Agents report OS-level CPU, memory, disk, and network metrics, catching host issues faster than scheduled agentless sweeps. Agents push to the core via HTTP and auto-register on first run. Agents are additive &mdash; everything works without them.</p>
       </div>
       <div class="product-card">
         <h3>Federated Multi-Site</h3>
@@ -162,10 +162,10 @@ IVMIA Core
   +-- Agent check-in API
   |
   +-- Host Agents push metrics
-        +-- Higher frequency (every 60s)
+        +-- Configurable collection intervals
         +-- OS-level host metrics
         +-- Auto-register on first run
-        +-- RPM / DEB / MSI packages
+        +-- RPM / DEB packages (Windows planned)
   |
   +-- Federation (Pro+)
         +-- Sub-Core (remote site)
@@ -198,7 +198,7 @@ IVMIA Core
       <div class="product-card" style="text-align:center;">
         <div style="font-size:2rem;">&#x1F4BB;</div>
         <h3>Windows</h3>
-        <p>NSIS installer for Hyper-V and VirtualBox</p>
+        <p>Agents for Hyper-V and VirtualBox (coming soon)</p>
       </div>
     </div>
   </div>
