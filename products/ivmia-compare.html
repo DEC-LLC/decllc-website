@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IVMIA Feature Comparison — DEC-LLC</title>
+  <link rel="stylesheet" href="../styles.css">
+  <style>
+    .cmp-table { width: 100%; border-collapse: collapse; margin: 0 auto; max-width: 1100px; font-size: 0.9rem; }
+    .cmp-table th, .cmp-table td { padding: 10px 14px; text-align: center; border-bottom: 1px solid var(--border); }
+    .cmp-table th { background: var(--primary); color: #fff; font-weight: 700; position: sticky; top: 64px; z-index: 10; }
+    .cmp-table th:first-child, .cmp-table td:first-child { text-align: left; font-weight: 600; min-width: 240px; }
+    .cmp-table tr:hover { background: rgba(110,168,255,0.06); }
+    .cmp-table .section-row td { background: var(--surface); font-weight: 800; color: var(--primary); font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.05em; padding: 14px 14px 8px; border-bottom: 2px solid var(--border); }
+    .cmp-table .yes { color: var(--teal); font-weight: 700; }
+    .cmp-table .no { color: var(--text-muted); opacity: 0.5; }
+    .cmp-table .partial { color: var(--orange); font-weight: 600; }
+    .cmp-table .featured-col { background: rgba(110,168,255,0.05); }
+    .cmp-note { font-size: 0.8rem; color: var(--text-muted); max-width: 1100px; margin: 24px auto 0; }
+    .cmp-note li { margin-bottom: 4px; }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="container">
+    <a href="../index.html" class="logo">
+      <img src="../assets/icon-only.jpg" alt="DEC-LLC">
+      <div class="logo-text"><span class="logo-name">DEC-LLC</span><svg class="logo-squiggle" viewBox="0 0 80 6" xmlns="http://www.w3.org/2000/svg"><path d="M0 3 Q10 0, 20 3 Q30 6, 40 3 Q50 0, 60 3 Q70 6, 80 3" stroke="rgba(255,255,255,0.5)" stroke-width="1.5" fill="none"/></svg><span class="logo-slogan">Open Ideas</span></div>
+    </a>
+    <ul>
+      <li><a href="../index.html#products">Products</a></li>
+      <li><a href="../index.html#pricing">Pricing</a></li>
+      <li><a href="../index.html#opensource">Open Source</a></li>
+      <li><a href="../store.html">Store</a></li>
+      <li><a href="../index.html#contact">Contact</a></li>
+    </ul>
+    <a href="../store.html" class="nav-cta">Buy Now</a>
+  </div>
+</nav>
+
+<section class="hero" style="padding:50px 0 40px;">
+  <div class="container">
+    <h1>IVMIA Feature Comparison</h1>
+    <p>See exactly what each tier includes. <a href="ivmia-pricing.html" style="color:#fff;text-decoration:underline;">View pricing</a></p>
+  </div>
+</section>
+
+<section>
+  <div class="container" style="overflow-x:auto;">
+
+    <table class="cmp-table">
+      <thead>
+        <tr>
+          <th>Feature</th>
+          <th>Community</th>
+          <th>Standard</th>
+          <th class="featured-col">Professional</th>
+          <th>Enterprise</th>
+        </tr>
+      </thead>
+      <tbody>
+
+        <!-- Pricing -->
+        <tr class="section-row"><td colspan="5">Pricing</td></tr>
+        <tr>
+          <td>Monthly price</td>
+          <td>Free</td>
+          <td>$49/mo</td>
+          <td class="featured-col">$199/mo</td>
+          <td>$599/mo</td>
+        </tr>
+        <tr>
+          <td>Hosts included</td>
+          <td>5</td>
+          <td>10</td>
+          <td class="featured-col">25</td>
+          <td>50</td>
+        </tr>
+        <tr>
+          <td>Additional hosts</td>
+          <td class="no">&mdash;</td>
+          <td>Buy up to 30 total (blocks of 5 or 10)</td>
+          <td class="featured-col">Buy blocks of 10, 25, or 50</td>
+          <td>Buy blocks of 25, 50, or 100</td>
+        </tr>
+
+        <!-- Base Platforms -->
+        <tr class="section-row"><td colspan="5">Base Platforms (included)</td></tr>
+        <tr>
+          <td>VMware ESXi / vCenter</td>
+          <td class="partial">Monitor</td>
+          <td class="yes">Monitor + Manage</td>
+          <td class="featured-col yes">Monitor + Manage</td>
+          <td class="yes">Monitor + Manage</td>
+        </tr>
+        <tr>
+          <td>Proxmox VE</td>
+          <td class="partial">Monitor</td>
+          <td class="yes">Monitor + Manage</td>
+          <td class="featured-col yes">Monitor + Manage</td>
+          <td class="yes">Monitor + Manage</td>
+        </tr>
+        <tr>
+          <td>KVM / QEMU (libvirt)</td>
+          <td class="partial">Monitor</td>
+          <td class="yes">Monitor + Manage</td>
+          <td class="featured-col yes">Monitor + Manage</td>
+          <td class="yes">Monitor + Manage</td>
+        </tr>
+        <tr>
+          <td>Microsoft Hyper-V</td>
+          <td class="partial">Monitor</td>
+          <td class="yes">Monitor + Manage</td>
+          <td class="featured-col yes">Monitor + Manage</td>
+          <td class="yes">Monitor + Manage</td>
+        </tr>
+        <tr>
+          <td>Docker / Podman</td>
+          <td class="partial">Monitor</td>
+          <td class="yes">Monitor + Manage</td>
+          <td class="featured-col yes">Monitor + Manage</td>
+          <td class="yes">Monitor + Manage</td>
+        </tr>
+
+        <!-- Add-on Platforms -->
+        <tr class="section-row"><td colspan="5">Add-on Platforms (paid monthly, Pro+)</td></tr>
+        <tr>
+          <td>Kubernetes</td>
+          <td class="no">&mdash;</td>
+          <td class="no">&mdash;</td>
+          <td class="featured-col yes">Paid add-on</td>
+          <td class="yes">Paid add-on</td>
+        </tr>
+        <tr>
+          <td>Incus / LXD</td>
+          <td class="no">&mdash;</td>
+          <td class="no">&mdash;</td>
+          <td class="featured-col yes">Paid add-on</td>
+          <td class="yes">Paid add-on</td>
+        </tr>
+        <tr>
+          <td>VirtualBox</td>
+          <td class="no">&mdash;</td>
+          <td class="no">&mdash;</td>
+          <td class="featured-col yes">Paid add-on</td>
+          <td class="yes">Paid add-on</td>
+        </tr>
+
+        <!-- Cloud (future) -->
+        <tr class="section-row"><td colspan="5">Cloud Platforms (coming Q4 2026)</td></tr>
+        <tr>
+          <td>AWS, Azure, GCP, OCI</td>
+          <td class="no">&mdash;</td>
+          <td class="no">&mdash;</td>
+          <td class="featured-col">Monthly subscription</td>
+          <td>Monthly subscription</td>
+        </tr>
+
+        <!-- Collectors (Monitor) -->
+        <tr class="section-row"><td colspan="5">Monitoring (Collectors)</td></tr>
+        <tr>
+          <td>Host inventory</td>
+          <td class="yes">Yes</td>
+          <td class="yes">Yes</td>
+          <td class="featured-col yes">Yes</td>
+          <td class="yes">Yes</td>
+        </tr>
+        <tr>
+          <td>Workload inventory (VMs, containers, pods)</td>
+          <td class="yes">Yes</td>
+          <td class="yes">Yes</td>
+          <td class="featured-col yes">Yes</td>
+          <td class="yes">Yes</td>
+        </tr>
+        <tr>
+          <td>Realtime CPU, memory, disk, network metrics</td>
+          <td class="yes">Yes</td>
+          <td class="yes">Yes</td>
+          <td class="featured-col yes">Yes</td>
+          <td class="yes">Yes</td>
+        </tr>
+        <tr>
+          <td>Dual-transport collection (SSH + API)</td>
+          <td class="yes">Yes</td>
+          <td class="yes">Yes</td>
+          <td class="featured-col yes">Yes</td>
+          <td class="yes">Yes</td>
+        </tr>
+        <tr>
+          <td>Scheduled collection (systemd timers)</td>
+          <td class="yes">Yes</td>
+          <td class="yes">Yes</td>
+          <td class="featured-col yes">Yes</td>
+          <td class="yes">Yes</td>
+        </tr>
+
+        <!-- Operations (Manage) -->
+        <tr class="section-row"><td colspan="5">Operations (Distributers)</td></tr>
+        <tr>
+          <td>Start / Stop / Suspend / Resume VMs</td>
+          <td class="no">&mdash;</td>
+          <td class="yes">Yes</td>
+          <td class="featured-col yes">Yes</td>
+          <td class="yes">Yes</td>
+        </tr>
+        <tr>
+          <td>Create / Clone / Delete VMs</td>
+          <td class="no">&mdash;</td>
+          <td class="yes">Yes</td>
+          <td class="featured-col yes">Yes</td>
+          <td class="yes">Yes</td>
+        </tr>
+        <tr>
+          <td>Snapshot management</td>
+          <td class="no">&mdash;</td>
+          <td class="yes">Yes</td>
+          <td class="featured-col yes">Yes</td>
+          <td class="yes">Yes</td>
+        </tr>
+        <tr>
+          <td>Live migration</td>
+          <td class="no">&mdash;</td>
+          <td class="yes">Yes</td>
+          <td class="featured-col yes">Yes</td>
+          <td class="yes">Yes</td>
+        </tr>
+        <tr>
+          <td>Operations API (REST)</td>
+          <td class="no">&mdash;</td>
+          <td class="yes">Yes</td>
+          <td class="featured-col yes">Yes</td>
+          <td class="yes">Yes</td>
+        </tr>
+
+        <!-- Web UI -->
+        <tr class="section-row"><td colspan="5">Web UI</td></tr>
+        <tr>
+          <td>Universal dashboard</td>
+          <td class="yes">Yes</td>
+          <td class="yes">Yes</td>
+          <td class="featured-col yes">Yes</td>
+          <td class="yes">Yes</td>
+        </tr>
+        <tr>
+          <td>Per-platform dashboards</td>
+          <td class="yes">Yes</td>
+          <td class="yes">Yes</td>
+          <td class="featured-col yes">Yes</td>
+          <td class="yes">Yes</td>
+        </tr>
+        <tr>
+          <td>Operations pages (manage VMs from browser)</td>
+          <td class="no">&mdash;</td>
+          <td class="yes">Yes</td>
+          <td class="featured-col yes">Yes</td>
+          <td class="yes">Yes</td>
+        </tr>
+        <tr>
+          <td>Search and workload launchpad</td>
+          <td class="yes">Yes</td>
+          <td class="yes">Yes</td>
+          <td class="featured-col yes">Yes</td>
+          <td class="yes">Yes</td>
+        </tr>
+        <tr>
+          <td>Chart.js metrics dashboards</td>
+          <td class="yes">Yes</td>
+          <td class="yes">Yes</td>
+          <td class="featured-col yes">Yes</td>
+          <td class="yes">Yes</td>
+        </tr>
+
+        <!-- Analysis -->
+        <tr class="section-row"><td colspan="5">Analysis</td></tr>
+        <tr>
+          <td>Trends (CPU/memory time-series)</td>
+          <td class="no">&mdash;</td>
+          <td class="yes">Basic</td>
+          <td class="featured-col yes">Full</td>
+          <td class="yes">Full</td>
+        </tr>
+        <tr>
+          <td>Capacity planning (heatmaps, projections)</td>
+          <td class="no">&mdash;</td>
+          <td class="no">&mdash;</td>
+          <td class="featured-col yes">Yes</td>
+          <td class="yes">Yes</td>
+        </tr>
+        <tr>
+          <td>Cross-platform comparison</td>
+          <td class="no">&mdash;</td>
+          <td class="no">&mdash;</td>
+          <td class="featured-col yes">Yes</td>
+          <td class="yes">Yes</td>
+        </tr>
+        <tr>
+          <td>AI-powered analysis</td>
+          <td class="no">&mdash;</td>
+          <td class="no">&mdash;</td>
+          <td class="partial">Paid add-on</td>
+          <td class="yes">Included</td>
+        </tr>
+        <tr>
+          <td>Anomaly detection</td>
+          <td class="no">&mdash;</td>
+          <td class="no">&mdash;</td>
+          <td class="partial">With AI add-on</td>
+          <td class="yes">Included</td>
+        </tr>
+        <tr>
+          <td>Right-sizing recommendations</td>
+          <td class="no">&mdash;</td>
+          <td class="no">&mdash;</td>
+          <td class="partial">With AI add-on</td>
+          <td class="yes">Included</td>
+        </tr>
+
+        <!-- Architecture -->
+        <tr class="section-row"><td colspan="5">Architecture</td></tr>
+        <tr>
+          <td>Federation (central + sub-cores)</td>
+          <td class="no">&mdash;</td>
+          <td class="no">&mdash;</td>
+          <td class="featured-col yes">Yes</td>
+          <td class="yes">Yes</td>
+        </tr>
+        <tr>
+          <td>Remote agents (host-level collection)</td>
+          <td class="no">&mdash;</td>
+          <td class="yes">Yes</td>
+          <td class="featured-col yes">Yes</td>
+          <td class="yes">Yes</td>
+        </tr>
+        <tr>
+          <td>REST API access</td>
+          <td class="no">&mdash;</td>
+          <td class="yes">Yes</td>
+          <td class="featured-col yes">Yes</td>
+          <td class="yes">Yes</td>
+        </tr>
+        <tr>
+          <td>PostgreSQL backend</td>
+          <td class="yes">Yes</td>
+          <td class="yes">Yes</td>
+          <td class="featured-col yes">Yes</td>
+          <td class="yes">Yes</td>
+        </tr>
+
+        <!-- Packaging -->
+        <tr class="section-row"><td colspan="5">Packaging & Deployment</td></tr>
+        <tr>
+          <td>RPM packages (Rocky / RHEL)</td>
+          <td class="yes">Yes</td>
+          <td class="yes">Yes</td>
+          <td class="featured-col yes">Yes</td>
+          <td class="yes">Yes</td>
+        </tr>
+        <tr>
+          <td>DEB packages (Debian / Proxmox)</td>
+          <td class="yes">Yes</td>
+          <td class="yes">Yes</td>
+          <td class="featured-col yes">Yes</td>
+          <td class="yes">Yes</td>
+        </tr>
+        <tr>
+          <td>Windows agents (Hyper-V, VirtualBox)</td>
+          <td class="no">&mdash;</td>
+          <td class="yes">Yes</td>
+          <td class="featured-col yes">Yes</td>
+          <td class="yes">Yes</td>
+        </tr>
+
+        <!-- Support -->
+        <tr class="section-row"><td colspan="5">Support</td></tr>
+        <tr>
+          <td>Community support (GitHub Issues)</td>
+          <td class="yes">Yes</td>
+          <td class="yes">Yes</td>
+          <td class="featured-col yes">Yes</td>
+          <td class="yes">Yes</td>
+        </tr>
+        <tr>
+          <td>Email support</td>
+          <td class="no">&mdash;</td>
+          <td>48hr response</td>
+          <td class="featured-col">8hr response</td>
+          <td>4hr response</td>
+        </tr>
+        <tr>
+          <td>Phone support</td>
+          <td class="no">&mdash;</td>
+          <td class="no">&mdash;</td>
+          <td class="featured-col">Business hours</td>
+          <td>Business hours</td>
+        </tr>
+        <tr>
+          <td>SLA</td>
+          <td class="no">&mdash;</td>
+          <td class="no">&mdash;</td>
+          <td class="no">&mdash;</td>
+          <td>4hr response SLA</td>
+        </tr>
+        <tr>
+          <td>Software updates</td>
+          <td>Community releases</td>
+          <td>Quarterly</td>
+          <td class="featured-col">Monthly</td>
+          <td>Monthly + hotfixes</td>
+        </tr>
+
+      </tbody>
+    </table>
+
+    <ul class="cmp-note">
+      <li><strong>Monitor</strong> = inventory collection, metrics, dashboards (read-only). <strong>Manage</strong> = monitor + operations like start/stop/migrate VMs (read-write).</li>
+      <li>All plans include a <strong>30-day evaluation period</strong>. No credit card required for Community.</li>
+      <li>Add-on platform pricing varies. <a href="mailto:sales@decllc.biz">Contact sales</a> for details.</li>
+      <li>Host counts are per core or sub-core. Each node in a federated deployment requires its own license.</li>
+    </ul>
+
+  </div>
+</section>
+
+<!-- CTA -->
+<section style="background:linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);color:#fff;text-align:center;">
+  <div class="container">
+    <h2 style="color:#fff;">Ready to get started?</h2>
+    <p style="opacity:0.8;max-width:500px;margin:12px auto 24px;">Start free with the Community tier. Upgrade anytime.</p>
+    <a href="ivmia-pricing.html" class="cta" style="background:#fff;color:var(--primary);margin-right:12px;">View Pricing</a>
+    <a href="../store.html" class="cta" style="background:var(--accent);color:#fff;">Register Free</a>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div>
+      <img src="../assets/icon-only.jpg" alt="DEC-LLC" style="height:56px;margin-bottom:8px;">
+      <p style="font-style:italic;opacity:0.9;margin-bottom:4px;">Open Ideas</p>
+      <p>&copy; 2026 DEC-LLC. All rights reserved.</p>
+    </div>
+    <div class="footer-links">
+      <a href="../index.html#products">Products</a>
+      <a href="ivmia.html">IVMIA</a>
+      <a href="ivmia-pricing.html">Pricing</a>
+      <a href="../store.html">Store</a>
+      <a href="mailto:info@decllc.biz">info@decllc.biz</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
