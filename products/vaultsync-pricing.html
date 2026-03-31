@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VaultSync Pricing — DEC-LLC</title>
+  <link rel="stylesheet" href="../styles.css">
+  <style>
+    .pricing-grid-5 { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; max-width: 1200px; margin: 0 auto; }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="container">
+    <a href="../index.html" class="logo">
+      <img src="../assets/icon-only.jpg" alt="DEC-LLC">
+      <div class="logo-text"><span class="logo-name">DEC-LLC</span><svg class="logo-squiggle" viewBox="0 0 80 6" xmlns="http://www.w3.org/2000/svg"><path d="M0 3 Q10 0, 20 3 Q30 6, 40 3 Q50 0, 60 3 Q70 6, 80 3" stroke="rgba(255,255,255,0.5)" stroke-width="1.5" fill="none"/></svg><span class="logo-slogan">Open Ideas</span></div>
+    </a>
+    <ul>
+      <li><a href="../index.html#products">Products</a></li>
+      <li><a href="../index.html#pricing">Pricing</a></li>
+      <li><a href="../index.html#opensource">Open Source</a></li>
+      <li><a href="../store.html">Store</a></li>
+      <li><a href="../index.html#contact">Contact</a></li>
+    </ul>
+    <a href="../store.html" class="nav-cta">Buy Now</a>
+  </div>
+</nav>
+
+<section class="hero" style="padding:50px 0 40px;">
+  <div class="container">
+    <h1>VaultSync Pricing</h1>
+    <p>Universal Backup, Restore & Sync</p>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <h2>Subscription Tiers</h2>
+    <p class="subtitle">Protect any hypervisor, any platform, any direction. Community is free forever.</p>
+
+    <div class="pricing-grid-5">
+
+      <!-- Community -->
+      <div class="pricing-card">
+        <h3>Community</h3>
+        <div class="price">Free</div>
+        <p style="color:var(--text-muted);">Forever free</p>
+        <ul>
+          <li>2 hypervisor hosts</li>
+          <li>ESXi, KVM, Proxmox backup</li>
+          <li>Full rsync + rsync delta</li>
+          <li>Borg deduplication</li>
+          <li>Cross-platform sync (rsync-based)</li>
+          <li>Web dashboard</li>
+          <li>Community support (GitHub)</li>
+        </ul>
+        <button class="btn-full btn-primary" style="background:var(--teal);" onclick="window.location.href='../store.html'">Download Free</button>
+      </div>
+
+      <!-- Standard -->
+      <div class="pricing-card">
+        <h3>Standard</h3>
+        <div class="price">$49<span>/mo</span></div>
+        <p style="color:var(--text-muted);">For small teams</p>
+        <ul>
+          <li>10 hosts (buy up to 30)</li>
+          <li>Everything in Community</li>
+          <li>ZFS backend + snapshots</li>
+          <li>Scheduled retention policies</li>
+          <li>Host config backup (ESXi/PVE/KVM)</li>
+          <li>Email support, 48hr response</li>
+        </ul>
+        <button class="btn-full btn-primary" onclick="window.location.href='../store.html'">Subscribe</button>
+      </div>
+
+      <!-- Professional -->
+      <div class="pricing-card featured">
+        <h3>Professional</h3>
+        <div class="price">$199<span>/mo</span></div>
+        <p style="color:var(--text-muted);">Most popular</p>
+        <ul>
+          <li>Unlimited hosts</li>
+          <li>Everything in Standard</li>
+          <li><strong>CBT incrementals (ESXi)</strong></li>
+          <li><strong>Dirty bitmap incrementals (KVM)</strong></li>
+          <li><strong>AES-256-GCM encryption</strong></li>
+          <li><strong>Cloud storage (S3, OCI, Azure, GCP)</strong></li>
+          <li>Cross-hypervisor sync (CBT-based, ~1 min RPO)</li>
+          <li>Failover & failback orchestration</li>
+          <li>Physical server backup (Linux)</li>
+          <li>REST API + webhook integration</li>
+          <li>Email support, 24hr response</li>
+        </ul>
+        <button class="btn-full btn-primary" onclick="window.location.href='../store.html'">Subscribe</button>
+      </div>
+
+      <!-- Enterprise -->
+      <div class="pricing-card">
+        <h3>Enterprise</h3>
+        <div class="price">$499<span>/mo</span></div>
+        <p style="color:var(--text-muted);">For large organizations</p>
+        <ul>
+          <li>Unlimited hosts + sites</li>
+          <li>Everything in Professional</li>
+          <li><strong>Hyper-V + VirtualBox support</strong></li>
+          <li><strong>Windows server/workstation backup</strong></li>
+          <li><strong>Storage array drivers (Pure, NetApp, EMC)</strong></li>
+          <li>Continuous block replication (sub-minute RPO)</li>
+          <li>Cloud restore (AWS AMI, Azure VHD, GCP image)</li>
+          <li>Multi-site DR orchestration</li>
+          <li>RBAC + multi-tenant</li>
+          <li>4hr response SLA</li>
+        </ul>
+        <button class="btn-full btn-primary" onclick="window.location.href='../store.html'">Contact Sales</button>
+      </div>
+
+      <!-- MSP -->
+      <div class="pricing-card">
+        <h3>MSP</h3>
+        <div class="price">Custom</div>
+        <p style="color:var(--text-muted);">For managed service providers</p>
+        <ul>
+          <li>Everything in Enterprise</li>
+          <li>Multi-tenant per-customer configs</li>
+          <li>White-label Web UI</li>
+          <li>Bulk host licensing</li>
+          <li>Named engineer support</li>
+          <li>2hr response SLA</li>
+          <li>Custom integrations</li>
+        </ul>
+        <button class="btn-full btn-primary" onclick="window.location.href='mailto:sales@decllc.biz'">Contact Sales</button>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Feature Comparison -->
+<section style="background:#f8f9fa;">
+  <div class="container">
+    <h2>Feature Comparison</h2>
+    <table style="width:100%;border-collapse:collapse;background:#fff;border-radius:8px;overflow:hidden;box-shadow:0 1px 3px rgba(0,0,0,0.1);">
+      <thead>
+        <tr style="background:var(--primary);color:#fff;">
+          <th style="padding:12px;text-align:left;">Feature</th>
+          <th style="padding:12px;text-align:center;">Community</th>
+          <th style="padding:12px;text-align:center;">Standard</th>
+          <th style="padding:12px;text-align:center;">Professional</th>
+          <th style="padding:12px;text-align:center;">Enterprise</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td style="padding:10px;">ESXi / KVM / Proxmox backup</td><td style="text-align:center;">&#10003;</td><td style="text-align:center;">&#10003;</td><td style="text-align:center;">&#10003;</td><td style="text-align:center;">&#10003;</td></tr>
+        <tr style="background:#f9f9f9;"><td style="padding:10px;">rsync full + differential</td><td style="text-align:center;">&#10003;</td><td style="text-align:center;">&#10003;</td><td style="text-align:center;">&#10003;</td><td style="text-align:center;">&#10003;</td></tr>
+        <tr><td style="padding:10px;">Borg deduplication</td><td style="text-align:center;">&#10003;</td><td style="text-align:center;">&#10003;</td><td style="text-align:center;">&#10003;</td><td style="text-align:center;">&#10003;</td></tr>
+        <tr style="background:#f9f9f9;"><td style="padding:10px;">Web dashboard</td><td style="text-align:center;">&#10003;</td><td style="text-align:center;">&#10003;</td><td style="text-align:center;">&#10003;</td><td style="text-align:center;">&#10003;</td></tr>
+        <tr><td style="padding:10px;">Cross-platform sync (rsync)</td><td style="text-align:center;">&#10003;</td><td style="text-align:center;">&#10003;</td><td style="text-align:center;">&#10003;</td><td style="text-align:center;">&#10003;</td></tr>
+        <tr style="background:#f9f9f9;"><td style="padding:10px;">ZFS backend</td><td style="text-align:center;">&mdash;</td><td style="text-align:center;">&#10003;</td><td style="text-align:center;">&#10003;</td><td style="text-align:center;">&#10003;</td></tr>
+        <tr><td style="padding:10px;">Host config backup</td><td style="text-align:center;">&mdash;</td><td style="text-align:center;">&#10003;</td><td style="text-align:center;">&#10003;</td><td style="text-align:center;">&#10003;</td></tr>
+        <tr style="background:#f9f9f9;"><td style="padding:10px;"><strong>CBT incrementals (ESXi)</strong></td><td style="text-align:center;">&mdash;</td><td style="text-align:center;">&mdash;</td><td style="text-align:center;">&#10003;</td><td style="text-align:center;">&#10003;</td></tr>
+        <tr><td style="padding:10px;"><strong>Dirty bitmap incrementals (KVM)</strong></td><td style="text-align:center;">&mdash;</td><td style="text-align:center;">&mdash;</td><td style="text-align:center;">&#10003;</td><td style="text-align:center;">&#10003;</td></tr>
+        <tr style="background:#f9f9f9;"><td style="padding:10px;"><strong>AES-256-GCM encryption</strong></td><td style="text-align:center;">&mdash;</td><td style="text-align:center;">&mdash;</td><td style="text-align:center;">&#10003;</td><td style="text-align:center;">&#10003;</td></tr>
+        <tr><td style="padding:10px;"><strong>Cloud storage (S3/OCI/Azure/GCP)</strong></td><td style="text-align:center;">&mdash;</td><td style="text-align:center;">&mdash;</td><td style="text-align:center;">&#10003;</td><td style="text-align:center;">&#10003;</td></tr>
+        <tr style="background:#f9f9f9;"><td style="padding:10px;">CBT-based sync (~1 min RPO)</td><td style="text-align:center;">&mdash;</td><td style="text-align:center;">&mdash;</td><td style="text-align:center;">&#10003;</td><td style="text-align:center;">&#10003;</td></tr>
+        <tr><td style="padding:10px;">Failover & failback</td><td style="text-align:center;">&mdash;</td><td style="text-align:center;">&mdash;</td><td style="text-align:center;">&#10003;</td><td style="text-align:center;">&#10003;</td></tr>
+        <tr style="background:#f9f9f9;"><td style="padding:10px;">Physical Linux backup</td><td style="text-align:center;">&mdash;</td><td style="text-align:center;">&mdash;</td><td style="text-align:center;">&#10003;</td><td style="text-align:center;">&#10003;</td></tr>
+        <tr><td style="padding:10px;"><strong>Hyper-V + VirtualBox</strong></td><td style="text-align:center;">&mdash;</td><td style="text-align:center;">&mdash;</td><td style="text-align:center;">&mdash;</td><td style="text-align:center;">&#10003;</td></tr>
+        <tr style="background:#f9f9f9;"><td style="padding:10px;"><strong>Windows backup (VSS)</strong></td><td style="text-align:center;">&mdash;</td><td style="text-align:center;">&mdash;</td><td style="text-align:center;">&mdash;</td><td style="text-align:center;">&#10003;</td></tr>
+        <tr><td style="padding:10px;"><strong>Storage array drivers</strong></td><td style="text-align:center;">&mdash;</td><td style="text-align:center;">&mdash;</td><td style="text-align:center;">&mdash;</td><td style="text-align:center;">&#10003;</td></tr>
+        <tr style="background:#f9f9f9;"><td style="padding:10px;">Cloud VM restore (AMI/VHD/GCP)</td><td style="text-align:center;">&mdash;</td><td style="text-align:center;">&mdash;</td><td style="text-align:center;">&mdash;</td><td style="text-align:center;">&#10003;</td></tr>
+        <tr><td style="padding:10px;">Continuous replication (sub-min RPO)</td><td style="text-align:center;">&mdash;</td><td style="text-align:center;">&mdash;</td><td style="text-align:center;">&mdash;</td><td style="text-align:center;">&#10003;</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section style="background:linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);color:#fff;text-align:center;">
+  <div class="container">
+    <h2 style="color:#fff;">Start protecting your infrastructure today</h2>
+    <p style="opacity:0.8;max-width:500px;margin:12px auto 24px;">Community edition is free forever. No credit card. No time limit. Upgrade when you need CBT, cloud, or enterprise features.</p>
+    <a href="../store.html" class="cta" style="background:#fff;color:var(--primary);">Download Community</a>
+    <a href="mailto:sales@decllc.biz" class="cta-secondary">Contact Sales</a>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div>
+      <img src="../assets/icon-only.jpg" alt="DEC-LLC" style="height:56px;margin-bottom:8px;">
+      <p style="font-style:italic;opacity:0.9;margin-bottom:4px;">Open Ideas</p>
+      <p>&copy; 2026 DEC-LLC. All rights reserved.</p>
+    </div>
+    <div class="footer-links">
+      <a href="../index.html#products">Products</a>
+      <a href="vaultsync-pricing.html">Pricing</a>
+      <a href="../store.html">Store</a>
+      <a href="../index.html#contact">Contact</a>
+      <a href="mailto:info@decllc.biz">info@decllc.biz</a>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

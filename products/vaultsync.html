@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>VaultSync — VM Backup Orchestration</title>
+  <title>VaultSync — Universal Backup, Restore & Sync</title>
   <link rel="stylesheet" href="../styles.css">
 </head>
 <body>
@@ -27,41 +27,96 @@
 <section class="hero">
   <div class="container">
     <h1>VaultSync</h1>
-    <p>VM Backup Orchestration</p>
-    <p style="opacity:0.7;font-size:1rem;">Intelligent, cross-platform backup orchestration for virtualized infrastructure.</p>
-    <a href="../index.html#pricing" class="cta">Start Free Trial</a>
+    <p>Universal Backup, Restore & Sync</p>
+    <p style="opacity:0.7;font-size:1rem;">Any hypervisor. Any platform. Any direction. One tool.</p>
+    <a href="vaultsync-pricing.html" class="cta">View Pricing</a>
     <a href="#features" class="cta-secondary">See Features</a>
   </div>
 </section>
 
 <section id="features">
   <div class="container">
-    <h2>Key Capabilities</h2>
-    <p class="subtitle">Production-grade VM backup without the enterprise price tag. Replaces XSIBackup and proprietary backup agents.</p>
+    <h2>What VaultSync Does</h2>
+    <p class="subtitle">Complete backup, restore, and cross-platform sync for virtualized and physical infrastructure. No vendor lock-in. No agents required.</p>
+
     <div class="product-grid">
       <div class="product-card">
-        <h3>ESXi VM Backup</h3>
-        <p>Stage ESXi virtual machine backups using native vmkfstools for thin-provisioned, consistent snapshots. No agents needed inside the VM.</p>
+        <h3>Multi-Hypervisor Backup</h3>
+        <p>Back up VMs on ESXi, KVM/libvirt, Proxmox VE, Hyper-V, and VirtualBox from a single orchestrator. No per-hypervisor tools needed.</p>
       </div>
       <div class="product-card">
-        <h3>KVM/Proxmox Integration</h3>
-        <p>Orchestrates vzdump for Proxmox and virsh snapshot for KVM/libvirt. One tool for all your hypervisors.</p>
+        <h3>Physical Server Backup</h3>
+        <p>Back up bare-metal Linux and Windows servers with LVM snapshots, btrfs, VSS, or live rsync. Full disk images for P2V conversion.</p>
       </div>
       <div class="product-card">
-        <h3>CBT-Aware Incrementals</h3>
-        <p>Changed Block Tracking support for ESXi means incremental backups transfer only what changed. Dramatically reduces backup windows and storage.</p>
+        <h3>Cross-Hypervisor Sync</h3>
+        <p>Continuously sync VMs between ESXi, KVM, and Proxmox with automatic format conversion. Fail over from VMware to free Proxmox in minutes.</p>
       </div>
       <div class="product-card">
-        <h3>Cross-Site Replication</h3>
-        <p>Rsync-based replication to local storage, remote sites, or cloud targets. Works over VLAN trunks, VPNs, or WAN links.</p>
+        <h3>CBT & Dirty Bitmap Incrementals</h3>
+        <p>Changed Block Tracking for ESXi and dirty bitmaps for KVM. Only changed blocks are transferred &mdash; 100x faster than full backups.</p>
       </div>
       <div class="product-card">
-        <h3>Scheduled Retention</h3>
-        <p>Configurable retention policies — daily, weekly, monthly. Automatic pruning of old backups. GFS (Grandfather-Father-Son) rotation support.</p>
+        <h3>Cloud Storage Targets</h3>
+        <p>Back up to AWS S3, Oracle Cloud, Azure Blob, or Google Cloud Storage. Client-side AES-256-GCM encryption &mdash; your cloud provider never sees your data.</p>
       </div>
       <div class="product-card">
-        <h3>Disk-Level Intelligence</h3>
-        <p>Skip non-essential disks (syslog archives, temp data) with skip_disks configuration. Exclude VMs by tag or pattern.</p>
+        <h3>Restore Anywhere</h3>
+        <p>Restore to the same hypervisor, a different hypervisor, a physical server, or the cloud. One backup, unlimited restore targets.</p>
+      </div>
+      <div class="product-card">
+        <h3>Hypervisor Host Backup</h3>
+        <p>Back up ESXi, Proxmox, and KVM host configurations. Recover an entire hypervisor from bare metal in minutes.</p>
+      </div>
+      <div class="product-card">
+        <h3>Web Dashboard</h3>
+        <p>Real-time backup status, drag-and-drop sync maps, job scheduling, and plugin management. REST API for automation and integration.</p>
+      </div>
+      <div class="product-card">
+        <h3>Plugin Architecture</h3>
+        <p>10+ modular RPM plugins. Install only what you need. Community plugins are free. Enterprise plugins add CBT, cloud, encryption, and sync.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="background:#f8f9fa;">
+  <div class="container" style="text-align:center;">
+    <h2>Makes VMware Lock-In Obsolete</h2>
+    <p style="max-width:700px;margin:0 auto 24px;">VaultSync can continuously sync your ESXi VMs to a free Proxmox or KVM host at another site. When you're ready, fail over and cancel your VMware licenses. No downtime. No data loss. No vendor permission needed.</p>
+    <div class="product-grid" style="max-width:800px;margin:0 auto;">
+      <div class="product-card" style="text-align:center;">
+        <h3 style="color:var(--primary);">vmdk &harr; qcow2</h3>
+        <p>ESXi &harr; KVM/Proxmox</p>
+      </div>
+      <div class="product-card" style="text-align:center;">
+        <h3 style="color:var(--primary);">qcow2 &harr; vhdx</h3>
+        <p>KVM &harr; Hyper-V</p>
+      </div>
+      <div class="product-card" style="text-align:center;">
+        <h3 style="color:var(--primary);">Any &rarr; Cloud</h3>
+        <p>AWS AMI / Azure VHD / GCP</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <h2>How It Works</h2>
+    <p class="subtitle">VaultSync is a control-plane orchestrator. It sends SSH commands to source and target systems &mdash; backup data never touches the orchestrator. Runs on a 2GB VM.</p>
+    <div class="product-grid">
+      <div class="product-card">
+        <h3>1. Configure</h3>
+        <p>Define your hypervisors, VMs, backup targets, and schedules in a single YAML file.</p>
+      </div>
+      <div class="product-card">
+        <h3>2. Backup</h3>
+        <p>VaultSync snapshots VMs, extracts changed blocks (CBT/dirty bitmap), and streams data directly to your backup target.</p>
+      </div>
+      <div class="product-card">
+        <h3>3. Restore or Sync</h3>
+        <p>Restore to any platform with automatic format conversion. Or set up continuous sync for disaster recovery.</p>
       </div>
     </div>
   </div>
@@ -69,9 +124,9 @@
 
 <section style="background:linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);color:#fff;text-align:center;">
   <div class="container">
-    <h2 style="color:#fff;">Ready to get started with VaultSync?</h2>
-    <p style="opacity:0.8;max-width:500px;margin:12px auto 24px;">Start free with up to 2 hosts. Professional plans from $330/mo per product.</p>
-    <a href="../index.html#pricing" class="cta" style="background:#fff;color:var(--primary);">View Pricing</a>
+    <h2 style="color:#fff;">Ready to protect your infrastructure?</h2>
+    <p style="opacity:0.8;max-width:500px;margin:12px auto 24px;">Start free with up to 2 hosts. Community edition includes full rsync backup + Borg dedup. No credit card required.</p>
+    <a href="vaultsync-pricing.html" class="cta" style="background:#fff;color:var(--primary);">View Pricing</a>
     <a href="mailto:sales@decllc.biz" class="cta-secondary">Contact Sales</a>
   </div>
 </section>
@@ -85,7 +140,7 @@
     </div>
     <div class="footer-links">
       <a href="../index.html#products">Products</a>
-      <a href="../index.html#pricing">Pricing</a>
+      <a href="vaultsync-pricing.html">Pricing</a>
       <a href="../store.html">Store</a>
       <a href="../index.html#contact">Contact</a>
       <a href="mailto:info@decllc.biz">info@decllc.biz</a>
