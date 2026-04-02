@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Domain-Aware AI: Intelligence That Understands Your Infrastructure — DEC-LLC Whitepaper</title>
+  <meta name="description" content="How DEC-LLC embeds domain-specific AI into every product to analyze, advise, and protect your infrastructure investment — without sending your data to the cloud.">
+  <link rel="stylesheet" href="../styles.css">
+  <style>
+    .wp-hero { background: linear-gradient(135deg, var(--primary) 0%, #0a3a6b 100%); color: #fff; padding: 80px 0 60px; text-align: center; }
+    .wp-hero h1 { font-size: 2.4rem; font-weight: 900; margin-bottom: 12px; letter-spacing: -0.02em; }
+    .wp-hero .wp-meta { opacity: 0.8; font-size: 0.95rem; margin-bottom: 8px; }
+    .wp-hero .wp-subtitle { font-size: 1.15rem; opacity: 0.85; max-width: 700px; margin: 0 auto; }
+    .wp-body { max-width: 800px; margin: 0 auto; padding: 48px 24px 80px; }
+    .wp-body h2 { font-size: 1.6rem; font-weight: 800; color: var(--primary); margin: 48px 0 16px; text-align: left; }
+    .wp-body h3 { font-size: 1.2rem; font-weight: 700; color: var(--primary-light); margin: 32px 0 12px; }
+    .wp-body p { color: var(--text); font-size: 1.05rem; line-height: 1.8; margin-bottom: 16px; }
+    .wp-body ul, .wp-body ol { margin: 0 0 20px 24px; color: var(--text); font-size: 1.05rem; line-height: 1.8; }
+    .wp-body li { margin-bottom: 8px; }
+    .wp-body blockquote { border-left: 4px solid var(--accent); padding: 16px 24px; margin: 24px 0; background: #f0f7ff; border-radius: 0 8px 8px 0; }
+    .wp-body blockquote p { color: var(--primary); font-weight: 600; margin-bottom: 0; }
+    .wp-body table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 0.95rem; }
+    .wp-body th { background: var(--primary); color: #fff; padding: 12px 16px; text-align: left; font-weight: 700; }
+    .wp-body td { padding: 10px 16px; border-bottom: 1px solid var(--border); }
+    .wp-body tr:hover td { background: #f0f7ff; }
+    .wp-callout { background: linear-gradient(135deg, #e3f2fd 0%, #f0f7ff 100%); border: 2px solid var(--accent); border-radius: var(--radius); padding: 24px 28px; margin: 32px 0; }
+    .wp-callout h4 { color: var(--accent-dark); font-size: 1.1rem; margin-bottom: 8px; }
+    .wp-callout p { margin-bottom: 0; }
+    .wp-back { display: inline-block; margin: 20px 0; color: var(--accent); font-weight: 600; }
+    .wp-body .diagram { background: var(--primary); color: #fff; padding: 24px 32px; border-radius: var(--radius); font-family: 'Courier New', monospace; font-size: 0.95rem; line-height: 1.7; margin: 24px 0; overflow-x: auto; white-space: pre; }
+    .guardrail-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 24px 0; }
+    .guardrail { background: var(--card); border-radius: var(--radius); padding: 16px 20px; border: 1px solid var(--border); border-left: 4px solid #e53935; }
+    .guardrail h4 { font-size: 0.95rem; color: #c62828; margin-bottom: 4px; }
+    .guardrail p { font-size: 0.9rem; color: var(--text-muted); margin: 0; }
+    .phase-card { background: var(--card); border-radius: var(--radius); padding: 24px; border: 1px solid var(--border); margin: 16px 0; }
+    .phase-card h4 { color: var(--primary); font-size: 1.1rem; margin-bottom: 8px; }
+    .phase-card .badge { display: inline-block; padding: 3px 10px; border-radius: 20px; font-size: 0.75rem; font-weight: 700; margin-bottom: 12px; }
+    .badge-community { background: #e8f5e9; color: #2e7d32; }
+    .badge-enterprise { background: #e3f2fd; color: var(--accent-dark); }
+  </style>
+</head>
+<body>
+
+<!-- Navigation -->
+<nav>
+  <div class="container">
+    <a href="../index.html" class="logo">
+      <img src="../assets/icon-only.jpg" alt="DEC-LLC">
+      <div class="logo-text"><span class="logo-name">DEC-LLC</span><svg class="logo-squiggle" viewBox="0 0 80 6" xmlns="http://www.w3.org/2000/svg"><path d="M0 3 Q10 0, 20 3 Q30 6, 40 3 Q50 0, 60 3 Q70 6, 80 3" stroke="rgba(255,255,255,0.5)" stroke-width="1.5" fill="none"/></svg><span class="logo-slogan">Open Ideas</span></div>
+    </a>
+    <ul>
+      <li><a href="../index.html#products">Products</a></li>
+      <li><a href="../index.html#pricing">Pricing</a></li>
+      <li><a href="../index.html#opensource">Open Source</a></li>
+      <li><a href="../index.html#about">About</a></li>
+      <li><a href="../store.html">Store</a></li>
+      <li><a href="../index.html#contact">Contact</a></li>
+    </ul>
+    <a href="../store.html" class="nav-cta">Buy Now</a>
+  </div>
+</nav>
+
+<!-- Hero -->
+<section class="wp-hero">
+  <div class="container">
+    <p class="wp-meta">DEC-LLC Whitepaper &mdash; April 2026</p>
+    <h1>Domain-Aware AI for Infrastructure</h1>
+    <p class="wp-subtitle">Intelligence that understands your firewall rules, your network topology, your VMs, and your backups &mdash; running locally, never leaving your network.</p>
+  </div>
+</section>
+
+<!-- Body -->
+<div class="wp-body">
+
+  <a href="../index.html" class="wp-back">&larr; Back to DEC-LLC</a>
+
+  <h2>The Problem with General-Purpose AI in Infrastructure</h2>
+
+  <p>Large language models are powerful. They can write code, summarize documents, and answer questions. But ask a general-purpose AI to analyze your firewall rules and it will give you generic advice. Ask it to audit your network topology and it will suggest best practices it read in a textbook. It doesn't understand <em>your</em> infrastructure.</p>
+
+  <p>Worse, most AI services require sending your configuration data &mdash; firewall rules, network maps, credentials, security policies &mdash; to a third-party cloud. For organizations in healthcare, finance, government, and critical infrastructure, this is a non-starter.</p>
+
+  <blockquote><p>Infrastructure AI should understand your domain, run on your hardware, and never send your data anywhere.</p></blockquote>
+
+  <h2>Our Approach: One Engine, Domain-Specific Knowledge</h2>
+
+  <p>Every DEC-LLC product ships with an AI plugin that shares a common inference engine but carries domain-specific knowledge unique to its role. The AI doesn't just process text &mdash; it understands the structure, semantics, and operational patterns of the infrastructure it manages.</p>
+
+  <table>
+    <tr><th>Product</th><th>AI Domain</th><th>What It Understands</th></tr>
+    <tr><td><strong>OpenUTM</strong></td><td>Security</td><td>Firewall rule ordering, shadowed rules, nftables patterns, threat signatures, VPN tunnel health, IPS alerts, DNS filtering patterns</td></tr>
+    <tr><td><strong>NIVMIA</strong></td><td>Networking</td><td>Cisco/Juniper/Arista config syntax, SNMP MIB semantics, interface health patterns, configuration drift, vendor best practices</td></tr>
+    <tr><td><strong>IVMIA</strong></td><td>Compute</td><td>VM placement optimization, resource contention patterns, migration policies, storage performance, hypervisor-specific behavior</td></tr>
+    <tr><td><strong>VaultSync</strong></td><td>Data Protection</td><td>Backup chain integrity, deduplication ratios, replication lag patterns, retention policy compliance, storage capacity forecasting</td></tr>
+  </table>
+
+  <p>The same engine powers all four products. The difference is what each one knows about its domain &mdash; embedded through system prompts, domain schemas, specialized analyzers, and product-specific knowledge bases.</p>
+
+  <div class="diagram">Shared Infrastructure (identical across products)
++-----------------------------------------------+
+|  decllc-ai-engine    Local LLM inference       |
+|  decllc-ai-rag       Vector search for KB      |
+|  decllc-ai-guardrails  Hard safety limits      |
++-----------------------------------------------+
+
+Product-Specific Knowledge (unique per product)
++---------------+  +---------------+  +---------------+
+| OpenUTM       |  | NIVMIA        |  | IVMIA         |
+| - nftables    |  | - SNMP MIBs   |  | - VM metrics  |
+| - CVE feeds   |  | - CLI syntax  |  | - hypervisor  |
+| - threat sigs |  | - drift rules |  | - migration   |
++---------------+  +---------------+  +---------------+</div>
+
+  <h2>What the AI Actually Does</h2>
+
+  <p>The AI plugin operates in two phases, matching the trust level between the operator and the system.</p>
+
+  <div class="phase-card">
+    <span class="badge badge-community">Community &amp; Standard Tier</span>
+    <h4>Phase 1: Analyze and Advise</h4>
+    <p>Read-only analysis of your infrastructure. The AI examines your configuration, identifies issues, and provides actionable recommendations. It never modifies anything.</p>
+    <ul>
+      <li><strong>Rule Analysis</strong> &mdash; Finds shadowed, redundant, and overly permissive firewall rules. Scores your ruleset.</li>
+      <li><strong>Security Audit</strong> &mdash; Grades your configuration (A through F) across firewall, NAT, DHCP, interfaces, management access, and authentication.</li>
+      <li><strong>Network Analysis</strong> &mdash; Evaluates interface health, DHCP scope utilization, routing configuration, and network segmentation.</li>
+      <li><strong>Threat Detection</strong> &mdash; Analyzes firewall logs for DNS tunneling, port scans, brute force attempts, and anomalous traffic patterns.</li>
+      <li><strong>Change Review</strong> &mdash; Before you apply a configuration change, the AI diffs the current and proposed config and flags safety concerns.</li>
+      <li><strong>Interactive Chat</strong> &mdash; Ask questions about your configuration in natural language. "Why is this rule here?" "What would happen if I blocked this subnet?"</li>
+    </ul>
+  </div>
+
+  <div class="phase-card">
+    <span class="badge badge-enterprise">Enterprise Tier</span>
+    <h4>Phase 2: Managed Operations</h4>
+    <p>The AI can propose and execute configuration changes within strict guardrails. Every action requires approval (or passes through a risk classifier for semi-autonomous operation).</p>
+    <ul>
+      <li><strong>Rule Management</strong> &mdash; Create, modify, or delete firewall rules in the draft configuration based on analysis findings or operator requests.</li>
+      <li><strong>Risk Classification</strong> &mdash; Every proposed change is classified as low, medium, or high risk before execution.</li>
+      <li><strong>Approval Workflow</strong> &mdash; Supervised mode requires human approval for every change. Semi-autonomous mode auto-approves low-risk changes. Autonomous mode is available for environments that need it.</li>
+      <li><strong>Auto-Rollback</strong> &mdash; If management connectivity is lost within 60 seconds of applying a change, the previous configuration is automatically restored. The AI cannot lock you out.</li>
+    </ul>
+  </div>
+
+  <h2>Protecting the Customer's Investment</h2>
+
+  <p>The AI plugin is not a replacement for the operator. It is a force multiplier that helps the operator make better decisions, catch mistakes before they happen, and maintain a state of well-being across the infrastructure.</p>
+
+  <h3>Continuous Health Monitoring</h3>
+
+  <p>Each product's AI runs periodic health checks against its domain knowledge:</p>
+
+  <ul>
+    <li><strong>OpenUTM:</strong> Are firewall rules still optimal? Has a new CVE made a previously acceptable rule dangerous? Is the VPN tunnel showing degradation patterns that predict failure?</li>
+    <li><strong>NIVMIA:</strong> Has a switch config drifted from the baseline? Is an interface showing error rates that indicate a failing cable? Is SNMP polling revealing capacity issues?</li>
+    <li><strong>IVMIA:</strong> Is a VM host approaching CPU or memory saturation? Would migrating a workload improve cluster balance? Is storage latency trending upward?</li>
+    <li><strong>VaultSync:</strong> Are backups completing on schedule? Is deduplication ratio declining (indicating data corruption)? Is retention policy being followed? Will storage run out in 30 days?</li>
+  </ul>
+
+  <p>These checks run locally, on the customer's own hardware, using the customer's own data. The results feed into the platform's notification system &mdash; the operator gets an alert when something needs attention, along with a specific recommendation from the AI.</p>
+
+  <h3>Institutional Knowledge That Doesn't Walk Out the Door</h3>
+
+  <p>Every organization has an engineer who knows why that firewall rule exists, why that VLAN is configured that way, or why backups run at 2 AM instead of midnight. When that engineer leaves, the knowledge leaves with them.</p>
+
+  <p>The AI plugin captures and retains this institutional knowledge. When the AI analyzes a rule and the operator adds context ("this rule exists because vendor X requires port 8443 for their health checks"), that context becomes part of the knowledge base. The next engineer who asks "why is this rule here?" gets the answer.</p>
+
+  <p>The customer's investment is not just in hardware and software. It is in the accumulated understanding of how their infrastructure works and why it is configured the way it is. The AI protects that investment by making institutional knowledge persistent and queryable.</p>
+
+  <h2>Hard Guardrails: The AI Cannot Hurt You</h2>
+
+  <p>The managed AI plugin (Phase 2) enforces hard guardrails at the engine level. These are not suggestions. They are compiled constraints that cannot be bypassed by prompt, configuration, or operator error.</p>
+
+  <div class="guardrail-grid">
+    <div class="guardrail">
+      <h4>Writes Target Draft Only</h4>
+      <p>All AI modifications go to draft config. Apply is always an explicit, separate step.</p>
+    </div>
+    <div class="guardrail">
+      <h4>Validation Before Apply</h4>
+      <p>Every apply is preceded by automated validation. Invalid configs cannot be applied.</p>
+    </div>
+    <div class="guardrail">
+      <h4>Transaction Limits</h4>
+      <p>Maximum 5 rule changes per transaction. Prevents runaway modifications.</p>
+    </div>
+    <div class="guardrail">
+      <h4>Protected Interfaces</h4>
+      <p>Management and uplink interfaces cannot be disabled. The AI cannot lock you out.</p>
+    </div>
+    <div class="guardrail">
+      <h4>Protected Ports</h4>
+      <p>SSH and management API ports cannot be blocked on the management interface.</p>
+    </div>
+    <div class="guardrail">
+      <h4>No Auth Modifications</h4>
+      <p>Users, roles, and credentials are read-only to the AI. It cannot escalate its own privileges.</p>
+    </div>
+    <div class="guardrail">
+      <h4>No License Modifications</h4>
+      <p>The licensing subsystem is completely isolated from AI operations.</p>
+    </div>
+    <div class="guardrail">
+      <h4>No Backup Deletion</h4>
+      <p>Backup and recovery systems are read-only. The AI can analyze but never destroy.</p>
+    </div>
+    <div class="guardrail">
+      <h4>Auto-Rollback</h4>
+      <p>Loss of management connectivity triggers automatic restoration within 60 seconds.</p>
+    </div>
+    <div class="guardrail">
+      <h4>Complete Audit Trail</h4>
+      <p>Every AI action is logged to an append-only audit file. Tamper-evident by design.</p>
+    </div>
+  </div>
+
+  <h2>Local Inference: Your Data Never Leaves</h2>
+
+  <p>The AI engine runs entirely on the customer's hardware using local LLM inference. No API calls to OpenAI. No data sent to any cloud service. No telemetry. The model runs on the appliance itself or on a GPU-equipped server on the customer's network.</p>
+
+  <table>
+    <tr><th>Component</th><th>Where It Runs</th><th>What It Needs</th></tr>
+    <tr><td>LLM Inference</td><td>Local (Ollama)</td><td>GPU recommended (8+ GB VRAM), CPU fallback available</td></tr>
+    <tr><td>Knowledge Base</td><td>Local (vector DB)</td><td>Product-specific, encrypted with license-derived key</td></tr>
+    <tr><td>Analyzers</td><td>On the appliance</td><td>Python, no external dependencies</td></tr>
+    <tr><td>Guardrails</td><td>On the appliance</td><td>Compiled binary, cannot be modified at runtime</td></tr>
+  </table>
+
+  <p>For organizations that cannot have AI processing on the appliance itself (resource-constrained edge deployments), the inference engine can run on a dedicated GPU server on the same network. The data still never leaves the customer's environment.</p>
+
+  <div class="wp-callout">
+    <h4>Privacy by Architecture, Not by Policy</h4>
+    <p>We don't promise to keep your data private. We make it architecturally impossible for your data to leave. There is no API endpoint to call, no telemetry to disable, no opt-out to configure. The inference engine talks to localhost. That's it.</p>
+  </div>
+
+  <h2>Cross-Product Intelligence</h2>
+
+  <p>When multiple DEC-LLC products are deployed together, their AI plugins share context through the SDNS platform's internal communication bus. This creates intelligence that no single product could achieve alone:</p>
+
+  <ul>
+    <li><strong>OpenUTM blocks a threat</strong> &rarr; NIVMIA's AI correlates the source IP with network traffic patterns and identifies other potentially compromised hosts &rarr; VaultSync's AI verifies backup integrity for affected systems</li>
+    <li><strong>IVMIA detects a VM migration</strong> &rarr; OpenUTM's AI reviews whether firewall rules still apply correctly on the new host &rarr; NIVMIA's AI verifies monitoring targets are updated</li>
+    <li><strong>VaultSync detects backup degradation</strong> &rarr; NIVMIA's AI checks for network-level issues (latency, packet loss) that could explain the degradation &rarr; operator gets a root cause, not just a symptom</li>
+  </ul>
+
+  <p>Each product's AI is an expert in its domain. Together, they form a team that covers the full infrastructure stack &mdash; security, networking, compute, and data protection &mdash; with correlated intelligence and coordinated response.</p>
+
+  <h2>The Human Is Always in Control</h2>
+
+  <p>The AI is a tool, not an authority. It analyzes, recommends, and (when authorized) executes. But the human operator is always the final authority. The approval workflow ensures this at every level:</p>
+
+  <ol>
+    <li><strong>Supervised mode</strong> (default): Every AI action requires explicit human approval. The AI proposes; the human decides.</li>
+    <li><strong>Semi-autonomous mode</strong>: Low-risk actions (adding a log rule, adjusting a DHCP scope) proceed automatically. High-risk actions (deleting rules, changing addressing) require approval.</li>
+    <li><strong>Autonomous mode</strong>: Available for environments that need it (automated remediation, after-hours response). Hard guardrails still apply. Auto-rollback still protects against mistakes.</li>
+  </ol>
+
+  <p>The operator can step in at any time, override any AI decision, and roll back any change. The AI assists the operator's judgment. It does not replace it.</p>
+
+  <blockquote><p>The platform helps the operator not get hurt. The operator decides what happens. This is assisted infrastructure management &mdash; intelligence in service of human judgment, not in place of it.</p></blockquote>
+
+  <h2>Maintaining a State of Well-Being</h2>
+
+  <p>Infrastructure has a natural tendency toward entropy. Configurations drift. Rules accumulate. Backups go untested. Capacity creeps toward limits. Small issues compound into outages.</p>
+
+  <p>The AI plugin's primary mission is to maintain a <strong>state of well-being</strong> across the customer's infrastructure investment. This means:</p>
+
+  <ul>
+    <li><strong>Proactive detection</strong> &mdash; Finding issues before they cause outages. A firewall rule that was fine last month may be dangerous today because of a new CVE.</li>
+    <li><strong>Continuous audit</strong> &mdash; The security grade, the network health score, the backup integrity check &mdash; these run continuously, not once a quarter.</li>
+    <li><strong>Drift prevention</strong> &mdash; When configuration drifts from the intended state, the AI flags it immediately. Not after the next audit. Not after the next incident.</li>
+    <li><strong>Capacity forecasting</strong> &mdash; The AI models trends in resource utilization and alerts before thresholds are breached, giving the operator time to plan instead of react.</li>
+    <li><strong>Knowledge continuity</strong> &mdash; When team members change, the institutional knowledge embedded in the AI's context ensures continuity. The new engineer has the same visibility as the veteran.</li>
+  </ul>
+
+  <p>This is not artificial intelligence replacing human intelligence. It is artificial intelligence <em>preserving</em> human intelligence &mdash; capturing what the team knows, applying it consistently, and alerting when attention is needed.</p>
+
+  <div class="wp-callout">
+    <h4>The Goal</h4>
+    <p>The customer's infrastructure should be healthier at the end of every month than it was at the beginning. Not because of heroic intervention, but because the platform is quietly, continuously maintaining a state of well-being &mdash; finding drift, flagging risks, preserving knowledge, and keeping the operator informed.</p>
+  </div>
+
+  <p style="margin-top:48px;text-align:center;color:var(--text-muted);font-size:0.9rem;">
+    &copy; 2026 Diwan Enterprise Consulting LLC (DEC-LLC). All rights reserved.<br>
+    For more information, contact <a href="mailto:info@decllc.biz">info@decllc.biz</a> or visit <a href="https://dec-llc.biz">dec-llc.biz</a>.
+  </p>
+
+</div>
+
+<!-- Footer -->
+<footer>
+  <div class="container">
+    <div>
+      <img src="../assets/icon-only.jpg" alt="DEC-LLC" style="height:56px;margin-bottom:8px;">
+      <p style="font-style:italic;opacity:0.9;margin-bottom:4px;">Open Ideas</p>
+      <p>&copy; 2026 DEC-LLC. All rights reserved.</p>
+    </div>
+    <div class="footer-links">
+      <a href="../index.html#products">Products</a>
+      <a href="../index.html#pricing">Pricing</a>
+      <a href="../index.html#opensource">Open Source</a>
+      <a href="../index.html#contact">Contact</a>
+      <a href="mailto:info@decllc.biz">info@decllc.biz</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
