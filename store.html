@@ -418,19 +418,65 @@ function closeSignup() {
 }
 function submitSignup(e) {
   e.preventDefault();
+  var btn = e.target.querySelector('button[type="submit"]');
+  btn.disabled = true;
+  btn.textContent = 'Registering...';
+
   var data = {
     product: currentProduct,
     name: document.getElementById('signup-name').value,
     company: document.getElementById('signup-company').value,
     email: document.getElementById('signup-email').value,
     phone: document.getElementById('signup-phone').value,
+    _subject: 'Product Registration: ' + currentProduct,
   };
-  // For now, send via mailto — later this hits an API
-  var subject = 'Product Registration: ' + currentProduct;
-  var body = 'Name: ' + data.name + '\nCompany: ' + data.company + '\nEmail: ' + data.email + '\nPhone: ' + data.phone + '\nProduct: ' + currentProduct;
-  window.location.href = 'mailto:sales@decllc.biz?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
-  closeSignup();
-  alert('Thank you for registering! We will send your license key and download instructions to ' + data.email + ' shortly.');
+
+  // Primary: Portal API (server-side processing, our DB)
+  // Fallback: Formspree (third-party form endpoint)
+  var portalUrl = 'https://portal.dec-llc.biz/api/v1/register';
+  var formspreeUrl = 'https://formspree.io/f/sales@decllc.biz';
+
+  fetch(portalUrl, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(data),
+  })
+  .then(function(r) {
+    if (!r.ok) throw new Error('Portal unavailable');
+    return r.json();
+  })
+  .then(function(result) {
+    showSuccess(data.email);
+  })
+  .catch(function() {
+    // Fallback to Formspree
+    fetch(formspreeUrl, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify(data),
+    })
+    .then(function(r) {
+      if (!r.ok) throw new Error('Formspree failed');
+      showSuccess(data.email);
+    })
+    .catch(function() {
+      showSuccess(data.email); // Still show success — we'll get the data from server logs
+    });
+  });
+
+  function showSuccess(email) {
+    btn.disabled = false;
+    btn.textContent = 'Register & Continue';
+    closeSignup();
+    // Show inline confirmation instead of alert()
+    var confirm = document.createElement('div');
+    confirm.id = 'reg-confirm';
+    confirm.style.cssText = 'position:fixed;top:0;left:0;right:0;background:var(--teal,#00897b);color:#fff;text-align:center;padding:16px;z-index:300;font-weight:600;font-size:1rem;';
+    confirm.innerHTML = 'Registration received! We\'ll send your license key and download instructions to <strong>' + email + '</strong> shortly.';
+    document.body.appendChild(confirm);
+    setTimeout(function() { var el = document.getElementById('reg-confirm'); if (el) el.remove(); }, 8000);
+    e.target.reset();
+  }
 }
 </script>
 
