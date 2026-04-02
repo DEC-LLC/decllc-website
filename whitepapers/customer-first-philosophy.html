@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Customer-First Infrastructure: The DEC-LLC Philosophy — Whitepaper</title>
+  <meta name="description" content="How DEC-LLC products work with what you already have, replace only what isn't working, and make cloud vs on-prem a detail instead of a decision.">
+  <link rel="stylesheet" href="../styles.css">
+  <style>
+    .wp-hero { background: linear-gradient(135deg, var(--primary) 0%, #0a3a6b 100%); color: #fff; padding: 80px 0 60px; text-align: center; }
+    .wp-hero h1 { font-size: 2.4rem; font-weight: 900; margin-bottom: 12px; letter-spacing: -0.02em; }
+    .wp-hero .wp-meta { opacity: 0.8; font-size: 0.95rem; margin-bottom: 8px; }
+    .wp-hero .wp-subtitle { font-size: 1.15rem; opacity: 0.85; max-width: 700px; margin: 0 auto; }
+    .wp-body { max-width: 800px; margin: 0 auto; padding: 48px 24px 80px; }
+    .wp-body h2 { font-size: 1.6rem; font-weight: 800; color: var(--primary); margin: 48px 0 16px; text-align: left; }
+    .wp-body h3 { font-size: 1.2rem; font-weight: 700; color: var(--primary-light); margin: 32px 0 12px; }
+    .wp-body p { color: var(--text); font-size: 1.05rem; line-height: 1.8; margin-bottom: 16px; }
+    .wp-body ul, .wp-body ol { margin: 0 0 20px 24px; color: var(--text); font-size: 1.05rem; line-height: 1.8; }
+    .wp-body li { margin-bottom: 8px; }
+    .wp-body blockquote { border-left: 4px solid var(--accent); padding: 16px 24px; margin: 24px 0; background: #f0f7ff; border-radius: 0 8px 8px 0; }
+    .wp-body blockquote p { color: var(--primary); font-weight: 600; margin-bottom: 0; }
+    .wp-body .diagram { background: var(--primary); color: #fff; padding: 24px 32px; border-radius: var(--radius); font-family: 'Courier New', monospace; font-size: 0.95rem; line-height: 1.7; margin: 24px 0; overflow-x: auto; white-space: pre; }
+    .wp-body table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 0.95rem; }
+    .wp-body th { background: var(--primary); color: #fff; padding: 12px 16px; text-align: left; font-weight: 700; }
+    .wp-body td { padding: 10px 16px; border-bottom: 1px solid var(--border); }
+    .wp-body tr:hover td { background: #f0f7ff; }
+    .wp-callout { background: linear-gradient(135deg, #e3f2fd 0%, #f0f7ff 100%); border: 2px solid var(--accent); border-radius: var(--radius); padding: 24px 28px; margin: 32px 0; }
+    .wp-callout h4 { color: var(--accent-dark); font-size: 1.1rem; margin-bottom: 8px; }
+    .wp-callout p { margin-bottom: 0; }
+    .wp-back { display: inline-block; margin: 20px 0; color: var(--accent); font-weight: 600; }
+    .comparison-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin: 24px 0; }
+    .comparison-card { background: var(--card); border-radius: var(--radius); padding: 24px; border: 1px solid var(--border); }
+    .comparison-card.them { border-top: 4px solid #e53935; }
+    .comparison-card.us { border-top: 4px solid var(--accent); }
+    .comparison-card h4 { font-size: 1rem; font-weight: 700; margin-bottom: 12px; }
+    .comparison-card.them h4 { color: #c62828; }
+    .comparison-card.us h4 { color: var(--accent-dark); }
+    .comparison-card ul { margin: 0; padding-left: 18px; font-size: 0.95rem; }
+    .journey { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; margin: 24px 0; }
+    .journey-step { background: var(--card); border-radius: var(--radius); padding: 20px; border: 1px solid var(--border); text-align: center; position: relative; }
+    .journey-step .step-num { display: inline-block; width: 32px; height: 32px; line-height: 32px; border-radius: 50%; background: var(--accent); color: #fff; font-weight: 700; font-size: 0.9rem; margin-bottom: 8px; }
+    .journey-step h4 { font-size: 0.95rem; color: var(--primary); margin-bottom: 6px; }
+    .journey-step p { font-size: 0.85rem; color: var(--text-muted); margin: 0; }
+  </style>
+</head>
+<body>
+
+<!-- Navigation -->
+<nav>
+  <div class="container">
+    <a href="../index.html" class="logo">
+      <img src="../assets/icon-only.jpg" alt="DEC-LLC">
+      <div class="logo-text"><span class="logo-name">DEC-LLC</span><svg class="logo-squiggle" viewBox="0 0 80 6" xmlns="http://www.w3.org/2000/svg"><path d="M0 3 Q10 0, 20 3 Q30 6, 40 3 Q50 0, 60 3 Q70 6, 80 3" stroke="rgba(255,255,255,0.5)" stroke-width="1.5" fill="none"/></svg><span class="logo-slogan">Open Ideas</span></div>
+    </a>
+    <ul>
+      <li><a href="../index.html#products">Products</a></li>
+      <li><a href="../index.html#pricing">Pricing</a></li>
+      <li><a href="../index.html#opensource">Open Source</a></li>
+      <li><a href="../index.html#about">About</a></li>
+      <li><a href="../store.html">Store</a></li>
+      <li><a href="../index.html#contact">Contact</a></li>
+    </ul>
+    <a href="../store.html" class="nav-cta">Buy Now</a>
+  </div>
+</nav>
+
+<!-- Hero -->
+<section class="wp-hero">
+  <div class="container">
+    <p class="wp-meta">DEC-LLC Whitepaper &mdash; April 2026</p>
+    <h1>Customer-First Infrastructure Software</h1>
+    <p class="wp-subtitle">We don't care what you're running. We'll manage it. And when you're ready, we'll replace the parts that aren't working &mdash; one at a time, at your pace.</p>
+  </div>
+</section>
+
+<!-- Body -->
+<div class="wp-body">
+
+  <a href="../index.html" class="wp-back">&larr; Back to DEC-LLC</a>
+
+  <h2>The Industry's Problem: Vendor Lock-In Disguised as Solutions</h2>
+
+  <p>Every major infrastructure vendor wants the same thing: to own your entire stack. Buy their firewall, then their management platform, then their cloud, then their analytics. Each product works best &mdash; or only &mdash; with their other products. Switching costs increase with every purchase. This is by design.</p>
+
+  <div class="comparison-grid">
+    <div class="comparison-card them">
+      <h4>How They Think</h4>
+      <ul>
+        <li>Customer buys our firewall</li>
+        <li>Now they need our management console</li>
+        <li>Now they need our cloud service</li>
+        <li>Now they need our analytics</li>
+        <li>Now they can't leave</li>
+      </ul>
+    </div>
+    <div class="comparison-card us">
+      <h4>How We Think</h4>
+      <ul>
+        <li>Customer has a FortiGate. That's fine.</li>
+        <li>We'll monitor it alongside their Cisco switches</li>
+        <li>We'll back up its config alongside their VMs</li>
+        <li>When the FortiGate contract expires, they can choose</li>
+        <li>They stay because it works, not because they're trapped</li>
+      </ul>
+    </div>
+  </div>
+
+  <p>The industry treats customers as accounts to capture. We treat them as engineers with real problems who deserve tools that work with what they already have.</p>
+
+  <h2>Our Philosophy: Integrate First, Replace Only When Better</h2>
+
+  <p>DEC-LLC products are designed to work with your existing infrastructure from day one. Not beside it. Not as a replacement for it. <em>With</em> it.</p>
+
+  <table>
+    <tr><th>You're Running</th><th>We'll Work With It</th></tr>
+    <tr><td>Palo Alto, FortiGate, pfSense, or any firewall</td><td>NIVMIA monitors it. VaultSync backs up its config. OpenUTM can sit beside it or behind it.</td></tr>
+    <tr><td>VMware vSphere, Proxmox, KVM, Hyper-V</td><td>IVMIA manages all of them from one console. No rip-and-replace.</td></tr>
+    <tr><td>AWS, Azure, GCP, OCI</td><td>Same products, same policies, same UI. Cloud-init is just another input adapter.</td></tr>
+    <tr><td>Cisco, Juniper, Arista switches</td><td>NIVMIA discovers and monitors them all via SNMP, SSH, and API.</td></tr>
+    <tr><td>Borg, rsync, Veeam, PBS</td><td>VaultSync orchestrates backups across all of them.</td></tr>
+  </table>
+
+  <blockquote><p>We don't ask you to throw away what works. We ask you to let us help with what doesn't.</p></blockquote>
+
+  <h2>The Customer Journey: Standalone to Integrated</h2>
+
+  <p>Every DEC-LLC product is independently useful. There is no "platform tax" &mdash; you don't need to buy the whole suite to get value from one product. But when you add a second product, and a third, something powerful happens: they start talking to each other.</p>
+
+  <div class="journey">
+    <div class="journey-step">
+      <div class="step-num">1</div>
+      <h4>Try One Product</h4>
+      <p>Deploy NIVMIA to monitor your network. It works with your existing switches and firewalls.</p>
+    </div>
+    <div class="journey-step">
+      <div class="step-num">2</div>
+      <h4>See the Value</h4>
+      <p>Discover devices you didn't know about. Get alerts that matter. Build trust.</p>
+    </div>
+    <div class="journey-step">
+      <div class="step-num">3</div>
+      <h4>Add a Second</h4>
+      <p>Deploy OpenUTM. It integrates with NIVMIA automatically. Firewall alerts correlate with network monitoring.</p>
+    </div>
+    <div class="journey-step">
+      <div class="step-num">4</div>
+      <h4>The Loop Closes</h4>
+      <p>Add VaultSync. Now your configs, your policies, and your data are all protected, monitored, and enforced by one authority.</p>
+    </div>
+  </div>
+
+  <p>At every step, the customer chose to add value. At no step were they forced. The platform earns its place by being useful, not by being mandatory.</p>
+
+  <h2>Making Cloud vs On-Prem Meaningless</h2>
+
+  <p>The industry wants you to choose: are you a "cloud company" or an "on-prem company"? This is a false choice invented by vendors who profit from the distinction.</p>
+
+  <p>The reality is that most organizations have both. They have servers in a rack and instances in AWS. They have VMs on Proxmox and containers on GCP. They need tools that don't care about the distinction.</p>
+
+  <p>DEC-LLC products run the same way everywhere:</p>
+
+  <ul>
+    <li><strong>Same image.</strong> The QCOW2 that runs on your KVM host converts to an AMI for AWS, a VHD for Azure, or uploads directly to OCI.</li>
+    <li><strong>Same configuration.</strong> Firewall rules, VPN tunnels, monitoring targets, backup policies &mdash; all defined the same way regardless of where the product runs.</li>
+    <li><strong>Same UI.</strong> One management interface, whether you're managing an appliance in your server room or an instance in Frankfurt.</li>
+    <li><strong>Same authority.</strong> The product controls its own DNS, DHCP, identity, and security. The cloud provider provides compute. We provide authority.</li>
+  </ul>
+
+  <div class="wp-callout">
+    <h4>What This Means for Your Team</h4>
+    <p>Your engineers learn one set of tools. Your policies are defined once. Your audit trail is in one place. When you move a workload from on-prem to cloud &mdash; or back &mdash; the infrastructure layer moves with it. No re-architecture. No new training. No new vendors.</p>
+  </div>
+
+  <h2>Vendor Agnostic by Design</h2>
+
+  <p>Being vendor agnostic is not a marketing claim. It is an engineering decision baked into every product:</p>
+
+  <ul>
+    <li><strong>NIVMIA</strong> monitors Cisco, Juniper, Arista, Fortinet, and any device that speaks SNMP or has an SSH CLI. It does not prefer one vendor over another.</li>
+    <li><strong>IVMIA</strong> manages VMware, Proxmox, KVM, Hyper-V, AWS, Azure, GCP, and OCI. It treats a vSphere cluster and a Proxmox cluster as equally valid deployment targets.</li>
+    <li><strong>OpenUTM</strong> integrates with existing firewalls (as a complement or replacement), existing VPN infrastructure, and existing DNS/DHCP services.</li>
+    <li><strong>VaultSync</strong> backs up to local storage, NAS, S3, Azure Blob, GCS, or OCI Object Storage. It orchestrates Borg, rsync, and its own replication engine.</li>
+  </ul>
+
+  <p>The customer's existing investment is respected. We integrate with what works. We offer to replace what doesn't. The customer decides, not us.</p>
+
+  <h2>Open Source Community Tier</h2>
+
+  <p>Every DEC-LLC product has a free, open-source community tier. This is not a trial. It is not feature-limited to the point of uselessness. It is a fully functional product that a small business or home lab can use indefinitely without paying anything.</p>
+
+  <p>Why? Because trust is earned, not purchased. We want engineers to use our software, form opinions, and make recommendations based on experience. If the community tier solves the problem, use it. If you need more &mdash; enterprise features, professional support, SLA guarantees &mdash; the commercial tiers are there.</p>
+
+  <p>This model has a direct business benefit: every community user is a potential advocate. Every lab deployment is a proof of concept. The software sells itself because it works, not because a salesperson called.</p>
+
+  <h2>What We Believe</h2>
+
+  <ol>
+    <li><strong>The customer's infrastructure is theirs, not ours.</strong> We provide tools to manage it. We do not hold it hostage.</li>
+    <li><strong>Interoperability is not optional.</strong> If we can't work with what the customer already has, we haven't built the right product.</li>
+    <li><strong>Cloud and on-prem are the same problem.</strong> The answer should be the same tools, the same policies, the same experience.</li>
+    <li><strong>Trust is earned by working, not by promising.</strong> Ship software that works. Open-source the community tier. Let engineers decide.</li>
+    <li><strong>Integration beats displacement.</strong> Helping a customer use their FortiGate better is more valuable than convincing them to throw it away.</li>
+    <li><strong>The platform should disappear.</strong> If the customer has to think about our platform instead of their problems, we've failed. The best infrastructure software is invisible.</li>
+  </ol>
+
+  <blockquote><p>We don't sell lock-in. We sell freedom &mdash; the freedom to run any vendor, any cloud, any hypervisor, and know that your tools work the same way everywhere. The customer stays because it works, not because they can't leave.</p></blockquote>
+
+  <p style="margin-top:48px;text-align:center;color:var(--text-muted);font-size:0.9rem;">
+    &copy; 2026 Diwan Enterprise Consulting LLC (DEC-LLC). All rights reserved.<br>
+    For more information, contact <a href="mailto:info@decllc.biz">info@decllc.biz</a> or visit <a href="https://dec-llc.biz">dec-llc.biz</a>.
+  </p>
+
+</div>
+
+<!-- Footer -->
+<footer>
+  <div class="container">
+    <div>
+      <img src="../assets/icon-only.jpg" alt="DEC-LLC" style="height:56px;margin-bottom:8px;">
+      <p style="font-style:italic;opacity:0.9;margin-bottom:4px;">Open Ideas</p>
+      <p>&copy; 2026 DEC-LLC. All rights reserved.</p>
+    </div>
+    <div class="footer-links">
+      <a href="../index.html#products">Products</a>
+      <a href="../index.html#pricing">Pricing</a>
+      <a href="../index.html#opensource">Open Source</a>
+      <a href="../index.html#contact">Contact</a>
+      <a href="mailto:info@decllc.biz">info@decllc.biz</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
