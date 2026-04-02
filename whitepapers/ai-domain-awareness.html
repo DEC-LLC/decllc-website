@@ -89,8 +89,8 @@
   <table>
     <tr><th>Product</th><th>AI Domain</th><th>What It Understands</th></tr>
     <tr><td><strong>OpenUTM</strong></td><td>Security</td><td>Firewall rule ordering, shadowed rules, nftables patterns, threat signatures, VPN tunnel health, IPS alerts, DNS filtering patterns. Covers on-prem, cloud, and hybrid perimeters.</td></tr>
-    <tr><td><strong>NIVMIA</strong></td><td>Networking</td><td>Cisco/Juniper/Arista config syntax, SNMP MIB semantics, interface health, configuration drift, vendor best practices. Includes third-party vendor equipment &mdash; ISP routers, MSP firewalls, carrier CPE, SD-WAN appliances.</td></tr>
-    <tr><td><strong>IVMIA</strong></td><td>Compute</td><td>VM placement, resource contention, migration policies, storage performance &mdash; plus workstation fleet health, endpoint compliance, physical device inventory across Windows, macOS, Linux, POS terminals, and field devices.</td></tr>
+    <tr><td><strong>NIVMIA</strong></td><td>Networking</td><td>Cisco/Juniper/Arista config syntax, SNMP MIB semantics, interface health, VLAN/BGP/OSPF validation, broadcast storm detection, QoS capacity modeling, config standardization patterns, fleet-wide change impact analysis. Includes third-party vendor equipment &mdash; ISP routers, MSP firewalls, carrier CPE, SD-WAN appliances.</td></tr>
+    <tr><td><strong>IVMIA</strong></td><td>Compute</td><td>VM placement, resource contention and redistribution, hardware compatibility validation, migration policies, storage performance, capacity forecasting &mdash; plus workstation fleet health, endpoint compliance, physical device inventory across Windows, macOS, Linux, POS terminals, and field devices.</td></tr>
     <tr><td><strong>VaultSync</strong></td><td>Data Protection</td><td>Backup chain integrity, deduplication ratios, replication lag, retention compliance, capacity forecasting. Includes mobile device backup analysis and business data extraction from backup sets.</td></tr>
   </table>
 
@@ -151,8 +151,8 @@ Product-Specific Knowledge (unique per product)
 
   <ul>
     <li><strong>OpenUTM:</strong> Are firewall rules still optimal? Has a new CVE made a previously acceptable rule dangerous? Is the VPN tunnel showing degradation patterns that predict failure? Are cloud security policies in sync with on-prem?</li>
-    <li><strong>NIVMIA:</strong> Has a switch config drifted from the baseline? Is an ISP-provided router behaving differently? Is the MSP's managed firewall dropping packets it shouldn't? Is SNMP polling revealing capacity issues across all 17+ vendor platforms?</li>
-    <li><strong>IVMIA:</strong> Is a VM host approaching saturation? Are workstation fleet patches current? Is a POS terminal offline? Is a field device reporting hardware errors? The AI monitors the entire compute estate, not just the data center.</li>
+    <li><strong>NIVMIA:</strong> Has a switch config drifted from the baseline? Is a VLAN misconfigured on a trunk port? Are BGP peers flapping? Is an OSPF adjacency failing to form? Is the ISP-provided router behaving differently? Is a broadcast storm developing? Does bandwidth trending suggest a QoS policy change is needed? The AI monitors, diagnoses, and recommends corrections across the entire network fleet.</li>
+    <li><strong>IVMIA:</strong> Is a VM host approaching saturation? Should workloads be redistributed? Is a new server hardware-compatible with the existing cluster? Are workstation fleet patches current? Is a POS terminal offline? The AI optimizes resource allocation across the entire compute estate.</li>
     <li><strong>VaultSync:</strong> Are all backups completing &mdash; VMs, physical servers, network configs, and company phones? Is deduplication ratio declining? Are mobile device backups current? Can the contact directory be rebuilt from the latest phone backup?</li>
   </ul>
 

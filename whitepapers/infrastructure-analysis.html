@@ -88,7 +88,7 @@
     </div>
     <div class="layer">
       <div class="layer-name">Network</div>
-      <div class="layer-content"><strong>NIVMIA</strong> analyzes device health, interface utilization, SNMP metrics, configuration compliance, bandwidth trends, and protocol distribution. It discovers every device on your network &mdash; including third-party vendor equipment (ISP routers, MSP firewalls, carrier CPE, SD-WAN appliances) &mdash; and tracks changes over time.</div>
+      <div class="layer-content"><strong>NIVMIA</strong> does far more than monitor &mdash; it manages, standardizes, and corrects. Fleet-wide configuration enforcement, VLAN/BGP/OSPF validation and correction, broadcast storm detection and suppression, QoS capacity planning and implementation, bandwidth trending, and error analysis. Covers every device on your network including third-party vendor equipment (ISP routers, MSP firewalls, carrier CPE, SD-WAN appliances).</div>
     </div>
     <div class="layer">
       <div class="layer-name">Compute</div>
@@ -123,12 +123,16 @@
   <table>
     <tr><th>Analysis</th><th>What It Finds</th><th>Why It Matters</th></tr>
     <tr><td>Device discovery</td><td>Every device on the network, including unauthorized ones</td><td>You can't secure what you don't know about</td></tr>
-    <tr><td>Config compliance</td><td>Drift from approved baselines, vendor best practices</td><td>Prevents "it worked before" incidents</td></tr>
-    <tr><td>Interface health</td><td>Error rates, CRC errors, utilization, duplex mismatches</td><td>Catches hardware failures early</td></tr>
-    <tr><td>Bandwidth trending</td><td>Per-interface, per-VLAN, per-protocol utilization over time</td><td>Capacity planning with data, not guesses</td></tr>
+    <tr><td>Config standardization</td><td>Fleet-wide baseline enforcement, automated rollback of unauthorized changes</td><td>Every switch, router, and firewall configured to your standard</td></tr>
+    <tr><td>Misconfiguration correction</td><td>VLAN trunk errors, access port misassignment, STP issues, duplex mismatches</td><td>Fix problems before they cause outages</td></tr>
+    <tr><td>Routing validation</td><td>BGP peering health, OSPF adjacency tables, route redistribution, path analysis</td><td>Catch routing loops, missing peers, and suboptimal paths</td></tr>
+    <tr><td>Storm detection</td><td>Broadcast storms, multicast floods, spanning tree loops</td><td>Detect and suppress before they take down the network</td></tr>
+    <tr><td>Interface health</td><td>Error rates, CRC errors, utilization, drops, discards</td><td>Catches hardware failures and congestion early</td></tr>
+    <tr><td>Bandwidth &amp; QoS planning</td><td>Per-interface, per-VLAN, per-protocol trending + QoS policy modeling</td><td>Capacity planning AND implementation, not just reports</td></tr>
     <tr><td>Flow analysis</td><td>Top talkers, protocol distribution, anomalous flows</td><td>Identifies shadow IT and unauthorized services</td></tr>
-    <tr><td>Third-party vendor gear</td><td>ISP routers, MSP firewalls, carrier CPE, SD-WAN appliances</td><td>Visibility into equipment you depend on but don't own</td></tr>
-    <tr><td>Multi-vendor comparison</td><td>Cisco, Juniper, Arista, Fortinet + 13 more platforms normalized</td><td>One view regardless of vendor mix</td></tr>
+    <tr><td>Third-party vendor gear</td><td>ISP routers, MSP firewalls, carrier CPE, SD-WAN appliances</td><td>Manage equipment you depend on but don't own</td></tr>
+    <tr><td>Fleet operations</td><td>Bulk config push, firmware upgrades, compliance scanning across hundreds of devices</td><td>Manage 500 switches as easily as 5</td></tr>
+    <tr><td>Multi-vendor normalization</td><td>Cisco, Juniper, Arista, Fortinet + 13 more platforms</td><td>One view, one language, regardless of vendor mix</td></tr>
   </table>
 
   <h3>IVMIA: Compute and Virtualization Analysis</h3>
@@ -138,10 +142,14 @@
     <tr><td>Resource utilization</td><td>CPU, memory, storage, network per VM and per host</td><td>Right-size VMs, eliminate waste</td></tr>
     <tr><td>Placement optimization</td><td>VM-to-host affinity, anti-affinity, DRS recommendations</td><td>Balanced clusters, better performance</td></tr>
     <tr><td>Storage analysis</td><td>IOPS, latency, thin provisioning ratios, snapshot sprawl</td><td>Prevents storage-caused outages</td></tr>
-    <tr><td>Cross-platform view</td><td>VMware + Proxmox + KVM + cloud in one dashboard</td><td>No more switching between 4 consoles</td></tr>
+    <tr><td>Resource allocation</td><td>CPU, memory, storage assigned vs used per VM and per host</td><td>Right-size VMs, eliminate over-provisioning waste</td></tr>
+    <tr><td>Resource redistribution</td><td>Rebalance workloads across hosts based on utilization, affinity, and constraints</td><td>Balanced clusters without manual migration planning</td></tr>
+    <tr><td>Hardware compatibility</td><td>Validate new server hardware against existing cluster requirements before purchase</td><td>Never buy incompatible hardware again</td></tr>
+    <tr><td>Cross-platform view</td><td>VMware + Proxmox + KVM + Hyper-V + cloud in one dashboard</td><td>No more switching between consoles</td></tr>
     <tr><td>Endpoint fleet</td><td>Workstation health, patch status, compliance across Windows/macOS/Linux</td><td>Manage the CEO's laptop and the warehouse scanner from the same console</td></tr>
     <tr><td>Physical device tracking</td><td>POS terminals, field devices, kiosks, scanners</td><td>Every device that runs a workload, not just VMs</td></tr>
-    <tr><td>Lifecycle tracking</td><td>VM/endpoint age, patch status, last backup, owner</td><td>Eliminates orphaned assets, tracks accountability</td></tr>
+    <tr><td>Lifecycle tracking</td><td>VM/endpoint age, patch status, last backup, owner, warranty</td><td>Eliminates orphaned assets, tracks accountability</td></tr>
+    <tr><td>Capacity planning</td><td>Growth modeling, resource exhaustion forecasting, procurement recommendations</td><td>Buy what you need before you need it, not after you're out</td></tr>
     <tr><td>Cloud cost analysis</td><td>Instance utilization vs cost across AWS, Azure, GCP, OCI</td><td>Stop paying for idle instances</td></tr>
   </table>
 
