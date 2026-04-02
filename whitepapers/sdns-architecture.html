@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SDNS Architecture: Self-Sovereign Infrastructure — DEC-LLC Whitepaper</title>
+  <meta name="description" content="How the SDNS platform provides a single, self-sovereign authority for DNS, DHCP, identity, and security — independent of any cloud provider or external service.">
+  <link rel="stylesheet" href="../styles.css">
+  <style>
+    .wp-hero { background: linear-gradient(135deg, var(--primary) 0%, #0a3a6b 100%); color: #fff; padding: 80px 0 60px; text-align: center; }
+    .wp-hero h1 { font-size: 2.4rem; font-weight: 900; margin-bottom: 12px; letter-spacing: -0.02em; }
+    .wp-hero .wp-meta { opacity: 0.8; font-size: 0.95rem; margin-bottom: 8px; }
+    .wp-hero .wp-subtitle { font-size: 1.15rem; opacity: 0.85; max-width: 700px; margin: 0 auto; }
+    .wp-body { max-width: 800px; margin: 0 auto; padding: 48px 24px 80px; }
+    .wp-body h2 { font-size: 1.6rem; font-weight: 800; color: var(--primary); margin: 48px 0 16px; text-align: left; }
+    .wp-body h3 { font-size: 1.2rem; font-weight: 700; color: var(--primary-light); margin: 32px 0 12px; }
+    .wp-body p { color: var(--text); font-size: 1.05rem; line-height: 1.8; margin-bottom: 16px; }
+    .wp-body ul, .wp-body ol { margin: 0 0 20px 24px; color: var(--text); font-size: 1.05rem; line-height: 1.8; }
+    .wp-body li { margin-bottom: 8px; }
+    .wp-body blockquote { border-left: 4px solid var(--accent); padding: 16px 24px; margin: 24px 0; background: #f0f7ff; border-radius: 0 8px 8px 0; }
+    .wp-body blockquote p { color: var(--primary); font-weight: 600; margin-bottom: 0; }
+    .wp-body .diagram { background: var(--primary); color: #fff; padding: 24px 32px; border-radius: var(--radius); font-family: 'Courier New', monospace; font-size: 0.95rem; line-height: 1.7; margin: 24px 0; overflow-x: auto; white-space: pre; }
+    .wp-body table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 0.95rem; }
+    .wp-body th { background: var(--primary); color: #fff; padding: 12px 16px; text-align: left; font-weight: 700; }
+    .wp-body td { padding: 10px 16px; border-bottom: 1px solid var(--border); }
+    .wp-body tr:hover td { background: #f0f7ff; }
+    .wp-callout { background: linear-gradient(135deg, #e3f2fd 0%, #f0f7ff 100%); border: 2px solid var(--accent); border-radius: var(--radius); padding: 24px 28px; margin: 32px 0; }
+    .wp-callout h4 { color: var(--accent-dark); font-size: 1.1rem; margin-bottom: 8px; }
+    .wp-callout p { margin-bottom: 0; }
+    .wp-back { display: inline-block; margin: 20px 0; color: var(--accent); font-weight: 600; }
+  </style>
+</head>
+<body>
+
+<!-- Navigation -->
+<nav>
+  <div class="container">
+    <a href="../index.html" class="logo">
+      <img src="../assets/icon-only.jpg" alt="DEC-LLC">
+      <div class="logo-text"><span class="logo-name">DEC-LLC</span><svg class="logo-squiggle" viewBox="0 0 80 6" xmlns="http://www.w3.org/2000/svg"><path d="M0 3 Q10 0, 20 3 Q30 6, 40 3 Q50 0, 60 3 Q70 6, 80 3" stroke="rgba(255,255,255,0.5)" stroke-width="1.5" fill="none"/></svg><span class="logo-slogan">Open Ideas</span></div>
+    </a>
+    <ul>
+      <li><a href="../index.html#products">Products</a></li>
+      <li><a href="../index.html#pricing">Pricing</a></li>
+      <li><a href="../index.html#opensource">Open Source</a></li>
+      <li><a href="../index.html#about">About</a></li>
+      <li><a href="../store.html">Store</a></li>
+      <li><a href="../index.html#contact">Contact</a></li>
+    </ul>
+    <a href="../store.html" class="nav-cta">Buy Now</a>
+  </div>
+</nav>
+
+<!-- Hero -->
+<section class="wp-hero">
+  <div class="container">
+    <p class="wp-meta">DEC-LLC Whitepaper &mdash; April 2026</p>
+    <h1>SDNS Architecture: Self-Sovereign Infrastructure</h1>
+    <p class="wp-subtitle">How the SDNS platform provides a single, self-sovereign authority for DNS, DHCP, identity, and security &mdash; independent of any cloud provider or external service.</p>
+  </div>
+</section>
+
+<!-- Body -->
+<div class="wp-body">
+
+  <a href="../index.html" class="wp-back">&larr; Back to DEC-LLC</a>
+
+  <h2>The Problem: Fragmented Authority</h2>
+
+  <p>Modern IT infrastructure is managed by dozens of independent systems. DNS is controlled by one provider. DHCP by another. Firewall rules live in one console. VPN configuration in another. Backup policies in a third. Monitoring in a fourth. Each system is its own authority, with its own credentials, its own audit trail, and its own failure modes.</p>
+
+  <p>When something goes wrong, the first question is always: <em>who changed what, when, and where?</em> In a fragmented environment, the answer requires checking five different dashboards, three different log formats, and two different vendors' support portals. By the time you've assembled the picture, the incident has escalated.</p>
+
+  <p>Cloud computing made this worse, not better. Now the same questions span on-premises infrastructure and one or more cloud providers, each with their own networking model, their own security primitives, and their own way of doing things.</p>
+
+  <blockquote><p>The fundamental problem is not complexity. It is fragmented authority. No single system knows the complete truth about your infrastructure.</p></blockquote>
+
+  <h2>The SDNS Solution: One Cohesive Authority</h2>
+
+  <p>SDNS &mdash; Software-Defined Network and Storage &mdash; is a platform architecture where multiple specialized products integrate to form a single, self-sovereign authority over infrastructure state. Each product is independently useful. Together, they create a closed loop where nothing gets past them.</p>
+
+  <div class="diagram">External Inputs (cloud-init, PXE, USB, console, API)
+        |
+        v
+  SDNS Provisioning Engine  &lt;-- SINGLE AUTHORITY
+        |
+        +-- DNS         (BIND9, own zones, own truth)
+        +-- DHCP/IP     (Kea, reservations under product control)
+        +-- Firewall    (nftables, stateful inspection, IPS)
+        +-- VPN         (WireGuard, OpenVPN, IPsec)
+        +-- Monitoring  (device discovery, health, SNMP, flow)
+        +-- Backup      (scheduled, verified, encrypted)
+        +-- Identity    (hostnames, certs, licenses, users)
+        +-- AI          (threat analysis, config assistance)
+        |
+        v
+  Converged State (quorum across products)</div>
+
+  <h3>The Products</h3>
+
+  <table>
+    <tr><th>Product</th><th>Role</th><th>What It Controls</th></tr>
+    <tr><td><strong>OpenUTM</strong></td><td>Security</td><td>Firewall, VPN, IPS, DNS filtering, content filtering, threat feeds</td></tr>
+    <tr><td><strong>NIVMIA</strong></td><td>Visibility</td><td>Network monitoring, device discovery, SNMP, flow analysis, alerting</td></tr>
+    <tr><td><strong>IVMIA</strong></td><td>Compute</td><td>Virtualization management across VMware, Proxmox, KVM, Hyper-V, and cloud</td></tr>
+    <tr><td><strong>VaultSync</strong></td><td>Data Integrity</td><td>Backup, replication, disaster recovery, storage management</td></tr>
+  </table>
+
+  <p>Each product can be deployed standalone and delivers immediate value. A customer can buy OpenUTM as a firewall and use nothing else. But when two or more products are deployed together, they share state, correlate events, and act as a unified authority.</p>
+
+  <h2>Core Principle: External Provisioners Are Input Adapters</h2>
+
+  <p>The SDNS platform accepts configuration input from many sources: cloud-init in a cloud environment, PXE for bare-metal provisioning, USB drives for air-gapped sites, a web-based setup wizard for interactive deployment, or an API for automation. These are all <strong>input adapters</strong> &mdash; mechanisms for delivering configuration data to the platform.</p>
+
+  <p>They are not the authority. The platform is the authority.</p>
+
+  <p>This distinction matters because it means the platform can operate, converge, and recover regardless of which input adapter was used to provision it. A firewall deployed via cloud-init on AWS and a firewall deployed via USB on a rack-mount appliance run the same software, enforce the same policies, and report to the same management plane.</p>
+
+  <div class="wp-callout">
+    <h4>What This Means in Practice</h4>
+    <p>If a cloud provider changes their DHCP behavior, updates their metadata service, or modifies their networking model, the SDNS platform adapts at the input adapter layer. The core authority &mdash; DNS zones, firewall rules, VPN tunnels, backup policies &mdash; is unaffected. The customer's infrastructure continues to operate as defined, not as the cloud provider decided.</p>
+  </div>
+
+  <h2>The Closed Loop</h2>
+
+  <p>When all four products are deployed, they form a closed loop:</p>
+
+  <ol>
+    <li><strong>OpenUTM</strong> controls what traffic enters and leaves the network. It enforces security policy at every boundary.</li>
+    <li><strong>NIVMIA</strong> sees everything on the network. It discovers devices, monitors health, collects flow data, and alerts on anomalies.</li>
+    <li><strong>IVMIA</strong> manages the compute layer. It knows which VMs are running, on which hypervisors, consuming which resources.</li>
+    <li><strong>VaultSync</strong> protects the data. It backs up configurations, databases, and files. It verifies integrity. It replicates to remote sites.</li>
+  </ol>
+
+  <p>Together, they answer every question about infrastructure state: <em>What is connected? What is allowed? What is running? Is it backed up?</em> No external service is needed to answer these questions. The platform knows.</p>
+
+  <h2>Cloud and On-Premises Are Implementation Details</h2>
+
+  <p>The SDNS platform treats deployment location as an implementation detail, not an architectural decision. The same product image runs on bare metal, in a virtual machine, in a cloud instance, or in a container. The same policies apply. The same UI manages it. The same audit trail records changes.</p>
+
+  <table>
+    <tr><th>Capability</th><th>On-Premises</th><th>Cloud</th></tr>
+    <tr><td>DNS</td><td>BIND9, own zones</td><td>BIND9, own zones (ignores Route 53)</td></tr>
+    <tr><td>DHCP</td><td>Kea, own reservations</td><td>Accepts cloud DHCP via cloud-init adapter</td></tr>
+    <tr><td>Firewall</td><td>nftables, full inspection</td><td>nftables, full inspection (replaces security groups)</td></tr>
+    <tr><td>VPN</td><td>WireGuard/IPsec</td><td>WireGuard/IPsec (replaces cloud VPN gateways)</td></tr>
+    <tr><td>Monitoring</td><td>SNMP, flow, syslog</td><td>VPC flow logs, API polling, syslog</td></tr>
+    <tr><td>Backup</td><td>Local + remote replication</td><td>Cloud storage + cross-region replication</td></tr>
+  </table>
+
+  <p>This design eliminates the "cloud migration" problem. There is no migration. The products move with the workload. The authority stays the same.</p>
+
+  <h2>Security Model: Nothing Gets Past</h2>
+
+  <p>The closed-loop architecture has a direct security benefit: there are no gaps between products. In a traditional environment, the firewall doesn't know what the monitoring system sees, the backup system doesn't know what the firewall blocked, and the hypervisor manager doesn't know what any of them are doing.</p>
+
+  <p>In the SDNS model:</p>
+
+  <ul>
+    <li>OpenUTM blocks a threat and notifies NIVMIA</li>
+    <li>NIVMIA correlates the alert with traffic patterns and notifies the operator</li>
+    <li>VaultSync has already backed up the pre-incident state</li>
+    <li>IVMIA can isolate the affected VM if needed</li>
+  </ul>
+
+  <p>The entire response happens within the platform. No SIEM integration required. No webhook chains to configure. No "check the other dashboard." One authority, one audit trail, one response.</p>
+
+  <h2>Regulated Industry Fit</h2>
+
+  <p>Organizations in healthcare, finance, government, and critical infrastructure must demonstrate who controls their systems, how changes are authorized, and where the audit trail lives. The SDNS platform provides a clear answer: <em>we are the single authority for all network, security, compute, and data protection state.</em></p>
+
+  <p>Every change flows through the platform's provisioning engine. Every change is logged. Every log is backed up. The complete chain of custody &mdash; from policy definition to enforcement to verification &mdash; exists within a system the customer controls.</p>
+
+  <p>No third-party cloud service can modify the state without the platform's knowledge. No external DNS provider can silently change a record. No managed firewall service can update a rule. If it's not in the platform's log, it didn't happen.</p>
+
+  <h2>Architecture Summary</h2>
+
+  <div class="wp-callout">
+    <h4>The SDNS platform is built on three principles:</h4>
+    <p><strong>1. Self-sovereign authority.</strong> The platform controls DNS, DHCP, firewall, VPN, monitoring, backup, and identity. External services are input adapters, not controllers.</p>
+    <p style="margin-top:8px;"><strong>2. Standalone value, integrated power.</strong> Each product works independently. Together, they form a closed loop where nothing gets past.</p>
+    <p style="margin-top:8px;"><strong>3. Location independence.</strong> Cloud and on-premises are implementation details. The authority, the policies, and the audit trail are the same everywhere.</p>
+  </div>
+
+  <p style="margin-top:48px;text-align:center;color:var(--text-muted);font-size:0.9rem;">
+    &copy; 2026 Diwan Enterprise Consulting LLC (DEC-LLC). All rights reserved.<br>
+    For more information, contact <a href="mailto:info@decllc.biz">info@decllc.biz</a> or visit <a href="https://dec-llc.biz">dec-llc.biz</a>.
+  </p>
+
+</div>
+
+<!-- Footer -->
+<footer>
+  <div class="container">
+    <div>
+      <img src="../assets/icon-only.jpg" alt="DEC-LLC" style="height:56px;margin-bottom:8px;">
+      <p style="font-style:italic;opacity:0.9;margin-bottom:4px;">Open Ideas</p>
+      <p>&copy; 2026 DEC-LLC. All rights reserved.</p>
+    </div>
+    <div class="footer-links">
+      <a href="../index.html#products">Products</a>
+      <a href="../index.html#pricing">Pricing</a>
+      <a href="../index.html#opensource">Open Source</a>
+      <a href="../index.html#contact">Contact</a>
+      <a href="mailto:info@decllc.biz">info@decllc.biz</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
