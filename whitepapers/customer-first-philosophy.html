@@ -117,6 +117,9 @@
     <tr><td>VMware vSphere, Proxmox, KVM, Hyper-V</td><td>IVMIA manages all of them from one console. No rip-and-replace.</td></tr>
     <tr><td>AWS, Azure, GCP, OCI</td><td>Same products, same policies, same UI. Cloud-init is just another input adapter.</td></tr>
     <tr><td>Cisco, Juniper, Arista switches</td><td>NIVMIA discovers and monitors them all via SNMP, SSH, and API.</td></tr>
+    <tr><td>ISP routers, MSP-managed firewalls, carrier CPE</td><td>NIVMIA monitors and manages third-party vendor equipment you depend on but don't own.</td></tr>
+    <tr><td>Windows, macOS, Linux workstations</td><td>IVMIA tracks your entire endpoint fleet &mdash; laptops, desktops, POS terminals, field devices.</td></tr>
+    <tr><td>Company phones and mobile devices</td><td>VaultSync backs them up and extracts business data &mdash; contact lists become a company directory.</td></tr>
     <tr><td>Borg, rsync, Veeam, PBS</td><td>VaultSync orchestrates backups across all of them.</td></tr>
   </table>
 
@@ -176,10 +179,10 @@
   <p>Being vendor agnostic is not a marketing claim. It is an engineering decision baked into every product:</p>
 
   <ul>
-    <li><strong>NIVMIA</strong> monitors Cisco, Juniper, Arista, Fortinet, and any device that speaks SNMP or has an SSH CLI. It does not prefer one vendor over another.</li>
-    <li><strong>IVMIA</strong> manages VMware, Proxmox, KVM, Hyper-V, AWS, Azure, GCP, and OCI. It treats a vSphere cluster and a Proxmox cluster as equally valid deployment targets.</li>
-    <li><strong>OpenUTM</strong> integrates with existing firewalls (as a complement or replacement), existing VPN infrastructure, and existing DNS/DHCP services.</li>
-    <li><strong>VaultSync</strong> backs up to local storage, NAS, S3, Azure Blob, GCS, or OCI Object Storage. It orchestrates Borg, rsync, and its own replication engine.</li>
+    <li><strong>NIVMIA</strong> monitors Cisco, Juniper, Arista, Fortinet, and any device that speaks SNMP or has an SSH CLI &mdash; including ISP-provided routers, MSP-managed firewalls, and carrier CPE that the customer depends on but doesn't own. If it's on your network, NIVMIA manages it.</li>
+    <li><strong>IVMIA</strong> manages VMs across every hypervisor and cloud, plus the full endpoint fleet &mdash; Windows desktops, MacBooks, Linux workstations, POS terminals, warehouse scanners, field devices. The entire compute estate, not just the data center.</li>
+    <li><strong>OpenUTM</strong> secures the entire perimeter &mdash; on-premises, cloud, and hybrid. Same image, same policies, same UI whether it's an appliance in your rack or an instance in AWS.</li>
+    <li><strong>VaultSync</strong> backs up everything &mdash; VMs, physical servers, network configs, workstations, and company mobile devices. It extracts business data from backups: contact lists become company directories, config history becomes compliance evidence.</li>
   </ul>
 
   <p>The customer's existing investment is respected. We integrate with what works. We offer to replace what doesn't. The customer decides, not us.</p>
