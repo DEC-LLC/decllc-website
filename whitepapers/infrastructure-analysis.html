@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Full-Stack Infrastructure Analysis — DEC-LLC Whitepaper</title>
+  <meta name="description" content="How DEC-LLC products analyze every layer of your infrastructure — security, networking, compute, and data protection — building toward business intelligence.">
+  <link rel="stylesheet" href="../styles.css">
+  <style>
+    .wp-hero { background: linear-gradient(135deg, var(--primary) 0%, #0a3a6b 100%); color: #fff; padding: 80px 0 60px; text-align: center; }
+    .wp-hero h1 { font-size: 2.4rem; font-weight: 900; margin-bottom: 12px; letter-spacing: -0.02em; }
+    .wp-hero .wp-meta { opacity: 0.8; font-size: 0.95rem; margin-bottom: 8px; }
+    .wp-hero .wp-subtitle { font-size: 1.15rem; opacity: 0.85; max-width: 700px; margin: 0 auto; }
+    .wp-body { max-width: 800px; margin: 0 auto; padding: 48px 24px 80px; }
+    .wp-body h2 { font-size: 1.6rem; font-weight: 800; color: var(--primary); margin: 48px 0 16px; text-align: left; }
+    .wp-body h3 { font-size: 1.2rem; font-weight: 700; color: var(--primary-light); margin: 32px 0 12px; }
+    .wp-body p { color: var(--text); font-size: 1.05rem; line-height: 1.8; margin-bottom: 16px; }
+    .wp-body ul, .wp-body ol { margin: 0 0 20px 24px; color: var(--text); font-size: 1.05rem; line-height: 1.8; }
+    .wp-body li { margin-bottom: 8px; }
+    .wp-body blockquote { border-left: 4px solid var(--accent); padding: 16px 24px; margin: 24px 0; background: #f0f7ff; border-radius: 0 8px 8px 0; }
+    .wp-body blockquote p { color: var(--primary); font-weight: 600; margin-bottom: 0; }
+    .wp-body table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 0.95rem; }
+    .wp-body th { background: var(--primary); color: #fff; padding: 12px 16px; text-align: left; font-weight: 700; }
+    .wp-body td { padding: 10px 16px; border-bottom: 1px solid var(--border); }
+    .wp-body tr:hover td { background: #f0f7ff; }
+    .wp-callout { background: linear-gradient(135deg, #e3f2fd 0%, #f0f7ff 100%); border: 2px solid var(--accent); border-radius: var(--radius); padding: 24px 28px; margin: 32px 0; }
+    .wp-callout h4 { color: var(--accent-dark); font-size: 1.1rem; margin-bottom: 8px; }
+    .wp-callout p { margin-bottom: 0; }
+    .wp-back { display: inline-block; margin: 20px 0; color: var(--accent); font-weight: 600; }
+    .wp-body .diagram { background: var(--primary); color: #fff; padding: 24px 32px; border-radius: var(--radius); font-family: 'Courier New', monospace; font-size: 0.95rem; line-height: 1.7; margin: 24px 0; overflow-x: auto; white-space: pre; }
+    .layer-stack { margin: 24px 0; }
+    .layer { background: var(--card); border-radius: var(--radius); padding: 20px 24px; border: 1px solid var(--border); margin: 8px 0; display: grid; grid-template-columns: 140px 1fr; gap: 16px; align-items: start; }
+    .layer-name { font-weight: 800; color: var(--primary); font-size: 0.95rem; padding-top: 2px; }
+    .layer-content { font-size: 0.95rem; color: var(--text-muted); }
+    .layer-content strong { color: var(--text); }
+    .timeline { margin: 24px 0; }
+    .timeline-item { display: grid; grid-template-columns: 100px 1fr; gap: 16px; padding: 16px 0; border-bottom: 1px solid var(--border); }
+    .timeline-year { font-weight: 800; color: var(--accent); font-size: 1.1rem; }
+    .timeline-content h4 { color: var(--primary); margin-bottom: 4px; font-size: 1rem; }
+    .timeline-content p { margin: 0; font-size: 0.95rem; color: var(--text-muted); }
+  </style>
+</head>
+<body>
+
+<!-- Navigation -->
+<nav>
+  <div class="container">
+    <a href="../index.html" class="logo">
+      <img src="../assets/icon-only.jpg" alt="DEC-LLC">
+      <div class="logo-text"><span class="logo-name">DEC-LLC</span><svg class="logo-squiggle" viewBox="0 0 80 6" xmlns="http://www.w3.org/2000/svg"><path d="M0 3 Q10 0, 20 3 Q30 6, 40 3 Q50 0, 60 3 Q70 6, 80 3" stroke="rgba(255,255,255,0.5)" stroke-width="1.5" fill="none"/></svg><span class="logo-slogan">Open Ideas</span></div>
+    </a>
+    <ul>
+      <li><a href="../index.html#products">Products</a></li>
+      <li><a href="../index.html#pricing">Pricing</a></li>
+      <li><a href="../index.html#opensource">Open Source</a></li>
+      <li><a href="../index.html#about">About</a></li>
+      <li><a href="../store.html">Store</a></li>
+      <li><a href="../index.html#contact">Contact</a></li>
+    </ul>
+    <a href="../store.html" class="nav-cta">Buy Now</a>
+  </div>
+</nav>
+
+<!-- Hero -->
+<section class="wp-hero">
+  <div class="container">
+    <p class="wp-meta">DEC-LLC Whitepaper &mdash; April 2026</p>
+    <h1>Full-Stack Infrastructure Analysis</h1>
+    <p class="wp-subtitle">From firewall rules to backup integrity to business outcomes &mdash; how the SDNS platform sees, understands, and reports on every layer of your investment.</p>
+  </div>
+</section>
+
+<!-- Body -->
+<div class="wp-body">
+
+  <a href="../index.html" class="wp-back">&larr; Back to DEC-LLC</a>
+
+  <h2>Analysis at Every Layer</h2>
+
+  <p>Most infrastructure tools analyze one thing well. Your firewall vendor analyzes security. Your monitoring vendor analyzes availability. Your backup vendor analyzes data protection. But no single vendor sees the full picture.</p>
+
+  <p>The SDNS platform does. Because each product specializes in a different infrastructure layer, and because they share context through the platform's internal communication bus, the analysis spans the entire stack &mdash; from packet-level security to business-level capacity planning.</p>
+
+  <div class="layer-stack">
+    <div class="layer">
+      <div class="layer-name">Security</div>
+      <div class="layer-content"><strong>OpenUTM</strong> analyzes firewall rules, VPN health, IPS alerts, DNS filtering effectiveness, threat patterns in traffic logs, and configuration drift from security baselines. Every rule is scored. Every change is risk-classified.</div>
+    </div>
+    <div class="layer">
+      <div class="layer-name">Network</div>
+      <div class="layer-content"><strong>NIVMIA</strong> analyzes device health, interface utilization, SNMP metrics, configuration compliance, bandwidth trends, and protocol distribution. It discovers every device on your network and tracks changes over time.</div>
+    </div>
+    <div class="layer">
+      <div class="layer-name">Compute</div>
+      <div class="layer-content"><strong>IVMIA</strong> analyzes VM placement efficiency, resource contention, storage performance, hypervisor health, and migration patterns across VMware, Proxmox, KVM, Hyper-V, and cloud instances. One view, all platforms.</div>
+    </div>
+    <div class="layer">
+      <div class="layer-name">Data Protection</div>
+      <div class="layer-content"><strong>VaultSync</strong> analyzes backup completion rates, deduplication health, replication lag, retention compliance, storage capacity trends, and recovery point objectives. It proves your data is protected, not just copied.</div>
+    </div>
+    <div class="layer">
+      <div class="layer-name">Cross-Layer</div>
+      <div class="layer-content"><strong>SDNS Platform</strong> correlates insights across products. A storage latency spike (VaultSync) + network congestion (NIVMIA) + VM migration (IVMIA) = root cause in seconds, not hours.</div>
+    </div>
+  </div>
+
+  <h2>What Each Product Analyzes</h2>
+
+  <h3>OpenUTM: Security Posture Analysis</h3>
+
+  <table>
+    <tr><th>Analysis</th><th>What It Finds</th><th>Why It Matters</th></tr>
+    <tr><td>Rule audit</td><td>Shadowed rules, redundant rules, overly permissive rules</td><td>Reduces attack surface, simplifies ruleset</td></tr>
+    <tr><td>Security grade</td><td>A through F score across 6 domains</td><td>Tracks security posture over time</td></tr>
+    <tr><td>Threat detection</td><td>DNS tunneling, port scans, brute force, C2 callbacks</td><td>Identifies active threats in real-time</td></tr>
+    <tr><td>Change impact</td><td>Risk classification of proposed config changes</td><td>Prevents misconfigurations before they're applied</td></tr>
+    <tr><td>VPN health</td><td>Tunnel uptime, rekeying patterns, latency trends</td><td>Predicts VPN failures before they happen</td></tr>
+    <tr><td>Compliance drift</td><td>Deviations from CIS benchmarks, NIST 800-53</td><td>Maintains compliance between audits</td></tr>
+  </table>
+
+  <h3>NIVMIA: Network Infrastructure Analysis</h3>
+
+  <table>
+    <tr><th>Analysis</th><th>What It Finds</th><th>Why It Matters</th></tr>
+    <tr><td>Device discovery</td><td>Every device on the network, including unauthorized ones</td><td>You can't secure what you don't know about</td></tr>
+    <tr><td>Config compliance</td><td>Drift from approved baselines, vendor best practices</td><td>Prevents "it worked before" incidents</td></tr>
+    <tr><td>Interface health</td><td>Error rates, CRC errors, utilization, duplex mismatches</td><td>Catches hardware failures early</td></tr>
+    <tr><td>Bandwidth trending</td><td>Per-interface, per-VLAN, per-protocol utilization over time</td><td>Capacity planning with data, not guesses</td></tr>
+    <tr><td>Flow analysis</td><td>Top talkers, protocol distribution, anomalous flows</td><td>Identifies shadow IT and unauthorized services</td></tr>
+    <tr><td>Multi-vendor comparison</td><td>Cisco, Juniper, Arista, Fortinet configs normalized</td><td>One view regardless of vendor mix</td></tr>
+  </table>
+
+  <h3>IVMIA: Compute and Virtualization Analysis</h3>
+
+  <table>
+    <tr><th>Analysis</th><th>What It Finds</th><th>Why It Matters</th></tr>
+    <tr><td>Resource utilization</td><td>CPU, memory, storage, network per VM and per host</td><td>Right-size VMs, eliminate waste</td></tr>
+    <tr><td>Placement optimization</td><td>VM-to-host affinity, anti-affinity, DRS recommendations</td><td>Balanced clusters, better performance</td></tr>
+    <tr><td>Storage analysis</td><td>IOPS, latency, thin provisioning ratios, snapshot sprawl</td><td>Prevents storage-caused outages</td></tr>
+    <tr><td>Cross-platform view</td><td>VMware + Proxmox + KVM + cloud in one dashboard</td><td>No more switching between 4 consoles</td></tr>
+    <tr><td>Lifecycle tracking</td><td>VM age, patch status, last backup, owner</td><td>Eliminates orphaned VMs, tracks accountability</td></tr>
+    <tr><td>Cloud cost analysis</td><td>Instance utilization vs cost across AWS, Azure, GCP, OCI</td><td>Stop paying for idle instances</td></tr>
+  </table>
+
+  <h3>VaultSync: Data Protection Analysis</h3>
+
+  <table>
+    <tr><th>Analysis</th><th>What It Finds</th><th>Why It Matters</th></tr>
+    <tr><td>Backup health</td><td>Success rates, duration trends, size anomalies</td><td>Catches failures before they become data loss</td></tr>
+    <tr><td>RPO compliance</td><td>Actual recovery points vs policy targets</td><td>Proves your SLAs are met</td></tr>
+    <tr><td>Dedup analysis</td><td>Ratio trends, declining efficiency indicators</td><td>Early warning for data corruption</td></tr>
+    <tr><td>Capacity forecast</td><td>Storage growth modeling, time-to-full projections</td><td>Buy storage before you run out, not after</td></tr>
+    <tr><td>Replication lag</td><td>Cross-site replication delays, bandwidth utilization</td><td>Ensures DR site is actually current</td></tr>
+    <tr><td>Retention audit</td><td>Policy compliance, legal hold verification</td><td>Compliance proof for auditors</td></tr>
+  </table>
+
+  <h2>Correlated Analysis: The Platform Advantage</h2>
+
+  <p>Individual product analysis is valuable. Correlated analysis across products is transformative. When the SDNS platform sees all four layers simultaneously, it can answer questions that no single product can:</p>
+
+  <ul>
+    <li><strong>"Why are backups slow?"</strong> &mdash; VaultSync sees the symptom (backup duration increased 40%). NIVMIA sees the cause (network link to backup target is saturated by a new VM). IVMIA identifies the VM. OpenUTM can apply QoS to protect backup traffic. Root cause to resolution in one platform.</li>
+    <li><strong>"Are we ready for an audit?"</strong> &mdash; OpenUTM provides security compliance score. NIVMIA provides network configuration compliance. VaultSync proves backup and retention policies are met. IVMIA shows the complete asset inventory. One report, all layers.</li>
+    <li><strong>"What happens if this host fails?"</strong> &mdash; IVMIA shows which VMs are affected. OpenUTM shows which firewall rules depend on those VMs' addresses. NIVMIA shows which monitoring targets go dark. VaultSync shows the last backup time for each affected system. Impact analysis in seconds.</li>
+    <li><strong>"Is our investment growing efficiently?"</strong> &mdash; IVMIA tracks compute utilization trends. NIVMIA tracks bandwidth growth. VaultSync tracks storage consumption. OpenUTM tracks threat volume. Together: a complete picture of whether infrastructure spend is keeping pace with demand.</li>
+  </ul>
+
+  <blockquote><p>The value of analysis is not in the data. It is in the correlations. One product sees a symptom. Four products see the cause.</p></blockquote>
+
+  <h2>From Infrastructure Analysis to Business Intelligence</h2>
+
+  <p>The analysis capabilities described above are operational &mdash; they answer questions about infrastructure health, security posture, and capacity. But the same data, collected over time and correlated across products, becomes the foundation for business intelligence.</p>
+
+  <div class="timeline">
+    <div class="timeline-item">
+      <div class="timeline-year">2026</div>
+      <div class="timeline-content">
+        <h4>Infrastructure Analysis (Current)</h4>
+        <p>Per-product analysis: security audit, network health, compute optimization, backup compliance. Cross-product correlation for root cause analysis and impact assessment.</p>
+      </div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-year">2027</div>
+      <div class="timeline-content">
+        <h4>Operational Intelligence</h4>
+        <p>Trend analysis across months and quarters. Capacity forecasting with confidence intervals. Cost optimization recommendations. SLA tracking and reporting. Automated compliance evidence generation.</p>
+      </div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-year">2027+</div>
+      <div class="timeline-content">
+        <h4>Business Intelligence Platform</h4>
+        <p>Infrastructure metrics tied to business outcomes. Cost-per-service analysis. Risk quantification in business terms. Board-ready reports that translate infrastructure state into business language. The data already exists in the platform &mdash; the BI layer makes it speak to executives, not just engineers.</p>
+      </div>
+    </div>
+  </div>
+
+  <p>This progression is natural because the SDNS platform already collects the data. Every firewall rule analyzed, every device discovered, every VM tracked, every backup verified &mdash; this operational data, accumulated over time, becomes the basis for answering business questions:</p>
+
+  <ul>
+    <li><em>How much does it cost to run service X?</em> (IVMIA compute + NIVMIA network + VaultSync storage + OpenUTM security overhead)</li>
+    <li><em>What is our risk exposure?</em> (OpenUTM security grade + VaultSync RPO compliance + NIVMIA config drift)</li>
+    <li><em>Are we growing efficiently?</em> (Resource utilization trends vs infrastructure spend)</li>
+    <li><em>What should we budget for next year?</em> (Capacity forecasting across all layers)</li>
+  </ul>
+
+  <div class="wp-callout">
+    <h4>The Long Game</h4>
+    <p>Infrastructure vendors sell products. We're building a platform that starts with operational tools and grows into business intelligence. The customer who buys a firewall today gets security analysis. The customer who deploys the full platform next year gets a BI dashboard that ties infrastructure health to business outcomes. The data was always there. The platform just learns to ask better questions over time.</p>
+  </div>
+
+  <h2>Analysis Without Exposure</h2>
+
+  <p>All analysis runs locally. The AI engine, the analyzers, the correlation engine, and the BI layer all operate on the customer's hardware, using the customer's data, without any external API calls. This is not a design constraint &mdash; it is a competitive advantage.</p>
+
+  <p>Customers in regulated industries cannot send infrastructure data to cloud analytics services. They cannot allow third-party AI models to process their firewall rules. They cannot share network topology with external vendors for "threat intelligence enrichment." The SDNS platform's local-first architecture means they don't have to choose between analysis and privacy. They get both.</p>
+
+  <blockquote><p>The best analysis of your infrastructure comes from a system that sees all of it, understands all of it, and never shares any of it.</p></blockquote>
+
+  <p style="margin-top:48px;text-align:center;color:var(--text-muted);font-size:0.9rem;">
+    &copy; 2026 Diwan Enterprise Consulting LLC (DEC-LLC). All rights reserved.<br>
+    For more information, contact <a href="mailto:info@decllc.biz">info@decllc.biz</a> or visit <a href="https://dec-llc.biz">dec-llc.biz</a>.
+  </p>
+
+</div>
+
+<!-- Footer -->
+<footer>
+  <div class="container">
+    <div>
+      <img src="../assets/icon-only.jpg" alt="DEC-LLC" style="height:56px;margin-bottom:8px;">
+      <p style="font-style:italic;opacity:0.9;margin-bottom:4px;">Open Ideas</p>
+      <p>&copy; 2026 DEC-LLC. All rights reserved.</p>
+    </div>
+    <div class="footer-links">
+      <a href="../index.html#products">Products</a>
+      <a href="../index.html#pricing">Pricing</a>
+      <a href="../index.html#opensource">Open Source</a>
+      <a href="../index.html#contact">Contact</a>
+      <a href="mailto:info@decllc.biz">info@decllc.biz</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
