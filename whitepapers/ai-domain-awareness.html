@@ -88,10 +88,10 @@
 
   <table>
     <tr><th>Product</th><th>AI Domain</th><th>What It Understands</th></tr>
-    <tr><td><strong>OpenUTM</strong></td><td>Security</td><td>Firewall rule ordering, shadowed rules, nftables patterns, threat signatures, VPN tunnel health, IPS alerts, DNS filtering patterns</td></tr>
-    <tr><td><strong>NIVMIA</strong></td><td>Networking</td><td>Cisco/Juniper/Arista config syntax, SNMP MIB semantics, interface health patterns, configuration drift, vendor best practices</td></tr>
-    <tr><td><strong>IVMIA</strong></td><td>Compute</td><td>VM placement optimization, resource contention patterns, migration policies, storage performance, hypervisor-specific behavior</td></tr>
-    <tr><td><strong>VaultSync</strong></td><td>Data Protection</td><td>Backup chain integrity, deduplication ratios, replication lag patterns, retention policy compliance, storage capacity forecasting</td></tr>
+    <tr><td><strong>OpenUTM</strong></td><td>Security</td><td>Firewall rule ordering, shadowed rules, nftables patterns, threat signatures, VPN tunnel health, IPS alerts, DNS filtering patterns. Covers on-prem, cloud, and hybrid perimeters.</td></tr>
+    <tr><td><strong>NIVMIA</strong></td><td>Networking</td><td>Cisco/Juniper/Arista config syntax, SNMP MIB semantics, interface health, configuration drift, vendor best practices. Includes third-party vendor equipment &mdash; ISP routers, MSP firewalls, carrier CPE, SD-WAN appliances.</td></tr>
+    <tr><td><strong>IVMIA</strong></td><td>Compute</td><td>VM placement, resource contention, migration policies, storage performance &mdash; plus workstation fleet health, endpoint compliance, physical device inventory across Windows, macOS, Linux, POS terminals, and field devices.</td></tr>
+    <tr><td><strong>VaultSync</strong></td><td>Data Protection</td><td>Backup chain integrity, deduplication ratios, replication lag, retention compliance, capacity forecasting. Includes mobile device backup analysis and business data extraction from backup sets.</td></tr>
   </table>
 
   <p>The same engine powers all four products. The difference is what each one knows about its domain &mdash; embedded through system prompts, domain schemas, specialized analyzers, and product-specific knowledge bases.</p>
@@ -150,10 +150,10 @@ Product-Specific Knowledge (unique per product)
   <p>Each product's AI runs periodic health checks against its domain knowledge:</p>
 
   <ul>
-    <li><strong>OpenUTM:</strong> Are firewall rules still optimal? Has a new CVE made a previously acceptable rule dangerous? Is the VPN tunnel showing degradation patterns that predict failure?</li>
-    <li><strong>NIVMIA:</strong> Has a switch config drifted from the baseline? Is an interface showing error rates that indicate a failing cable? Is SNMP polling revealing capacity issues?</li>
-    <li><strong>IVMIA:</strong> Is a VM host approaching CPU or memory saturation? Would migrating a workload improve cluster balance? Is storage latency trending upward?</li>
-    <li><strong>VaultSync:</strong> Are backups completing on schedule? Is deduplication ratio declining (indicating data corruption)? Is retention policy being followed? Will storage run out in 30 days?</li>
+    <li><strong>OpenUTM:</strong> Are firewall rules still optimal? Has a new CVE made a previously acceptable rule dangerous? Is the VPN tunnel showing degradation patterns that predict failure? Are cloud security policies in sync with on-prem?</li>
+    <li><strong>NIVMIA:</strong> Has a switch config drifted from the baseline? Is an ISP-provided router behaving differently? Is the MSP's managed firewall dropping packets it shouldn't? Is SNMP polling revealing capacity issues across all 17+ vendor platforms?</li>
+    <li><strong>IVMIA:</strong> Is a VM host approaching saturation? Are workstation fleet patches current? Is a POS terminal offline? Is a field device reporting hardware errors? The AI monitors the entire compute estate, not just the data center.</li>
+    <li><strong>VaultSync:</strong> Are all backups completing &mdash; VMs, physical servers, network configs, and company phones? Is deduplication ratio declining? Are mobile device backups current? Can the contact directory be rebuilt from the latest phone backup?</li>
   </ul>
 
   <p>These checks run locally, on the customer's own hardware, using the customer's own data. The results feed into the platform's notification system &mdash; the operator gets an alert when something needs attention, along with a specific recommendation from the AI.</p>
