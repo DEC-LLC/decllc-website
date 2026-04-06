@@ -62,24 +62,6 @@
 
     <div class="store-grid">
 
-      <!-- IVMIA -->
-      <div class="store-card">
-        <h3>IVMIA</h3>
-        <div class="tier">Virtualization Management</div>
-        <div class="price-line">From $49<span>/mo</span></div>
-        <ul>
-          <li><strong>Community</strong>: Free — 5 hosts, 4 platforms</li>
-          <li><strong>Standard</strong>: $49/mo — 10 hosts</li>
-          <li><strong>Professional</strong>: $199/mo — 25 hosts</li>
-          <li><strong>Enterprise</strong>: $599/mo — 50 hosts</li>
-        </ul>
-        <p class="details"><a href="products/ivmia-pricing.html">See full IVMIA pricing</a> including platform add-ons.</p>
-        <div class="payment-buttons">
-          <button class="pay-btn pay-stripe" onclick="stripeCheckout('ivmia-professional')">Subscribe (Stripe)</button>
-          <div id="paypal-ivmia-pro"></div>
-        </div>
-      </div>
-
       <!-- NIVMIA -->
       <div class="store-card">
         <h3>NIVMIA</h3>
@@ -87,9 +69,9 @@
         <div class="price-line">From $49<span>/mo</span></div>
         <ul>
           <li><strong>Community</strong>: Free — 7 platforms, 10 devices</li>
-          <li><strong>Standard</strong>: $49/mo — 20 devices</li>
-          <li><strong>Professional</strong>: $199/mo — 30 devices</li>
-          <li><strong>Enterprise</strong>: $599/mo — 50 devices</li>
+          <li><strong>Standard</strong>: $49/mo ($547/yr) — 20 devices</li>
+          <li><strong>Professional</strong>: $199/mo ($2,221/yr) — 30 devices</li>
+          <li><strong>Enterprise</strong>: $599/mo ($6,685/yr) — 50 devices</li>
         </ul>
         <p class="details"><a href="products/nivmia-pricing.html">See full NIVMIA pricing</a> including enterprise plugins and device bundles.</p>
         <div class="payment-buttons">
@@ -98,95 +80,111 @@
         </div>
       </div>
 
-      <!-- OpenUTM Professional -->
+      <!-- IVMIA -->
       <div class="store-card">
-        <h3>OpenUTM Professional</h3>
-        <div class="tier">Unified Threat Management</div>
-        <div class="price-line">$330<span>/mo per firewall pair</span></div>
+        <h3>IVMIA</h3>
+        <div class="tier">Virtualization Management</div>
+        <div class="price-line">From $49<span>/mo</span></div>
         <ul>
-          <li>Full UTM stack (firewall, NAT, VPN, DNS, DHCP)</li>
-          <li>Proxy + WAF modules</li>
-          <li>IDS/IPS engine</li>
-          <li>Email support (48hr response)</li>
-          <li>Quarterly updates</li>
+          <li><strong>Community</strong>: Free — 5 hosts, 4 platforms</li>
+          <li><strong>Standard</strong>: $49/mo ($547/yr) — 10 hosts</li>
+          <li><strong>Professional</strong>: $199/mo ($2,221/yr) — 25 hosts</li>
+          <li><strong>Enterprise</strong>: $599/mo ($6,685/yr) — 50 hosts</li>
         </ul>
-        <p class="details">HA plugins available separately — <a href="mailto:sales@decllc.biz">contact us</a>.</p>
+        <p class="details"><a href="products/ivmia-pricing.html">See full IVMIA pricing</a> including platform add-ons.</p>
         <div class="payment-buttons">
-          <button class="pay-btn pay-stripe" onclick="stripeCheckout('openutm-professional')">Pay with Card (Stripe)</button>
+          <button class="pay-btn pay-stripe" onclick="stripeCheckout('ivmia-professional')">Subscribe (Stripe)</button>
+          <div id="paypal-ivmia-pro"></div>
+        </div>
+      </div>
+
+      <!-- OpenUTM -->
+      <div class="store-card">
+        <h3>OpenUTM</h3>
+        <div class="tier">Unified Threat Management</div>
+        <div class="price-line">From $49<span>/mo</span></div>
+        <ul>
+          <li><strong>Community</strong>: Free — full firewall, same security hardening</li>
+          <li><strong>Standard</strong>: $49/mo ($547/yr) — VPN, IDS/IPS</li>
+          <li><strong>Professional</strong>: $199/mo ($2,221/yr) — AI threat analysis, HA</li>
+          <li><strong>Enterprise</strong>: $599/mo ($6,685/yr) — AI intelligence, clustering</li>
+        </ul>
+        <p class="details"><a href="products/openutm-pricing.html">See full OpenUTM pricing</a> including add-ons and comparison.</p>
+        <div class="payment-buttons">
+          <button class="pay-btn pay-stripe" onclick="stripeCheckout('openutm-professional')">Subscribe (Stripe)</button>
           <div id="paypal-openutm-pro"></div>
         </div>
       </div>
 
-      <!-- IPv6Auto Professional -->
+      <!-- VaultSync -->
       <div class="store-card">
-        <h3>IPv6Auto Professional</h3>
+        <h3>VaultSync</h3>
+        <div class="tier">VM Backup Orchestration</div>
+        <div class="price-line">From $49<span>/mo</span></div>
+        <ul>
+          <li><strong>Community</strong>: Free — 2 hosts, manual backups</li>
+          <li><strong>Standard</strong>: $49/mo ($547/yr) — scheduling, retention</li>
+          <li><strong>Professional</strong>: $3,000/yr — CBT, cross-site replication</li>
+          <li><strong>Enterprise</strong>: $1,000/mo ($11,160/yr) — cloud, encryption, active resilience</li>
+        </ul>
+        <p class="details"><a href="products/vaultsync-pricing.html">See full VaultSync pricing</a> including per-host and cloud add-ons.</p>
+        <div class="payment-buttons">
+          <button class="pay-btn pay-stripe" onclick="stripeCheckout('vaultsync-professional')">Subscribe (Stripe)</button>
+          <div id="paypal-vaultsync-pro"></div>
+        </div>
+      </div>
+
+      <!-- IPv6Auto -->
+      <div class="store-card">
+        <h3>IPv6Auto</h3>
         <div class="tier">IPv6 Automation</div>
-        <div class="price-line">$330<span>/mo</span></div>
+        <div class="price-line">Contact<span> for pricing</span></div>
         <ul>
           <li>Automated IPv6 address planning</li>
           <li>Dual-stack configuration</li>
           <li>DNS + firewall rule generation</li>
           <li>Compliance validation</li>
-          <li>Email support (48hr response)</li>
+          <li>Priced per network segment</li>
         </ul>
+        <p class="details"><a href="products/ipv6auto.html">Learn more about IPv6Auto</a>. Standalone or as an OpenUTM plugin.</p>
         <div class="payment-buttons">
-          <button class="pay-btn pay-stripe" onclick="stripeCheckout('ipv6auto-professional')">Pay with Card (Stripe)</button>
-          <div id="paypal-ipv6auto-pro"></div>
+          <a href="mailto:sales@decllc.biz?subject=IPv6Auto%20Pricing%20Inquiry" class="pay-btn pay-contact" style="text-decoration:none;">Contact Sales</a>
         </div>
       </div>
 
-      <!-- CAAN Professional -->
+      <!-- CAAN System Tools -->
       <div class="store-card">
-        <h3>CAAN System Tools Professional</h3>
-        <div class="tier">Advanced Network Wizards</div>
-        <div class="price-line">$330<span>/mo</span></div>
+        <h3>CAAN System Tools</h3>
+        <div class="tier">Network Configuration Automation</div>
+        <div class="price-line">Included<span> with NIVMIA</span></div>
         <ul>
-          <li>All network configuration wizards</li>
-          <li>REST API + SDK access</li>
-          <li>Template library</li>
-          <li>Multi-host deployment</li>
-          <li>Email support (48hr response)</li>
+          <li>Interactive network configuration tools</li>
+          <li>Common configurations free (open source)</li>
+          <li>Advanced tools via subscription</li>
+          <li>REST API + automation interface</li>
+          <li>Also available standalone</li>
         </ul>
+        <p class="details"><a href="products/caan.html">Learn more about CAAN</a>. Open source (Apache 2.0).</p>
         <div class="payment-buttons">
-          <button class="pay-btn pay-stripe" onclick="stripeCheckout('caan-professional')">Pay with Card (Stripe)</button>
-          <div id="paypal-caan-pro"></div>
+          <a href="mailto:sales@decllc.biz?subject=CAAN%20Standalone%20Pricing" class="pay-btn pay-contact" style="text-decoration:none;">Contact for Standalone Pricing</a>
         </div>
       </div>
 
-      <!-- FireMigrate Professional -->
+      <!-- FireMigrate -->
       <div class="store-card">
-        <h3>FireMigrate Professional</h3>
+        <h3>FireMigrate</h3>
         <div class="tier">Firewall Migration</div>
-        <div class="price-line">$330<span>/mo</span></div>
+        <div class="price-line">Per migration<span> pricing</span></div>
         <ul>
           <li>All vendor import/export formats</li>
           <li>Semantic rule preservation</li>
           <li>NAT + alias mapping</li>
-          <li>Migration reports</li>
-          <li>Email support (48hr response)</li>
+          <li>Audit reports + deployable output</li>
+          <li>Volume pricing for MSPs</li>
         </ul>
+        <p class="details"><a href="products/firemigrate.html">Learn more about FireMigrate</a>. Open source (Apache 2.0).</p>
         <div class="payment-buttons">
-          <button class="pay-btn pay-stripe" onclick="stripeCheckout('firemigrate-professional')">Pay with Card (Stripe)</button>
-          <div id="paypal-firemigrate-pro"></div>
-        </div>
-      </div>
-
-
-      <!-- VaultSync Professional -->
-      <div class="store-card">
-        <h3>VaultSync Professional</h3>
-        <div class="tier">VM Backup Orchestration</div>
-        <div class="price-line">$330<span>/mo per hypervisor host</span></div>
-        <ul>
-          <li>ESXi + KVM/Proxmox backup orchestration</li>
-          <li>CBT-aware incremental backups</li>
-          <li>Cross-site replication</li>
-          <li>Scheduled retention + pruning</li>
-          <li>Email support (48hr response)</li>
-        </ul>
-        <div class="payment-buttons">
-          <button class="pay-btn pay-stripe" onclick="stripeCheckout('vaultsync-professional')">Pay with Card (Stripe)</button>
-          <div id="paypal-vaultsync-pro"></div>
+          <a href="mailto:sales@decllc.biz?subject=FireMigrate%20Pricing%20Inquiry" class="pay-btn pay-contact" style="text-decoration:none;">Contact Sales</a>
         </div>
       </div>
 
@@ -197,8 +195,8 @@
 <!-- Enterprise -->
 <section style="background:#fff;">
   <div class="container">
-    <h2>Enterprise Contracts</h2>
-    <p class="subtitle">Starting at $10,000/month. Custom support contracts with dedicated account management.</p>
+    <h2>Enterprise &amp; MSP Contracts</h2>
+    <p class="subtitle">Enterprise: $599/mo per product. MSP: starting at $50,000/yr. Custom contracts with dedicated account management.</p>
 
     <div class="store-note">
       <h3>Contact Sales for Enterprise Pricing</h3>
@@ -401,13 +399,10 @@ var currentProduct = '';
 function showSignup(productId) {
   currentProduct = productId;
   var names = {
-    'ivmia-professional': 'IVMIA — from $49/mo',
-    'nivmia-professional': 'NIVMIA — from $49/mo',
-    'openutm-professional': 'OpenUTM Professional — $330/mo per firewall pair',
-    'ipv6auto-professional': 'IPv6Auto Professional — $330/mo',
-    'caan-professional': 'CAAN System Tools Professional — $330/mo',
-    'firemigrate-professional': 'FireMigrate Professional — $330/mo',
-    'vaultsync-professional': 'VaultSync Professional — $330/mo per hypervisor host',
+    'nivmia-professional': 'NIVMIA — from $49/mo ($547/yr)',
+    'ivmia-professional': 'IVMIA — from $49/mo ($547/yr)',
+    'openutm-professional': 'OpenUTM — from $49/mo ($547/yr)',
+    'vaultsync-professional': 'VaultSync — from $49/mo ($547/yr)',
     'community': 'Community Edition — Free',
   };
   document.getElementById('signup-product').textContent = names[productId] || productId;
