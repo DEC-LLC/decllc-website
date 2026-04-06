@@ -6,6 +6,10 @@
   <title>OpenUTM Pricing — DEC-LLC</title>
   <link rel="stylesheet" href="../styles.css">
   <link rel="stylesheet" href="../extras.css">
+  <style>
+    .pricing-grid-5 { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 18px; max-width: 1200px; margin: 0 auto; }
+    .yearly-note { color: var(--teal); font-size: 0.85rem; font-weight: 700; margin-top: 4px; }
+  </style>
 </head>
 <body>
 
@@ -22,31 +26,28 @@
   </div>
 </nav>
 
-<!-- Hero -->
 <section class="v2-hero" style="padding:60px 0 50px;">
   <div class="container">
     <div class="v2-tagline">Unified Threat Management</div>
     <h1>OpenUTM Pricing</h1>
-    <p class="v2-lede">Firewall, VPN, intrusion prevention, web filtering, and DNS -- all in one appliance that protects your perimeter without the complexity.</p>
+    <p class="v2-lede">An intelligent firewall that knows why its rules exist, teaches your team, and gets smarter every day. Start free. Scale when your security needs grow.</p>
   </div>
 </section>
 
-<!-- Intro -->
 <section class="v2-story" style="padding:40px 0 20px;">
   <div class="container">
     <div class="v2-story-inner" style="text-align:center;">
-      <p class="v2-intro">Start free with a basic firewall. When you're ready for the full security stack -- VPN, intrusion prevention, web application filtering, and automatic failover -- upgrade to Professional. Every tier ships as a hardened appliance with the same security foundation.</p>
+      <p class="v2-intro">Every tier ships as a hardened appliance with the same security foundation. Community is free — forever. Pay when you need the full security stack, AI intelligence, or enterprise support. Save 7% when you pay annually.</p>
     </div>
   </div>
 </section>
 
-<!-- Tier Cards -->
 <section>
   <div class="container">
-    <h2>Choose Your Tier</h2>
-    <p class="subtitle">Modular security platform. Turn on what you need, when you need it.</p>
+    <h2>Subscription Tiers</h2>
+    <p class="subtitle">Every tier includes the OpenUTM appliance, web dashboard, and hardened security baseline.</p>
 
-    <div class="pricing-grid">
+    <div class="pricing-grid-5">
 
       <!-- Community -->
       <div class="pricing-card">
@@ -54,28 +55,46 @@
         <div class="price">Free</div>
         <p style="color:var(--text-muted);">Register to get started</p>
         <ul>
-          <li>Basic stateful firewall</li>
-          <li>1 network interface (single-segment protection)</li>
+          <li>Stateful firewall</li>
           <li>NAT and port forwarding</li>
+          <li>Basic VPN (1 tunnel)</li>
           <li>Web dashboard</li>
           <li>Community support (GitHub)</li>
+          <li>Same security hardening as enterprise</li>
         </ul>
         <button class="btn-full btn-primary" style="background:var(--teal);" onclick="window.location.href='../store.html'">Register Free</button>
+      </div>
+
+      <!-- Standard -->
+      <div class="pricing-card">
+        <h3>Standard</h3>
+        <div class="price">$49<span>/mo</span></div>
+        <p class="yearly-note">or $547/yr (save 7%)</p>
+        <ul>
+          <li>Full firewall + NAT + routing</li>
+          <li>VPN — up to 10 tunnels</li>
+          <li>DNS and DHCP services</li>
+          <li>Basic web filtering</li>
+          <li>Email support, 48hr response</li>
+          <li>Quarterly security updates</li>
+        </ul>
+        <button class="btn-full btn-primary" onclick="window.location.href='../store.html'">Subscribe</button>
       </div>
 
       <!-- Professional -->
       <div class="pricing-card featured">
         <h3>Professional</h3>
-        <div class="price">$330<span>/mo</span></div>
-        <p style="color:var(--text-muted);">Per firewall pair</p>
+        <div class="price">$199<span>/mo</span></div>
+        <p class="yearly-note">or $2,221/yr (save 7%)</p>
         <ul>
-          <li>Full security stack: firewall, NAT, VPN, DNS, DHCP</li>
-          <li>Web application filtering and proxy</li>
+          <li>Everything in Standard</li>
+          <li>Unlimited VPN tunnels</li>
           <li>Intrusion detection and prevention</li>
-          <li>Multi-WAN for redundant internet connections</li>
-          <li>Automatic failover -- if one goes down, the other takes over</li>
+          <li>Web application filtering + proxy</li>
+          <li>Multi-WAN (redundant internet)</li>
+          <li>Automatic failover (paired appliances)</li>
+          <li>AI-assisted rule analysis</li>
           <li>Email support, 48hr response</li>
-          <li>Quarterly security updates</li>
         </ul>
         <button class="btn-full btn-primary" onclick="window.location.href='../store.html'">Subscribe</button>
       </div>
@@ -83,18 +102,34 @@
       <!-- Enterprise -->
       <div class="pricing-card">
         <h3>Enterprise</h3>
-        <div class="price">Custom</div>
-        <p style="color:var(--text-muted);">Contact sales for pricing</p>
+        <div class="price">$599<span>/mo</span></div>
+        <p class="yearly-note">or $6,685/yr (save 7%)</p>
         <ul>
           <li>Everything in Professional</li>
-          <li>Multi-firewall clustering for high availability</li>
-          <li>Real-time state synchronization across nodes</li>
+          <li>Multi-firewall clustering</li>
+          <li>Real-time state sync across nodes</li>
+          <li>Full AI intelligence — natural language rules, stale rule detection, multi-audience explanations</li>
           <li>Custom security policy modules</li>
-          <li>Dedicated support engineer, 4hr response</li>
-          <li>On-site consulting available</li>
-          <li>Monthly security updates plus hotfixes</li>
+          <li>Email + phone support, 24hr response</li>
+          <li>Monthly security updates + hotfixes</li>
         </ul>
         <button class="btn-full btn-primary" style="background:var(--orange);" onclick="window.location.href='mailto:sales@decllc.biz?subject=OpenUTM%20Enterprise'">Contact Sales</button>
+      </div>
+
+      <!-- MSP -->
+      <div class="pricing-card">
+        <h3>MSP</h3>
+        <div class="price">$50K<span>/yr starting</span></div>
+        <p style="color:var(--text-muted);">Managed service providers</p>
+        <ul>
+          <li>Everything in Enterprise</li>
+          <li>Multi-tenant per-customer configs</li>
+          <li>White-label management UI</li>
+          <li>Bulk appliance licensing</li>
+          <li>Named support engineer, 24hr response</li>
+          <li>Custom integrations</li>
+        </ul>
+        <button class="btn-full btn-primary" style="background:var(--orange);" onclick="window.location.href='mailto:sales@decllc.biz?subject=OpenUTM%20MSP'">Contact Sales</button>
       </div>
 
     </div>
@@ -105,30 +140,32 @@
 <section style="background:#f8fafb;">
   <div class="container">
     <h2>What's Included</h2>
-    <table style="width:100%;border-collapse:collapse;background:#fff;border-radius:8px;overflow:hidden;box-shadow:0 1px 3px rgba(0,0,0,0.1);max-width:900px;margin:0 auto;">
+    <table style="width:100%;border-collapse:collapse;background:#fff;border-radius:8px;overflow:hidden;box-shadow:0 1px 3px rgba(0,0,0,0.1);max-width:1000px;margin:0 auto;">
       <thead>
         <tr style="background:var(--primary);color:#fff;">
           <th style="padding:12px;text-align:left;">Capability</th>
           <th style="padding:12px;text-align:center;">Community</th>
+          <th style="padding:12px;text-align:center;">Standard</th>
           <th style="padding:12px;text-align:center;">Professional</th>
           <th style="padding:12px;text-align:center;">Enterprise</th>
         </tr>
       </thead>
       <tbody>
-        <tr><td style="padding:10px;">Stateful firewall</td><td style="text-align:center;">&#10003;</td><td style="text-align:center;">&#10003;</td><td style="text-align:center;">&#10003;</td></tr>
-        <tr style="background:#f9f9f9;"><td style="padding:10px;">NAT and port forwarding</td><td style="text-align:center;">&#10003;</td><td style="text-align:center;">&#10003;</td><td style="text-align:center;">&#10003;</td></tr>
-        <tr><td style="padding:10px;">Web dashboard</td><td style="text-align:center;">&#10003;</td><td style="text-align:center;">&#10003;</td><td style="text-align:center;">&#10003;</td></tr>
-        <tr style="background:#f9f9f9;"><td style="padding:10px;">Multiple network interfaces</td><td style="text-align:center;">&mdash;</td><td style="text-align:center;">&#10003;</td><td style="text-align:center;">&#10003;</td></tr>
-        <tr><td style="padding:10px;">VPN (site-to-site and remote access)</td><td style="text-align:center;">&mdash;</td><td style="text-align:center;">&#10003;</td><td style="text-align:center;">&#10003;</td></tr>
-        <tr style="background:#f9f9f9;"><td style="padding:10px;">DNS and DHCP services</td><td style="text-align:center;">&mdash;</td><td style="text-align:center;">&#10003;</td><td style="text-align:center;">&#10003;</td></tr>
-        <tr><td style="padding:10px;">Web application filtering and proxy</td><td style="text-align:center;">&mdash;</td><td style="text-align:center;">&#10003;</td><td style="text-align:center;">&#10003;</td></tr>
-        <tr style="background:#f9f9f9;"><td style="padding:10px;">Intrusion detection and prevention</td><td style="text-align:center;">&mdash;</td><td style="text-align:center;">&#10003;</td><td style="text-align:center;">&#10003;</td></tr>
-        <tr><td style="padding:10px;">Multi-WAN (redundant internet)</td><td style="text-align:center;">&mdash;</td><td style="text-align:center;">&#10003;</td><td style="text-align:center;">&#10003;</td></tr>
-        <tr style="background:#f9f9f9;"><td style="padding:10px;">Automatic failover (paired appliances)</td><td style="text-align:center;">&mdash;</td><td style="text-align:center;">&#10003;</td><td style="text-align:center;">&#10003;</td></tr>
-        <tr><td style="padding:10px;">Multi-firewall clustering</td><td style="text-align:center;">&mdash;</td><td style="text-align:center;">&mdash;</td><td style="text-align:center;">&#10003;</td></tr>
-        <tr style="background:#f9f9f9;"><td style="padding:10px;">Real-time state sync across nodes</td><td style="text-align:center;">&mdash;</td><td style="text-align:center;">&mdash;</td><td style="text-align:center;">&#10003;</td></tr>
-        <tr><td style="padding:10px;">Custom security policy modules</td><td style="text-align:center;">&mdash;</td><td style="text-align:center;">&mdash;</td><td style="text-align:center;">&#10003;</td></tr>
-        <tr style="background:#f9f9f9;"><td style="padding:10px;">Dedicated support engineer</td><td style="text-align:center;">&mdash;</td><td style="text-align:center;">&mdash;</td><td style="text-align:center;">&#10003;</td></tr>
+        <tr><td style="padding:10px;">Stateful firewall</td><td style="text-align:center;">&#10003;</td><td style="text-align:center;">&#10003;</td><td style="text-align:center;">&#10003;</td><td style="text-align:center;">&#10003;</td></tr>
+        <tr style="background:#f9f9f9;"><td style="padding:10px;">NAT and port forwarding</td><td style="text-align:center;">&#10003;</td><td style="text-align:center;">&#10003;</td><td style="text-align:center;">&#10003;</td><td style="text-align:center;">&#10003;</td></tr>
+        <tr><td style="padding:10px;">Web dashboard</td><td style="text-align:center;">&#10003;</td><td style="text-align:center;">&#10003;</td><td style="text-align:center;">&#10003;</td><td style="text-align:center;">&#10003;</td></tr>
+        <tr style="background:#f9f9f9;"><td style="padding:10px;">VPN tunnels</td><td style="text-align:center;">1</td><td style="text-align:center;">10</td><td style="text-align:center;">Unlimited</td><td style="text-align:center;">Unlimited</td></tr>
+        <tr><td style="padding:10px;">DNS and DHCP services</td><td style="text-align:center;">&mdash;</td><td style="text-align:center;">&#10003;</td><td style="text-align:center;">&#10003;</td><td style="text-align:center;">&#10003;</td></tr>
+        <tr style="background:#f9f9f9;"><td style="padding:10px;">Web filtering</td><td style="text-align:center;">&mdash;</td><td style="text-align:center;">Basic</td><td style="text-align:center;">Full + proxy</td><td style="text-align:center;">Full + proxy</td></tr>
+        <tr><td style="padding:10px;">Intrusion detection + prevention</td><td style="text-align:center;">&mdash;</td><td style="text-align:center;">&mdash;</td><td style="text-align:center;">&#10003;</td><td style="text-align:center;">&#10003;</td></tr>
+        <tr style="background:#f9f9f9;"><td style="padding:10px;">Multi-WAN (redundant internet)</td><td style="text-align:center;">&mdash;</td><td style="text-align:center;">&mdash;</td><td style="text-align:center;">&#10003;</td><td style="text-align:center;">&#10003;</td></tr>
+        <tr><td style="padding:10px;">Automatic failover (paired appliances)</td><td style="text-align:center;">&mdash;</td><td style="text-align:center;">&mdash;</td><td style="text-align:center;">&#10003;</td><td style="text-align:center;">&#10003;</td></tr>
+        <tr style="background:#f9f9f9;"><td style="padding:10px;">AI-assisted rule analysis</td><td style="text-align:center;">&mdash;</td><td style="text-align:center;">&mdash;</td><td style="text-align:center;">&#10003;</td><td style="text-align:center;">&#10003;</td></tr>
+        <tr><td style="padding:10px;">Natural language rule creation</td><td style="text-align:center;">&mdash;</td><td style="text-align:center;">&mdash;</td><td style="text-align:center;">&mdash;</td><td style="text-align:center;">&#10003;</td></tr>
+        <tr style="background:#f9f9f9;"><td style="padding:10px;">Multi-firewall clustering</td><td style="text-align:center;">&mdash;</td><td style="text-align:center;">&mdash;</td><td style="text-align:center;">&mdash;</td><td style="text-align:center;">&#10003;</td></tr>
+        <tr><td style="padding:10px;">Real-time state sync across nodes</td><td style="text-align:center;">&mdash;</td><td style="text-align:center;">&mdash;</td><td style="text-align:center;">&mdash;</td><td style="text-align:center;">&#10003;</td></tr>
+        <tr style="background:#f9f9f9;"><td style="padding:10px;">Custom security policy modules</td><td style="text-align:center;">&mdash;</td><td style="text-align:center;">&mdash;</td><td style="text-align:center;">&mdash;</td><td style="text-align:center;">&#10003;</td></tr>
+        <tr><td style="padding:10px;">Support response time</td><td style="text-align:center;">Community</td><td style="text-align:center;">48hr email</td><td style="text-align:center;">48hr email</td><td style="text-align:center;">24hr email + phone</td></tr>
       </tbody>
     </table>
   </div>
@@ -145,7 +182,7 @@
       <p style="color:var(--text-muted);">All four products, one invoice</p>
       <ul>
         <li>NIVMIA + IVMIA + VaultSync + OpenUTM</li>
-        <li>Unified cross-product dashboard</li>
+        <li>Cross-product AI intelligence</li>
         <li>Shared device and host inventory</li>
         <li>Single support contract covers everything</li>
       </ul>
@@ -157,10 +194,10 @@
 <!-- CTA -->
 <section class="v2-closing">
   <div class="container">
-    <h2>Ready to protect your network perimeter?</h2>
-    <p>Community tier is free -- start with a basic firewall and grow from there. Professional plans include a 30-day evaluation period. We're here when you have questions.</p>
-    <a href="mailto:sales@decllc.biz" class="cta" style="background:#ffab40;color:#0f2b46;">sales@decllc.biz</a>
-    <a href="tel:+12012549971" class="cta-secondary" style="border-color:white;color:white;">(201) 254-9971</a>
+    <h2>Ready to protect your network?</h2>
+    <p>Community tier is free — start with a basic firewall and grow from there. All paid plans include a 30-day evaluation period. Save 7% when you pay annually.</p>
+    <a href="openutm.html" class="cta" style="background:white;color:#0f2b46;">Learn More About OpenUTM</a>
+    <a href="mailto:sales@decllc.biz" class="cta-secondary" style="border-color:white;color:white;">Talk to Us</a>
   </div>
 </section>
 
@@ -173,9 +210,7 @@
     <div class="footer-links">
       <a href="../index.html#products">Products</a>
       <a href="openutm.html">OpenUTM</a>
-      <a href="../store.html">Store</a>
       <a href="../index.html#contact">Contact</a>
-      <a href="mailto:info@decllc.biz">info@decllc.biz</a>
     </div>
   </div>
 </footer>
