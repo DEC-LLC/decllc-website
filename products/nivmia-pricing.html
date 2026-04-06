@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>NIVMIA Pricing — DEC-LLC</title>
   <link rel="stylesheet" href="../styles.css">
+  <link rel="stylesheet" href="../extras.css">
   <style>
     .pricing-grid-5 { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 18px; max-width: 1200px; margin: 0 auto; }
     .pricing-table { width: 100%; border-collapse: collapse; margin: 0 auto; max-width: 1000px; }
@@ -19,34 +20,39 @@
 <nav>
   <div class="container">
     <a href="../index.html" class="logo">
-      <img src="../assets/logo-circle.svg" alt="DEC-LLC">
-      
+      <img src="../assets/logo-circle.svg" alt="DEC-LLC"><span style="font-weight:800;font-size:1.1rem;letter-spacing:0.05em;margin-left:10px;">DEC-LLC</span>
     </a>
     <ul>
       <li><a href="../index.html#products">Products</a></li>
-      <li><a href="../index.html#pricing">Pricing</a></li>
-      <li><a href="../index.html#opensource">Open Source</a></li>
-      <li><a href="../store.html">Store</a></li>
+      <li><a href="../index.html#why">Why DEC-LLC</a></li>
       <li><a href="../index.html#contact">Contact</a></li>
     </ul>
-    <a href="../store.html" class="nav-cta">Buy Now</a>
   </div>
 </nav>
 
 <!-- Hero -->
-<section class="hero" style="padding:50px 0 40px;">
+<section class="v2-hero" style="padding:60px 0 50px;">
   <div class="container">
+    <div class="v2-tagline">Network Infrastructure</div>
     <h1>NIVMIA Pricing</h1>
-    <p>Network Infrastructure Visualization, Management, Inventory & Analytics</p>
-    <p style="opacity:0.7;font-size:0.95rem;">Start free. Scale as you grow. <a href="nivmia-compare.html" style="color:#fff;text-decoration:underline;">Compare all features &rarr;</a></p>
+    <p class="v2-lede">One dashboard for every switch, router, and firewall on your network. See what's happening, what changed, and what needs attention next.</p>
+  </div>
+</section>
+
+<!-- Intro -->
+<section class="v2-story" style="padding:40px 0 20px;">
+  <div class="container">
+    <div class="v2-story-inner" style="text-align:center;">
+      <p class="v2-intro">Start free with seven vendor platforms and ten devices. Scale when your infrastructure grows. Every tier gets the same security hardening, the same config vault, and the same scheduler engine -- you're only choosing how many devices and how deep the analysis goes.</p>
+    </div>
   </div>
 </section>
 
 <!-- Tier Cards -->
 <section>
   <div class="container">
-    <h2>Subscription Tiers</h2>
-    <p class="subtitle">Every tier includes the NIVMIA core engine, CLI, scheduler, and config vault.</p>
+    <h2>Choose Your Tier</h2>
+    <p class="subtitle">Every tier includes the NIVMIA core engine, CLI, scheduler, config vault, and alerting.</p>
 
     <div class="pricing-grid-5">
 
@@ -56,14 +62,13 @@
         <div class="price">Free</div>
         <p style="color:var(--text-muted);">Register to get started</p>
         <ul>
-          <li>7 community platforms</li>
-          <li>10 devices</li>
-          <li>Monitor only (SNMP read)</li>
-          <li>Web UI included</li>
-          <li>Community support only (GitHub)</li>
-          <li>No SLA, no email support</li>
+          <li>7 vendor platforms included</li>
+          <li>Up to 10 devices</li>
+          <li>Monitor your network (read-only visibility)</li>
+          <li>Web dashboard included</li>
+          <li>Community support (GitHub)</li>
         </ul>
-        <p style="font-size:0.8rem;color:var(--text-muted);margin-top:6px;">Need help? <a href="mailto:sales@decllc.biz">Purchase a support session</a> ($100/1-2hrs)</p>
+        <p style="font-size:0.8rem;color:var(--text-muted);margin-top:6px;">Need a hand? <a href="mailto:sales@decllc.biz">Book a setup session</a> ($100 for 1-2 hrs)</p>
         <button class="btn-full btn-primary" style="background:var(--teal);" onclick="window.location.href='../store.html'">Register Free</button>
       </div>
 
@@ -73,14 +78,12 @@
         <div class="price">$49<span>/mo</span></div>
         <p style="color:var(--text-muted);">For small teams and labs</p>
         <ul>
-          <li>20 devices (buy to 40)</li>
-          <li>Monitor + manage (SNMP-based)</li>
-          <li>Enterprise plugin add-ons</li>
-          <li>Basic analysis reports</li>
-          <li>Email support (community forum)</li>
-          <li>48hr support add-on: $29/mo</li>
+          <li>20 devices (expand to 40)</li>
+          <li>Monitor and manage your fleet</li>
+          <li>Add enterprise vendor platforms</li>
+          <li>Basic analysis reports and trends</li>
+          <li>Email support; 48hr add-on: $29/mo</li>
         </ul>
-        <p style="font-size:0.8rem;color:var(--text-muted);margin-top:6px;">Support contract sold separately</p>
         <button class="btn-full btn-primary" onclick="window.location.href='../store.html'">Subscribe</button>
       </div>
 
@@ -91,11 +94,10 @@
         <p style="color:var(--text-muted);">For growing organizations</p>
         <ul>
           <li>30 devices (buy blocks of 10/25/50)</li>
-          <li>Full redundant management (SSH + SNMP + API)</li>
-          <li>Full analysis and trending</li>
-          <li>Federation / multi-site</li>
-          <li>Email support, 48hr response</li>
-          <li>Phone support add-on available</li>
+          <li>Full management -- monitor, configure, and correct across your fleet</li>
+          <li>Full analysis, trending, and forecasting</li>
+          <li>Multi-site federation</li>
+          <li>Email support, 48hr response; phone add-on available</li>
         </ul>
         <button class="btn-full btn-primary" onclick="window.location.href='../store.html'">Subscribe</button>
       </div>
@@ -107,10 +109,10 @@
         <p style="color:var(--text-muted);">For large deployments</p>
         <ul>
           <li>50 devices (buy blocks of 25/50/100)</li>
-          <li>Full management + AI analysis</li>
-          <li>Email + phone support, 24hr SLA</li>
-          <li>Web UI + AI model RPM included</li>
-          <li>Discounted enterprise plugins</li>
+          <li>Full management plus AI-powered analysis</li>
+          <li>Email and phone support, 24hr response</li>
+          <li>Web dashboard and AI model included</li>
+          <li>Discounted enterprise platform add-ons</li>
           <li>Support contract included</li>
         </ul>
         <button class="btn-full btn-primary" style="background:var(--orange);" onclick="window.location.href='mailto:sales@decllc.biz?subject=NIVMIA%20Enterprise'">Contact Sales</button>
@@ -124,9 +126,9 @@
         <ul>
           <li>Monitoring: $50K/yr (2 platforms)</li>
           <li>Management: $200K/yr (2 platforms)</li>
-          <li>Add'l platforms: up to $100K/yr ea.</li>
-          <li>Email + phone support, 24hr SLA</li>
-          <li>Multi-tenant, white-label</li>
+          <li>Additional platforms: up to $100K/yr each</li>
+          <li>Email and phone support, 24hr response</li>
+          <li>Multi-tenant with white-label option</li>
           <li>Support contract included</li>
         </ul>
         <button class="btn-full btn-primary" style="background:var(--orange);" onclick="window.location.href='mailto:sales@decllc.biz?subject=NIVMIA%20MSP'">Contact Sales</button>
@@ -134,24 +136,44 @@
 
     </div>
 
-    <p style="text-align:center;margin-top:24px;"><a href="nivmia-compare.html" style="color:var(--primary);font-weight:700;font-size:1rem;">See full feature comparison across all tiers &rarr;</a></p>
+    <p style="text-align:center;margin-top:24px;"><a href="nivmia-compare.html" style="color:var(--primary);font-weight:700;font-size:1rem;">See the full feature comparison across all tiers &rarr;</a></p>
+  </div>
+</section>
+
+<!-- DEC-LLC Complete Bundle -->
+<section style="background:#f0f7ff;">
+  <div class="container" style="text-align:center;max-width:700px;">
+    <h2>DEC-LLC Complete Bundle</h2>
+    <p class="subtitle">Run NIVMIA alongside IVMIA, VaultSync, and OpenUTM? Bundle all four products and save.</p>
+    <div class="pricing-card featured" style="max-width:420px;margin:24px auto;">
+      <h3>Complete Bundle</h3>
+      <div class="price">15% off<span> combined monthly</span></div>
+      <p style="color:var(--text-muted);">All four products, one invoice</p>
+      <ul>
+        <li>NIVMIA + IVMIA + VaultSync + OpenUTM</li>
+        <li>Unified cross-product dashboard</li>
+        <li>Shared device and host inventory</li>
+        <li>Single support contract covers everything</li>
+      </ul>
+      <button class="btn-full btn-primary" onclick="window.location.href='mailto:sales@decllc.biz?subject=DEC-LLC%20Complete%20Bundle'">Contact Sales for Bundle Pricing</button>
+    </div>
   </div>
 </section>
 
 <!-- Enterprise Platform Pricing -->
 <section style="background:#fff;">
   <div class="container">
-    <h2>Enterprise Platform Plugin Pricing</h2>
-    <p class="subtitle">Enterprise platforms are paid add-ons. Community gets one-time purchase (monitor only). Standard+ pay monthly.</p>
+    <h2>Enterprise Vendor Platform Pricing</h2>
+    <p class="subtitle">Community tier gets one-time purchase for read-only monitoring. Standard and above pay monthly for deeper management capabilities.</p>
 
     <table class="pricing-table">
       <thead>
         <tr>
-          <th>Platform</th>
-          <th>Community (one-time)</th>
-          <th>Standard (SNMP mgmt)</th>
-          <th>Professional (full mgmt)</th>
-          <th>Enterprise (full mgmt)</th>
+          <th>Vendor Platform</th>
+          <th>Community (one-time, monitor only)</th>
+          <th>Standard (monitor + manage)</th>
+          <th>Professional (full management)</th>
+          <th>Enterprise (full management)</th>
         </tr>
       </thead>
       <tbody>
@@ -170,12 +192,12 @@
 <!-- Host Bundles -->
 <section>
   <div class="container">
-    <h2>Device Bundles</h2>
-    <p class="subtitle">Need more devices? Buy additional capacity in blocks.</p>
+    <h2>Device Capacity Packs</h2>
+    <p class="subtitle">Need to monitor more devices? Add capacity in blocks as your network grows.</p>
 
     <table class="pricing-table">
       <thead>
-        <tr><th>Bundle</th><th>Standard</th><th>Professional</th><th>Enterprise</th></tr>
+        <tr><th>Additional Devices</th><th>Standard</th><th>Professional</th><th>Enterprise</th></tr>
       </thead>
       <tbody>
         <tr><td>5 devices</td><td>$19/mo</td><td>&mdash;</td><td>&mdash;</td></tr>
@@ -192,19 +214,19 @@
 <section style="background:#fff;">
   <div class="container">
     <h2>Feature Add-ons</h2>
-    <p class="subtitle">Enhance your tier with premium capabilities.</p>
+    <p class="subtitle">Enhance your tier with premium capabilities when you need them.</p>
 
     <table class="pricing-table">
       <thead>
-        <tr><th>Feature</th><th>Community</th><th>Standard</th><th>Professional</th><th>Enterprise</th></tr>
+        <tr><th>Capability</th><th>Community</th><th>Standard</th><th>Professional</th><th>Enterprise</th></tr>
       </thead>
       <tbody>
-        <tr><td>Web UI</td><td>Included</td><td>$29/mo</td><td>$49/mo</td><td>Included</td></tr>
-        <tr><td>AI Analysis (basic)</td><td>&mdash;</td><td>$39/mo</td><td>&mdash;</td><td>&mdash;</td></tr>
-        <tr><td>AI Analysis (full)</td><td>&mdash;</td><td>&mdash;</td><td>$79/mo</td><td>&mdash;</td></tr>
-        <tr><td>AI Model RPM</td><td>&mdash;</td><td>&mdash;</td><td>&mdash;</td><td>Included</td></tr>
-        <tr><td>Prometheus/Grafana</td><td>&mdash;</td><td>$19/mo</td><td>Included</td><td>Included</td></tr>
-        <tr><td>Config Vault (advanced)</td><td>&mdash;</td><td>$19/mo</td><td>Included</td><td>Included</td></tr>
+        <tr><td>Web Dashboard</td><td>Included</td><td>$29/mo</td><td>$49/mo</td><td>Included</td></tr>
+        <tr><td>AI Analysis (basic insights)</td><td>&mdash;</td><td>$39/mo</td><td>&mdash;</td><td>&mdash;</td></tr>
+        <tr><td>AI Analysis (full recommendations)</td><td>&mdash;</td><td>&mdash;</td><td>$79/mo</td><td>&mdash;</td></tr>
+        <tr><td>Pre-trained AI Model</td><td>&mdash;</td><td>&mdash;</td><td>&mdash;</td><td>Included</td></tr>
+        <tr><td>Metrics and Dashboards (Prometheus/Grafana)</td><td>&mdash;</td><td>$19/mo</td><td>Included</td><td>Included</td></tr>
+        <tr><td>Advanced Config Vault (golden baselines, drift alerts)</td><td>&mdash;</td><td>$19/mo</td><td>Included</td><td>Included</td></tr>
       </tbody>
     </table>
   </div>
@@ -214,13 +236,14 @@
 <section>
   <div class="container">
     <h2>Professional Services</h2>
+    <p class="subtitle">Hands-on help when you want it.</p>
     <table class="pricing-table">
       <thead>
         <tr><th>Service</th><th>Community</th><th>Standard+</th></tr>
       </thead>
       <tbody>
-        <tr><td>Remote setup session (1-2 hrs)</td><td>$100/session</td><td>1 free/quarter, $75 add'l</td></tr>
-        <tr><td>Custom plugin development</td><td>$150/hr</td><td>$125/hr</td></tr>
+        <tr><td>Remote setup session (1-2 hrs)</td><td>$100/session</td><td>1 free/quarter, $75 additional</td></tr>
+        <tr><td>Custom platform development</td><td>$150/hr</td><td>$125/hr</td></tr>
         <tr><td>On-site consulting</td><td>&mdash;</td><td>Contact sales</td></tr>
       </tbody>
     </table>
@@ -228,12 +251,12 @@
 </section>
 
 <!-- CTA -->
-<section style="background:linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);color:#fff;text-align:center;">
+<section class="v2-closing">
   <div class="container">
-    <h2 style="color:#fff;">Questions? Let's talk.</h2>
-    <p style="opacity:0.8;max-width:500px;margin:12px auto 24px;">All plans include a 30-day evaluation period. No credit card required for Community tier.</p>
-    <a href="mailto:sales@decllc.biz" class="cta" style="background:#fff;color:var(--primary);">sales@decllc.biz</a>
-    <a href="tel:+12012549971" class="cta-secondary">(201) 254-9971</a>
+    <h2>Ready to see your whole network in one place?</h2>
+    <p>Every plan includes a 30-day evaluation period. Community tier is free -- no credit card, no time limit. Upgrade whenever you're ready.</p>
+    <a href="mailto:sales@decllc.biz" class="cta" style="background:#ffab40;color:#0f2b46;">sales@decllc.biz</a>
+    <a href="tel:+12012549971" class="cta-secondary" style="border-color:white;color:white;">(201) 254-9971</a>
   </div>
 </section>
 
@@ -241,7 +264,6 @@
   <div class="container">
     <div>
       <img src="../assets/logo-circle.svg" alt="DEC-LLC" style="height:56px;margin-bottom:8px;">
-      <p style="font-style:italic;opacity:0.9;margin-bottom:4px;">Open Ideas</p>
       <p>&copy; 2026 DEC-LLC. All rights reserved.</p>
     </div>
     <div class="footer-links">
