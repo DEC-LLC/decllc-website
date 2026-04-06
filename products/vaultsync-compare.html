@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VaultSync vs Veeam, Commvault, Acronis — How We Compare</title>
+  <link rel="stylesheet" href="../styles.css">
+  <link rel="stylesheet" href="../extras.css">
+</head>
+<body>
+
+<nav>
+  <div class="container">
+    <a href="../index.html" class="logo">
+      <img src="../assets/logo-circle.svg" alt="DEC-LLC"><span style="font-weight:800;font-size:1.1rem;letter-spacing:0.05em;margin-left:10px;">DEC-LLC</span>
+    </a>
+    <ul>
+      <li><a href="../index.html#products">Products</a></li>
+      <li><a href="../index.html#why">Why DEC-LLC</a></li>
+      <li><a href="../index.html#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<section class="v2-hero" style="padding:60px 0 50px;">
+  <div class="container">
+    <div class="v2-tagline">How We Compare</div>
+    <h1>VaultSync vs Veeam, Commvault, Acronis</h1>
+    <p class="v2-lede">Backup tools have traditionally focused on one thing: copying data and putting it back. VaultSync does that -- and also solves the problem nobody else addresses: what happens when you need to restore a VMware VM onto a Proxmox host, or migrate your entire backup strategy off one hypervisor platform onto another.</p>
+  </div>
+</section>
+
+<!-- The cross-platform restore problem -->
+<section class="v2-story">
+  <div class="container">
+    <div class="v2-story-inner">
+      <h2>Why backup tools assume you'll restore to the same platform -- and why that assumption is breaking.</h2>
+      <p>Veeam built its business on VMware backup. It does VMware backup exceptionally well -- fast, reliable, well-understood. But Veeam's architecture assumes your restore target is VMware. Commvault supports broader platforms but at enterprise complexity and enterprise pricing ($15,000-$50,000+/year for a mid-sized deployment). Acronis has moved toward a cloud-first model where they want you storing your backups in Acronis Cloud -- storage you pay for by the terabyte, month after month.</p>
+      <p>VaultSync was designed for the reality that organizations are increasingly running multiple hypervisors. You might have ESXi hosts from before the Broadcom acquisition, Proxmox nodes you're evaluating as replacements, KVM servers running specific workloads, and Docker containers everywhere. VaultSync backs up all of them -- and critically, can restore any of them to any other supported platform. Back up a VMware VM, restore it on Proxmox. That's not a future roadmap item. That's the core design.</p>
+
+      <div class="v2-metaphor">Traditional backup tools are like a moving company that will pack your house and unpack it into an identical house. VaultSync is a moving company that can unpack your furniture into a house, an apartment, or a loft -- whatever you need next.</div>
+    </div>
+  </div>
+</section>
+
+<!-- Comparison table -->
+<section class="v2-compare">
+  <div class="container">
+    <h2>Side-by-Side Comparison</h2>
+    <div class="v2-compare-table">
+      <table>
+        <thead>
+          <tr>
+            <th style="width:26%;">Capability</th>
+            <th>Veeam</th>
+            <th>Commvault</th>
+            <th>Acronis</th>
+            <th>VaultSync</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Primary platform focus</td>
+            <td class="v2-partial">VMware-first. Hyper-V, some Linux. Proxmox support added late 2024.</td>
+            <td class="v2-yes">Broad: VMware, Hyper-V, cloud, physical, SaaS apps.</td>
+            <td class="v2-partial">Physical + cloud focus. VM backup via agent.</td>
+            <td class="v2-yes">ESXi, Proxmox, KVM, Hyper-V, Docker, VirtualBox. Platform-native APIs.</td>
+          </tr>
+          <tr>
+            <td>Mid-range annual cost</td>
+            <td class="v2-no">$8,000-$25,000/yr (per-socket or VUL licensing)</td>
+            <td class="v2-no">$15,000-$50,000+/yr (capacity or per-VM licensing)</td>
+            <td>$3,000-$10,000/yr (per-workload + cloud storage)</td>
+            <td class="v2-yes">$3,000/yr Professional (20 sources, everything included)</td>
+          </tr>
+          <tr>
+            <td>Cross-platform restore</td>
+            <td class="v2-no">Restore to same platform. V2V conversion requires Veeam ONE or manual steps.</td>
+            <td class="v2-partial">Some cross-platform via IntelliSnap, but complex to configure.</td>
+            <td class="v2-no">Restore to same platform or Acronis Cloud.</td>
+            <td class="v2-yes">Core feature. Back up VMware, restore to Proxmox or KVM. Any direction.</td>
+          </tr>
+          <tr>
+            <td>VMware escape path</td>
+            <td class="v2-no">No. Veeam's business depends on VMware customers staying on VMware.</td>
+            <td class="v2-partial">Technically possible but not a marketed capability.</td>
+            <td class="v2-no">No cross-hypervisor migration tooling.</td>
+            <td class="v2-yes">Explicit design goal. Sync VMware VMs to Proxmox/KVM continuously. Switch when ready.</td>
+          </tr>
+          <tr>
+            <td>AI backup health analysis</td>
+            <td class="v2-no">No. Reports and dashboards only.</td>
+            <td class="v2-partial">Metallic AI (cloud SaaS add-on).</td>
+            <td class="v2-no">No.</td>
+            <td class="v2-yes">Enterprise tier. Local AI explains backup health, flags risks, reports in business terms.</td>
+          </tr>
+          <tr>
+            <td>Where does your data go?</td>
+            <td class="v2-yes">On-prem (self-managed repositories).</td>
+            <td class="v2-partial">On-prem or Metallic cloud (Commvault pushes cloud).</td>
+            <td class="v2-no">Acronis Cloud (per-TB monthly cost) or on-prem at extra complexity.</td>
+            <td class="v2-yes">On-prem. Your storage, your network. Optional cloud targets (S3, OCI, Azure, GCP) at Professional+.</td>
+          </tr>
+          <tr>
+            <td>Assisted HA / data clustering</td>
+            <td class="v2-partial">Veeam Availability Suite. Significant additional cost.</td>
+            <td class="v2-partial">DR orchestration available at enterprise tier.</td>
+            <td class="v2-no">Basic disaster recovery, no clustering.</td>
+            <td class="v2-yes">Automated failover and failback. Near-instant sync between hypervisors. Professional tier.</td>
+          </tr>
+          <tr>
+            <td>Deduplication included</td>
+            <td class="v2-yes">Yes, built-in.</td>
+            <td class="v2-yes">Yes, built-in.</td>
+            <td class="v2-partial">Limited without dedicated appliance.</td>
+            <td class="v2-yes">Yes, built-in at every tier including Community.</td>
+          </tr>
+          <tr>
+            <td>Pricing model</td>
+            <td class="v2-no">Per-socket or Veeam Universal License (VUL) per workload. Adds up fast.</td>
+            <td class="v2-no">Capacity-based or per-VM. Enterprise contracts required.</td>
+            <td class="v2-partial">Per-workload + cloud storage per TB. Costs grow with data.</td>
+            <td class="v2-yes">Per-tier with source blocks. No per-TB cloud storage fees. Storage is yours.</td>
+          </tr>
+          <tr>
+            <td>Works without internet</td>
+            <td class="v2-yes">Yes, on-prem.</td>
+            <td class="v2-partial">On-prem works. Cloud features require connectivity.</td>
+            <td class="v2-no">Cloud-first model. Offline is degraded.</td>
+            <td class="v2-yes">Fully operational. Air-gap deployable.</td>
+          </tr>
+          <tr>
+            <td>Cross-product integration</td>
+            <td class="v2-no">Standalone. Veeam ONE for monitoring (separate product).</td>
+            <td class="v2-partial">Commvault ecosystem only.</td>
+            <td class="v2-no">Standalone.</td>
+            <td class="v2-yes">Integrates with IVMIA (VM management), NIVMIA (network), OpenUTM (firewalls). Shared databus.</td>
+          </tr>
+          <tr>
+            <td>Community / free tier</td>
+            <td class="v2-partial">Veeam Community Edition: 10 workloads, limited features.</td>
+            <td class="v2-no">No free tier.</td>
+            <td class="v2-no">Free trial only. No permanent free tier.</td>
+            <td class="v2-yes">Free forever. 2 hosts, full backup + dedup + cross-platform sync.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- The cross-platform story -->
+<section class="v2-story">
+  <div class="container">
+    <div class="v2-story-inner">
+      <h2>Cross-platform restore: why it matters more than it used to.</h2>
+      <p>For twenty years, "backup and restore" meant copying a VM and putting it back on the same host or same cluster. That worked when everyone ran one hypervisor. Now, after VMware's licensing changes, organizations are actively diversifying. They're keeping VMware for legacy workloads while standing up Proxmox or KVM for new deployments. In that world, a backup tool that can only restore to the same platform is a constraint, not a feature.</p>
+      <p>VaultSync's cross-platform restore isn't a conversion utility you run after the fact. It's built into the backup format. When VaultSync backs up a VM, it captures the disk images and metadata in a normalized format. On restore, it translates that format into whatever the target platform expects -- VMDK for VMware, qcow2 for KVM/Proxmox, VHD for Hyper-V. The VM boots on the new platform with the same data, the same identity, the same network configuration.</p>
+
+      <div class="v2-callout">
+        <strong>VaultSync's AI doesn't just monitor backup jobs -- it explains them.</strong> "Your SQL server backup is taking 40% longer than last month because the database grew by 12GB. At this rate, your backup window will exceed 8 hours by September. Here are three options." That's the kind of insight that used to require a senior engineer reviewing logs for an hour. VaultSync's AI delivers it in plain language, automatically, to whoever needs it -- from the backup admin to the CTO.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Total cost of ownership -->
+<section class="v2-arch" style="background:#f8fafb;">
+  <div class="container">
+    <h2>5-Year Total Cost of Ownership</h2>
+    <p class="v2-subtitle">What you actually spend over five years for a 20-host environment with full backup, replication, and support.</p>
+
+    <div class="v2-arch-block">
+      <div class="v2-diagram">
+        <svg viewBox="0 0 700 320" xmlns="http://www.w3.org/2000/svg">
+          <!-- Commvault bar -->
+          <rect x="80" y="20" width="530" height="36" rx="6" fill="#e65100" opacity="0.85"/>
+          <text x="90" y="43" fill="white" font-size="13" font-weight="bold">Commvault (mid-range + support): ~$75,000 - $250,000</text>
+
+          <!-- Veeam bar -->
+          <rect x="80" y="64" width="360" height="36" rx="6" fill="#bf360c" opacity="0.75"/>
+          <text x="90" y="87" fill="white" font-size="13" font-weight="bold">Veeam (VUL licensing + support): ~$40,000 - $125,000</text>
+
+          <!-- Acronis bar -->
+          <rect x="80" y="108" width="250" height="36" rx="6" fill="#d84315" opacity="0.70"/>
+          <text x="90" y="131" fill="white" font-size="13" font-weight="bold">Acronis (workloads + cloud storage): ~$15,000 - $50,000</text>
+
+          <!-- VaultSync bar -->
+          <rect x="80" y="168" width="88" height="36" rx="6" fill="#2e7d32" opacity="0.85"/>
+          <text x="90" y="191" fill="white" font-size="13" font-weight="bold">VaultSync: ~$15,000 - $56,000</text>
+
+          <!-- Details -->
+          <text x="90" y="225" fill="#333" font-size="11">Veeam: VUL per-workload licensing ($8K-$25K/yr) + renewal escalation + Veeam ONE for monitoring</text>
+          <text x="90" y="240" fill="#333" font-size="11">Commvault: capacity-based licensing ($15K-$50K+/yr) + mandatory support contracts</text>
+          <text x="90" y="255" fill="#333" font-size="11">Acronis: per-workload + cloud storage per TB/month. Costs grow with data volume.</text>
+          <text x="90" y="270" fill="#333" font-size="11">VaultSync Professional: $3,000/yr (20 sources, all features). Enterprise: $11,160/yr (AI included).</text>
+          <text x="90" y="285" fill="#333" font-size="11">VaultSync storage is yours -- NAS, SAN, local disk. No per-TB cloud fees unless you choose cloud targets.</text>
+
+          <!-- Savings callout -->
+          <text x="350" y="315" text-anchor="middle" fill="#1d4978" font-size="14" font-weight="bold">5-year savings vs Veeam: $25,000 - $70,000 per deployment</text>
+        </svg>
+        <div class="v2-diagram-caption">Traditional backup vendors charge per-socket, per-workload, or per-TB of cloud storage. VaultSync charges per tier with simple source blocks. Your storage costs are whatever your own NAS or SAN costs -- not a monthly cloud bill that grows with every gigabyte.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- What about... -->
+<section class="v2-story">
+  <div class="container">
+    <div class="v2-story-inner">
+      <h2>Questions you might be asking.</h2>
+
+      <h3>"If it's that much cheaper, is it actually as good?"</h3>
+      <p>It's cheaper because we don't sell per-socket or per-TB, and there's no hardware appliance in our price. VaultSync uses platform-native APIs for backup -- the same APIs Veeam and Commvault use -- so the data fidelity is identical. The cross-platform restore capability is something neither Veeam nor Commvault offers natively. Deduplication, encryption, and incremental backups are included at the Professional tier, not sold as add-ons. The price reflects the business model: software that runs on your hardware and stores data on your storage.</p>
+
+      <h3>"Veeam is the industry standard. Why would we switch?"</h3>
+      <p>Veeam earned its reputation on VMware backup and it remains excellent at that specific job. Two things have changed. First, Veeam's licensing moved from per-socket (predictable) to Veeam Universal License (per-workload, harder to predict). Second, many Veeam customers are diversifying away from VMware -- and Veeam's cross-platform restore capabilities haven't kept pace with that shift. If your environment is 100% VMware and staying that way, Veeam is a strong choice. If you're running or planning to run multiple hypervisors, VaultSync was designed for exactly that reality.</p>
+
+      <h3>"Commvault does everything. How is this different?"</h3>
+      <p>Commvault does, in fact, do almost everything -- VM backup, physical servers, SaaS apps, databases, endpoints, cloud. That breadth comes with genuine complexity. Commvault deployments typically require dedicated backup administrators and significant planning. VaultSync focuses specifically on virtualization infrastructure backup with cross-platform mobility. It doesn't try to back up your Office 365 mailboxes or endpoint laptops. If you need one tool for everything, Commvault is comprehensive. If you need virtualization backup done well with cross-platform restore, VaultSync is purpose-built for that.</p>
+
+      <h3>"Acronis Cloud is convenient. Why would we manage our own storage?"</h3>
+      <p>Convenience has a price: Acronis charges per terabyte per month for cloud storage. A 10TB backup set costs $600-$1,200/month in Acronis Cloud -- $36,000-$72,000 over five years just for storage. A 10TB NAS costs $500-$1,500 once. VaultSync lets you use your own storage -- NAS, SAN, local drives -- and optionally replicate to cloud targets (S3, OCI, Azure, GCP) that you control and pay for directly, without Acronis as the middleman.</p>
+
+      <h3>"What if we already have Veeam / Commvault / Acronis?"</h3>
+      <p>Keep your existing backup tool running for now. Deploy VaultSync alongside it to protect the non-VMware workloads that Veeam doesn't cover well, or the new Proxmox nodes you're evaluating. Run both in parallel. When your Veeam or Commvault renewal arrives, you'll have months of operational data showing whether VaultSync can take over fully. Most organizations start by adding VaultSync for cross-platform workloads and gradually consolidate as they see the results. No rip-and-replace required.</p>
+    </div>
+  </div>
+</section>
+
+<section class="v2-closing">
+  <div class="container">
+    <h2>Back up anything. Restore anywhere. Your storage. Your rules.</h2>
+    <p>VaultSync doesn't compete on backup speed alone -- every backup tool is fast. It competes on flexibility: the cross-platform restore that lets you move between hypervisors, the AI that explains backup health in business terms, and the economics of storing data on hardware you own instead of renting cloud space by the terabyte.</p>
+    <a href="vaultsync.html" class="cta" style="background:white;color:#0f2b46;">Learn More About VaultSync</a>
+    <a href="vaultsync-pricing.html" class="cta-secondary" style="border-color:white;color:white;">View Pricing</a>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div>
+      <img src="../assets/logo-circle.svg" alt="DEC-LLC" style="height:56px;margin-bottom:8px;">
+      <p>&copy; 2026 DEC-LLC. All rights reserved.</p>
+    </div>
+    <div class="footer-links">
+      <a href="../index.html#products">Products</a>
+      <a href="vaultsync.html">VaultSync</a>
+      <a href="vaultsync-pricing.html">Pricing</a>
+      <a href="../index.html#contact">Contact</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
