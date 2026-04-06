@@ -3,215 +3,257 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>IVMIA — Virtualization Management, Inventory & Analytics</title>
+  <title>IVMIA — Every Computer You Own, On One Screen</title>
   <link rel="stylesheet" href="../styles.css">
+  <link rel="stylesheet" href="../extras.css">
 </head>
 <body>
+
 
 <nav>
   <div class="container">
     <a href="../index.html" class="logo">
       <img src="../assets/icon-only.jpg" alt="DEC-LLC">
       <div class="logo-text"><span class="logo-name">DEC-LLC</span><svg class="logo-squiggle" viewBox="0 0 80 6" xmlns="http://www.w3.org/2000/svg"><path d="M0 3 Q10 0, 20 3 Q30 6, 40 3 Q50 0, 60 3 Q70 6, 80 3" stroke="rgba(255,255,255,0.5)" stroke-width="1.5" fill="none"/></svg><span class="logo-slogan">Open Ideas</span></div>
-      
     </a>
     <ul>
       <li><a href="../index.html#products">Products</a></li>
-      <li><a href="../index.html#pricing">Pricing</a></li>
-      <li><a href="../index.html#opensource">Open Source</a></li>
-      <li><a href="../store.html">Store</a></li>
+      <li><a href="../index.html#why">Why DEC-LLC</a></li>
       <li><a href="../index.html#contact">Contact</a></li>
     </ul>
-    <a href="../store.html" class="nav-cta">Buy Now</a>
   </div>
 </nav>
 
-<!-- Product Hero -->
-<section class="hero">
+<section class="v2-hero">
   <div class="container">
+    <div class="v2-tagline">Virtualization Infrastructure</div>
     <h1>IVMIA</h1>
-    <p>Infrastructure, Virtualization & Endpoint Management, Inventory & Analytics</p>
-    <p style="opacity:0.7;font-size:1rem;">One platform for your entire compute estate &mdash; VMs, physical servers, workstations, endpoints, and field devices across 8+ platforms and every major cloud.</p>
-    <a href="../index.html#pricing" class="cta">Start Free Trial</a>
-    <a href="#features" class="cta-secondary">See Features</a>
-  </div>
-</section>
-
-<!-- Platform Support -->
-<section>
-  <div class="container">
-    <h2>VMs, Workstations, Endpoints &mdash; One Dashboard</h2>
-    <p class="subtitle">IVMIA connects to every major virtualization platform, cloud provider, and endpoint OS, normalizing data into a unified view of your entire compute estate.</p>
-
-    <div class="product-grid" style="grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));">
-      <div class="product-card" style="text-align:center;padding:20px;">
-        <div style="font-size:2rem;">&#x1F7E2;</div>
-        <h3>VMware ESXi</h3>
-        <p>vSphere VMs via SSH and pyVmomi SDK</p>
-      </div>
-      <div class="product-card" style="text-align:center;padding:20px;">
-        <div style="font-size:2rem;">&#x1F7E0;</div>
-        <h3>Proxmox VE</h3>
-        <p>QEMU VMs and LXC containers via SSH and REST API</p>
-      </div>
-      <div class="product-card" style="text-align:center;padding:20px;">
-        <div style="font-size:2rem;">&#x1F5A5;</div>
-        <h3>KVM / QEMU</h3>
-        <p>Virtual machines via virsh and native API</p>
-      </div>
-      <div class="product-card" style="text-align:center;padding:20px;">
-        <div style="font-size:2rem;">&#x1F537;</div>
-        <h3>Hyper-V</h3>
-        <p>Windows VMs via PowerShell SSH and WinRM</p>
-      </div>
-      <div class="product-card" style="text-align:center;padding:20px;">
-        <div style="font-size:2rem;">&#x1F433;</div>
-        <h3>Docker / Podman</h3>
-        <p>Containers via CLI and Docker SDK</p>
-      </div>
-      <div class="product-card" style="text-align:center;padding:20px;">
-        <div style="font-size:2rem;">&#x2638;</div>
-        <h3>Kubernetes</h3>
-        <p>Pods, deployments, services via K8s API</p>
-      </div>
-      <div class="product-card" style="text-align:center;padding:20px;">
-        <div style="font-size:2rem;">&#x1F536;</div>
-        <h3>Incus / LXD</h3>
-        <p>Instances via REST API with TLS certs</p>
-      </div>
-      <div class="product-card" style="text-align:center;padding:20px;">
-        <div style="font-size:2rem;">&#x1F4E6;</div>
-        <h3>VirtualBox</h3>
-        <p>VMs via VBoxManage over SSH or WinRM</p>
-      </div>
+    <p class="v2-lede">Eight hypervisor platforms. Hundreds of virtual machines. One dashboard that shows every VM, every host, and every resource — regardless of which vendor runs underneath. IVMIA gives you a single pane of glass across your entire virtual infrastructure, so you always know what's running, what's idle, and what's about to run out of room.</p>
+    <div class="v2-cta-row">
+      <a href="#intelligence" class="cta">See What Makes It Different</a>
+      <a href="#capabilities" class="cta-secondary">Capabilities</a>
     </div>
   </div>
 </section>
 
-<!-- Key Features -->
-<section id="features" style="background:#fff;">
+<!-- The story -->
+<section class="v2-story">
   <div class="container">
-    <h2>Key Features</h2>
+    <div class="v2-story-inner">
+      <h2>Your VMware renewal just came in at double last year's price.</h2>
+      <p>The board wants a plan. Someone suggests Proxmox. Someone else mentions KVM. Someone else says cloud or nothing. But you have 2,000 virtual machines running on VMware right now, nobody's entirely sure which ones are critical and which ones were spun up for a project two years ago and never decommissioned, and you don't know how to set up the cloud replication you're going to need. The person who built most of this is now heads-down on the new satellite office project.</p>
 
-    <div class="product-grid">
-      <div class="product-card">
-        <h3>Unified Dashboard</h3>
-        <p>See all hosts, workloads, and metrics across every platform in a single web interface. No more switching between vCenter, Proxmox UI, and kubectl.</p>
-      </div>
-      <div class="product-card">
-        <h3>Agentless by Default</h3>
-        <p>IVMIA collects inventory, metrics, and manages workloads without installing anything on your hypervisors. The core connects directly via SSH and native platform APIs. No agents to deploy, patch, or secure across your fleet.</p>
-      </div>
-      <div class="product-card">
-        <h3>Dual-Transport Architecture</h3>
-        <p>Every platform supports two transport methods (SSH + native API) with automatic failover. If one path goes down, collection continues via the other. Fully agentless on both paths.</p>
-      </div>
-      <div class="product-card">
-        <h3>Optional Agents for Realtime</h3>
-        <p>Deploy lightweight agents (under 100KB, no Java) for realtime host monitoring with user-configurable intervals and sane defaults. Agents report OS-level CPU, memory, disk, and network metrics, catching host issues faster than scheduled agentless sweeps. Agents also collect platform workloads locally via native CLI &mdash; virsh, pvesh, docker, vim-cmd, PowerShell Get-VM, kubectl, incus, and VBoxManage &mdash; so workload inventory stays current between agentless sweeps. Agents push to the core via HTTP and auto-register on first run. Agents are additive &mdash; everything works without them.</p>
-      </div>
-      <div class="product-card">
-        <h3>Federated Multi-Site</h3>
-        <p>Deploy sub-cores at remote sites that collect locally and sync to a central core. Works across VPNs and high-latency links. Each sub-core is also agentless.</p>
-      </div>
-      <div class="product-card">
-        <h3>Operations Management</h3>
-        <p>Start, stop, restart, snapshot, and manage workloads directly from the web UI. Confirmation dialogs on destructive operations. Full audit trail.</p>
-      </div>
-      <div class="product-card">
-        <h3>Analysis & Trending</h3>
-        <p>CPU, memory, disk, and network trends over time. Capacity heatmaps. Cross-platform comparison radar charts. All powered by Chart.js with AJAX auto-refresh.</p>
-      </div>
+      <p>Meanwhile, the development team set up a Proxmox cluster for testing. There are VMs on it that somehow became production. Nobody documented the transition. And the contractor who configured it used conventions that don't match anything else in the organization.</p>
+
+      <div class="v2-metaphor">IVMIA solves this in its first week. Install it, point it at your hypervisors, and within 24 hours you have a complete inventory: every VM, every host, every resource pool — which ones are critical, which are idle, which are eating resources for no reason. The board's question — "what would it take to move off VMware?" — gets an answer based on data: these 400 VMs can migrate today, these 120 need dependency work first, these 80 are already running on Proxmox and nobody realized. The cloud replication question gets scoped: here's what needs to go to the cloud, here's what should stay on-premises, here's the resource profile for each. And the three people arguing about Proxmox vs KVM vs cloud stop arguing — because the data shows which answer fits which workload. It's not one answer. It's the right answer with context and reason behind it.</div>
+
+      <p>And none of that required your lead engineer to stop what they're doing. IVMIA built the picture from the infrastructure itself. Better yet — IVMIA can orchestrate the cloud builds today, and with VaultSync as its partner, start moving workloads ASAP. The plan and the execution come from the same system.</p>
     </div>
   </div>
 </section>
 
-<!-- Architecture Overview -->
-<section>
+<!-- Intelligence -->
+<section id="intelligence" class="v2-benefits">
   <div class="container">
-    <h2>Architecture</h2>
-    <p class="subtitle">Agentless-first design. Agents are optional. Works in heterogeneous and distributed environments.</p>
+    <h2>The intelligence that makes it different</h2>
+    <div class="v2-benefit-grid">
 
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;max-width:900px;margin:0 auto;">
-
-      <div style="background:#fff;padding:28px;border-radius:var(--radius);box-shadow:var(--shadow);">
-        <h3 style="color:var(--primary);margin-bottom:12px;">Agentless Mode (default)</h3>
-        <pre style="font-size:0.82rem;line-height:1.5;color:var(--text-muted);overflow-x:auto;margin:0;">
-IVMIA Core
-  +-- SSH / API to hypervisors
-  |     +-- ESXi (vim-cmd + pyVmomi)
-  |     +-- Proxmox (pvesh + REST API)
-  |     +-- KVM (virsh + TLS)
-  |     +-- Hyper-V (PowerShell + WinRM)
-  |     +-- Docker (CLI + SDK)
-  |     +-- Kubernetes (K8s API + kubectl)
-  |     +-- Incus (REST + CLI)
-  |     +-- VirtualBox (VBoxManage)
-  |
-  +-- Web UI + REST API
-  +-- PostgreSQL
-        </pre>
-        <p style="font-size:0.85rem;color:var(--text-muted);margin-top:12px;">Nothing to install on target hosts. Inventory, metrics, and operations all work over the network.</p>
+      <div class="v2-benefit-card">
+        <div class="v2-check">&#10003;</div>
+        <h3>Ask it questions</h3>
+        <p>Ask IVMIA <em>"which VMs haven't been accessed in 30 days?"</em> or <em>"what would happen to capacity if we shut down host 3?"</em> and get a clear answer. Not a spreadsheet you have to interpret — an answer. It knows your topology because it inventories it nightly.</p>
       </div>
 
-      <div style="background:#fff;padding:28px;border-radius:var(--radius);box-shadow:var(--shadow);">
-        <h3 style="color:var(--primary);margin-bottom:12px;">With Agents (optional)</h3>
-        <pre style="font-size:0.82rem;line-height:1.5;color:var(--text-muted);overflow-x:auto;margin:0;">
-IVMIA Core
-  +-- Agentless collection (as before)
-  +-- Agent check-in API
-  |
-  +-- Host Agents push metrics + workloads
-        +-- Configurable collection intervals
-        +-- OS-level host metrics
-        +-- Local workload collection via native CLI
-        +-- Auto-register on first run
-        +-- RPM / DEB / Windows NSIS packages
-  |
-  +-- Federation (Pro+)
-        +-- Sub-Core (remote site)
-        +-- Local DB + agentless collectors
-        +-- Syncs to central core
-        </pre>
-        <p style="font-size:0.85rem;color:var(--text-muted);margin-top:12px;">Agents add realtime host metrics and local workload collection for higher frequency. Everything still works if an agent goes offline.</p>
+      <div class="v2-benefit-card">
+        <div class="v2-check">&#10003;</div>
+        <h3>Teaches new staff</h3>
+        <p>When the new sysadmin starts — or your lead engineer is busy with bigger projects — anyone on the team can query IVMIA to understand the entire VM landscape. What's running where, why certain VMs are on certain hosts, which resource pools matter most. The knowledge lives in the system, accessible to the whole team, not bottlenecked in one person's head.</p>
+      </div>
+
+      <div class="v2-benefit-card">
+        <div class="v2-check">&#10003;</div>
+        <h3>Finds the VMs everyone forgot about</h3>
+        <p>Orphan detection identifies VMs that are running but nobody owns, consuming resources but serving no purpose. IVMIA flags them so you can reclaim the capacity — or at least find out why they exist before shutting them down.</p>
+      </div>
+
+      <div class="v2-benefit-card">
+        <div class="v2-check">&#10003;</div>
+        <h3>Platform-neutral by design</h3>
+        <p>VMware ESXi, Proxmox, KVM/libvirt, Hyper-V, Docker, Kubernetes, and more — all normalized into one consistent view. You see "virtual machines" and "hosts," not platform-specific jargon. One tool that speaks every virtualization language.</p>
+      </div>
+
+      <div class="v2-benefit-card">
+        <div class="v2-check">&#10003;</div>
+        <h3>Capacity planning that prevents surprises</h3>
+        <p>IVMIA tracks CPU, memory, storage, and network utilization across every host. It spots trends — <em>"at current growth, your production cluster will run out of memory in four months"</em> — so you budget for hardware before you hit the wall.</p>
+      </div>
+
+      <div class="v2-benefit-card">
+        <div class="v2-check">&#10003;</div>
+        <h3>No vendor lock-in</h3>
+        <p>Because IVMIA normalizes everything into a universal model, your operational knowledge doesn't become tied to one vendor's tools. If you move from VMware to Proxmox, your dashboards, reports, and history come with you.</p>
       </div>
 
     </div>
   </div>
 </section>
 
-<!-- Packaging -->
-<section style="background:#fff;">
+<!-- Capabilities -->
+<section id="capabilities" class="v2-arch" style="background:#f8fafb;">
   <div class="container">
-    <h2>Easy Deployment</h2>
-    <p class="subtitle">Install from packages. No containers required. No cloud dependency.</p>
-    <div class="product-grid" style="grid-template-columns: repeat(3, 1fr);">
-      <div class="product-card" style="text-align:center;">
-        <div style="font-size:2rem;">&#x1F4E6;</div>
-        <h3>RPM</h3>
-        <p>Rocky Linux, RHEL, CentOS, Alma</p>
+    <h2>What IVMIA does, automatically and continuously</h2>
+    <p class="v2-subtitle">Once installed, IVMIA inventories every host and VM on a schedule. No manual data entry. No spreadsheets to maintain.</p>
+
+    <div class="v2-layers">
+      <div class="v2-layer">
+        <div class="v2-layer-num">1</div>
+        <div class="v2-layer-body">
+          <h4>Universal inventory</h4>
+          <p>Every VM, every host, every resource pool — cataloged and normalized regardless of platform. New VMs appear automatically. Decommissioned VMs are tracked, not forgotten.</p>
+        </div>
       </div>
-      <div class="product-card" style="text-align:center;">
-        <div style="font-size:2rem;">&#x1F4E6;</div>
-        <h3>DEB</h3>
-        <p>Debian, Ubuntu, Proxmox</p>
+
+      <div class="v2-layer">
+        <div class="v2-layer-num">2</div>
+        <div class="v2-layer-body">
+          <h4>Cross-platform health monitoring</h4>
+          <p>CPU load, memory pressure, storage consumption, and network throughput — collected per host and per VM, tracked over time, with alerts when thresholds are crossed.</p>
+        </div>
       </div>
-      <div class="product-card" style="text-align:center;">
-        <div style="font-size:2rem;">&#x1F4BB;</div>
-        <h3>Windows</h3>
-        <p>NSIS installer for Hyper-V and VirtualBox agents</p>
+
+      <div class="v2-layer">
+        <div class="v2-layer-num">3</div>
+        <div class="v2-layer-body">
+          <h4>Workload optimization</h4>
+          <p>Identifies VMs that are over-provisioned (wasting resources) or under-provisioned (at risk of failure). Recommends right-sizing based on actual utilization, not the guesses made when the VM was created.</p>
+        </div>
+      </div>
+
+      <div class="v2-layer">
+        <div class="v2-layer-num">4</div>
+        <div class="v2-layer-body">
+          <h4>Orphan and waste detection</h4>
+          <p>Finds VMs with no recent activity, snapshots consuming storage silently, and resources allocated but unused. Reclaiming waste is often the cheapest way to add capacity.</p>
+        </div>
+      </div>
+
+      <div class="v2-layer">
+        <div class="v2-layer-num">5</div>
+        <div class="v2-layer-body">
+          <h4>Migration readiness</h4>
+          <p>Designed to assess VM portability between platforms. When you need to move workloads from one hypervisor to another, IVMIA identifies dependencies, compatibility issues, and the order of operations.</p>
+        </div>
+      </div>
+
+      <div class="v2-layer">
+        <div class="v2-layer-num">6</div>
+        <div class="v2-layer-body">
+          <h4>Fleet-wide reporting</h4>
+          <p>Inventory summaries, capacity reports, utilization trends, and cost allocation — across every platform. Export as table, JSON, or YAML. Every report is a query away.</p>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- CTA -->
-<section style="background:linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);color:#fff;text-align:center;">
+<!-- Cross-product integration -->
+<section class="v2-story">
   <div class="container">
-    <h2 style="color:#fff;">Ready to unify your infrastructure?</h2>
-    <p style="opacity:0.8;max-width:500px;margin:12px auto 24px;">Start free with 5 hosts and all base platforms. No agents required. No credit card.</p>
-    <a href="ivmia-pricing.html" class="cta" style="background:#fff;color:var(--primary);margin-right:12px;">View Pricing</a>
-    <a href="ivmia-compare.html" class="cta-secondary">Feature Comparison</a>
+    <div class="v2-story-inner">
+      <h3>Connect it to the rest of your DEC-LLC ecosystem and the products start thinking together.</h3>
+      <p>IVMIA notices a host is showing early signs of hardware failure — memory errors ticking up, disk latency creeping. On its own, that's a monitoring alert. Connected to the ecosystem, it becomes an orchestrated response: IVMIA live-migrates the VMs off the failing host to healthy ones. OpenUTM automatically updates the firewall rules for the VMs' new network locations. VaultSync confirms every migrated VM is backed up at its new home. The failing host gets flagged for maintenance. Your users never noticed a thing.</p>
+      <p>The very next month, IVMIA notices your billing in a cloud it's been monitoring is running high — and that 12 VMs haven't been accessed in 60 days. Instead of just flagging them, it asks you in dollars: <em>"These are consuming $4,200 a month in compute resources. Shall I decommission them?"</em> You say yes. Before powering anything down, IVMIA checks with VaultSync — <em>"do we have verified backups of each one?"</em> VaultSync confirms. IVMIA shuts them down and reclaims the resources. If anyone comes looking for one of those VMs six months later, VaultSync brings it back. You just saved $50K a year, safely, with a full safety net underneath.</p>
+      <p>These aren't scripted automations someone programmed by hand. The products share knowledge about your infrastructure and coordinate decisions — because IVMIA knows what's running, VaultSync knows what's protected, and OpenUTM knows what's connected. Together, they're more than three tools. They're one infrastructure brain.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Who it's for -->
+<section class="v2-usecase">
+  <div class="container">
+    <h2>Who runs IVMIA</h2>
+
+    <div class="v2-usecase-block">
+      <div class="v2-persona">The company evaluating a VMware exit</div>
+      <h3>You need to know what you have before you can plan where it goes.</h3>
+      <p>IVMIA gives you a complete inventory of every VM — what it runs, how much it uses, who depends on it, and how portable it is. Instead of a months-long discovery project, you get a migration-ready assessment from data you already have. The board gets a real plan with real numbers, not a guess and a timeline.</p>
+      <div class="v2-outcome"><strong>Result:</strong> Migration planning based on data, not tribal knowledge. Weeks saved on discovery alone.</div>
+    </div>
+
+    <div class="v2-usecase-block">
+      <div class="v2-persona">The MSP managing mixed virtualization environments</div>
+      <h3>Customer A runs VMware. Customer B runs Proxmox. Customer C runs both.</h3>
+      <p>You don't want a different management console for each customer's platform. IVMIA normalizes everything into one view, with per-customer isolation. Your team learns one tool, manages every customer's VMs from one dashboard, and bills based on actual resource consumption.</p>
+      <div class="v2-outcome"><strong>Result:</strong> One tool, all customers, every hypervisor platform. Consistent service delivery regardless of what's underneath.</div>
+    </div>
+
+    <div class="v2-usecase-block">
+      <div class="v2-persona">The growing company with VM sprawl</div>
+      <h3>You started with 10 VMs. Now you have 150 and nobody's sure which ones matter.</h3>
+      <p>IVMIA's orphan detection, utilization tracking, and workload optimization turn VM sprawl into a managed fleet. You find out which VMs are critical, which are abandoned, and which are burning resources for no reason — before you buy more hardware to compensate.</p>
+      <div class="v2-outcome"><strong>Result:</strong> Reclaim capacity you already own before spending on more. Typical savings: 15-30% of VM resources are waste.</div>
+    </div>
+
+  </div>
+</section>
+
+<!-- Future-readiness -->
+<section class="v2-tomorrow">
+  <div class="container">
+    <div class="v2-future">
+      <div class="v2-section-label">Ready for what's coming</div>
+      <h2>Your virtual infrastructure in 2030</h2>
+
+      <div class="v2-future-item">
+        <div class="v2-icon">&#x1F4B0;</div>
+        <div>
+          <h4>Licensing uncertainty becomes the norm</h4>
+          <p>VMware's acquisition was just the beginning. Vendor consolidation means more surprise price hikes, more forced migrations, more "we're sunsetting the product you depend on" emails. IVMIA ensures your operational knowledge is platform-independent, so you can move when you need to — not when you're forced to.</p>
+        </div>
+      </div>
+
+      <div class="v2-future-item">
+        <div class="v2-icon">&#x2601;</div>
+        <div>
+          <h4>Cloud cost explosions</h4>
+          <p>Organizations that moved everything to the cloud are discovering the bills never stop growing. Hybrid and on-premises virtualization is making a comeback — but only if you can manage it efficiently. IVMIA is designed to span on-premises and cloud workloads in a single view.</p>
+        </div>
+      </div>
+
+      <div class="v2-future-item">
+        <div class="v2-icon">&#x1F916;</div>
+        <div>
+          <h4>AI-powered attacks targeting VM infrastructure</h4>
+          <p>Automated attack tools will probe for VM escape vulnerabilities, misconfigured resource limits, and unpatched hypervisors faster than manual audits can catch. IVMIA's continuous inventory and health monitoring creates an always-current security baseline — catching misconfigurations before they become attack surfaces.</p>
+        </div>
+      </div>
+
+      <div class="v2-future-item">
+        <div class="v2-icon">&#x1F512;</div>
+        <div>
+          <h4>Quantum-era encryption for VM storage</h4>
+          <p>When quantum computing breaks current encryption standards, every encrypted VM disk will need new protection. Coordinating that across hundreds of VMs on multiple platforms is a fleet management problem — the kind IVMIA is designed to solve.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Pricing teaser -->
+<section style="background:#fff;padding:60px 0;text-align:center;">
+  <div class="container">
+    <h2 style="color:#0f2b46;">Start with what you have. Grow from there.</h2>
+    <p style="max-width:700px;margin:0 auto 28px;color:#444;font-size:1.1rem;">IVMIA supports KVM/libvirt and Proxmox today, with VMware ESXi, Hyper-V, Docker, and Kubernetes platforms available via subscription. Free community tier gets you started with core inventory and monitoring.</p>
+    <a href="../index.html#contact" class="btn btn-primary">Contact Sales</a>
+  </div>
+</section>
+
+<section class="v2-closing">
+  <div class="container">
+    <h2>You shouldn't need to log into six consoles to understand your own infrastructure.</h2>
+    <p>IVMIA puts every host, every VM, and every resource on one screen — so your team manages workloads, not vendor tools.</p>
+    <a href="../index.html" class="cta" style="background:#ffab40;color:#0f2b46;">Back to All Products</a>
+    <a href="mailto:sales@decllc.biz" class="cta-secondary" style="border-color:white;color:white;">Talk to Us</a>
   </div>
 </section>
 
@@ -224,7 +266,7 @@ IVMIA Core
     </div>
     <div class="footer-links">
       <a href="../index.html#products">Products</a>
-      <a href="../index.html#pricing">Pricing</a>
+      <a href="../index.html#horizon">Horizon</a>
       <a href="../index.html#contact">Contact</a>
     </div>
   </div>

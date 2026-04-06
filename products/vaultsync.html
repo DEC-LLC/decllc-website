@@ -3,10 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>VaultSync — Universal Backup, Restore & Sync</title>
+  <title>VaultSync — Backups You Can Actually Restore, To Any Platform</title>
   <link rel="stylesheet" href="../styles.css">
+  <link rel="stylesheet" href="../extras.css">
 </head>
 <body>
+
 
 <nav>
   <div class="container">
@@ -16,118 +18,267 @@
     </a>
     <ul>
       <li><a href="../index.html#products">Products</a></li>
-      <li><a href="../index.html#pricing">Pricing</a></li>
-      <li><a href="../store.html">Store</a></li>
+      <li><a href="../index.html#why">Why DEC-LLC</a></li>
       <li><a href="../index.html#contact">Contact</a></li>
     </ul>
-    <a href="../store.html" class="nav-cta">Buy Now</a>
   </div>
 </nav>
 
-<section class="hero">
+<section class="v2-hero">
   <div class="container">
+    <div class="v2-tagline">Backup &amp; Recovery</div>
     <h1>VaultSync</h1>
-    <p>Universal Backup, Restore & Sync</p>
-    <p style="opacity:0.7;font-size:1rem;">VMs, servers, workstations, network configs, company phones &mdash; back up everything, extract business data from every backup.</p>
-    <a href="vaultsync-pricing.html" class="cta">View Pricing</a>
-    <a href="#features" class="cta-secondary">See Features</a>
+    <p class="v2-lede">You have backups. Somewhere. Probably. When was the last time you tested a restore? VaultSync backs up your VMs, servers, workstations, network configs, and mobile devices — then proves they can be restored. To the same platform or a completely different one. Encrypted. Tested. Automatically.</p>
+    <div class="v2-cta-row">
+      <a href="#intelligence" class="cta">See What Makes It Different</a>
+      <a href="#capabilities" class="cta-secondary">Capabilities</a>
+    </div>
   </div>
 </section>
 
-<section id="features">
+<!-- The story -->
+<section class="v2-story">
   <div class="container">
-    <h2>What VaultSync Does</h2>
-    <p class="subtitle">Complete backup, restore, and sync for your entire operational footprint &mdash; VMs, physical servers, workstations, network device configs, and mobile devices. Extract business data from backups. No vendor lock-in.</p>
+    <div class="v2-story-inner">
+      <h2>Your backup server has been running for three years. You've never tested a full restore.</h2>
+      <p>It's not negligence — it's reality. Testing restores is time-consuming, disruptive, and easy to postpone. So the backup runs every night, the logs say "success," and everyone assumes it's working. Until the day you actually need it, and discover that the database backup has been silently failing for six months because a permission changed.</p>
 
-    <div class="product-grid">
-      <div class="product-card">
-        <h3>Multi-Hypervisor Backup</h3>
-        <p>Back up VMs on ESXi, KVM/libvirt, Proxmox VE, Hyper-V, and VirtualBox from a single orchestrator. No per-hypervisor tools needed.</p>
+      <p>And there's a newer problem: ransomware gangs have figured out that if they encrypt your backups first, you have nowhere to go. They sit quietly in your network for weeks, mapping your backup infrastructure, finding your backup server, and compromising it before they encrypt anything else. Your insurance policy gets shredded before the fire starts.</p>
+
+      <div class="v2-metaphor">VaultSync is insurance and a photocopier for your entire business — but the copies can be restored to a completely different address. If your building burns down, the copies don't just prove what you lost. They rebuild the business in a new building, with a different floor plan, and everything works on arrival. VMware copies can wake up as Proxmox VMs. Physical servers can become virtual ones. The backup isn't just a snapshot — it's a portable, tested, ready-to-run copy of your operations.</div>
+
+      <p>Most backup tools answer the question "did the backup complete?" VaultSync answers the question that actually matters: "can we restore this, right now, and will it work?"</p>
+    </div>
+  </div>
+</section>
+
+<!-- Intelligence -->
+<section id="intelligence" class="v2-benefits">
+  <div class="container">
+    <h2>The intelligence that makes it different</h2>
+    <div class="v2-benefit-grid">
+
+      <div class="v2-benefit-card">
+        <div class="v2-check">&#10003;</div>
+        <h3>Ask it the hard questions</h3>
+        <p>Ask VaultSync <em>"when was the last successful restore test?"</em> or <em>"which backups would survive if the primary site burned down?"</em> and get a verified answer. Not a log entry that says "completed" — a confirmation that the data was restored, validated, and functional.</p>
       </div>
-      <div class="product-card">
-        <h3>Physical Server Backup</h3>
-        <p>Back up bare-metal Linux and Windows servers with LVM snapshots, btrfs, VSS, or live rsync. Full disk images for P2V conversion.</p>
+
+      <div class="v2-benefit-card">
+        <div class="v2-check">&#10003;</div>
+        <h3>Knowledge that outlasts the admin who set it up</h3>
+        <p>Backup policies, retention schedules, restore procedures, and recovery priorities live in VaultSync — accessible to the whole team, not bottlenecked in one person's expertise. When the team grows, when responsibilities shift, when the intern needs to check on last night's backups — the system explains itself. And it doesn't explain in backup jargon. Ask it <em>"is our accounting system protected?"</em> and it tells you in business terms: when the last backup ran, whether it was tested, and how fast it can be restored.</p>
       </div>
-      <div class="product-card">
-        <h3>Cross-Hypervisor Sync</h3>
-        <p>Continuously sync VMs between ESXi, KVM, and Proxmox with automatic format conversion. Fail over from VMware to free Proxmox in minutes.</p>
+
+      <div class="v2-benefit-card">
+        <div class="v2-check">&#10003;</div>
+        <h3>Automated restore testing</h3>
+        <p>VaultSync periodically restores backups to a sandbox environment, validates they boot and function, and records the result. You get a confidence score for every backup — not a hope and a prayer. Failed tests trigger alerts before you actually need the backup.</p>
       </div>
-      <div class="product-card">
-        <h3>CBT & Dirty Bitmap Incrementals</h3>
-        <p>Changed Block Tracking for ESXi and dirty bitmaps for KVM. Only changed blocks are transferred &mdash; 100x faster than full backups.</p>
+
+      <div class="v2-benefit-card">
+        <div class="v2-check">&#10003;</div>
+        <h3>Cross-platform restore</h3>
+        <p>Back up a VMware VM, restore it as a Proxmox VM. Back up a physical server, restore it as a virtual machine. VaultSync converts between formats during restore, so your backups aren't trapped in the platform they came from.</p>
       </div>
-      <div class="product-card">
-        <h3>Cloud Storage Targets</h3>
-        <p>Back up to AWS S3, Oracle Cloud, Azure Blob, or Google Cloud Storage. Client-side AES-256-GCM encryption &mdash; your cloud provider never sees your data.</p>
+
+      <div class="v2-benefit-card">
+        <div class="v2-check">&#10003;</div>
+        <h3>VMware lock-in escape</h3>
+        <p>This is the killer feature. VaultSync continuously syncs your ESXi VMs to Proxmox or KVM format in the background. When you're ready to cancel VMware licenses, your VMs are already running on the new platform. No migration weekend. No downtime. Just switch over.</p>
       </div>
-      <div class="product-card">
-        <h3>Restore Anywhere</h3>
-        <p>Restore to the same hypervisor, a different hypervisor, a physical server, or the cloud. One backup, unlimited restore targets.</p>
+
+      <div class="v2-benefit-card">
+        <div class="v2-check">&#10003;</div>
+        <h3>Encrypted at every stage</h3>
+        <p>Backups are encrypted before they leave the source, encrypted in transit, and encrypted at rest on the target. Even if an attacker reaches your backup storage, they get ciphertext — not your data. The encryption keys are managed separately from the backup data.</p>
       </div>
-      <div class="product-card">
-        <h3>Hypervisor Host Backup</h3>
-        <p>Back up ESXi, Proxmox, and KVM host configurations. Recover an entire hypervisor from bare metal in minutes.</p>
+
+    </div>
+  </div>
+</section>
+
+<!-- Capabilities -->
+<section id="capabilities" class="v2-arch" style="background:#f8fafb;">
+  <div class="container">
+    <h2>What VaultSync protects, and how</h2>
+    <p class="v2-subtitle">VaultSync isn't just for VMs. It backs up everything that matters — and tests the restores so you don't have to wonder.</p>
+
+    <div class="v2-layers">
+      <div class="v2-layer">
+        <div class="v2-layer-num">1</div>
+        <div class="v2-layer-body">
+          <h4>Virtual machines</h4>
+          <p>Full VM backups across VMware, Proxmox, KVM/libvirt, and Hyper-V. Incremental snapshots minimize storage. Cross-platform restore means your backups aren't married to one vendor.</p>
+        </div>
       </div>
-      <div class="product-card">
-        <h3>Web Dashboard</h3>
-        <p>Real-time backup status, drag-and-drop sync maps, job scheduling, and plugin management. REST API for automation and integration.</p>
+
+      <div class="v2-layer">
+        <div class="v2-layer-num">2</div>
+        <div class="v2-layer-body">
+          <h4>Physical servers and workstations</h4>
+          <p>Bare-metal backup and restore. Physical-to-virtual conversion for disaster recovery. Your critical server can come back as a VM in minutes, even if the hardware is gone.</p>
+        </div>
       </div>
-      <div class="product-card">
-        <h3>Plugin Architecture</h3>
-        <p>10+ modular RPM plugins. Install only what you need. Community plugins are free. Enterprise plugins add CBT, cloud, encryption, and sync.</p>
+
+      <div class="v2-layer">
+        <div class="v2-layer-num">3</div>
+        <div class="v2-layer-body">
+          <h4>Network device configurations</h4>
+          <p>Switch configs, firewall rules, router tables — backed up and versioned. When integrated with NIVMIA, VaultSync inherits the full config vault history. A misconfigured firewall can be rolled back in minutes, not hours.</p>
+        </div>
+      </div>
+
+      <div class="v2-layer">
+        <div class="v2-layer-num">4</div>
+        <div class="v2-layer-body">
+          <h4>Cloud storage targets</h4>
+          <p>Designed to send copies to off-site storage — cloud providers, remote offices, or hardened backup vaults. Your primary site can be completely destroyed and your backups survive because they were already somewhere else.</p>
+        </div>
+      </div>
+
+      <div class="v2-layer">
+        <div class="v2-layer-num">5</div>
+        <div class="v2-layer-body">
+          <h4>Restore verification</h4>
+          <p>Automated restore tests run on a schedule. VaultSync boots the backup in an isolated environment, checks that services respond, and records the result. You know your backups work because VaultSync proved it last Tuesday.</p>
+        </div>
+      </div>
+
+      <div class="v2-layer">
+        <div class="v2-layer-num">6</div>
+        <div class="v2-layer-body">
+          <h4>Retention policy enforcement</h4>
+          <p>Daily, weekly, monthly, yearly retention tiers — configured per workload. Regulatory requirements met automatically. Storage reclaimed on schedule without manual cleanup.</p>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<section style="background:#f8f9fa;">
-  <div class="container" style="text-align:center;">
-    <h2>Makes VMware Lock-In Obsolete</h2>
-    <p style="max-width:700px;margin:0 auto 24px;">VaultSync can continuously sync your ESXi VMs to a free Proxmox or KVM host at another site. When you're ready, fail over and cancel your VMware licenses. No downtime. No data loss. No vendor permission needed.</p>
-    <div class="product-grid" style="max-width:800px;margin:0 auto;">
-      <div class="product-card" style="text-align:center;">
-        <h3 style="color:var(--primary);">vmdk &harr; qcow2</h3>
-        <p>ESXi &harr; KVM/Proxmox</p>
+<!-- Assisted HA + Data Clustering -->
+<section class="v2-arch">
+  <div class="container">
+    <h2>Beyond backup: Assisted HA and Data Clustering</h2>
+    <p class="v2-subtitle">VaultSync doesn't just copy your data somewhere safe. It keeps live, synchronized copies across sites — so when a site goes dark, the data is already somewhere else, ready to work.</p>
+
+    <div class="v2-arch-block">
+      <h3>Assisted High Availability</h3>
+      <p>Traditional HA requires identical hardware at both sites, matching cluster configurations, expensive shared storage, and a team of specialists to maintain it. Most small and mid-size organizations can't afford that — so they don't have HA at all. They have backups and a prayer.</p>
+      <div class="v2-metaphor">VaultSync's Assisted HA is different. Think of it like having a fully furnished apartment across town that mirrors your house. Every night — or every hour, or continuously — VaultSync updates that apartment with everything that changed at home. The furniture is arranged the same way. The fridge is stocked. The lights work. If your house becomes uninhabitable, you don't rebuild from boxes in a storage unit. You walk into the apartment and keep living.</div>
+      <p>VaultSync continuously syncs your critical workloads to a secondary site — which can be a different hypervisor, a different location, even a different platform entirely. VMware primary, Proxmox secondary. Physical server primary, cloud VM secondary. When the primary goes down, the synced copy is current, tested, and ready. Your team brings it online — or, integrated with the DEC-LLC ecosystem, the system brings it online for you based on the priority you already set.</p>
+      <p>No matching hardware required. No shared storage fabric. No vendor lock-in at the secondary site. Just a continuously-synced, ready-to-run copy of the workloads that matter most.</p>
+    </div>
+
+    <div class="v2-arch-block">
+      <h3>Data Clustering</h3>
+      <p>Some data doesn't just need to survive a disaster — it needs to be available from multiple places at the same time. A retail company with three warehouses needs inventory data at all three. A law firm with two offices needs case files accessible from both. A school district needs student records at every campus.</p>
+      <div class="v2-metaphor">VaultSync's data clustering keeps synchronized, verified copies of your critical data across multiple locations — not as backups waiting to be restored, but as live, readable, current copies. Like having the same library card catalog in every branch of your library, updated in real time. A book checked out at one branch shows as unavailable at all the others, instantly.</div>
+      <p>When one location loses connectivity or goes offline, the other locations already have current data. There's no "failover" event because the data was never in just one place. When the offline location comes back, VaultSync reconciles — catches it up on what changed while it was away, resolves conflicts, and brings the cluster back to consistency. Automatically.</p>
+      <p>For businesses that have always been told "real HA and data replication requires a six-figure budget and a dedicated DBA" — VaultSync makes it achievable — without the added zeros. Not by cutting corners on the engineering, but by handling the complexity inside the appliance so your team doesn't have to.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Cross-product integration -->
+<section class="v2-story">
+  <div class="container">
+    <div class="v2-story-inner">
+      <h3>Backup is only half the story. What happens between backups is the other half.</h3>
+      <p>VaultSync's automated restore test runs Tuesday night. It restores your core accounting database to a sandbox, boots it, validates the data, and records the result: clean. Wednesday morning, the report is in your inbox before your coffee. But this time it also says: <em>"Backup size for finance-db-01 increased 340% overnight. IVMIA reports a new 500GB data disk was attached yesterday by jparker. Retention policy impact: your 30-day rolling storage will exceed quota in 9 days."</em></p>
+      <p>VaultSync didn't just test the backup — it asked IVMIA <em>"what changed on this machine?"</em>, got a specific answer with a name and a reason, calculated the downstream impact on your storage budget, and told you in time to act. Not a cryptic log entry. A clear explanation with a person, a cause, and a deadline.</p>
+      <p>Or this: VaultSync notices that network config backups from your NIVMIA config vault haven't changed in 14 days — but NIVMIA reports that switch configurations HAVE changed during that time. Something is wrong with the backup pipe. VaultSync doesn't wait for you to discover the gap during an audit. It alerts: <em>"Config backups appear stale — NIVMIA shows 6 config changes in the last two weeks that aren't reflected in the backup vault. Pulling fresh copies now."</em> Gap closed, before you knew it existed.</p>
+      <p>This is what happens when your backup system isn't just a copier — it's a participant in the ecosystem. It knows what IVMIA knows about your VMs. It knows what NIVMIA tracks about your network. It uses that shared knowledge to catch the gaps between your tools — the exact gaps where data loss lives.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Who it's for -->
+<section class="v2-usecase">
+  <div class="container">
+    <h2>Who runs VaultSync</h2>
+
+    <div class="v2-usecase-block">
+      <div class="v2-persona">The company planning a VMware exit</div>
+      <h3>You want to leave VMware, but migrating 200 VMs sounds like a six-month project.</h3>
+      <p>VaultSync's continuous cross-platform sync runs in the background. Your ESXi VMs are silently replicated to Proxmox or KVM format every night. When you're ready to switch, you flip — no migration weekend, no downtime window, no emergency. Cancel the VMware licenses when you're comfortable, not when you're panicking.</p>
+      <div class="v2-outcome"><strong>Result:</strong> VMware exit on your schedule, not VMware's renewal deadline. Zero-downtime migration.</div>
+    </div>
+
+    <div class="v2-usecase-block">
+      <div class="v2-persona">The organization that's been meaning to test their backups</div>
+      <h3>The backup runs every night. You're 90% sure it works. That last 10% keeps you up.</h3>
+      <p>VaultSync eliminates the uncertainty. It tests restores automatically, on a schedule, in an isolated sandbox. You get a weekly report showing which backups were verified and which ones need attention. The 3 AM phone call becomes a Tuesday morning report you skim with your coffee.</p>
+      <div class="v2-outcome"><strong>Result:</strong> Verified backups, not hopeful backups. Sleep-at-night confidence.</div>
+    </div>
+
+    <div class="v2-usecase-block">
+      <div class="v2-persona">The business worried about ransomware</div>
+      <h3>You've read the headlines. Ransomware gangs encrypt the backups first, then the production data.</h3>
+      <p>VaultSync's encrypted off-site copies and air-gapped storage targets mean your backups survive even if your entire primary site is compromised. The attacker can't encrypt what they can't reach. And because VaultSync tests restores continuously, you know the clean copies actually work — before the crisis starts.</p>
+      <div class="v2-outcome"><strong>Result:</strong> Ransomware becomes a bad day instead of a business-ending event.</div>
+    </div>
+
+  </div>
+</section>
+
+<!-- Future-readiness -->
+<section class="v2-tomorrow">
+  <div class="container">
+    <div class="v2-future">
+      <div class="v2-section-label">Ready for what's coming</div>
+      <h2>Your backup strategy in 2030</h2>
+
+      <div class="v2-future-item">
+        <div class="v2-icon">&#x1F4A3;</div>
+        <div>
+          <h4>Ransomware evolves faster than defenses</h4>
+          <p>Tomorrow's ransomware won't just encrypt files — it will corrupt backups incrementally over months, so the damage is already baked into your "clean" copies by the time you notice. VaultSync's restore verification catches corruption early, because it doesn't just check that files exist — it checks that they work.</p>
+        </div>
       </div>
-      <div class="product-card" style="text-align:center;">
-        <h3 style="color:var(--primary);">qcow2 &harr; vhdx</h3>
-        <p>KVM &harr; Hyper-V</p>
+
+      <div class="v2-future-item">
+        <div class="v2-icon">&#x1F512;</div>
+        <div>
+          <h4>Quantum computing breaks today's encryption</h4>
+          <p>Every backup encrypted with today's algorithms will eventually be readable by quantum computers. VaultSync is designed to support encryption algorithm rotation — re-encrypting existing backups with quantum-safe algorithms when they become available, without re-creating the backups themselves.</p>
+        </div>
       </div>
-      <div class="product-card" style="text-align:center;">
-        <h3 style="color:var(--primary);">Any &rarr; Cloud</h3>
-        <p>AWS AMI / Azure VHD / GCP</p>
+
+      <div class="v2-future-item">
+        <div class="v2-icon">&#x1F4CB;</div>
+        <div>
+          <h4>Regulatory retention mandates expand</h4>
+          <p>HIPAA, SOX, GDPR, and industry-specific regulations increasingly mandate not just that you keep data, but that you can prove you can restore it. VaultSync's automated restore testing creates an audit trail of verified recoverability — the evidence auditors are starting to require.</p>
+        </div>
+      </div>
+
+      <div class="v2-future-item">
+        <div class="v2-icon">&#x1F504;</div>
+        <div>
+          <h4>More vendor acquisitions, more forced migrations</h4>
+          <p>The VMware-Broadcom situation won't be the last. VaultSync's cross-platform restore ensures that no matter which vendor gets acquired, EOL'd, or repriced, your workloads can move to whatever platform makes sense — because they're already backed up in a portable format.</p>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<section>
+<!-- Pricing teaser -->
+<section style="background:#fff;padding:60px 0;text-align:center;">
   <div class="container">
-    <h2>How It Works</h2>
-    <p class="subtitle">VaultSync is a control-plane orchestrator. It sends SSH commands to source and target systems &mdash; backup data never touches the orchestrator. Runs on a 2GB VM.</p>
-    <div class="product-grid">
-      <div class="product-card">
-        <h3>1. Configure</h3>
-        <p>Define your hypervisors, VMs, backup targets, and schedules in a single YAML file.</p>
-      </div>
-      <div class="product-card">
-        <h3>2. Backup</h3>
-        <p>VaultSync snapshots VMs, extracts changed blocks (CBT/dirty bitmap), and streams data directly to your backup target.</p>
-      </div>
-      <div class="product-card">
-        <h3>3. Restore or Sync</h3>
-        <p>Restore to any platform with automatic format conversion. Or set up continuous sync for disaster recovery.</p>
-      </div>
-    </div>
+    <h2 style="color:#0f2b46;">Protect everything. Test everything. Sleep soundly.</h2>
+    <p style="max-width:700px;margin:0 auto 28px;color:#444;font-size:1.1rem;">VaultSync is priced per protected workload. Start with your most critical VMs and expand from there. Cross-platform restore and VMware escape sync are included in every tier.</p>
+    <a href="../index.html#contact" class="btn btn-primary">Contact Sales</a>
   </div>
 </section>
 
-<section style="background:linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);color:#fff;text-align:center;">
+<section class="v2-closing">
   <div class="container">
-    <h2 style="color:#fff;">Ready to protect your infrastructure?</h2>
-    <p style="opacity:0.8;max-width:500px;margin:12px auto 24px;">Start free with up to 2 hosts. Community edition includes full rsync backup + Borg dedup. No credit card required.</p>
-    <a href="vaultsync-pricing.html" class="cta" style="background:#fff;color:var(--primary);">View Pricing</a>
-    <a href="mailto:sales@decllc.biz" class="cta-secondary">Contact Sales</a>
+    <h2>A backup you've never tested is a backup you don't have.</h2>
+    <p>VaultSync makes sure every backup is verified, portable, and ready — so "restore from backup" is a plan, not a prayer.</p>
+    <a href="../index.html" class="cta" style="background:#ffab40;color:#0f2b46;">Back to All Products</a>
+    <a href="mailto:sales@decllc.biz" class="cta-secondary" style="border-color:white;color:white;">Talk to Us</a>
   </div>
 </section>
 
@@ -140,12 +291,11 @@
     </div>
     <div class="footer-links">
       <a href="../index.html#products">Products</a>
-      <a href="vaultsync-pricing.html">Pricing</a>
-      <a href="../store.html">Store</a>
+      <a href="../index.html#horizon">Horizon</a>
       <a href="../index.html#contact">Contact</a>
-      <a href="mailto:info@decllc.biz">info@decllc.biz</a>
     </div>
   </div>
 </footer>
+
 </body>
 </html>

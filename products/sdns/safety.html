@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>[PRODUCT]-SDNS — Safer by Design</title>
+  <link rel="stylesheet" href="../../styles.css">
+  <link rel="stylesheet" href="../../extras.css">
+</head>
+<body>
+
+
+<nav>
+  <div class="container">
+    <a href="../../index.html" class="logo">
+      <img src="../../assets/icon-only.jpg" alt="DEC-LLC">
+      <div class="logo-text"><span class="logo-name">DEC-LLC</span><svg class="logo-squiggle" viewBox="0 0 80 6" xmlns="http://www.w3.org/2000/svg"><path d="M0 3 Q10 0, 20 3 Q30 6, 40 3 Q50 0, 60 3 Q70 6, 80 3" stroke="rgba(255,255,255,0.5)" stroke-width="1.5" fill="none"/></svg><span class="logo-slogan">Open Ideas</span></div>
+    </a>
+    <ul>
+      <li><a href="../../index.html#products">Products</a></li>
+      <li><a href="../../index.html#horizon">The Horizon</a></li>
+      <li><a href="../../index.html#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="v2-subnav">
+  <div class="container">
+    <span class="v2-subnav-name">[PRODUCT]-SDNS</span>
+    <a href="index.html">Overview</a>
+    <a href="architecture.html">Architecture</a>
+    <a href="sovereignty.html">Sovereignty</a>
+    <a href="safety.html" class="active">Safer by Design</a>
+    <a href="integration.html">Integration</a>
+    <a href="use-cases.html">Use Cases</a>
+  </div>
+</div>
+
+<section class="v2-hero">
+  <div class="container">
+    <div class="v2-tagline">Safer by design</div>
+    <h1>The safety features aren't features. They're the design.</h1>
+    <p class="v2-lede">A safe building isn't safe because someone added airbags to it. A safe coordination layer isn't safe because someone added a firewall to it. Safety is a property of how the thing is built. Here is what we built in, and which threats each piece answers.</p>
+  </div>
+</section>
+
+<!-- Defense in depth -->
+<section class="v2-arch">
+  <div class="container">
+    <h2>Defense in depth — without the castle language</h2>
+    <p class="v2-subtitle">If one defense fails, another catches the fall. And if that one fails, another. Every attacker has to get past every layer.</p>
+
+    <div class="v2-arch-block">
+      <p>Old-school security was "build a moat, put a wall inside it, put a keep inside the wall" — outside attackers, inside safety. That model assumes everyone inside is trustworthy and everyone outside isn't. Modern threats don't cooperate with that assumption: attackers get inside (stolen credentials, supply chain, social engineering), and from that point, "everyone inside is trustworthy" becomes a liability.</p>
+
+      <div class="v2-metaphor">Think of an airport instead. Even inside security, passengers can't walk into the cockpit. Gate agents can't access the control tower. Baggage handlers can't reach the tarmac fuel depot. Being "inside" the building is not an access pass — every zone requires its own verification, and every door is logged.</div>
+
+      <div class="v2-diagram">
+        <svg viewBox="0 0 700 400" xmlns="http://www.w3.org/2000/svg">
+          <!-- Layered rings -->
+          <circle cx="350" cy="200" r="180" fill="none" stroke="#d0dce8" stroke-width="2"/>
+          <circle cx="350" cy="200" r="140" fill="none" stroke="#a0b7cf" stroke-width="2"/>
+          <circle cx="350" cy="200" r="100" fill="none" stroke="#6591b8" stroke-width="2"/>
+          <circle cx="350" cy="200" r="60" fill="#1d4978" stroke="#0f2b46" stroke-width="3"/>
+
+          <!-- Core -->
+          <text x="350" y="195" text-anchor="middle" fill="white" font-size="13" font-weight="bold">Your</text>
+          <text x="350" y="212" text-anchor="middle" fill="white" font-size="13" font-weight="bold">authority</text>
+
+          <!-- Layer labels -->
+          <text x="350" y="125" text-anchor="middle" fill="#0f2b46" font-size="12" font-weight="bold">1. Network boundary</text>
+          <text x="350" y="87" text-anchor="middle" fill="#0f2b46" font-size="12" font-weight="bold">2. Identity verification</text>
+          <text x="350" y="50" text-anchor="middle" fill="#0f2b46" font-size="12" font-weight="bold">3. Per-request authorization</text>
+          <text x="350" y="18" text-anchor="middle" fill="#0f2b46" font-size="12" font-weight="bold">4. Audit + anomaly detection</text>
+
+          <!-- Bottom labels -->
+          <text x="350" y="290" text-anchor="middle" fill="#0f2b46" font-size="12" font-weight="bold">5. Least-privilege isolation</text>
+          <text x="350" y="328" text-anchor="middle" fill="#0f2b46" font-size="12" font-weight="bold">6. Tamper-evident records</text>
+          <text x="350" y="365" text-anchor="middle" fill="#0f2b46" font-size="12" font-weight="bold">7. Recovery key under your control</text>
+        </svg>
+        <div class="v2-diagram-caption">Seven layers between an attacker and the core of your coordination authority. Breaching one does not grant access to the next.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- The seven layers -->
+<section class="v2-arch" style="background:#f8fafb;">
+  <div class="container">
+    <h2>The seven defenses, in plain language</h2>
+
+    <div class="v2-arch-block">
+      <h3>1. Network boundary — "Only the right doors are open"</h3>
+      <p>Only the specific services your other products need to reach are exposed. Everything else is blocked at the door. An attacker scanning your network finds a narrow, well-defined surface — not a hundred random ports to probe.</p>
+    </div>
+
+    <div class="v2-arch-block">
+      <h3>2. Identity verification — "Everyone shows their ID at every door"</h3>
+      <p>There is no "logged in, now I'm trusted" assumption. Every request — from a user, from a service, from a subordinate product — re-verifies. A stolen credential doesn't stay stolen; every attempt to use it produces a verifiable event.</p>
+    </div>
+
+    <div class="v2-arch-block">
+      <h3>3. Per-request authorization — "Having a key doesn't mean every door"</h3>
+      <p>Authenticated users and services are still authorized per action. A user who can view the audit log can't edit the policy store. A service that can look up names can't rotate certificates. Privilege is scoped tightly at every step, not granted in a lump.</p>
+    </div>
+
+    <div class="v2-arch-block">
+      <h3>4. Audit and anomaly detection — "Someone is always watching the cameras"</h3>
+      <p>Every action is logged. Unusual patterns — logins at odd hours, policy changes outside change windows, certificate rotations outside schedule — generate alerts. The alerts go to your notification channels, not to a vendor's cloud.</p>
+    </div>
+
+    <div class="v2-arch-block">
+      <h3>5. Least-privilege isolation — "Each room is separately keyed"</h3>
+      <p>Components inside [PRODUCT]-SDNS are isolated from each other. A bug in one component doesn't grant access to the others. If an attacker compromises the name service, they don't gain the power to issue certificates.</p>
+    </div>
+
+    <div class="v2-arch-block">
+      <h3>6. Tamper-evident records — "The logbook itself is signed"</h3>
+      <p>The audit log is built so that altering past records is detectable. An attacker who compromises the log reader cannot cover their tracks — the erasure itself leaves a mark.</p>
+    </div>
+
+    <div class="v2-arch-block">
+      <h3>7. Recovery key under your control — "You hold the master override"</h3>
+      <p>Every appliance has a sealed recovery key that restores it to a known-good state. You hold the key. Not DEC-LLC, not a vendor, not a cloud. If the appliance is compromised or corrupted, you recover it from the envelope in your safe — no phone-home, no support ticket, no dependency on anyone.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Future threats -->
+<section class="v2-tomorrow">
+  <div class="container">
+    <div class="v2-future">
+      <div class="v2-section-label">What we're already building for</div>
+      <h2>The threats that are coming — not the ones you have today</h2>
+
+      <div class="v2-future-item">
+        <div class="v2-icon">&#x1F916;</div>
+        <div>
+          <h4>AI attackers that don't sleep</h4>
+          <p>Within a few years, attackers will deploy AI agents that probe, learn, and adapt continuously — no staff turnover, no vacations, no moral qualms. [PRODUCT]-SDNS's per-request authorization, continuous audit, and anomaly detection are designed exactly for this: the assumption that attackers will try a million variations and one of them will succeed on a Tuesday afternoon, so the system needs to catch the one — not just block the 999,999.</p>
+        </div>
+      </div>
+
+      <div class="v2-future-item">
+        <div class="v2-icon">&#x1F9EC;</div>
+        <div>
+          <h4>Quantum computers that break today's encryption</h4>
+          <p>When practical quantum computers arrive (timeline: 2030s, possibly earlier), they will break the mathematical problems that protect today's encryption. The defenses that rely on "this would take a million years to break" become "this breaks in an afternoon." You'll need to rotate every key across every system. [PRODUCT]-SDNS's centralized certificate authority is designed for the crypto-rotation event: one place decides, and every subordinate product inherits the new keys in a coordinated push.</p>
+        </div>
+      </div>
+
+      <div class="v2-future-item">
+        <div class="v2-icon">&#x1F4DC;</div>
+        <div>
+          <h4>Regulations that require proof, not promises</h4>
+          <p>Audit trails are becoming mandatory across more industries every year. The question from the regulator is no longer "do you have security?" — it is "show me the log of who touched this, when." [PRODUCT]-SDNS's tamper-evident history is designed to be the answer to that question. One export. Chronological. Verifiable. Signed.</p>
+        </div>
+      </div>
+
+      <div class="v2-future-item">
+        <div class="v2-icon">&#x1F310;</div>
+        <div>
+          <h4>Supply-chain attacks on updates</h4>
+          <p>Attackers increasingly target the software update process itself — poison the update, and you poison every consumer of that update. [PRODUCT]-SDNS's update path includes signed packages from your own curated repository, with verification at install time. An update that arrives without the correct signature is refused. You don't have to trust the internet to stay current.</p>
+        </div>
+      </div>
+
+      <div class="v2-future-item">
+        <div class="v2-icon">&#x1F464;</div>
+        <div>
+          <h4>Insider compromise</h4>
+          <p>Sometimes the credential stolen is an admin's. Sometimes the action is taken by someone who was trusted and shouldn't have been. [PRODUCT]-SDNS's least-privilege model and continuous audit are designed for this case too: no one person holds a key that bypasses the logs, and no action — even from an admin — is unlogged.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="v2-closing">
+  <div class="container">
+    <h2>Safety is not a feature. It's a design commitment.</h2>
+    <p>These aren't checkboxes bolted onto a finished product. They are the shape of the thing — chosen before the first line of code, enforced by the architecture, tested on every release.</p>
+    <a href="integration.html" class="cta" style="background:#ffab40;color:#0f2b46;">How It Works With Your Other Products</a>
+    <a href="use-cases.html" class="cta-secondary" style="border-color:white;color:white;">Real Scenarios</a>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div>
+      <img src="../../assets/icon-only.jpg" alt="DEC-LLC" style="height:56px;margin-bottom:8px;">
+      <p style="font-style:italic;opacity:0.9;margin-bottom:4px;">Open Ideas</p>
+      <p>&copy; 2026 DEC-LLC. All rights reserved.</p>
+    </div>
+    <div class="footer-links">
+      <a href="../../index.html#products">Products</a>
+      <a href="../../index.html#horizon">Horizon</a>
+      <a href="../../index.html#contact">Contact</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
