@@ -3,429 +3,245 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>NIVMIA Feature Comparison — DEC-LLC</title>
+  <title>NIVMIA vs SolarWinds, PRTG, Auvik, ManageEngine — How We Compare</title>
   <link rel="stylesheet" href="../styles.css">
-  <style>
-    .compare-table { width: 100%; border-collapse: collapse; margin: 0 auto; max-width: 1100px; font-size: 0.88rem; }
-    .compare-table th, .compare-table td { padding: 10px 14px; text-align: center; border-bottom: 1px solid var(--border); }
-    .compare-table th { background: var(--primary); color: #fff; font-weight: 700; position: sticky; top: 0; z-index: 2; }
-    .compare-table th:first-child, .compare-table td:first-child { text-align: left; font-weight: 600; min-width: 240px; }
-    .compare-table td:first-child { color: var(--primary); }
-    .compare-table tr:hover { background: var(--surface); }
-    .compare-table .section-header { background: #f0f4f8; font-weight: 800; color: var(--primary); text-transform: uppercase; font-size: 0.8rem; letter-spacing: 0.5px; }
-    .compare-table .section-header td { padding: 14px; border-bottom: 2px solid var(--primary); }
-    .check { color: var(--teal); font-weight: 700; }
-    .cross { color: #ccc; }
-    .partial { color: var(--orange); font-weight: 600; }
-    .compare-table .featured-col { background: rgba(42,157,143,0.04); }
-  </style>
+  <link rel="stylesheet" href="../extras.css">
 </head>
 <body>
 
 <nav>
   <div class="container">
     <a href="../index.html" class="logo">
-      <img src="../assets/logo-circle.svg" alt="DEC-LLC">
-      
+      <img src="../assets/logo-circle.svg" alt="DEC-LLC"><span style="font-weight:800;font-size:1.1rem;letter-spacing:0.05em;margin-left:10px;">DEC-LLC</span>
     </a>
     <ul>
       <li><a href="../index.html#products">Products</a></li>
-      <li><a href="nivmia-pricing.html">Pricing</a></li>
-      <li><a href="../store.html">Store</a></li>
+      <li><a href="../index.html#why">Why DEC-LLC</a></li>
       <li><a href="../index.html#contact">Contact</a></li>
     </ul>
-    <a href="../store.html" class="nav-cta">Buy Now</a>
   </div>
 </nav>
 
-<!-- Hero -->
-<section class="hero" style="padding:50px 0 40px;">
+<section class="v2-hero" style="padding:60px 0 50px;">
   <div class="container">
-    <h1>NIVMIA Feature Comparison</h1>
-    <p>See exactly what you get at every tier</p>
+    <div class="v2-tagline">How We Compare</div>
+    <h1>NIVMIA vs SolarWinds, PRTG, Auvik, ManageEngine</h1>
+    <p class="v2-lede">Network monitoring tools have existed for decades. Most were designed to poll SNMP and draw graphs. NIVMIA was designed to understand your network -- who built it, why it's configured this way, and what your new hire needs to know on day one. Here's how the economics and capabilities actually compare.</p>
   </div>
 </section>
 
-<!-- Comparison Table -->
-<section>
-  <div class="container" style="overflow-x:auto;">
+<!-- The pricing model difference -->
+<section class="v2-story">
+  <div class="container">
+    <div class="v2-story-inner">
+      <h2>Why network monitoring costs what it does -- and where the money goes.</h2>
+      <p>SolarWinds NPM starts at $2,775/year for a single module and goes up quickly. Need NetFlow analysis? That's a separate license. Need config management? Another module. Need server monitoring? Another. A mid-sized deployment with three or four modules easily reaches $15,000-$40,000/year -- and that's before support contracts. PRTG takes a different approach: sensor-based pricing that starts affordably ($1,750 for 500 sensors) but scales linearly. A 5,000-sensor deployment -- typical for 200 network devices -- costs $15,500/year. Auvik is cloud-only SaaS at roughly $3-$6 per device per month, which sounds modest until you realize your network telemetry is leaving your building. ManageEngine is the budget option at $595-$2,000/year, but the complexity of managing its sprawling module ecosystem is a hidden cost.</p>
+      <p>NIVMIA doesn't sell per-module, per-sensor, or per-device-per-month. One license covers monitoring, management, config vault, compliance, alerting, and analysis for up to your tier's device count. We don't sell hardware, so there's no appliance margin in our price. There's no cloud you're required to push data to. One price. Everything included.</p>
 
-    <table class="compare-table">
-      <thead>
-        <tr>
-          <th>Feature</th>
-          <th>Community</th>
-          <th>Standard</th>
-          <th class="featured-col">Professional</th>
-          <th>Enterprise</th>
-          <th>MSP</th>
-        </tr>
-      </thead>
-      <tbody>
-
-        <!-- Pricing -->
-        <tr class="section-header"><td colspan="6">Pricing</td></tr>
-        <tr>
-          <td>Monthly price</td>
-          <td>Free</td>
-          <td>$49/mo</td>
-          <td class="featured-col">$199/mo</td>
-          <td>$599/mo</td>
-          <td>From $50K/yr</td>
-        </tr>
-        <tr>
-          <td>Devices included</td>
-          <td>10</td>
-          <td>20</td>
-          <td class="featured-col">30</td>
-          <td>50</td>
-          <td>Unlimited</td>
-        </tr>
-        <tr>
-          <td>Additional device bundles</td>
-          <td class="cross">&mdash;</td>
-          <td>5 or 10 blocks (to 40)</td>
-          <td class="featured-col">10/25/50 blocks</td>
-          <td>25/50/100 blocks</td>
-          <td>Included</td>
-        </tr>
-
-        <!-- Platform Access -->
-        <tr class="section-header"><td colspan="6">Platform Access</td></tr>
-        <tr>
-          <td>Community platforms (7)</td>
-          <td class="check">&#10003;</td>
-          <td class="check">&#10003;</td>
-          <td class="featured-col check">&#10003;</td>
-          <td class="check">&#10003;</td>
-          <td class="check">&#10003;</td>
-        </tr>
-        <tr>
-          <td>Enterprise platforms (Cisco, Juniper, PA, etc.)</td>
-          <td class="partial">One-time buy</td>
-          <td class="partial">Paid add-on</td>
-          <td class="featured-col partial">Paid add-on</td>
-          <td class="partial">Discounted add-on</td>
-          <td class="check">2 included</td>
-        </tr>
-
-        <!-- Monitoring (Read) -->
-        <tr class="section-header"><td colspan="6">Monitoring (Read Operations)</td></tr>
-        <tr>
-          <td>SNMP polling (facts, interfaces, VLANs, health)</td>
-          <td class="check">&#10003;</td>
-          <td class="check">&#10003;</td>
-          <td class="featured-col check">&#10003;</td>
-          <td class="check">&#10003;</td>
-          <td class="check">&#10003;</td>
-        </tr>
-        <tr>
-          <td>SSH collection (show commands)</td>
-          <td class="cross">&mdash;</td>
-          <td class="cross">&mdash;</td>
-          <td class="featured-col check">&#10003;</td>
-          <td class="check">&#10003;</td>
-          <td class="check">&#10003;</td>
-        </tr>
-        <tr>
-          <td>API collection (REST/XML)</td>
-          <td class="cross">&mdash;</td>
-          <td class="cross">&mdash;</td>
-          <td class="featured-col check">&#10003;</td>
-          <td class="check">&#10003;</td>
-          <td class="check">&#10003;</td>
-        </tr>
-        <tr>
-          <td>Telnet collection</td>
-          <td class="cross">&mdash;</td>
-          <td class="partial">SNMP only</td>
-          <td class="featured-col check">&#10003;</td>
-          <td class="check">&#10003;</td>
-          <td class="check">&#10003;</td>
-        </tr>
-
-        <!-- Management (Write) -->
-        <tr class="section-header"><td colspan="6">Management (Write Operations)</td></tr>
-        <tr>
-          <td>SNMP-based config management</td>
-          <td class="cross">&mdash;</td>
-          <td class="check">&#10003;</td>
-          <td class="featured-col check">&#10003;</td>
-          <td class="check">&#10003;</td>
-          <td class="check">&#10003;</td>
-        </tr>
-        <tr>
-          <td>SSH-based config push</td>
-          <td class="cross">&mdash;</td>
-          <td class="cross">&mdash;</td>
-          <td class="featured-col check">&#10003;</td>
-          <td class="check">&#10003;</td>
-          <td class="check">&#10003;</td>
-        </tr>
-        <tr>
-          <td>API-based config management</td>
-          <td class="cross">&mdash;</td>
-          <td class="cross">&mdash;</td>
-          <td class="featured-col check">&#10003;</td>
-          <td class="check">&#10003;</td>
-          <td class="check">&#10003;</td>
-        </tr>
-        <tr>
-          <td>Redundant management methods</td>
-          <td class="cross">&mdash;</td>
-          <td class="cross">SNMP only</td>
-          <td class="featured-col check">SSH + SNMP + API</td>
-          <td class="check">SSH + SNMP + API</td>
-          <td class="check">SSH + SNMP + API</td>
-        </tr>
-        <tr>
-          <td>Pre-check / apply / post-check / rollback</td>
-          <td class="cross">&mdash;</td>
-          <td class="partial">Basic</td>
-          <td class="featured-col check">Full</td>
-          <td class="check">Full</td>
-          <td class="check">Full</td>
-        </tr>
-
-        <!-- Config Vault -->
-        <tr class="section-header"><td colspan="6">Configuration Vault</td></tr>
-        <tr>
-          <td>Git-backed config backup</td>
-          <td class="check">&#10003;</td>
-          <td class="check">&#10003;</td>
-          <td class="featured-col check">&#10003;</td>
-          <td class="check">&#10003;</td>
-          <td class="check">&#10003;</td>
-        </tr>
-        <tr>
-          <td>Diff history &amp; revision tracking</td>
-          <td class="check">&#10003;</td>
-          <td class="check">&#10003;</td>
-          <td class="featured-col check">&#10003;</td>
-          <td class="check">&#10003;</td>
-          <td class="check">&#10003;</td>
-        </tr>
-        <tr>
-          <td>Golden copy management</td>
-          <td class="cross">&mdash;</td>
-          <td class="partial">Add-on $19/mo</td>
-          <td class="featured-col check">Included</td>
-          <td class="check">Included</td>
-          <td class="check">Included</td>
-        </tr>
-
-        <!-- Scheduler -->
-        <tr class="section-header"><td colspan="6">Scheduler &amp; Automation</td></tr>
-        <tr>
-          <td>CLI (ad-hoc collection)</td>
-          <td class="check">&#10003;</td>
-          <td class="check">&#10003;</td>
-          <td class="featured-col check">&#10003;</td>
-          <td class="check">&#10003;</td>
-          <td class="check">&#10003;</td>
-        </tr>
-        <tr>
-          <td>Periodic scheduler (YAML jobs)</td>
-          <td class="cross">&mdash;</td>
-          <td class="check">&#10003;</td>
-          <td class="featured-col check">&#10003;</td>
-          <td class="check">&#10003;</td>
-          <td class="check">&#10003;</td>
-        </tr>
-        <tr>
-          <td>Daemon mode with PID file</td>
-          <td class="cross">&mdash;</td>
-          <td class="check">&#10003;</td>
-          <td class="featured-col check">&#10003;</td>
-          <td class="check">&#10003;</td>
-          <td class="check">&#10003;</td>
-        </tr>
-        <tr>
-          <td>SIGHUP config reload</td>
-          <td class="cross">&mdash;</td>
-          <td class="check">&#10003;</td>
-          <td class="featured-col check">&#10003;</td>
-          <td class="check">&#10003;</td>
-          <td class="check">&#10003;</td>
-        </tr>
-
-        <!-- Analysis -->
-        <tr class="section-header"><td colspan="6">Analysis &amp; AI</td></tr>
-        <tr>
-          <td>Basic reports</td>
-          <td class="cross">&mdash;</td>
-          <td class="check">&#10003;</td>
-          <td class="featured-col check">&#10003;</td>
-          <td class="check">&#10003;</td>
-          <td class="check">&#10003;</td>
-        </tr>
-        <tr>
-          <td>Trend analysis &amp; capacity planning</td>
-          <td class="cross">&mdash;</td>
-          <td class="cross">&mdash;</td>
-          <td class="featured-col check">&#10003;</td>
-          <td class="check">&#10003;</td>
-          <td class="check">&#10003;</td>
-        </tr>
-        <tr>
-          <td>AI-powered analysis (local Ollama)</td>
-          <td class="cross">&mdash;</td>
-          <td class="cross">&mdash;</td>
-          <td class="cross">&mdash;</td>
-          <td class="check">&#10003;</td>
-          <td class="check">&#10003;</td>
-        </tr>
-        <tr>
-          <td>Custom AI model RPM</td>
-          <td class="cross">&mdash;</td>
-          <td class="cross">&mdash;</td>
-          <td class="cross">&mdash;</td>
-          <td class="check">Included</td>
-          <td class="check">Included</td>
-        </tr>
-
-        <!-- Web UI -->
-        <tr class="section-header"><td colspan="6">Web UI &amp; Dashboards</td></tr>
-        <tr>
-          <td>PHP web dashboard</td>
-          <td class="check">Included</td>
-          <td class="partial">Add-on $29/mo</td>
-          <td class="featured-col partial">Add-on $49/mo</td>
-          <td class="check">Included</td>
-          <td class="check">Included</td>
-        </tr>
-        <tr>
-          <td>Platform-specific pages</td>
-          <td class="check">&#10003;</td>
-          <td class="check">&#10003;</td>
-          <td class="featured-col check">&#10003;</td>
-          <td class="check">&#10003;</td>
-          <td class="check">&#10003;</td>
-        </tr>
-        <tr>
-          <td>Prometheus / Grafana export</td>
-          <td class="cross">&mdash;</td>
-          <td class="partial">Add-on $19/mo</td>
-          <td class="featured-col check">Included</td>
-          <td class="check">Included</td>
-          <td class="check">Included</td>
-        </tr>
-
-        <!-- Deployment -->
-        <tr class="section-header"><td colspan="6">Deployment &amp; Architecture</td></tr>
-        <tr>
-          <td>RPM packages (Rocky/RHEL)</td>
-          <td class="check">&#10003;</td>
-          <td class="check">&#10003;</td>
-          <td class="featured-col check">&#10003;</td>
-          <td class="check">&#10003;</td>
-          <td class="check">&#10003;</td>
-        </tr>
-        <tr>
-          <td>DEB packages (Debian/Ubuntu)</td>
-          <td class="check">&#10003;</td>
-          <td class="check">&#10003;</td>
-          <td class="featured-col check">&#10003;</td>
-          <td class="check">&#10003;</td>
-          <td class="check">&#10003;</td>
-        </tr>
-        <tr>
-          <td>PostgreSQL backend</td>
-          <td class="check">&#10003;</td>
-          <td class="check">&#10003;</td>
-          <td class="featured-col check">&#10003;</td>
-          <td class="check">&#10003;</td>
-          <td class="check">&#10003;</td>
-        </tr>
-        <tr>
-          <td>Federation / multi-site</td>
-          <td class="cross">&mdash;</td>
-          <td class="cross">&mdash;</td>
-          <td class="featured-col check">&#10003;</td>
-          <td class="check">&#10003;</td>
-          <td class="check">&#10003;</td>
-        </tr>
-        <tr>
-          <td>Multi-tenant isolation</td>
-          <td class="cross">&mdash;</td>
-          <td class="cross">&mdash;</td>
-          <td class="featured-col cross">&mdash;</td>
-          <td class="cross">&mdash;</td>
-          <td class="check">&#10003;</td>
-        </tr>
-        <tr>
-          <td>White-label option</td>
-          <td class="cross">&mdash;</td>
-          <td class="cross">&mdash;</td>
-          <td class="featured-col cross">&mdash;</td>
-          <td class="cross">&mdash;</td>
-          <td class="check">&#10003;</td>
-        </tr>
-
-        <!-- Support -->
-        <tr class="section-header"><td colspan="6">Support</td></tr>
-        <tr>
-          <td>Community support (GitHub)</td>
-          <td class="check">&#10003;</td>
-          <td class="check">&#10003;</td>
-          <td class="featured-col check">&#10003;</td>
-          <td class="check">&#10003;</td>
-          <td class="check">&#10003;</td>
-        </tr>
-        <tr>
-          <td>Email support</td>
-          <td class="cross">&mdash;</td>
-          <td class="partial">Add-on ($29/mo, 48hr)</td>
-          <td class="featured-col check">48hr response</td>
-          <td class="check">24hr response</td>
-          <td class="check">24hr response</td>
-        </tr>
-        <tr>
-          <td>Phone support</td>
-          <td class="cross">&mdash;</td>
-          <td class="cross">&mdash;</td>
-          <td class="featured-col partial">Add-on</td>
-          <td class="check">Included</td>
-          <td class="check">Included</td>
-        </tr>
-        <tr>
-          <td>Support contract</td>
-          <td class="cross">&mdash;</td>
-          <td class="partial">Sold separately</td>
-          <td class="featured-col partial">Sold separately</td>
-          <td class="check">Included</td>
-          <td class="check">Included</td>
-        </tr>
-        <tr>
-          <td>Professional services</td>
-          <td>$100/session</td>
-          <td>$100/session</td>
-          <td class="featured-col">$75/session</td>
-          <td>1 free/year (audit only)</td>
-          <td>Included</td>
-        </tr>
-        <tr>
-          <td>SLA guarantee</td>
-          <td class="cross">&mdash;</td>
-          <td class="cross">&mdash;</td>
-          <td class="featured-col partial">48hr (with contract)</td>
-          <td class="check">24hr</td>
-          <td class="check">24hr</td>
-        </tr>
-
-      </tbody>
-    </table>
-
+      <div class="v2-metaphor">The industry standard is to sell you the speedometer separately from the fuel gauge separately from the oil light. NIVMIA puts the whole dashboard in front of you -- because that's how you actually drive.</div>
+    </div>
   </div>
 </section>
 
-<!-- CTA -->
-<section style="background:linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);color:#fff;text-align:center;">
+<!-- Comparison table -->
+<section class="v2-compare">
   <div class="container">
-    <h2 style="color:#fff;">Ready to get started?</h2>
-    <p style="opacity:0.8;max-width:500px;margin:12px auto 24px;">Start free with 7 platforms and 10 devices. Upgrade anytime.</p>
-    <a href="nivmia-pricing.html" class="cta" style="background:#fff;color:var(--primary);">View Pricing</a>
-    <a href="mailto:sales@decllc.biz" class="cta-secondary">Contact Sales</a>
+    <h2>Side-by-Side Comparison</h2>
+    <div class="v2-compare-table">
+      <table>
+        <thead>
+          <tr>
+            <th style="width:26%;">Capability</th>
+            <th>SolarWinds NPM</th>
+            <th>PRTG</th>
+            <th>Auvik</th>
+            <th>NIVMIA</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Vendor platforms supported</td>
+            <td>Broad but generic SNMP/WMI</td>
+            <td>Broad but sensor-per-metric</td>
+            <td class="v2-partial">Cloud-discovered, ~12 vendors</td>
+            <td class="v2-yes">17 platforms with dedicated parsers per vendor</td>
+          </tr>
+          <tr>
+            <td>Mid-range annual cost</td>
+            <td class="v2-no">$15,000-$40,000/yr (multi-module)</td>
+            <td>$8,000-$15,500/yr (2,500-5,000 sensors)</td>
+            <td>$7,200-$14,400/yr (200 devices)</td>
+            <td class="v2-yes">$2,221/yr Professional (everything included)</td>
+          </tr>
+          <tr>
+            <td>Pricing model</td>
+            <td class="v2-no">Per-module + per-node + support contract</td>
+            <td class="v2-partial">Per-sensor (scales linearly)</td>
+            <td class="v2-partial">Per-device/month (cloud SaaS)</td>
+            <td class="v2-yes">Per-tier with device blocks. One price covers everything.</td>
+          </tr>
+          <tr>
+            <td>Config backup with versioning</td>
+            <td class="v2-partial">NCM module (separate license, $2,000+/yr)</td>
+            <td class="v2-no">No built-in config management</td>
+            <td class="v2-partial">Basic backup, no git-style versioning</td>
+            <td class="v2-yes">Git-backed config vault with diffs, golden copies, and drift alerts. Included.</td>
+          </tr>
+          <tr>
+            <td>Compliance checking</td>
+            <td class="v2-partial">NCM module (separate)</td>
+            <td class="v2-no">No</td>
+            <td class="v2-no">No</td>
+            <td class="v2-yes">6 built-in checks (firmware, STP, port security, rogue DHCP, more). Included.</td>
+          </tr>
+          <tr>
+            <td>AI that explains your network</td>
+            <td class="v2-no">No. Dashboards and alerting only.</td>
+            <td class="v2-no">No.</td>
+            <td class="v2-no">No.</td>
+            <td class="v2-yes">Local AI analyzes configs, explains them to new staff, detects anomalies. Enterprise tier.</td>
+          </tr>
+          <tr>
+            <td>Where does your data go?</td>
+            <td class="v2-partial">On-prem, but telemetry sent to SolarWinds for updates and threat intel.</td>
+            <td class="v2-yes">On-prem. Data stays local.</td>
+            <td class="v2-no">Cloud-only. All network data leaves your building.</td>
+            <td class="v2-yes">On-prem. Everything runs locally. No phone-home required.</td>
+          </tr>
+          <tr>
+            <td>Supply chain security</td>
+            <td class="v2-no">SolarWinds Orion was compromised in the 2020 SUNBURST supply-chain attack, affecting 18,000+ organizations.</td>
+            <td class="v2-yes">No known supply-chain incidents.</td>
+            <td class="v2-partial">Cloud SaaS -- you trust Auvik's infrastructure.</td>
+            <td class="v2-yes">On-prem. ECDSA-signed packages. SHA-256 integrity checks. You control the supply chain.</td>
+          </tr>
+          <tr>
+            <td>Works without internet</td>
+            <td class="v2-partial">Core works, but licensing and updates require connectivity.</td>
+            <td class="v2-yes">Yes, fully on-prem.</td>
+            <td class="v2-no">No. Cloud-only. No internet = no monitoring.</td>
+            <td class="v2-yes">Fully operational. Air-gap deployable via USB.</td>
+          </tr>
+          <tr>
+            <td>Multi-vendor management (write)</td>
+            <td class="v2-partial">NCM module, template-based.</td>
+            <td class="v2-no">Read-only monitoring.</td>
+            <td class="v2-partial">Limited config push for supported vendors.</td>
+            <td class="v2-yes">Per-platform distributors with pre-check, apply, post-check, and rollback.</td>
+          </tr>
+          <tr>
+            <td>Cross-product integration</td>
+            <td class="v2-partial">SolarWinds ecosystem only.</td>
+            <td class="v2-no">Standalone.</td>
+            <td class="v2-no">Standalone.</td>
+            <td class="v2-yes">Integrates with IVMIA (VMs), VaultSync (backups), OpenUTM (firewalls). Shared databus.</td>
+          </tr>
+          <tr>
+            <td>Community / free tier</td>
+            <td class="v2-no">No. Minimum ~$2,775/yr.</td>
+            <td class="v2-partial">Free tier: 100 sensors (very limited).</td>
+            <td class="v2-no">No free tier. 14-day trial only.</td>
+            <td class="v2-yes">Free forever. 7 platforms, 10 devices, full security hardening.</td>
+          </tr>
+          <tr>
+            <td>Institutional knowledge</td>
+            <td class="v2-no">Dashboards show data. Context lives in people's heads.</td>
+            <td class="v2-no">Same. Alerts fire, but nobody knows why the threshold was set.</td>
+            <td class="v2-no">Same.</td>
+            <td class="v2-yes">AI carries context. Ask why a VLAN exists, who uses it, what depends on it. Knowledge stays in the infrastructure.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- The AI difference -->
+<section class="v2-story">
+  <div class="container">
+    <div class="v2-story-inner">
+      <h2>The AI question: dashboards vs understanding.</h2>
+      <p>SolarWinds, PRTG, and Auvik are genuinely good at what they do: polling devices, graphing metrics, and firing alerts when thresholds are crossed. That's monitoring. It tells you WHAT is happening. It doesn't tell you WHY your predecessor configured trunk port Gi0/24 with a native VLAN that doesn't match the rest of the stack, or whether that was intentional, or what breaks if you change it.</p>
+      <p>NIVMIA's AI integration (Enterprise tier, powered by local Ollama -- your data never leaves) does something none of those tools attempt: it reads your device configurations, correlates them with your network topology, and answers questions in plain language. "Why does this switch have an ACL on VLAN 30?" "What would happen if I shut down interface Gi0/12?" "Explain this network to someone starting next Monday."</p>
+
+      <div class="v2-callout">
+        <strong>The real cost of network monitoring isn't the license -- it's the knowledge that leaves when people leave.</strong> Every network team has one person who "just knows" why things are configured the way they are. When that person retires, takes a new job, or goes on vacation, the network becomes a minefield of undocumented decisions. NIVMIA's AI captures that knowledge and makes it permanent -- not locked in someone's head, but embedded in the infrastructure itself.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Total cost of ownership -->
+<section class="v2-arch" style="background:#f8fafb;">
+  <div class="container">
+    <h2>5-Year Total Cost of Ownership</h2>
+    <p class="v2-subtitle">What you actually spend over five years for a 200-device network with config management, compliance, and support.</p>
+
+    <div class="v2-arch-block">
+      <div class="v2-diagram">
+        <svg viewBox="0 0 700 340" xmlns="http://www.w3.org/2000/svg">
+          <!-- SolarWinds bar -->
+          <rect x="80" y="20" width="520" height="36" rx="6" fill="#e65100" opacity="0.85"/>
+          <text x="90" y="43" fill="white" font-size="13" font-weight="bold">SolarWinds (NPM + NCM + support): ~$75,000 - $200,000</text>
+
+          <!-- PRTG bar -->
+          <rect x="80" y="64" width="350" height="36" rx="6" fill="#bf360c" opacity="0.75"/>
+          <text x="90" y="87" fill="white" font-size="13" font-weight="bold">PRTG (5,000 sensors + maintenance): ~$55,000 - $77,500</text>
+
+          <!-- Auvik bar -->
+          <rect x="80" y="108" width="300" height="36" rx="6" fill="#d84315" opacity="0.70"/>
+          <text x="90" y="131" fill="white" font-size="13" font-weight="bold">Auvik (200 devices, SaaS): ~$36,000 - $72,000</text>
+
+          <!-- NIVMIA bar -->
+          <rect x="80" y="168" width="88" height="36" rx="6" fill="#2e7d32" opacity="0.85"/>
+          <text x="90" y="191" fill="white" font-size="13" font-weight="bold">NIVMIA: ~$11,000 - $33,000</text>
+
+          <!-- Details -->
+          <text x="90" y="225" fill="#333" font-size="11">SolarWinds: NPM ($2,775+) + NCM ($2,000+) + SAM ($2,800+) + support ($3K+) per year, escalating with renewals</text>
+          <text x="90" y="240" fill="#333" font-size="11">PRTG: 5,000-sensor license ($15,500/yr perpetual renewal) + maintenance renewals</text>
+          <text x="90" y="255" fill="#333" font-size="11">Auvik: $3-$6/device/month x 200 devices = $7,200-$14,400/yr (data in their cloud)</text>
+          <text x="90" y="270" fill="#333" font-size="11">NIVMIA Professional: $2,221/yr all-in. Enterprise: $6,685/yr (AI included). Runs on your hardware.</text>
+          <text x="90" y="285" fill="#333" font-size="11">NIVMIA has no hardware margin, no per-sensor scaling, and no mandatory cloud.</text>
+
+          <!-- Savings callout -->
+          <text x="350" y="325" text-anchor="middle" fill="#1d4978" font-size="14" font-weight="bold">5-year savings vs SolarWinds: $45,000 - $170,000 per deployment</text>
+        </svg>
+        <div class="v2-diagram-caption">Traditional network monitoring vendors charge per-module, per-sensor, or per-device-per-month. NIVMIA delivers monitoring, config vault, compliance, alerting, and AI analysis in one license -- at a fraction of the cost -- because we don't sell hardware and we don't charge for each feature separately.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- What about... -->
+<section class="v2-story">
+  <div class="container">
+    <div class="v2-story-inner">
+      <h2>Questions you might be asking.</h2>
+
+      <h3>"If it's that much cheaper, is it actually as good?"</h3>
+      <p>It's cheaper because we don't sell per-module or per-sensor, and there's no hardware margin in our price. NIVMIA has dedicated parsers for 17 vendor platforms -- not generic SNMP templates -- with platform-specific collectors that understand each vendor's CLI, API, and data model. Config vault, compliance, alerting, and analysis are included at every paid tier, not sold as add-on modules. The price difference reflects the business model, not the engineering.</p>
+
+      <h3>"SolarWinds has been around for 25 years. How do you compare on maturity?"</h3>
+      <p>SolarWinds pioneered SNMP-based network monitoring and has earned its reputation for breadth. That breadth comes with complexity -- dozens of modules, each with its own licensing and database. NIVMIA takes a different architectural approach: one database, one CLI, one scheduler, one config vault, with pluggable platform support. We also take the 2020 SUNBURST supply-chain attack seriously. NIVMIA ships with ECDSA-signed packages and SHA-256 file integrity verification. Your monitoring tool should be the last thing an attacker can compromise, not the first.</p>
+
+      <h3>"PRTG is simple and we like it. Why would we switch?"</h3>
+      <p>PRTG is genuinely easy to use and the sensor model is intuitive for small deployments. The challenge comes at scale: 200 devices with 25 sensors each is 5,000 sensors, and pricing grows linearly. PRTG is also read-only monitoring -- it doesn't manage configs, run compliance checks, or back up device configurations. If all you need is metric graphs and alerting, PRTG does that well. If you need config management, compliance, and AI analysis alongside monitoring, NIVMIA provides all of that in one tool.</p>
+
+      <h3>"Auvik is cloud-managed. Isn't that easier?"</h3>
+      <p>Cloud management is convenient when you don't mind your network topology, device configurations, and traffic patterns living on someone else's servers. For many organizations -- especially those in regulated industries, government, healthcare, or finance -- that's a non-starter. NIVMIA runs entirely on-prem. Your data never leaves your network. For organizations that need cloud access to dashboards, NIVMIA's web UI can be securely exposed via reverse proxy on your terms.</p>
+
+      <h3>"What if we already have SolarWinds / PRTG / Auvik?"</h3>
+      <p>Keep it running. NIVMIA doesn't require a rip-and-replace migration. Start by deploying NIVMIA alongside your existing tool -- it uses agentless collection via SSH, SNMP, and API, so there's nothing to install on your devices. Run both in parallel and compare the data. When your SolarWinds renewal comes up, you'll have months of side-by-side evidence to make the decision. Most teams migrate one site or one platform at a time. NIVMIA's federation feature lets you start at a branch office and expand to headquarters when you're ready.</p>
+    </div>
+  </div>
+</section>
+
+<section class="v2-closing">
+  <div class="container">
+    <h2>17 platforms. One dashboard. AI that teaches your team.</h2>
+    <p>NIVMIA doesn't compete on dashboards alone -- every monitoring tool has dashboards. It competes on understanding: the config vault that shows what changed and when, the compliance engine that catches drift before auditors do, and the AI that ensures your network's institutional knowledge outlasts any single employee.</p>
+    <a href="nivmia.html" class="cta" style="background:white;color:#0f2b46;">Learn More About NIVMIA</a>
+    <a href="nivmia-pricing.html" class="cta-secondary" style="border-color:white;color:white;">View Pricing</a>
   </div>
 </section>
 
@@ -433,15 +249,13 @@
   <div class="container">
     <div>
       <img src="../assets/logo-circle.svg" alt="DEC-LLC" style="height:56px;margin-bottom:8px;">
-      <p style="font-style:italic;opacity:0.9;margin-bottom:4px;">Open Ideas</p>
       <p>&copy; 2026 DEC-LLC. All rights reserved.</p>
     </div>
     <div class="footer-links">
       <a href="../index.html#products">Products</a>
       <a href="nivmia.html">NIVMIA</a>
       <a href="nivmia-pricing.html">Pricing</a>
-      <a href="../store.html">Store</a>
-      <a href="mailto:info@decllc.biz">info@decllc.biz</a>
+      <a href="../index.html#contact">Contact</a>
     </div>
   </div>
 </footer>

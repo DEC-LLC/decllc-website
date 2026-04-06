@@ -3,440 +3,235 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>IVMIA Feature Comparison — DEC-LLC</title>
+  <title>IVMIA vs VMware vCenter, Nutanix Prism, Turbonomic — How We Compare</title>
   <link rel="stylesheet" href="../styles.css">
-  <style>
-    .cmp-table { width: 100%; border-collapse: collapse; margin: 0 auto; max-width: 1100px; font-size: 0.9rem; }
-    .cmp-table th, .cmp-table td { padding: 10px 14px; text-align: center; border-bottom: 1px solid var(--border); }
-    .cmp-table th { background: var(--primary); color: #fff; font-weight: 700; position: sticky; top: 64px; z-index: 10; }
-    .cmp-table th:first-child, .cmp-table td:first-child { text-align: left; font-weight: 600; min-width: 240px; }
-    .cmp-table tr:hover { background: rgba(110,168,255,0.06); }
-    .cmp-table .section-row td { background: var(--surface); font-weight: 800; color: var(--primary); font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.05em; padding: 14px 14px 8px; border-bottom: 2px solid var(--border); }
-    .cmp-table .yes { color: var(--teal); font-weight: 700; }
-    .cmp-table .no { color: var(--text-muted); opacity: 0.5; }
-    .cmp-table .partial { color: var(--orange); font-weight: 600; }
-    .cmp-table .featured-col { background: rgba(110,168,255,0.05); }
-    .cmp-note { font-size: 0.8rem; color: var(--text-muted); max-width: 1100px; margin: 24px auto 0; }
-    .cmp-note li { margin-bottom: 4px; }
-  </style>
+  <link rel="stylesheet" href="../extras.css">
 </head>
 <body>
 
 <nav>
   <div class="container">
     <a href="../index.html" class="logo">
-      <img src="../assets/logo-circle.svg" alt="DEC-LLC">
-      
+      <img src="../assets/logo-circle.svg" alt="DEC-LLC"><span style="font-weight:800;font-size:1.1rem;letter-spacing:0.05em;margin-left:10px;">DEC-LLC</span>
     </a>
     <ul>
       <li><a href="../index.html#products">Products</a></li>
-      <li><a href="../index.html#pricing">Pricing</a></li>
-      <li><a href="../index.html#opensource">Open Source</a></li>
-      <li><a href="../store.html">Store</a></li>
+      <li><a href="../index.html#why">Why DEC-LLC</a></li>
       <li><a href="../index.html#contact">Contact</a></li>
     </ul>
-    <a href="../store.html" class="nav-cta">Buy Now</a>
   </div>
 </nav>
 
-<section class="hero" style="padding:50px 0 40px;">
+<section class="v2-hero" style="padding:60px 0 50px;">
   <div class="container">
-    <h1>IVMIA Feature Comparison</h1>
-    <p>See exactly what each tier includes. <a href="ivmia-pricing.html" style="color:#fff;text-decoration:underline;">View pricing</a></p>
+    <div class="v2-tagline">How We Compare</div>
+    <h1>IVMIA vs VMware vCenter, Nutanix Prism, Turbonomic</h1>
+    <p class="v2-lede">Most virtualization management tools only manage one platform -- the one sold by the same company. IVMIA manages all of them from a single pane of glass: ESXi, Proxmox, KVM, Hyper-V, Docker, Kubernetes, Incus, and VirtualBox. Here's what that means in practice and in cost.</p>
   </div>
 </section>
 
-<section>
-  <div class="container" style="overflow-x:auto;">
+<!-- The lock-in problem -->
+<section class="v2-story">
+  <div class="container">
+    <div class="v2-story-inner">
+      <h2>The platform lock-in problem -- and why it costs more than the license.</h2>
+      <p>VMware vCenter manages VMware. That's its job and it does it well. But if you also run Proxmox in a lab, KVM on a few bare-metal servers, or Docker for containerized workloads, vCenter can't see them. You end up with two or three management tools, each with its own dashboard, its own alerting, and its own blind spots. Nutanix Prism is the same story for Nutanix clusters -- excellent within its ecosystem, invisible outside it. Turbonomic (now IBM) takes a broader view but at $50,000+/year, it's priced for Fortune 500 budgets.</p>
+      <p>IVMIA was built from the ground up to be platform-neutral. It connects to ESXi, Proxmox, KVM, Hyper-V, Docker, Kubernetes, Incus, and VirtualBox using each platform's native APIs and SSH -- no agents required. Every workload, regardless of where it runs, appears in one universal dashboard with normalized metrics. You see your entire virtualization estate in one place.</p>
 
-    <table class="cmp-table">
-      <thead>
-        <tr>
-          <th>Feature</th>
-          <th>Community</th>
-          <th>Standard</th>
-          <th class="featured-col">Professional</th>
-          <th>Enterprise</th>
-        </tr>
-      </thead>
-      <tbody>
-
-        <!-- Pricing -->
-        <tr class="section-row"><td colspan="5">Pricing</td></tr>
-        <tr>
-          <td>Monthly price</td>
-          <td>Free</td>
-          <td>$49/mo</td>
-          <td class="featured-col">$199/mo</td>
-          <td>$599/mo</td>
-        </tr>
-        <tr>
-          <td>Hosts included</td>
-          <td>5</td>
-          <td>10</td>
-          <td class="featured-col">25</td>
-          <td>50</td>
-        </tr>
-        <tr>
-          <td>Additional hosts</td>
-          <td class="no">&mdash;</td>
-          <td>Buy up to 30 total (blocks of 5 or 10)</td>
-          <td class="featured-col">Buy blocks of 10, 25, or 50</td>
-          <td>Buy blocks of 25, 50, or 100</td>
-        </tr>
-
-        <!-- Base Platforms -->
-        <tr class="section-row"><td colspan="5">Base Platforms (included)</td></tr>
-        <tr>
-          <td>VMware ESXi / vCenter</td>
-          <td class="partial">Monitor</td>
-          <td class="yes">Monitor + Manage</td>
-          <td class="featured-col yes">Monitor + Manage</td>
-          <td class="yes">Monitor + Manage</td>
-        </tr>
-        <tr>
-          <td>Proxmox VE</td>
-          <td class="partial">Monitor</td>
-          <td class="yes">Monitor + Manage</td>
-          <td class="featured-col yes">Monitor + Manage</td>
-          <td class="yes">Monitor + Manage</td>
-        </tr>
-        <tr>
-          <td>KVM / QEMU (libvirt)</td>
-          <td class="partial">Monitor</td>
-          <td class="yes">Monitor + Manage</td>
-          <td class="featured-col yes">Monitor + Manage</td>
-          <td class="yes">Monitor + Manage</td>
-        </tr>
-        <tr>
-          <td>Microsoft Hyper-V</td>
-          <td class="partial">Monitor</td>
-          <td class="yes">Monitor + Manage</td>
-          <td class="featured-col yes">Monitor + Manage</td>
-          <td class="yes">Monitor + Manage</td>
-        </tr>
-        <tr>
-          <td>Docker / Podman</td>
-          <td class="partial">Monitor</td>
-          <td class="yes">Monitor + Manage</td>
-          <td class="featured-col yes">Monitor + Manage</td>
-          <td class="yes">Monitor + Manage</td>
-        </tr>
-
-        <!-- Add-on Platforms -->
-        <tr class="section-row"><td colspan="5">Add-on Platforms (paid monthly, Pro+)</td></tr>
-        <tr>
-          <td>Kubernetes</td>
-          <td class="no">&mdash;</td>
-          <td class="no">&mdash;</td>
-          <td class="featured-col yes">Paid add-on</td>
-          <td class="yes">Paid add-on</td>
-        </tr>
-        <tr>
-          <td>Incus / LXD</td>
-          <td class="no">&mdash;</td>
-          <td class="no">&mdash;</td>
-          <td class="featured-col yes">Paid add-on</td>
-          <td class="yes">Paid add-on</td>
-        </tr>
-        <tr>
-          <td>VirtualBox</td>
-          <td class="no">&mdash;</td>
-          <td class="no">&mdash;</td>
-          <td class="featured-col yes">Paid add-on</td>
-          <td class="yes">Paid add-on</td>
-        </tr>
-
-        <!-- Cloud (future) -->
-        <tr class="section-row"><td colspan="5">Cloud Platforms (coming Q4 2026)</td></tr>
-        <tr>
-          <td>AWS, Azure, GCP, OCI</td>
-          <td class="no">&mdash;</td>
-          <td class="no">&mdash;</td>
-          <td class="featured-col">Monthly subscription</td>
-          <td>Monthly subscription</td>
-        </tr>
-
-        <!-- Collectors (Monitor) -->
-        <tr class="section-row"><td colspan="5">Monitoring (Collectors)</td></tr>
-        <tr>
-          <td>Host inventory</td>
-          <td class="yes">Yes</td>
-          <td class="yes">Yes</td>
-          <td class="featured-col yes">Yes</td>
-          <td class="yes">Yes</td>
-        </tr>
-        <tr>
-          <td>Workload inventory (VMs, containers, pods)</td>
-          <td class="yes">Yes</td>
-          <td class="yes">Yes</td>
-          <td class="featured-col yes">Yes</td>
-          <td class="yes">Yes</td>
-        </tr>
-        <tr>
-          <td>Realtime CPU, memory, disk, network metrics</td>
-          <td class="yes">Yes</td>
-          <td class="yes">Yes</td>
-          <td class="featured-col yes">Yes</td>
-          <td class="yes">Yes</td>
-        </tr>
-        <tr>
-          <td>Dual-transport collection (SSH + API)</td>
-          <td class="yes">Yes</td>
-          <td class="yes">Yes</td>
-          <td class="featured-col yes">Yes</td>
-          <td class="yes">Yes</td>
-        </tr>
-        <tr>
-          <td>Scheduled collection (systemd timers)</td>
-          <td class="yes">Yes</td>
-          <td class="yes">Yes</td>
-          <td class="featured-col yes">Yes</td>
-          <td class="yes">Yes</td>
-        </tr>
-
-        <!-- Operations (Manage) -->
-        <tr class="section-row"><td colspan="5">Operations (Distributers)</td></tr>
-        <tr>
-          <td>Start / Stop / Suspend / Resume VMs</td>
-          <td class="no">&mdash;</td>
-          <td class="yes">Yes</td>
-          <td class="featured-col yes">Yes</td>
-          <td class="yes">Yes</td>
-        </tr>
-        <tr>
-          <td>Create / Clone / Delete VMs</td>
-          <td class="no">&mdash;</td>
-          <td class="yes">Yes</td>
-          <td class="featured-col yes">Yes</td>
-          <td class="yes">Yes</td>
-        </tr>
-        <tr>
-          <td>Snapshot management</td>
-          <td class="no">&mdash;</td>
-          <td class="yes">Yes</td>
-          <td class="featured-col yes">Yes</td>
-          <td class="yes">Yes</td>
-        </tr>
-        <tr>
-          <td>Live migration</td>
-          <td class="no">&mdash;</td>
-          <td class="yes">Yes</td>
-          <td class="featured-col yes">Yes</td>
-          <td class="yes">Yes</td>
-        </tr>
-        <tr>
-          <td>Operations API (REST)</td>
-          <td class="no">&mdash;</td>
-          <td class="yes">Yes</td>
-          <td class="featured-col yes">Yes</td>
-          <td class="yes">Yes</td>
-        </tr>
-
-        <!-- Web UI -->
-        <tr class="section-row"><td colspan="5">Web UI</td></tr>
-        <tr>
-          <td>Universal dashboard</td>
-          <td class="yes">Yes</td>
-          <td class="yes">Yes</td>
-          <td class="featured-col yes">Yes</td>
-          <td class="yes">Yes</td>
-        </tr>
-        <tr>
-          <td>Per-platform dashboards</td>
-          <td class="yes">Yes</td>
-          <td class="yes">Yes</td>
-          <td class="featured-col yes">Yes</td>
-          <td class="yes">Yes</td>
-        </tr>
-        <tr>
-          <td>Operations pages (manage VMs from browser)</td>
-          <td class="no">&mdash;</td>
-          <td class="yes">Yes</td>
-          <td class="featured-col yes">Yes</td>
-          <td class="yes">Yes</td>
-        </tr>
-        <tr>
-          <td>Search and workload launchpad</td>
-          <td class="yes">Yes</td>
-          <td class="yes">Yes</td>
-          <td class="featured-col yes">Yes</td>
-          <td class="yes">Yes</td>
-        </tr>
-        <tr>
-          <td>Chart.js metrics dashboards</td>
-          <td class="yes">Yes</td>
-          <td class="yes">Yes</td>
-          <td class="featured-col yes">Yes</td>
-          <td class="yes">Yes</td>
-        </tr>
-
-        <!-- Analysis -->
-        <tr class="section-row"><td colspan="5">Analysis</td></tr>
-        <tr>
-          <td>Trends (CPU/memory time-series)</td>
-          <td class="no">&mdash;</td>
-          <td class="yes">Basic</td>
-          <td class="featured-col yes">Full</td>
-          <td class="yes">Full</td>
-        </tr>
-        <tr>
-          <td>Capacity planning (heatmaps, projections)</td>
-          <td class="no">&mdash;</td>
-          <td class="no">&mdash;</td>
-          <td class="featured-col yes">Yes</td>
-          <td class="yes">Yes</td>
-        </tr>
-        <tr>
-          <td>Cross-platform comparison</td>
-          <td class="no">&mdash;</td>
-          <td class="no">&mdash;</td>
-          <td class="featured-col yes">Yes</td>
-          <td class="yes">Yes</td>
-        </tr>
-        <tr>
-          <td>AI-powered analysis</td>
-          <td class="no">&mdash;</td>
-          <td class="no">&mdash;</td>
-          <td class="partial">Paid add-on</td>
-          <td class="yes">Included</td>
-        </tr>
-        <tr>
-          <td>Anomaly detection</td>
-          <td class="no">&mdash;</td>
-          <td class="no">&mdash;</td>
-          <td class="partial">With AI add-on</td>
-          <td class="yes">Included</td>
-        </tr>
-        <tr>
-          <td>Right-sizing recommendations</td>
-          <td class="no">&mdash;</td>
-          <td class="no">&mdash;</td>
-          <td class="partial">With AI add-on</td>
-          <td class="yes">Included</td>
-        </tr>
-
-        <!-- Architecture -->
-        <tr class="section-row"><td colspan="5">Architecture</td></tr>
-        <tr>
-          <td>Agentless collection (SSH + API)</td>
-          <td class="yes">Yes</td>
-          <td class="yes">Yes</td>
-          <td class="featured-col yes">Yes</td>
-          <td class="yes">Yes</td>
-        </tr>
-        <tr>
-          <td>Optional agents (host metrics + workload collection)</td>
-          <td class="no">&mdash;</td>
-          <td class="yes">Yes</td>
-          <td class="featured-col yes">Yes</td>
-          <td class="yes">Yes</td>
-        </tr>
-        <tr>
-          <td>Federation (central + sub-cores)</td>
-          <td class="no">&mdash;</td>
-          <td class="no">&mdash;</td>
-          <td class="featured-col yes">Yes</td>
-          <td class="yes">Yes</td>
-        </tr>
-        <tr>
-          <td>REST API access</td>
-          <td class="no">&mdash;</td>
-          <td class="yes">Yes</td>
-          <td class="featured-col yes">Yes</td>
-          <td class="yes">Yes</td>
-        </tr>
-        <tr>
-          <td>PostgreSQL backend</td>
-          <td class="yes">Yes</td>
-          <td class="yes">Yes</td>
-          <td class="featured-col yes">Yes</td>
-          <td class="yes">Yes</td>
-        </tr>
-
-        <!-- Packaging -->
-        <tr class="section-row"><td colspan="5">Packaging & Deployment</td></tr>
-        <tr>
-          <td>RPM packages (Rocky / RHEL)</td>
-          <td class="yes">Yes</td>
-          <td class="yes">Yes</td>
-          <td class="featured-col yes">Yes</td>
-          <td class="yes">Yes</td>
-        </tr>
-        <tr>
-          <td>DEB packages (Debian / Proxmox)</td>
-          <td class="yes">Yes</td>
-          <td class="yes">Yes</td>
-          <td class="featured-col yes">Yes</td>
-          <td class="yes">Yes</td>
-        </tr>
-        <tr>
-          <td>Windows agents (Hyper-V, VirtualBox)</td>
-          <td class="no">&mdash;</td>
-          <td class="yes">Yes</td>
-          <td class="featured-col yes">Yes</td>
-          <td class="yes">Yes</td>
-        </tr>
-
-        <!-- Support -->
-        <tr class="section-row"><td colspan="5">Support</td></tr>
-        <tr>
-          <td>Community support (GitHub Issues)</td>
-          <td class="yes">Yes</td>
-          <td class="yes">Yes</td>
-          <td class="featured-col yes">Yes</td>
-          <td class="yes">Yes</td>
-        </tr>
-        <tr>
-          <td>Email support</td>
-          <td class="no">&mdash;</td>
-          <td>48hr response</td>
-          <td class="featured-col">8hr response</td>
-          <td>4hr response</td>
-        </tr>
-        <tr>
-          <td>Phone support</td>
-          <td class="no">&mdash;</td>
-          <td class="no">&mdash;</td>
-          <td class="featured-col">Business hours</td>
-          <td>Business hours</td>
-        </tr>
-        <tr>
-          <td>SLA</td>
-          <td class="no">&mdash;</td>
-          <td class="no">&mdash;</td>
-          <td class="no">&mdash;</td>
-          <td>4hr response SLA</td>
-        </tr>
-        <tr>
-          <td>Software updates</td>
-          <td>Community releases</td>
-          <td>Quarterly</td>
-          <td class="featured-col">Monthly</td>
-          <td>Monthly + hotfixes</td>
-        </tr>
-
-      </tbody>
-    </table>
-
-    <ul class="cmp-note">
-      <li><strong>Agentless by default.</strong> IVMIA connects to hypervisors directly via SSH and native APIs. No software to install on target hosts. Optional agents add higher-frequency host metrics and local workload collection via native platform CLIs.</li>
-      <li><strong>Monitor</strong> = inventory collection, metrics, dashboards (read-only). <strong>Manage</strong> = monitor + operations like start/stop/migrate VMs (read-write).</li>
-      <li>All plans include a <strong>30-day evaluation period</strong>. No credit card required for Community.</li>
-      <li>Add-on platform pricing varies. <a href="mailto:sales@decllc.biz">Contact sales</a> for details.</li>
-      <li>Host counts are per core or sub-core. Each node in a federated deployment requires its own license.</li>
-    </ul>
-
+      <div class="v2-metaphor">Imagine having a separate electricity meter for every brand of appliance in your building. That's what managing virtualization with vendor-specific tools feels like. IVMIA is one meter for the whole building.</div>
+    </div>
   </div>
 </section>
 
-<!-- CTA -->
-<section style="background:linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);color:#fff;text-align:center;">
+<!-- Comparison table -->
+<section class="v2-compare">
   <div class="container">
-    <h2 style="color:#fff;">Ready to get started?</h2>
-    <p style="opacity:0.8;max-width:500px;margin:12px auto 24px;">Start free with the Community tier. Upgrade anytime.</p>
-    <a href="ivmia-pricing.html" class="cta" style="background:#fff;color:var(--primary);margin-right:12px;">View Pricing</a>
-    <a href="../store.html" class="cta" style="background:var(--accent);color:#fff;">Register Free</a>
+    <h2>Side-by-Side Comparison</h2>
+    <div class="v2-compare-table">
+      <table>
+        <thead>
+          <tr>
+            <th style="width:26%;">Capability</th>
+            <th>VMware vCenter</th>
+            <th>Nutanix Prism</th>
+            <th>Turbonomic (IBM)</th>
+            <th>IVMIA</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Platforms managed</td>
+            <td class="v2-no">VMware ESXi only</td>
+            <td class="v2-no">Nutanix AHV only (vCenter plugin for ESXi)</td>
+            <td class="v2-partial">Multi-platform, but read-only for non-VMware</td>
+            <td class="v2-yes">8 platforms: ESXi, Proxmox, KVM, Hyper-V, Docker, Kubernetes, Incus, VirtualBox</td>
+          </tr>
+          <tr>
+            <td>Mid-range annual cost</td>
+            <td class="v2-no">$6,000-$15,000/yr (per-CPU licensing, vSphere + vCenter)</td>
+            <td>$8,000-$20,000/yr (per-node, software + HW bundle)</td>
+            <td class="v2-no">$50,000-$150,000+/yr</td>
+            <td class="v2-yes">$2,221/yr Professional (everything included)</td>
+          </tr>
+          <tr>
+            <td>Pricing model</td>
+            <td class="v2-no">Per-CPU socket or per-core (changed 2024, widely criticized)</td>
+            <td class="v2-partial">Per-node (hardware + software bundle)</td>
+            <td class="v2-no">Per-VM or per-workload, enterprise contracts</td>
+            <td class="v2-yes">Per-tier with host blocks. One price covers all platforms.</td>
+          </tr>
+          <tr>
+            <td>Universal dashboard</td>
+            <td class="v2-no">VMware only</td>
+            <td class="v2-no">Nutanix only</td>
+            <td class="v2-yes">Multi-platform view</td>
+            <td class="v2-yes">All 8 platforms normalized into one view. Compare any workload to any other.</td>
+          </tr>
+          <tr>
+            <td>AI capacity planning</td>
+            <td class="v2-partial">vRealize Operations (separate product, ~$5,000+/yr)</td>
+            <td class="v2-partial">Prism Pro (upgrade tier, additional cost)</td>
+            <td class="v2-yes">Core strength. ML-driven resource optimization.</td>
+            <td class="v2-yes">Included at Enterprise. Local AI (Ollama). Trend analysis and forecasting at Professional.</td>
+          </tr>
+          <tr>
+            <td>VMware migration path</td>
+            <td class="v2-no">No. VMware wants you to stay on VMware.</td>
+            <td class="v2-partial">Nutanix Move tool (to Nutanix AHV only)</td>
+            <td class="v2-no">Observability only, no migration tooling.</td>
+            <td class="v2-yes">Pairs with VaultSync for cross-platform backup and restore (VMware to Proxmox, KVM, etc.)</td>
+          </tr>
+          <tr>
+            <td>Where does your data go?</td>
+            <td class="v2-partial">On-prem, but VMware Cloud pushes toward SaaS management.</td>
+            <td class="v2-partial">On-prem cluster, but Nutanix Central is cloud-managed.</td>
+            <td class="v2-no">IBM cloud / SaaS model.</td>
+            <td class="v2-yes">Entirely on-prem. Your data never leaves your network.</td>
+          </tr>
+          <tr>
+            <td>Works without internet</td>
+            <td class="v2-yes">Yes (on-prem vCenter).</td>
+            <td class="v2-partial">Cluster works, but Prism Central features require connectivity.</td>
+            <td class="v2-no">SaaS. Requires internet.</td>
+            <td class="v2-yes">Fully operational. Air-gap deployable via USB.</td>
+          </tr>
+          <tr>
+            <td>Vendor lock-in</td>
+            <td class="v2-no">Total. vCenter only works with VMware. Moving away means rebuilding management.</td>
+            <td class="v2-no">Total. Prism only works with Nutanix clusters.</td>
+            <td class="v2-partial">Less lock-in (observability), but IBM ecosystem dependency.</td>
+            <td class="v2-yes">Zero. Add or remove platforms anytime. Your data stays in PostgreSQL, not a proprietary format.</td>
+          </tr>
+          <tr>
+            <td>Cross-product integration</td>
+            <td class="v2-partial">VMware ecosystem (vSAN, NSX, etc.)</td>
+            <td class="v2-partial">Nutanix ecosystem (Files, Flow, etc.)</td>
+            <td class="v2-partial">IBM ecosystem (Instana, etc.)</td>
+            <td class="v2-yes">Integrates with NIVMIA (network), VaultSync (backups), OpenUTM (firewalls). Shared databus.</td>
+          </tr>
+          <tr>
+            <td>Community / free tier</td>
+            <td class="v2-no">No. Free ESXi hypervisor was discontinued in 2024.</td>
+            <td class="v2-no">No free management tier.</td>
+            <td class="v2-no">No. Enterprise pricing only.</td>
+            <td class="v2-yes">Free forever. 5 hosts, 4 platforms, full dashboard.</td>
+          </tr>
+          <tr>
+            <td>Container + VM in one view</td>
+            <td class="v2-no">VMs only. No native container visibility.</td>
+            <td class="v2-partial">Limited. Karbon for Kubernetes only.</td>
+            <td class="v2-yes">Yes, broad workload visibility.</td>
+            <td class="v2-yes">VMs, containers, and pods all normalized in one dashboard.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- The VMware escape story -->
+<section class="v2-story">
+  <div class="container">
+    <div class="v2-story-inner">
+      <h2>The VMware question everyone is asking.</h2>
+      <p>Broadcom's acquisition of VMware in late 2023 changed the licensing landscape. Perpetual licenses were eliminated. Per-socket pricing moved to per-core. Many customers saw 2x-10x price increases at renewal. The free ESXi hypervisor was discontinued. Organizations that built their entire virtualization stack on VMware are now facing a difficult choice: pay significantly more, or migrate to something else.</p>
+      <p>IVMIA doesn't pick a side in that conversation. What it does is give you visibility across all your options. Run ESXi alongside Proxmox alongside KVM in the same dashboard. See how workloads perform on each platform. When you're ready to move a VM from ESXi to Proxmox, pair IVMIA with VaultSync -- which can back up a VMware VM and restore it to a Proxmox host. Not a forklift migration. One VM at a time, at your pace, with rollback capability.</p>
+
+      <div class="v2-callout">
+        <strong>IVMIA doesn't replace vCenter -- it sits above it.</strong> Keep vCenter for the VMware hosts that still need it. Add Proxmox nodes managed directly by IVMIA. See everything in one place. When a VMware host reaches end-of-life, the replacement doesn't have to be another VMware host. That's what platform-neutral management gives you: choices you didn't have before.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Total cost of ownership -->
+<section class="v2-arch" style="background:#f8fafb;">
+  <div class="container">
+    <h2>5-Year Total Cost of Ownership</h2>
+    <p class="v2-subtitle">What you actually spend over five years for a 25-host virtualization environment with management, analytics, and support.</p>
+
+    <div class="v2-arch-block">
+      <div class="v2-diagram">
+        <svg viewBox="0 0 700 320" xmlns="http://www.w3.org/2000/svg">
+          <!-- Turbonomic bar -->
+          <rect x="80" y="20" width="560" height="36" rx="6" fill="#e65100" opacity="0.85"/>
+          <text x="90" y="43" fill="white" font-size="13" font-weight="bold">Turbonomic / IBM (enterprise): ~$250,000 - $750,000</text>
+
+          <!-- vCenter bar -->
+          <rect x="80" y="64" width="320" height="36" rx="6" fill="#bf360c" opacity="0.75"/>
+          <text x="90" y="87" fill="white" font-size="13" font-weight="bold">VMware vCenter + vSphere: ~$30,000 - $75,000</text>
+
+          <!-- Nutanix bar -->
+          <rect x="80" y="108" width="380" height="36" rx="6" fill="#d84315" opacity="0.70"/>
+          <text x="90" y="131" fill="white" font-size="13" font-weight="bold">Nutanix Prism (software + nodes): ~$40,000 - $100,000</text>
+
+          <!-- IVMIA bar -->
+          <rect x="80" y="168" width="88" height="36" rx="6" fill="#2e7d32" opacity="0.85"/>
+          <text x="90" y="191" fill="white" font-size="13" font-weight="bold">IVMIA: ~$11,000 - $33,000</text>
+
+          <!-- Details -->
+          <text x="90" y="225" fill="#333" font-size="11">vCenter: vSphere per-core licensing ($6K-$15K/yr) + vRealize ($5K+/yr) + support. Increases at each renewal.</text>
+          <text x="90" y="240" fill="#333" font-size="11">Nutanix: per-node software + required Nutanix hardware. No BYOH (bring your own hardware).</text>
+          <text x="90" y="255" fill="#333" font-size="11">Turbonomic: per-VM/workload pricing for enterprise AI optimization. Minimum $50K/yr.</text>
+          <text x="90" y="270" fill="#333" font-size="11">IVMIA Professional: $2,221/yr (25 hosts, all platforms). Enterprise: $6,685/yr (AI included).</text>
+          <text x="90" y="285" fill="#333" font-size="11">IVMIA runs on any hardware. No per-CPU, per-core, or per-VM pricing.</text>
+
+          <!-- Savings callout -->
+          <text x="350" y="315" text-anchor="middle" fill="#1d4978" font-size="14" font-weight="bold">5-year savings vs vCenter: $20,000 - $45,000 per deployment</text>
+        </svg>
+        <div class="v2-diagram-caption">Vendor-locked management tools charge per-CPU, per-core, or per-node -- pricing models that scale with your infrastructure. IVMIA charges per tier with simple host blocks, covers all platforms in one license, and has no hardware requirements of its own.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- What about... -->
+<section class="v2-story">
+  <div class="container">
+    <div class="v2-story-inner">
+      <h2>Questions you might be asking.</h2>
+
+      <h3>"If it's that much cheaper, is it actually as good?"</h3>
+      <p>It's cheaper because we don't sell hardware, we don't charge per-CPU or per-core, and we aren't bundling a hypervisor license into the management price. IVMIA uses each platform's native APIs -- libvirt for KVM, the Proxmox API, vSphere SDK for ESXi -- to collect the same data vCenter or Prism collects. The difference is that IVMIA normalizes it all into one universal view. The price reflects the business model: software-only management that works with hardware you already own.</p>
+
+      <h3>"Can IVMIA replace vCenter?"</h3>
+      <p>For monitoring and operational management (start, stop, migrate, snapshot), yes. IVMIA connects directly to ESXi hosts via the vSphere SDK. For VMware-specific features like vSAN management, NSX networking, or DRS cluster automation, vCenter is still the tool for those jobs. Many teams keep a single vCenter instance for those deep VMware features while using IVMIA as the unified view across their entire environment -- VMware and non-VMware alike.</p>
+
+      <h3>"Nutanix includes hardware. Isn't that simpler?"</h3>
+      <p>Nutanix's integrated hardware-software model is convenient if you want a turnkey hyperconverged stack. The trade-off is that you're locked to Nutanix hardware at Nutanix prices, and Prism only manages Nutanix nodes (plus limited vCenter integration). IVMIA manages any hardware running any supported hypervisor. If you already have Nutanix, IVMIA can sit alongside Prism and give you visibility into the rest of your estate that Prism can't see.</p>
+
+      <h3>"What if we already have vCenter / Prism / Turbonomic?"</h3>
+      <p>Keep it. IVMIA connects to your existing hypervisors alongside your current management tool -- it's agentless and non-invasive. Run both in parallel. Over time, you'll find that the universal dashboard becomes your primary view because it shows everything, not just one vendor's slice. When license renewals come up, you'll have real data on whether you still need the vendor-specific tool. Many organizations keep vCenter for the VMware-specific features they rely on while using IVMIA for the cross-platform visibility and AI analytics that vCenter doesn't offer.</p>
+    </div>
+  </div>
+</section>
+
+<section class="v2-closing">
+  <div class="container">
+    <h2>Every hypervisor. One dashboard. No vendor lock-in.</h2>
+    <p>IVMIA doesn't ask you to standardize on one platform. It gives you the freedom to use the right hypervisor for each workload -- ESXi for legacy apps, Proxmox for new builds, Docker for microservices -- with unified visibility, management, and AI-driven capacity planning across all of them.</p>
+    <a href="ivmia.html" class="cta" style="background:white;color:#0f2b46;">Learn More About IVMIA</a>
+    <a href="ivmia-pricing.html" class="cta-secondary" style="border-color:white;color:white;">View Pricing</a>
   </div>
 </section>
 
@@ -444,15 +239,13 @@
   <div class="container">
     <div>
       <img src="../assets/logo-circle.svg" alt="DEC-LLC" style="height:56px;margin-bottom:8px;">
-      <p style="font-style:italic;opacity:0.9;margin-bottom:4px;">Open Ideas</p>
       <p>&copy; 2026 DEC-LLC. All rights reserved.</p>
     </div>
     <div class="footer-links">
       <a href="../index.html#products">Products</a>
       <a href="ivmia.html">IVMIA</a>
       <a href="ivmia-pricing.html">Pricing</a>
-      <a href="../store.html">Store</a>
-      <a href="mailto:info@decllc.biz">info@decllc.biz</a>
+      <a href="../index.html#contact">Contact</a>
     </div>
   </div>
 </footer>
