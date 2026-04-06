@@ -40,6 +40,157 @@
   </div>
 </section>
 
+<!-- AI Waveform visualization -->
+<section id="ai-wave-section" style="background:#0f2b46;padding:0;overflow:hidden;position:relative;">
+  <canvas id="ai-waveform" style="width:100%;height:200px;display:block;cursor:pointer;"></canvas>
+  <div id="ai-wave-label" style="position:absolute;bottom:20px;left:50%;transform:translateX(-50%);color:rgba(255,255,255,0.5);font-size:0.85rem;letter-spacing:0.1em;text-transform:uppercase;pointer-events:none;transition:opacity 0.5s;">listening...</div>
+  <div id="ai-wave-mic-prompt" style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);color:rgba(135,206,235,0.7);font-size:0.95rem;cursor:pointer;text-align:center;transition:opacity 0.5s;" onclick="enableMic()">
+    click to let the AI hear your room
+  </div>
+</section>
+
+<!-- Scroll arrows -->
+<div id="scroll-arrows" style="position:fixed;right:16px;top:50%;transform:translateY(-50%);z-index:900;display:flex;flex-direction:column;gap:12px;">
+  <button onclick="window.scrollBy({top:-400,behavior:'smooth'})" style="width:48px;height:48px;border-radius:50%;border:2px solid rgba(15,43,70,0.2);background:rgba(255,255,255,0.9);color:#0f2b46;font-size:1.4rem;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,0.1);transition:all 0.2s;" onmouseover="this.style.background='#1d4978';this.style.color='white'" onmouseout="this.style.background='rgba(255,255,255,0.9)';this.style.color='#0f2b46'">&#x25B2;</button>
+  <button onclick="window.scrollBy({top:400,behavior:'smooth'})" style="width:48px;height:48px;border-radius:50%;border:2px solid rgba(15,43,70,0.2);background:rgba(255,255,255,0.9);color:#0f2b46;font-size:1.4rem;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,0.1);transition:all 0.2s;animation:bounce-arrow 2s ease infinite;" onmouseover="this.style.background='#1d4978';this.style.color='white'" onmouseout="this.style.background='rgba(255,255,255,0.9)';this.style.color='#0f2b46'">&#x25BC;</button>
+</div>
+
+<style>
+@keyframes bounce-arrow {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(6px); }
+}
+#scroll-arrows button:hover { transform: scale(1.1); }
+@media (max-width: 768px) {
+  #scroll-arrows { right: 8px; }
+  #scroll-arrows button { width: 38px; height: 38px; font-size: 1.1rem; }
+}
+</style>
+
+<script>
+// === AI Waveform Visualization ===
+(function() {
+  const canvas = document.getElementById('ai-waveform');
+  const ctx = canvas.getContext('2d');
+  const label = document.getElementById('ai-wave-label');
+  const micPrompt = document.getElementById('ai-wave-mic-prompt');
+  let analyser = null;
+  let dataArray = null;
+  let micActive = false;
+  let animId = null;
+
+  function resize() {
+    canvas.width = canvas.offsetWidth * (window.devicePixelRatio || 1);
+    canvas.height = canvas.offsetHeight * (window.devicePixelRatio || 1);
+  }
+  resize();
+  window.addEventListener('resize', resize);
+
+  // Ambient animated waves (no mic)
+  function drawAmbient(t) {
+    const w = canvas.width, h = canvas.height;
+    ctx.fillStyle = '#0f2b46';
+    ctx.fillRect(0, 0, w, h);
+
+    const waves = [
+      { freq: 0.008, amp: 0.25, speed: 0.0015, color: 'rgba(33,150,243,0.4)', lineWidth: 2.5 },
+      { freq: 0.012, amp: 0.18, speed: 0.002, color: 'rgba(135,206,235,0.35)', lineWidth: 2 },
+      { freq: 0.005, amp: 0.3, speed: 0.001, color: 'rgba(29,73,120,0.5)', lineWidth: 3 },
+      { freq: 0.015, amp: 0.1, speed: 0.003, color: 'rgba(255,255,255,0.12)', lineWidth: 1.5 },
+    ];
+
+    waves.forEach(wave => {
+      ctx.beginPath();
+      ctx.strokeStyle = wave.color;
+      ctx.lineWidth = wave.lineWidth;
+      for (let x = 0; x < w; x++) {
+        const y = h / 2 + Math.sin(x * wave.freq + t * wave.speed) * h * wave.amp
+                        + Math.sin(x * wave.freq * 1.7 + t * wave.speed * 0.7) * h * wave.amp * 0.3;
+        x === 0 ? ctx.moveTo(x, y) : ctx.lineTo(x, y);
+      }
+      ctx.stroke();
+    });
+  }
+
+  // Microphone-driven waveform
+  function drawMic() {
+    if (!analyser) return;
+    const w = canvas.width, h = canvas.height;
+    analyser.getByteTimeDomainData(dataArray);
+
+    ctx.fillStyle = '#0f2b46';
+    ctx.fillRect(0, 0, w, h);
+
+    // Main waveform
+    ctx.beginPath();
+    ctx.strokeStyle = 'rgba(33,150,243,0.8)';
+    ctx.lineWidth = 3;
+    const sliceWidth = w / dataArray.length;
+    let x = 0;
+    for (let i = 0; i < dataArray.length; i++) {
+      const v = dataArray[i] / 128.0;
+      const y = v * h / 2;
+      i === 0 ? ctx.moveTo(x, y) : ctx.lineTo(x, y);
+      x += sliceWidth;
+    }
+    ctx.stroke();
+
+    // Echo/glow
+    ctx.beginPath();
+    ctx.strokeStyle = 'rgba(135,206,235,0.3)';
+    ctx.lineWidth = 6;
+    x = 0;
+    for (let i = 0; i < dataArray.length; i++) {
+      const v = dataArray[i] / 128.0;
+      const y = v * h / 2;
+      i === 0 ? ctx.moveTo(x, y) : ctx.lineTo(x, y);
+      x += sliceWidth;
+    }
+    ctx.stroke();
+  }
+
+  let startTime = performance.now();
+  function animate() {
+    const t = performance.now() - startTime;
+    if (micActive) {
+      drawMic();
+    } else {
+      drawAmbient(t);
+    }
+    animId = requestAnimationFrame(animate);
+  }
+  animate();
+
+  // Enable microphone
+  window.enableMic = async function() {
+    try {
+      const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+      const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+      const source = audioCtx.createMediaStreamSource(stream);
+      analyser = audioCtx.createAnalyser();
+      analyser.fftSize = 2048;
+      source.connect(analyser);
+      dataArray = new Uint8Array(analyser.frequencyBinCount);
+      micActive = true;
+      micPrompt.style.opacity = '0';
+      label.textContent = 'hearing you...';
+      label.style.color = 'rgba(135,206,235,0.7)';
+    } catch (e) {
+      micPrompt.textContent = 'microphone not available';
+      micPrompt.style.color = 'rgba(255,255,255,0.3)';
+      setTimeout(() => { micPrompt.style.opacity = '0'; }, 2000);
+    }
+  };
+
+  // Hide scroll arrows when near bottom
+  window.addEventListener('scroll', function() {
+    const arrows = document.getElementById('scroll-arrows');
+    const nearBottom = (window.innerHeight + window.scrollY) >= document.body.offsetHeight - 200;
+    arrows.style.opacity = nearBottom ? '0.3' : '1';
+  });
+})();
+</script>
+
 <!-- Story -->
 <section class="v2-story">
   <div class="container">
