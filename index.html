@@ -43,9 +43,10 @@
 <!-- AI Waveform visualization -->
 <section id="ai-wave-section" style="background:#0f2b46;padding:0;overflow:hidden;position:relative;">
   <canvas id="ai-waveform" style="width:100%;height:200px;display:block;cursor:pointer;"></canvas>
+  <audio id="ai-welcome-audio" src="assets/welcome.mp3" preload="auto"></audio>
   <div id="ai-wave-label" style="position:absolute;bottom:20px;left:50%;transform:translateX(-50%);color:rgba(255,255,255,0.5);font-size:0.85rem;letter-spacing:0.1em;text-transform:uppercase;pointer-events:none;transition:opacity 0.5s;">listening...</div>
   <div id="ai-wave-mic-prompt" style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);color:rgba(135,206,235,0.7);font-size:0.95rem;cursor:pointer;text-align:center;transition:opacity 0.5s;" onclick="enableMic()">
-    click to let the AI hear your room
+    &#x1F50A; click to hear our AI welcome you
   </div>
 </section>
 
@@ -161,24 +162,62 @@
   }
   animate();
 
-  // Enable microphone
+  // Play welcome audio, visualize it, then transition to mic
   window.enableMic = async function() {
+    micPrompt.style.opacity = '0';
+    const welcomeAudio = document.getElementById('ai-welcome-audio');
+    const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+
+    // Phase 1: Play welcome audio + visualize it on the waveform
     try {
-      const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
-      const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
-      const source = audioCtx.createMediaStreamSource(stream);
+      const audioSource = audioCtx.createMediaElementSource(welcomeAudio);
       analyser = audioCtx.createAnalyser();
       analyser.fftSize = 2048;
-      source.connect(analyser);
+      audioSource.connect(analyser);
+      analyser.connect(audioCtx.destination); // so we hear it too
       dataArray = new Uint8Array(analyser.frequencyBinCount);
       micActive = true;
-      micPrompt.style.opacity = '0';
-      label.textContent = 'hearing you...';
-      label.style.color = 'rgba(135,206,235,0.7)';
+      label.textContent = 'speaking...';
+      label.style.color = 'rgba(135,206,235,0.9)';
+      welcomeAudio.play();
+
+      // Phase 2: After welcome finishes, switch to mic
+      welcomeAudio.addEventListener('ended', async function() {
+        label.textContent = 'listening...';
+        label.style.color = 'rgba(135,206,235,0.7)';
+        try {
+          const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+          const micSource = audioCtx.createMediaStreamSource(stream);
+          const micAnalyser = audioCtx.createAnalyser();
+          micAnalyser.fftSize = 2048;
+          micSource.connect(micAnalyser);
+          analyser = micAnalyser;
+          dataArray = new Uint8Array(micAnalyser.frequencyBinCount);
+          label.textContent = 'hearing you...';
+        } catch (e) {
+          // Mic denied — keep showing ambient after welcome
+          micActive = false;
+          label.textContent = 'listening...';
+        }
+      }, { once: true });
     } catch (e) {
-      micPrompt.textContent = 'microphone not available';
-      micPrompt.style.color = 'rgba(255,255,255,0.3)';
-      setTimeout(() => { micPrompt.style.opacity = '0'; }, 2000);
+      // Audio play failed — try mic directly
+      try {
+        const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+        const micSource = audioCtx.createMediaStreamSource(stream);
+        analyser = audioCtx.createAnalyser();
+        analyser.fftSize = 2048;
+        micSource.connect(analyser);
+        dataArray = new Uint8Array(analyser.frequencyBinCount);
+        micActive = true;
+        label.textContent = 'hearing you...';
+        label.style.color = 'rgba(135,206,235,0.7)';
+      } catch (e2) {
+        micPrompt.textContent = 'audio not available';
+        micPrompt.style.opacity = '1';
+        micPrompt.style.color = 'rgba(255,255,255,0.3)';
+        setTimeout(() => { micPrompt.style.opacity = '0'; }, 2000);
+      }
     }
   };
 
