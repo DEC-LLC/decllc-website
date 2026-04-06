@@ -3,158 +3,239 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>OpenUTM — Open Unified Threat Management</title>
+  <title>OpenUTM — A Firewall That Knows Why Its Rules Exist</title>
   <link rel="stylesheet" href="../styles.css">
+  <link rel="stylesheet" href="../extras.css">
 </head>
 <body>
+
 
 <nav>
   <div class="container">
     <a href="../index.html" class="logo">
       <img src="../assets/icon-only.jpg" alt="DEC-LLC">
       <div class="logo-text"><span class="logo-name">DEC-LLC</span><svg class="logo-squiggle" viewBox="0 0 80 6" xmlns="http://www.w3.org/2000/svg"><path d="M0 3 Q10 0, 20 3 Q30 6, 40 3 Q50 0, 60 3 Q70 6, 80 3" stroke="rgba(255,255,255,0.5)" stroke-width="1.5" fill="none"/></svg><span class="logo-slogan">Open Ideas</span></div>
-      
     </a>
     <ul>
       <li><a href="../index.html#products">Products</a></li>
-      <li><a href="../index.html#pricing">Pricing</a></li>
-      <li><a href="../index.html#opensource">Open Source</a></li>
-      <li><a href="../store.html">Store</a></li>
+      <li><a href="../index.html#why">Why DEC-LLC</a></li>
       <li><a href="../index.html#contact">Contact</a></li>
     </ul>
-    <a href="../store.html" class="nav-cta">Buy Now</a>
   </div>
 </nav>
 
-<section class="hero">
+<section class="v2-hero">
   <div class="container">
+    <div class="v2-tagline">Unified Threat Management</div>
     <h1>OpenUTM</h1>
-    <p>Open Unified Threat Management</p>
-    <p style="opacity:0.7;font-size:1rem;">Next-generation UTM platform &mdash; firewall, VPN, IPS, DNS, DHCP, proxy, and AI-powered threat analysis. Same image on-prem, in the cloud, or hybrid. Your security, your authority.</p>
-    <a href="../index.html#pricing" class="cta">Start Free Trial</a>
-    <a href="#features" class="cta-secondary">See Features</a>
+    <p class="v2-lede">A firewall that doesn't just block threats — it knows why every rule exists, can explain its own configuration to your newest team member, and turns your security posture from tribal knowledge into permanent institutional knowledge.</p>
+    <div class="v2-cta-row">
+      <a href="#intelligence" class="cta">The Intelligent Difference</a>
+      <a href="#capabilities" class="cta-secondary">Capabilities</a>
+    </div>
   </div>
 </section>
 
-<section id="features">
+<section class="v2-story">
   <div class="container">
-    <h2>Key Capabilities</h2>
-    <p class="subtitle">A modular, scalable UTM built from the ground up with a modern architecture.</p>
-    <div class="product-grid">
-      <div class="product-card">
-        <h3>Modular Architecture</h3>
-        <p>Pick the components you need — firewall, NAT, routing, VPN, DHCP, DNS, proxy, WAF, IDS/IPS. Each module is independent.</p>
+    <div class="v2-story-inner">
+      <h2>Rule 847. Nobody knows why it's there. Nobody dares delete it.</h2>
+      <p>Every firewall that's been running for more than a year has rules that nobody remembers the context for. The ticket was closed. The documentation was a sticky note. Your best security person is now managing the integration for your latest acquisition and doesn't have time to answer questions from the junior analyst. And so the rule sits — doing something that may or may not still matter — because the cost of deleting it and being wrong is higher than the cost of leaving it and hoping.</p>
+      <p>Now multiply that by 2,000 rules. Your senior people have bigger responsibilities now. Your team is growing. The new hires need to get productive fast. But the firewall is a black box that only explains itself to people who already know it.</p>
+
+      <div class="v2-metaphor">OpenUTM is a firewall that remembers. It doesn't just enforce rules — it records why each rule was created, what it protects, when it was last evaluated, and who approved it. When your new security analyst asks "what does this rule do and why?", the firewall answers them. Your company's security knowledge stops being bottlenecked in one person's head and becomes something the whole team can access, query, and learn from.</div>
+    </div>
+  </div>
+</section>
+
+<!-- Intelligence -->
+<section id="intelligence" class="v2-benefits">
+  <div class="container">
+    <h2>The intelligent firewall</h2>
+    <div class="v2-benefit-grid">
+
+      <div class="v2-benefit-card">
+        <div class="v2-check">✓</div>
+        <h3>Ask it anything about your security</h3>
+        <p>OpenUTM's built-in AI understands your rule set, your network topology, and your traffic patterns. Ask <em>"why is port 8443 open to the accounting VLAN?"</em> and get a human-readable answer with context — not a rule number. Ask <em>"what would break if I deleted rules 320 through 340?"</em> and get an impact analysis before you touch anything.</p>
       </div>
-      <div class="product-card">
-        <h3>High-Performance Data Plane</h3>
-        <p>C-based packet processing with kernel bypass options for wire-speed performance on commodity hardware.</p>
+
+      <div class="v2-benefit-card">
+        <div class="v2-check">✓</div>
+        <h3>Onboard new security staff in days, not months</h3>
+        <p>When a new analyst joins — or an intern starts their rotation — the firewall teaches them. They explore the rule set by asking questions. They understand the security posture by querying it. They ramp up in days instead of months because the institutional knowledge is in the system, available to everyone on the team.</p>
       </div>
-      <div class="product-card">
-        <h3>Perl Control Plane</h3>
-        <p>Flexible, scriptable management layer. CLI, REST API, and web UI for configuration and monitoring.</p>
+
+      <div class="v2-benefit-card">
+        <div class="v2-check">✓</div>
+        <h3>Stale-rule detection</h3>
+        <p>OpenUTM tracks which rules are actually being used and which ones haven't matched traffic in months. It surfaces candidates for cleanup — with confidence scores and impact analysis — so you can prune your rule set without fear.</p>
       </div>
-      <div class="product-card">
-        <h3>Extensible Plugin System</h3>
-        <p>Modular plugin architecture for adding new capabilities. Package and distribute extensions independently.</p>
+
+      <div class="v2-benefit-card">
+        <div class="v2-check">✓</div>
+        <h3>Threat analysis that runs locally</h3>
+        <p>OpenUTM's AI analyzes your traffic patterns, your rule coverage, and your threat exposure — on your hardware, without sending your data anywhere. It understands your specific environment because it lives inside it, not in a vendor cloud looking at aggregated statistics from 10,000 strangers.</p>
       </div>
-      <div class="product-card">
-        <h3>Multi-WAN & HA</h3>
-        <p>Active-passive and active-active clustering. Multi-WAN with policy-based routing and failover.</p>
+
+      <div class="v2-benefit-card">
+        <div class="v2-check">✓</div>
+        <h3>Runs on your hardware or your cloud, and answers only to you</h3>
+        <p>No subscription trap. No phone-home telemetry you can't control. Not your vendor. Not a specialist. YOU — in YOUR language. OpenUTM answers to the person running it. You install it, you own it, and it keeps working when you have other things to worry about.</p>
       </div>
-      <div class="product-card">
-        <h3>Enterprise VPN</h3>
-        <p>IPsec, WireGuard, and OpenVPN support. Site-to-site and remote access with certificate management.</p>
+
+      <div class="v2-benefit-card">
+        <div class="v2-check">✓</div>
+        <h3>Same image everywhere</h3>
+        <p>The same OpenUTM image runs on a small office box, a datacenter server, a cloud VM, or a virtual appliance. One set of skills, one set of policies, one management interface — whether you're protecting a branch office or a multi-site enterprise.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Capabilities -->
+<section id="capabilities" class="v2-arch" style="background:#f8fafb;">
+  <div class="container">
+    <h2>Everything you'd expect from a UTM — plus the part you wouldn't</h2>
+    <p class="v2-subtitle">All the standard security capabilities, plus the intelligence layer that no other UTM ships with.</p>
+
+    <div class="v2-layers">
+      <div class="v2-layer">
+        <div class="v2-layer-num">&#x1F6E1;</div>
+        <div class="v2-layer-body">
+          <h4>True zero-trust inspection</h4>
+          <p>No zones. No "inside is trusted, outside isn't." Every connection is inspected on its own merits — where it came from, where it's going, what it's carrying, and whether the policy you set allows it. Think of it like a building where every single door has its own lock and its own guest list, instead of one perimeter fence with an open campus inside. A compromised device on one floor can't wander to another floor just because it's "inside the network." Rules can be as fine-grained as a single connection between two specific machines, or as broad as a company-wide policy — and everything in between.</p>
+        </div>
+      </div>
+      <div class="v2-layer">
+        <div class="v2-layer-num">&#x1F4AC;</div>
+        <div class="v2-layer-body">
+          <h4>Natural-language rule creation</h4>
+          <p>Tell the AI what you want in plain language — <em>"block all outbound traffic from the finance servers except to our payment processor"</em> — and it builds the rule, explains what it did, and asks you to confirm before applying it. No syntax to memorize, no vendor-specific command language. You describe intent, the system translates it into policy. It's the difference between telling a contractor "I need a wall here" and having to hand them a blueprint in a language you don't speak.</p>
+        </div>
+      </div>
+      <div class="v2-layer">
+        <div class="v2-layer-num">&#x26A1;</div>
+        <div class="v2-layer-body">
+          <h4>Enterprise stateful failover</h4>
+          <p>When one firewall in a pair goes down, the other picks up every active connection — video calls, database transactions, real-time trading feeds — without dropping a single packet. At multi-100 gigabit speeds. Most firewalls can fail over. OpenUTM can fail over while your CFO is on a video call with investors and they never notice. That's the difference between "we have redundancy" and "your business didn't blink."</p>
+        </div>
+      </div>
+      <div class="v2-layer">
+        <div class="v2-layer-num">&#x1F510;</div>
+        <div class="v2-layer-body">
+          <h4>VPN — site-to-site and remote access</h4>
+          <p>Connect offices, remote workers, and cloud VPCs through encrypted tunnels. Certificate management is integrated — certificates rotate on schedule, not when someone remembers. But what happens when a VPN endpoint goes down? With most firewalls, someone drives to the site, racks a new device, reconfigures the tunnel, and tells 50 remote workers to update their settings. With OpenUTM integrated with NIVMIA, you ask it to reroute traffic and stand up a replacement tunnel — and it does, using the network paths NIVMIA already knows about. Your remote workers never change a setting. The tunnel moves, the connections follow, and the office that lost its VPN box is back online before the replacement hardware arrives.</p>
+        </div>
+      </div>
+      <div class="v2-layer">
+        <div class="v2-layer-num">&#x1F50D;</div>
+        <div class="v2-layer-body">
+          <h4>Intrusion detection and prevention</h4>
+          <p>Watches for attack patterns in your traffic. Blocks known threats automatically. Logs unknown-but-suspicious activity for AI analysis. Updates signatures from your own curated repository — not a vendor's cloud.</p>
+        </div>
+      </div>
+      <div class="v2-layer">
+        <div class="v2-layer-num">&#x1F310;</div>
+        <div class="v2-layer-body">
+          <h4>DNS, DHCP, and web filtering</h4>
+          <p>DNS-level threat blocking, content categorization, and address management — built in, not bolted on. Your DNS is authoritative for your internal zones, so internal names resolve even when the internet is down. But OpenUTM doesn't just run its own DNS, DHCP, and web filtering — it integrates with, monitors, and helps you manage the ones you already have. Already running a DNS server? OpenUTM watches it, understands it, and with its AI, tells you when something's not right — a misconfiguration, an unexpected change, a query pattern that doesn't belong.</p>
+        </div>
+      </div>
+      <div class="v2-layer">
+        <div class="v2-layer-num">&#x1F916;</div>
+        <div class="v2-layer-body">
+          <h4>AI-powered analysis (the part you wouldn't expect)</h4>
+          <p>A local AI engine that understands YOUR rules, YOUR topology, and YOUR traffic. Runs entirely on the appliance. Never sends data out. Explains decisions in human language. This is not "AI-powered marketing" — it is a domain-aware assistant that has read every rule you have and can answer questions about them. And it doesn't have to answer in technical jargon. Ask from the CFO's chair and it explains in financial terms — revenue at risk, cost of downtime. Ask from sales and it tells you which customer-facing systems are affected and what opportunities are stalled. Ask from the front desk and it says, in plain simple English, <em>"that system isn't available right now, it should be back up in about 30 minutes."</em> Same AI, same knowledge, different audience — because the person asking the question shouldn't need a networking degree to understand the answer.</p>
+        </div>
+      </div>
+      <div class="v2-layer">
+        <div class="v2-layer-num">&#x1F30D;</div>
+        <div class="v2-layer-body">
+          <h4>Multi-WAN and policy routing</h4>
+          <p>Multiple internet connections with intelligent routing. Send your video traffic over the low-latency link and your backups over the cheap one. If any link goes down, traffic reroutes automatically — no support ticket, no manual switchover, no one even notices.</p>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<section id="requirements">
+<!-- Institutional knowledge -->
+<section class="v2-story">
   <div class="container">
-    <h2>Hardware Requirements</h2>
-    <p class="subtitle">OpenUTM runs on commodity x86-64 hardware. Requirements scale with your deployment tier.</p>
+    <div class="v2-story-inner">
+      <h2>The real problem with firewalls isn't the firewall. It's the knowledge gap.</h2>
+      <p>Every other firewall vendor sells you a box. As your team grows, as responsibilities shift, as new people come aboard — the configuration becomes an artifact that only a few people truly understand. OpenUTM is a box that <em>is</em> the documentation. The configuration, the intent, the history, the reasoning — all queryable, all permanent, all institutional. And if you don't have that knowledge base today, one install and it starts building it for you.</p>
 
-    <table style="width:100%;border-collapse:collapse;margin:24px 0;font-size:0.95rem;">
-      <thead>
-        <tr style="border-bottom:2px solid var(--primary);text-align:left;">
-          <th style="padding:12px 8px;">Component</th>
-          <th style="padding:12px 8px;">Community</th>
-          <th style="padding:12px 8px;">Standard</th>
-          <th style="padding:12px 8px;">Enterprise</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr style="border-bottom:1px solid #eee;">
-          <td style="padding:10px 8px;font-weight:600;">CPU</td>
-          <td style="padding:10px 8px;">2 cores (x86-64)</td>
-          <td style="padding:10px 8px;">4 cores</td>
-          <td style="padding:10px 8px;">4+ cores</td>
-        </tr>
-        <tr style="border-bottom:1px solid #eee;">
-          <td style="padding:10px 8px;font-weight:600;">Memory</td>
-          <td style="padding:10px 8px;">3 GB</td>
-          <td style="padding:10px 8px;">8 GB</td>
-          <td style="padding:10px 8px;">16 GB+</td>
-        </tr>
-        <tr style="border-bottom:1px solid #eee;">
-          <td style="padding:10px 8px;font-weight:600;">Disk</td>
-          <td style="padding:10px 8px;">20 GB</td>
-          <td style="padding:10px 8px;">40 GB</td>
-          <td style="padding:10px 8px;">80 GB+ (SSD recommended)</td>
-        </tr>
-        <tr style="border-bottom:1px solid #eee;">
-          <td style="padding:10px 8px;font-weight:600;">Network</td>
-          <td style="padding:10px 8px;">2 NICs (uplink + access)</td>
-          <td style="padding:10px 8px;">2+ NICs</td>
-          <td style="padding:10px 8px;">2+ NICs (10GbE supported)</td>
-        </tr>
-        <tr style="border-bottom:1px solid #eee;">
-          <td style="padding:10px 8px;font-weight:600;">GPU (AI Plugin)</td>
-          <td style="padding:10px 8px;">Not required</td>
-          <td style="padding:10px 8px;">Not required</td>
-          <td style="padding:10px 8px;">NVIDIA 16 GB+ VRAM<br><span style="font-size:0.85rem;color:#666;">Tesla T4, RTX A4000, Ada 4000 or equivalent</span></td>
-        </tr>
-        <tr>
-          <td style="padding:10px 8px;font-weight:600;">OS</td>
-          <td style="padding:10px 8px;" colspan="3">Rocky Linux 10 (included in appliance image). Rocky 8 supported for legacy hardware (community tier only, no AI).</td>
-        </tr>
-      </tbody>
-    </table>
-
-    <div class="product-grid" style="margin-top:24px;">
-      <div class="product-card">
-        <h3>AI Plugin — GPU Guide</h3>
-        <p>The AI analysis plugin uses local LLM inference (Ollama + phi4) for firewall rule analysis, security auditing, threat detection, and configuration review. No cloud API calls — all processing stays on your appliance.</p>
-        <table style="width:100%;font-size:0.85rem;border-collapse:collapse;margin-top:12px;">
-          <tr style="border-bottom:1px solid #eee;"><td style="padding:6px 4px;font-weight:600;">Tesla P4 (8 GB)</td><td style="padding:6px 4px;">Minimum — quantized models, basic analysis</td></tr>
-          <tr style="border-bottom:1px solid #eee;"><td style="padding:6px 4px;font-weight:600;">Tesla T4 (16 GB)</td><td style="padding:6px 4px;">Recommended — full phi4 model, real-time analysis</td></tr>
-          <tr style="border-bottom:1px solid #eee;"><td style="padding:6px 4px;font-weight:600;">Ada 4000 (20 GB)</td><td style="padding:6px 4px;">Ideal — full model + extended context window</td></tr>
-          <tr><td style="padding:6px 4px;font-weight:600;">A2000 (12 GB)</td><td style="padding:6px 4px;">Good mid-range — phi4 at 4-bit quantization</td></tr>
-        </table>
-        <p style="font-size:0.85rem;color:#666;margin-top:12px;">Community and Standard tiers do not require a GPU. The AI plugin is available as an add-on for any tier.</p>
+      <div class="v2-callout">
+        <strong>What "institutional knowledge" means in practice:</strong><br><br>
+        Your lead engineer just got pulled into the acquisition integration. A junior analyst needs to take over day-to-day firewall operations. With a traditional firewall, they'd spend 3-6 months reading rules, guessing intent, and bothering senior staff. With OpenUTM, they ask the firewall itself — and get answers that are better than any handoff document. Not because someone typed in the reason, but because the system learns, self-documents, finds the patterns, and keeps them as history and knowledge that is in context with how it's deployed. And it just keeps getting better — because with more knowledge comes better rules, better integration, and better control.
       </div>
-      <div class="product-card">
-        <h3>Tested Platforms</h3>
-        <p>OpenUTM has been tested on:</p>
-        <ul style="font-size:0.9rem;line-height:1.8;">
-          <li>Bare metal (1U/2U rackmount, mini PC, NUC)</li>
-          <li>KVM / libvirt (Rocky, Ubuntu, Debian hosts)</li>
-          <li>Proxmox VE 8.x</li>
-          <li>VMware ESXi 7.x / 8.x</li>
-          <li>Containers (Podman, Docker)</li>
-          <li>Sophos UTM 110/120 hardware (Rocky 8, community tier)</li>
-        </ul>
+
+      <h3>Connect it to another DEC-LLC product and watch what happens.</h3>
+      <p>Link OpenUTM with IVMIA — our compute and virtualization manager — and the two share information over DEC-LLC's proprietary secure channels. IVMIA knows every host, every VM, every container workload on your infrastructure. OpenUTM uses that knowledge to auto-populate its firewall objects — no manual entry, no stale address lists, no "we forgot to update the firewall when we added that server."</p>
+      <p>Now the system doesn't just block threats — it <em>understands what it's protecting.</em> An intrusion detection event comes in. OpenUTM correlates it against what IVMIA knows about your environment and tells you: <em>"This is a current threat targeting the version of accounting software running on your finance-app-02 VM. You need to block this type of traffic to these three systems. Shall I do it for you?"</em></p>
+      <p>That's not a feature list. That's your infrastructure thinking for itself — getting smarter every day, across every product, because the knowledge compounds.</p>
+
+      <p>This matters more than any feature on any spec sheet. Because the firewall your whole team understands is the firewall your whole team can trust. And the firewall only one person understands is the one that's going to fail you on the worst possible day.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Future readiness -->
+<section class="v2-tomorrow">
+  <div class="container">
+    <div class="v2-future">
+      <div class="v2-section-label">Security in 2030</div>
+      <h2>The threats that are already on the way</h2>
+
+      <div class="v2-future-item">
+        <div class="v2-icon">&#x1F916;</div>
+        <div>
+          <h4>AI-generated attacks at machine speed</h4>
+          <p>Attackers are already using AI to generate phishing, craft exploits, and probe networks. The next generation will be fully autonomous agents that learn your defenses and adapt in real time. But OpenUTM operates in the same real time. It can reroute your traffic, create a secure zone where one didn't exist before, and isolate a threat before it becomes a threat — by seeing its patterns as they emerge.</p>
+          <p>Even better: integrate OpenUTM with VaultSync — our backup and data protection platform — and the response becomes automatic. You've already told both systems: <em>"this is a P0 critical application, no downtime allowed."</em> So when OpenUTM detects strange behavior on that system, it knows what to do. It tells VaultSync <em>"stop copying from that machine, I'm isolating it."</em> VaultSync already has a clean copy — it's been keeping golden, pre-scanned backups in the [PRODUCT]-SDNS secured vault. It spins the fresh instance up in the new secure zone OpenUTM just created for it — and layers in the pre-scanned deltas in real time, so the restored application is as close to current as it was before the compromise, and still safe. OpenUTM enables the replacement system's network rules automatically. The compromised machine is isolated, the clean replacement is live, your customers don't lose critical time-sensitive data, and you don't lose customers. All because you set the priority once, and the systems honored it.</p>
+          <p>This isn't just high availability. This is active resilience — your infrastructure defending itself, healing itself, and keeping itself running while you decide what to do next.</p>
+        </div>
+      </div>
+
+      <div class="v2-future-item">
+        <div class="v2-icon">&#x1F9EC;</div>
+        <div>
+          <h4>Quantum-break encryption</h4>
+          <p>Right now, every encrypted connection you have — every VPN tunnel, every certificate, every secure login — is protected by a math problem that takes a normal computer millions of years to solve. A quantum computer solves it over lunch. The day that happens isn't science fiction anymore — governments are already stockpiling encrypted traffic today, waiting for the machines that can read it tomorrow.</p>
+          <p>DEC-LLC's answer isn't one thing. It's several, layered:</p>
+          <ul style="color:rgba(255,255,255,0.9);margin:12px 0 12px 20px;line-height:1.7;">
+            <li><strong>Coordinated rotation.</strong> OpenUTM manages all your certificates and tunnel keys from one place. On rotation day, it's one coordinated push across your entire infrastructure — not a six-month scramble where the last device you forgot is the one they walk through.</li>
+            <li><strong>Crypto-agility.</strong> The encryption in our products is modular, not welded to the hardware. When quantum-safe algorithms arrive (some are already standardized), we adopt them through a software update — no forklift replacement, no new appliances.</li>
+            <li><strong>Aggressive key cycling.</strong> Attackers recording your traffic today are betting they can decrypt it later. The defense: rotate keys frequently so the recorded traffic is protected by keys that are already retired. OpenUTM enforces rotation schedules that make the harvest-now-decrypt-later strategy worthless.</li>
+            <li><strong>Your own certificate authority.</strong> With [PRODUCT]-SDNS, you run your own CA. You move to quantum-safe certificates on your timeline — not waiting for a public authority to support them, not begging a vendor to update their schedule.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="v2-future-item">
+        <div class="v2-icon">&#x1F4DC;</div>
+        <div>
+          <h4>Regulations demanding proof, not claims</h4>
+          <p>NIS2, SOC 2, HIPAA, the next wave of state-level data laws — regulators increasingly demand provable security posture, not just policies on paper. And "provable" doesn't mean a binder full of screenshots your team assembled the week before the audit. It means a living, continuous, tamper-evident record that says "here is what we did, here is why, and here is the proof it was enforced."</p>
+          <p>Think about how most companies prepare for an audit today. It's a fire drill. Someone pulls firewall exports into spreadsheets. Someone else digs through change-management tickets trying to match rules to approvals. A third person writes a narrative explaining why the configuration looks the way it does. It takes weeks. It's incomplete. And the auditor knows it, because they've seen the same scramble at every company they visit.</p>
+          <p>OpenUTM doesn't just accept random rules a firewall engineer puts in — its AI assistant reasons them out by studying actual traffic patterns. When integrated with NIVMIA, it knows the rules on your edge devices, your other firewalls, your routers, your access control lists — even if they're not OpenUTM firewalls. It self-documents everything. It doesn't just ask the engineer if a rule is a good idea — it tells them why it might be a bad one. It learns why rules exist and which systems depend on them.</p>
+          <p>So when the auditor arrives and says "prove it," OpenUTM answers: <em>"This is the reason we do it this way. This is why it's safe. And here is the document that proves it."</em> Not a binder assembled last Tuesday — a living document that's been writing itself every day since the system was installed. The auditor gets a verifiable, time-stamped, continuously-maintained record instead of a human reconstruction. Your team gets their month back. And your compliance posture stops being something you perform once a year and becomes something the infrastructure maintains for you, continuously, in the background.</p>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<section style="background:linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);color:#fff;text-align:center;">
+<!-- CTA -->
+<section class="v2-closing">
   <div class="container">
-    <h2 style="color:#fff;">Ready to get started with OpenUTM?</h2>
-    <p style="opacity:0.8;max-width:500px;margin:12px auto 24px;">Start free with up to 2 hosts. Professional plans from $330/mo per product.</p>
-    <a href="../index.html#pricing" class="cta" style="background:#fff;color:var(--primary);">View Pricing</a>
-    <a href="mailto:sales@decllc.biz" class="cta-secondary">Contact Sales</a>
+    <h2>Your firewall should make your team smarter — every day, automatically.</h2>
+    <p>OpenUTM is a firewall that explains itself, teaches new hires, remembers why every rule exists, and keeps that knowledge permanent. That's the difference between a security tool and security infrastructure.</p>
+    <a href="../index.html" class="cta" style="background:#ffab40;color:#0f2b46;">Back to All Products</a>
+    <a href="mailto:sales@decllc.biz" class="cta-secondary" style="border-color:white;color:white;">Talk to Us</a>
   </div>
 </section>
 
@@ -167,10 +248,11 @@
     </div>
     <div class="footer-links">
       <a href="../index.html#products">Products</a>
-      <a href="../index.html#pricing">Pricing</a>
+      <a href="../index.html#horizon">Horizon</a>
       <a href="../index.html#contact">Contact</a>
     </div>
   </div>
 </footer>
+
 </body>
 </html>

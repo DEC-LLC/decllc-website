@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>[PRODUCT]-SDNS — Integration with NIVMIA, IVMIA, OpenUTM, VaultSync</title>
+  <link rel="stylesheet" href="../../styles.css">
+  <link rel="stylesheet" href="../../extras.css">
+</head>
+<body>
+
+
+<nav>
+  <div class="container">
+    <a href="../../index.html" class="logo">
+      <img src="../../assets/icon-only.jpg" alt="DEC-LLC">
+      <div class="logo-text"><span class="logo-name">DEC-LLC</span><svg class="logo-squiggle" viewBox="0 0 80 6" xmlns="http://www.w3.org/2000/svg"><path d="M0 3 Q10 0, 20 3 Q30 6, 40 3 Q50 0, 60 3 Q70 6, 80 3" stroke="rgba(255,255,255,0.5)" stroke-width="1.5" fill="none"/></svg><span class="logo-slogan">Open Ideas</span></div>
+    </a>
+    <ul>
+      <li><a href="../../index.html#products">Products</a></li>
+      <li><a href="../../index.html#horizon">The Horizon</a></li>
+      <li><a href="../../index.html#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="v2-subnav">
+  <div class="container">
+    <span class="v2-subnav-name">[PRODUCT]-SDNS</span>
+    <a href="index.html">Overview</a>
+    <a href="architecture.html">Architecture</a>
+    <a href="sovereignty.html">Sovereignty</a>
+    <a href="safety.html">Safer by Design</a>
+    <a href="integration.html" class="active">Integration</a>
+    <a href="use-cases.html">Use Cases</a>
+  </div>
+</div>
+
+<section class="v2-hero">
+  <div class="container">
+    <div class="v2-tagline">Integration</div>
+    <h1>How it plays with the rest of the orchestra.</h1>
+    <p class="v2-lede">[PRODUCT]-SDNS doesn't replace NIVMIA, IVMIA, OpenUTM, or VaultSync — it coordinates across them. Here's what each product gains when [PRODUCT]-SDNS is conducting.</p>
+  </div>
+</section>
+
+<section class="v2-story">
+  <div class="container">
+    <div class="v2-story-inner">
+      <h2>Each section keeps its expertise. The score is shared.</h2>
+      <p>A violinist is better at violin than the conductor. A percussionist knows percussion better. The conductor doesn't take over — the conductor provides the shared context: tempo, dynamics, cues. That's the relationship between [PRODUCT]-SDNS and the other DEC-LLC products.</p>
+      <p>Each product stays fully functional on its own. NIVMIA manages your network today without [PRODUCT]-SDNS. IVMIA manages your VMs today without it. OpenUTM guards your perimeter today without it. VaultSync protects your data today without it. What changes when [PRODUCT]-SDNS joins the ensemble: they stop being four separate instruments and start being one performance.</p>
+    </div>
+  </div>
+</section>
+
+<section class="v2-arch" style="background:#f8fafb;">
+  <div class="container">
+    <h2>What each product gains</h2>
+    <p class="v2-subtitle">Four expert products, one shared set of answers.</p>
+
+    <div class="v2-arch-block">
+      <h3>NIVMIA with [PRODUCT]-SDNS</h3>
+      <p>NIVMIA today logs into your switches, routers, and firewalls and tells you what's happening. Adding [PRODUCT]-SDNS adds three things:</p>
+      <ul>
+        <li><strong>Who can NIVMIA log in as?</strong> Today, NIVMIA holds its own credentials for each device. With [PRODUCT]-SDNS, NIVMIA gets a coordinated identity — and when that identity is rotated, every connection rotates at the same time.</li>
+        <li><strong>Which devices exist?</strong> Today, you tell NIVMIA which devices to watch. With [PRODUCT]-SDNS, the inventory is a shared record — new devices added to the directory show up in NIVMIA's watch list automatically.</li>
+        <li><strong>Which rules should be enforced?</strong> Today, NIVMIA reports drift from a baseline you define. With [PRODUCT]-SDNS, the baseline is a shared policy — and a change to the baseline propagates to every device NIVMIA manages.</li>
+      </ul>
+      <div class="v2-metaphor">NIVMIA alone: a building inspector checking every junction box by hand, from a clipboard. With [PRODUCT]-SDNS: the clipboard is a live document that updates when the building's master plan changes.</div>
+    </div>
+
+    <div class="v2-arch-block">
+      <h3>IVMIA with [PRODUCT]-SDNS</h3>
+      <p>IVMIA today manages virtual machines across VMware, Proxmox, Hyper-V, and cloud providers. Adding [PRODUCT]-SDNS brings:</p>
+      <ul>
+        <li><strong>Consistent VM naming and ownership.</strong> A VM created in [PRODUCT]-SDNS gets a name from your directory, an owner from your identity, and tags from your policy — automatically and uniformly, regardless of which hypervisor it lives on.</li>
+        <li><strong>Policy-driven placement.</strong> "This VM contains customer data, so it can only run in the PCI zone" is a rule [PRODUCT]-SDNS enforces; IVMIA doesn't have to carry that rule separately.</li>
+        <li><strong>Unified certificates for VM-to-VM traffic.</strong> When your VMs talk to each other encrypted, they use certificates issued by your own [PRODUCT]-SDNS — not a patchwork of self-signed or per-hypervisor certs.</li>
+      </ul>
+      <div class="v2-metaphor">IVMIA alone: a property manager running rental buildings with different tenant policies for each building. With [PRODUCT]-SDNS: one lease template, one tenant screening process, one rent collection system — applied consistently across the whole portfolio.</div>
+    </div>
+
+    <div class="v2-arch-block">
+      <h3>OpenUTM with [PRODUCT]-SDNS</h3>
+      <p>OpenUTM today is firewall, VPN, intrusion detection, and content filtering. Adding [PRODUCT]-SDNS:</p>
+      <ul>
+        <li><strong>VPN users come from your directory.</strong> No separate VPN account database. When someone leaves, revoking them in [PRODUCT]-SDNS revokes their VPN access instantly.</li>
+        <li><strong>Firewall rules reference your policy, not raw IPs.</strong> "HR laptops can reach payroll" is a rule — not a list of IPs that drift as laptops change.</li>
+        <li><strong>Certificates for VPN and management interfaces come from your CA.</strong> No dependency on public certificate authorities for internal secure connections.</li>
+      </ul>
+      <div class="v2-metaphor">OpenUTM alone: a security guard checking each visitor's ID card from a binder. With [PRODUCT]-SDNS: the binder is kept current by the front desk, so revoked cards stop working the moment they're revoked — not the next time someone updates the binder.</div>
+    </div>
+
+    <div class="v2-arch-block">
+      <h3>VaultSync with [PRODUCT]-SDNS</h3>
+      <p>VaultSync today backs up VMs, physical servers, workstations, configs, and mobile devices. Adding [PRODUCT]-SDNS:</p>
+      <ul>
+        <li><strong>Backup policies live in one place.</strong> "Customer-data systems: daily backup, 7-year retention, encrypted with keys from [PRODUCT]-SDNS" is a single rule, not a copy-pasted configuration per system.</li>
+        <li><strong>Encryption keys rotate with the rest of your infrastructure.</strong> Backup encryption keys are managed by [PRODUCT]-SDNS's certificate authority — and they rotate on the schedule your policy defines.</li>
+        <li><strong>Restore authorization uses your identity.</strong> A restore request is an action attributed to a specific person from your directory, with approval by whoever your policy designates.</li>
+      </ul>
+      <div class="v2-metaphor">VaultSync alone: a bonded photocopier service keeping copies of everything in a warehouse. With [PRODUCT]-SDNS: the warehouse uses the same retention rules, the same access controls, and the same audit trail as the rest of your infrastructure.</div>
+    </div>
+  </div>
+</section>
+
+<!-- The single-pane-of-glass diagram -->
+<section class="v2-arch">
+  <div class="container">
+    <h2>One screen, four expertises</h2>
+    <p class="v2-subtitle">What "single pane of glass" actually feels like.</p>
+
+    <div class="v2-arch-block">
+      <div class="v2-diagram">
+        <svg viewBox="0 0 700 400" xmlns="http://www.w3.org/2000/svg">
+          <!-- Screen frame -->
+          <rect x="40" y="20" width="620" height="340" rx="8" fill="#0f2b46" stroke="#000" stroke-width="2"/>
+          <rect x="50" y="30" width="600" height="320" rx="4" fill="#f0f7ff"/>
+
+          <!-- Title bar -->
+          <rect x="50" y="30" width="600" height="30" fill="#1d4978"/>
+          <text x="60" y="50" fill="white" font-size="13" font-weight="bold">[PRODUCT]-SDNS — your infrastructure, today</text>
+
+          <!-- Four panels -->
+          <!-- Network -->
+          <rect x="65" y="80" width="280" height="125" rx="4" fill="white" stroke="#2e7d32" stroke-width="2"/>
+          <text x="75" y="100" fill="#1b5e20" font-size="12" font-weight="bold">Network (NIVMIA)</text>
+          <text x="75" y="125" fill="#333" font-size="11">✓ 47 devices online</text>
+          <text x="75" y="143" fill="#e65100" font-size="11">⚠ Port 14 on 10GSwitch-2 dropping 8%</text>
+          <text x="75" y="161" fill="#333" font-size="11">✓ Config drift clean</text>
+          <text x="75" y="179" fill="#333" font-size="11">3 firmware updates available</text>
+          <text x="75" y="197" fill="#1565c0" font-size="10" font-style="italic">last scan: 3 min ago</text>
+
+          <!-- Compute -->
+          <rect x="355" y="80" width="280" height="125" rx="4" fill="white" stroke="#1565c0" stroke-width="2"/>
+          <text x="365" y="100" fill="#0d47a1" font-size="12" font-weight="bold">Compute (IVMIA)</text>
+          <text x="365" y="125" fill="#333" font-size="11">✓ 124 VMs across 4 hypervisors</text>
+          <text x="365" y="143" fill="#333" font-size="11">✓ All capacity thresholds green</text>
+          <text x="365" y="161" fill="#e65100" font-size="11">⚠ app-db-03 idle 11 days, orphan?</text>
+          <text x="365" y="179" fill="#333" font-size="11">2 hosts need maintenance reboot</text>
+          <text x="365" y="197" fill="#1565c0" font-size="10" font-style="italic">last sync: 1 min ago</text>
+
+          <!-- Security -->
+          <rect x="65" y="215" width="280" height="125" rx="4" fill="white" stroke="#e65100" stroke-width="2"/>
+          <text x="75" y="235" fill="#bf360c" font-size="12" font-weight="bold">Security (OpenUTM)</text>
+          <text x="75" y="260" fill="#333" font-size="11">✓ All firewall rules current</text>
+          <text x="75" y="278" fill="#333" font-size="11">✓ VPN: 14 active sessions</text>
+          <text x="75" y="296" fill="#e65100" font-size="11">⚠ 3 blocked scans from 203.x.x.x</text>
+          <text x="75" y="314" fill="#333" font-size="11">✓ Certificates: 24/24 valid</text>
+          <text x="75" y="332" fill="#1565c0" font-size="10" font-style="italic">last event: 12 sec ago</text>
+
+          <!-- Data -->
+          <rect x="355" y="215" width="280" height="125" rx="4" fill="white" stroke="#7b1fa2" stroke-width="2"/>
+          <text x="365" y="235" fill="#4a148c" font-size="12" font-weight="bold">Data (VaultSync)</text>
+          <text x="365" y="260" fill="#333" font-size="11">✓ Last night's backups: 47/47 OK</text>
+          <text x="365" y="278" fill="#333" font-size="11">✓ Quarterly restore test: passed</text>
+          <text x="365" y="296" fill="#333" font-size="11">✓ Retention within policy</text>
+          <text x="365" y="314" fill="#333" font-size="11">Next backup: 02:00 tomorrow</text>
+          <text x="365" y="332" fill="#1565c0" font-size="10" font-style="italic">last job: 6 hr ago</text>
+
+          <!-- Bottom bar -->
+          <rect x="50" y="350" width="600" height="0" fill="none"/>
+        </svg>
+        <div class="v2-diagram-caption">One view. Four domains. Each panel is the live report from that product's own brain — coordinated through [PRODUCT]-SDNS so they share identity, policy, audit, and context.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- What stays the same -->
+<section class="v2-story" style="background:#f8fafb;">
+  <div class="container">
+    <div class="v2-story-inner">
+      <h2>What stays the same when [PRODUCT]-SDNS joins</h2>
+      <ul>
+        <li><strong>Each product's CLI and API still work.</strong> If you have scripts that call NIVMIA directly, they keep working. [PRODUCT]-SDNS doesn't demand that every action go through it.</li>
+        <li><strong>Each product can operate in isolation.</strong> If [PRODUCT]-SDNS is down for maintenance, your firewall still firewalls, your VMs still run, your backups still run.</li>
+        <li><strong>Each product's upgrade path is independent.</strong> You can upgrade NIVMIA without upgrading [PRODUCT]-SDNS. Versions are loosely coupled, not lockstep.</li>
+        <li><strong>Your existing login accounts still work during transition.</strong> [PRODUCT]-SDNS adds a shared directory — it doesn't demand you abandon the directories you have on day one.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="v2-closing">
+  <div class="container">
+    <h2>The orchestra is better together than alone.</h2>
+    <p>Each DEC-LLC product is strong on its own. Coordinated by [PRODUCT]-SDNS, they become infrastructure that moves as one.</p>
+    <a href="use-cases.html" class="cta" style="background:#ffab40;color:#0f2b46;">See Real Scenarios</a>
+    <a href="index.html" class="cta-secondary" style="border-color:white;color:white;">Back to Overview</a>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div>
+      <img src="../../assets/icon-only.jpg" alt="DEC-LLC" style="height:56px;margin-bottom:8px;">
+      <p style="font-style:italic;opacity:0.9;margin-bottom:4px;">Open Ideas</p>
+      <p>&copy; 2026 DEC-LLC. All rights reserved.</p>
+    </div>
+    <div class="footer-links">
+      <a href="../../index.html#products">Products</a>
+      <a href="../../index.html#horizon">Horizon</a>
+      <a href="../../index.html#contact">Contact</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

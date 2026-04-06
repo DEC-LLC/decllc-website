@@ -3,78 +3,237 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>IPv6Auto — IPv6 Implementation Automation System</title>
+  <title>IPv6Auto — Move to the New Internet Without Breaking the Old One</title>
   <link rel="stylesheet" href="../styles.css">
+  <link rel="stylesheet" href="../extras.css">
 </head>
 <body>
+
 
 <nav>
   <div class="container">
     <a href="../index.html" class="logo">
       <img src="../assets/icon-only.jpg" alt="DEC-LLC">
       <div class="logo-text"><span class="logo-name">DEC-LLC</span><svg class="logo-squiggle" viewBox="0 0 80 6" xmlns="http://www.w3.org/2000/svg"><path d="M0 3 Q10 0, 20 3 Q30 6, 40 3 Q50 0, 60 3 Q70 6, 80 3" stroke="rgba(255,255,255,0.5)" stroke-width="1.5" fill="none"/></svg><span class="logo-slogan">Open Ideas</span></div>
-      
     </a>
     <ul>
       <li><a href="../index.html#products">Products</a></li>
-      <li><a href="../index.html#pricing">Pricing</a></li>
-      <li><a href="../index.html#opensource">Open Source</a></li>
-      <li><a href="../store.html">Store</a></li>
+      <li><a href="../index.html#why">Why DEC-LLC</a></li>
       <li><a href="../index.html#contact">Contact</a></li>
     </ul>
-    <a href="../store.html" class="nav-cta">Buy Now</a>
   </div>
 </nav>
 
-<section class="hero">
+<section class="v2-hero">
   <div class="container">
+    <div class="v2-tagline">Network Modernization</div>
     <h1>IPv6Auto</h1>
-    <p>IPv6 Implementation Automation System</p>
-    <p style="opacity:0.7;font-size:1rem;">Take the complexity out of IPv6 deployment across your entire infrastructure.</p>
-    <a href="../index.html#pricing" class="cta">Start Free Trial</a>
-    <a href="#features" class="cta-secondary">See Features</a>
+    <p class="v2-lede">The old internet addresses are running out. The new ones are ready. The hard part is getting from here to there without breaking anything along the way. IPv6Auto handles the transition — automatically rewriting firewall rules, updating name records, and planning new addresses — while keeping your existing network running the entire time.</p>
+    <div class="v2-cta-row">
+      <a href="#intelligence" class="cta">See What Makes It Different</a>
+      <a href="#capabilities" class="cta-secondary">Capabilities</a>
+    </div>
   </div>
 </section>
 
-<section id="features">
+<!-- The story -->
+<section class="v2-story">
   <div class="container">
-    <h2>Key Capabilities</h2>
-    <p class="subtitle">Automated IPv6 planning, configuration, and validation for enterprise networks.</p>
-    <div class="product-grid">
-      <div class="product-card">
-        <h3>Address Planning</h3>
-        <p>Automated IPv6 address allocation with prefix delegation, subnet hierarchy, and documentation generation.</p>
+    <div class="v2-story-inner">
+      <h2>You keep hearing that IPv6 is coming. It's already here.</h2>
+      <p>Federal agencies have mandated it. Major carriers are rolling it out. Cloud providers are charging premiums for the old-style addresses because there aren't enough to go around. If you rent public internet addresses for your business, you've probably noticed the price creeping up year after year — that's supply and demand for a resource that's genuinely running out.</p>
+
+      <p>But migrating sounds terrifying. Every firewall rule, every name record, every service that references an address — all of it needs to be updated. And you can't just flip a switch. The old system has to keep working while the new one comes online, because your business can't afford a network outage while IT figures out — well, whatever it is they said they need more time to figure out. It made your head hurt.</p>
+
+      <div class="v2-metaphor">We've actually done this before, as a society. We moved from the post office to email. Nobody flipped a switch. Nobody shut the post office down on a Friday. Email just started handling more and more of the communication, and over time the post office became the thing you use for packages and birthday cards. Most young people today don't even think about sending a letter — and that's why the post office is short-staffed, changing weekend schedules, and struggling to keep up. The transition happened gradually, almost invisibly. IPv6 is the same kind of shift — the new system comes online alongside the old one, handles more and more of the traffic, and eventually the old addresses are just there for compatibility. IPv6Auto manages that gradual transition so both systems run side by side until the old one fades on its own. IPv6Auto can even tell you when you don't need the old stuff anymore, by watching your network profile over time. It watches, it measures, it gives you the data to make the call confidently instead of guessing. And if there's a misconfiguration or a connectivity issue, it can provide you the solution before you know it's even a problem.</div>
+
+      <p>The companies that figure this out early get access to virtually unlimited addresses, simpler network design, and compliance with federal mandates that are already in effect. The ones that wait will eventually be forced to migrate under pressure — which is when mistakes happen.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Intelligence -->
+<section id="intelligence" class="v2-benefits">
+  <div class="container">
+    <h2>The intelligence that makes it different</h2>
+    <div class="v2-benefit-grid">
+
+      <div class="v2-benefit-card">
+        <div class="v2-check">&#10003;</div>
+        <h3>Automated dual-stack migration</h3>
+        <p>IPv6Auto runs both addressing systems simultaneously. Your existing services keep working on the old addresses while new addresses come online alongside them. Nothing breaks during the transition because nothing gets turned off — it's additive, not replacement.</p>
       </div>
-      <div class="product-card">
-        <h3>Dual-Stack Configuration</h3>
-        <p>Configure IPv4+IPv6 dual-stack on routers, switches, firewalls, and hosts simultaneously.</p>
+
+      <div class="v2-benefit-card">
+        <div class="v2-check">&#10003;</div>
+        <h3>Firewall rules rewritten for you</h3>
+        <p>The hardest part of any address migration is the firewall. Hundreds or thousands of rules that reference specific addresses — all of which need equivalent rules for the new addressing. IPv6Auto reads your existing rules, understands their intent, and generates the equivalent new-address rules automatically.</p>
       </div>
-      <div class="product-card">
-        <h3>DNS Integration</h3>
-        <p>Automatic AAAA and PTR record generation. Forward and reverse zone updates for Kea, BIND, and PowerDNS.</p>
+
+      <div class="v2-benefit-card">
+        <div class="v2-check">&#10003;</div>
+        <h3>Address planning that makes sense</h3>
+        <p>The new address space is enormous — large enough for every grain of sand on Earth to have its own address. That abundance can be paralyzing. IPv6Auto designs a sensible address plan based on your existing network layout, so you get a clean, logical scheme instead of a random assignment.</p>
       </div>
-      <div class="product-card">
-        <h3>Firewall Rule Generation</h3>
-        <p>Generate IPv6 firewall rules that mirror your existing IPv4 policy. Supports multiple vendor formats.</p>
+
+      <div class="v2-benefit-card">
+        <div class="v2-check">&#10003;</div>
+        <h3>Name record integration</h3>
+        <p>Every device that gets a new address also needs its name records updated so the rest of the network can find it. IPv6Auto handles name record creation and updates as part of the migration, so addresses and names stay synchronized throughout the transition.</p>
       </div>
-      <div class="product-card">
-        <h3>Compliance Validation</h3>
-        <p>Verify IPv6 readiness and compliance. Check connectivity, routing, DNS resolution, and security posture.</p>
+
+      <div class="v2-benefit-card">
+        <div class="v2-check">&#10003;</div>
+        <h3>Compliance validation</h3>
+        <p>Federal mandates require specific implementation standards. IPv6Auto validates your deployment against those standards and generates compliance reports — so when the auditor asks "are you IPv6 compliant?", you have documentation, not a conversation.</p>
       </div>
-      <div class="product-card">
-        <h3>Migration Planning</h3>
-        <p>Phased migration plans with rollback procedures. Test in lab, deploy in production with confidence.</p>
+
+      <div class="v2-benefit-card">
+        <div class="v2-check">&#10003;</div>
+        <h3>Rollback without risk</h3>
+        <p>Because both addressing systems run simultaneously, you can back out any change without impacting the existing network. The old addresses never stop working until you explicitly retire them. If something unexpected happens, you remove the new addresses and you're back where you started.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Capabilities -->
+<section id="capabilities" class="v2-arch" style="background:#f8fafb;">
+  <div class="container">
+    <h2>How IPv6Auto manages the transition</h2>
+    <p class="v2-subtitle">A phased approach that keeps your network running at every step. No big-bang cutover. No weekend outage windows.</p>
+
+    <div class="v2-layers">
+      <div class="v2-layer">
+        <div class="v2-layer-num">1</div>
+        <div class="v2-layer-body">
+          <h4>Discovery and assessment</h4>
+          <p>IPv6Auto surveys your current network — addresses, firewall rules, name records, routing, and services. It identifies what needs to change, what's already compatible, and what will require special handling.</p>
+        </div>
+      </div>
+
+      <div class="v2-layer">
+        <div class="v2-layer-num">2</div>
+        <div class="v2-layer-body">
+          <h4>Address plan generation</h4>
+          <p>Based on your network layout, IPv6Auto generates a logical address plan. Subnets, allocations, and assignments are designed to be clean and maintainable — not just technically correct but operationally sensible.</p>
+        </div>
+      </div>
+
+      <div class="v2-layer">
+        <div class="v2-layer-num">3</div>
+        <div class="v2-layer-body">
+          <h4>Firewall rule translation</h4>
+          <p>Existing firewall rules are analyzed and translated to work with the new addresses. The translation preserves intent — "allow the accounting department to reach the financial server" stays the same, even though the addresses change.</p>
+        </div>
+      </div>
+
+      <div class="v2-layer">
+        <div class="v2-layer-num">4</div>
+        <div class="v2-layer-body">
+          <h4>Phased deployment</h4>
+          <p>New addresses are deployed alongside existing ones in controlled phases. Core infrastructure first, then servers, then workstations. Each phase is validated before the next one begins.</p>
+        </div>
+      </div>
+
+      <div class="v2-layer">
+        <div class="v2-layer-num">5</div>
+        <div class="v2-layer-body">
+          <h4>Validation and monitoring</h4>
+          <p>Every deployed address is verified to be reachable and functioning. Services are tested on both addressing systems. Any failures are caught during the validation phase, not after you've committed.</p>
+        </div>
+      </div>
+
+      <div class="v2-layer">
+        <div class="v2-layer-num">6</div>
+        <div class="v2-layer-body">
+          <h4>Compliance reporting</h4>
+          <p>Generates documentation showing your implementation meets federal and industry standards. Updated automatically as the deployment progresses, so your compliance status is always current.</p>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<section style="background:linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);color:#fff;text-align:center;">
+<!-- Who it's for -->
+<section class="v2-usecase">
   <div class="container">
-    <h2 style="color:#fff;">Ready to get started with IPv6Auto?</h2>
-    <p style="opacity:0.8;max-width:500px;margin:12px auto 24px;">Start free with up to 2 hosts. Professional plans from $330/mo per product.</p>
-    <a href="../index.html#pricing" class="cta" style="background:#fff;color:var(--primary);">View Pricing</a>
-    <a href="mailto:sales@decllc.biz" class="cta-secondary">Contact Sales</a>
+    <h2>Who runs IPv6Auto</h2>
+
+    <div class="v2-usecase-block">
+      <div class="v2-persona">The federal contractor with a compliance deadline</div>
+      <h3>Your agency partner requires IPv6 capability. The deadline is in the contract.</h3>
+      <p>IPv6Auto gets you compliant without disrupting your existing network. Both addressing systems run simultaneously, so your team keeps working while the migration happens around them. When the auditor checks, you hand them a compliance report generated automatically — not a PowerPoint deck and a promise.</p>
+      <div class="v2-outcome"><strong>Result:</strong> Contract compliance met on schedule. Zero disruption to operations.</div>
+    </div>
+
+    <div class="v2-usecase-block">
+      <div class="v2-persona">The growing company running out of addresses</div>
+      <h3>You keep adding devices, and the address space keeps shrinking.</h3>
+      <p>Every new office, every IoT sensor, every employee's laptop needs an address. You've been subdividing and recycling the old addresses, but the workarounds are getting complicated. IPv6Auto migrates you to a system where addresses are effectively unlimited — so you stop managing scarcity and start managing growth.</p>
+      <div class="v2-outcome"><strong>Result:</strong> No more address juggling. Room for every device you'll ever add.</div>
+    </div>
+
+    <div class="v2-usecase-block">
+      <div class="v2-persona">The ISP or hosting provider feeling the squeeze</div>
+      <h3>Your address costs keep rising because global supply is shrinking.</h3>
+      <p>The market for old-style internet addresses is a seller's market, and it's getting worse. Every year you renew, the price is higher. IPv6Auto migrates your infrastructure to the new addressing so you can release expensive leased addresses and reduce a cost that only goes in one direction. And if your ISP or a branch office network is slow on the uptake — and some will be — that's OK. IPv6Auto sets up tunneling, compatibility, and translation layers until they're up to speed. You don't wait for the slowest link in the chain to modernize before you start saving money.</p>
+      <div class="v2-outcome"><strong>Result:</strong> Operating costs drop as leased address blocks are returned. Slow partners don't hold you back. Future-proofed for growth.</div>
+    </div>
+
+  </div>
+</section>
+
+<!-- Future-readiness -->
+<section class="v2-tomorrow">
+  <div class="container">
+    <div class="v2-future">
+      <div class="v2-section-label">Ready for what's coming</div>
+      <h2>Internet addressing in 2030</h2>
+
+      <div class="v2-future-item">
+        <div class="v2-icon">&#x1F4B8;</div>
+        <div>
+          <h4>Old addresses become luxury real estate</h4>
+          <p>The global pool of old-style internet addresses is finite and nearly exhausted. Organizations that still depend on leased addresses will pay more every year, with no ceiling in sight. The organizations that migrate early lock in effectively free addressing for the life of their network.</p>
+        </div>
+      </div>
+
+      <div class="v2-future-item">
+        <div class="v2-icon">&#x1F4DC;</div>
+        <div>
+          <h4>Regulatory mandates expand beyond federal</h4>
+          <p>Federal IPv6 mandates were the first wave. State-level requirements, industry-specific standards, and international regulations are following. Organizations that wait for each mandate will migrate in a panic. Organizations that migrate proactively do it once, on their own schedule.</p>
+        </div>
+      </div>
+
+      <div class="v2-future-item">
+        <div class="v2-icon">&#x1F310;</div>
+        <div>
+          <h4>Carrier-grade workarounds reach their limits</h4>
+          <p>Internet providers have been using shared-address schemes to stretch the old address supply. Those workarounds cause problems — broken video calls, gaming issues, remote access failures. As more providers hit those limits, the push to native new-style addressing accelerates. Being ready means your services work cleanly when the rest of the internet catches up.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Pricing teaser -->
+<section style="background:#fff;padding:60px 0;text-align:center;">
+  <div class="container">
+    <h2 style="color:#0f2b46;">Migrate on your schedule, not under pressure.</h2>
+    <p style="max-width:700px;margin:0 auto 28px;color:#444;font-size:1.1rem;">IPv6Auto is priced per network segment. Start with your public-facing infrastructure and expand inward. Assessment and address planning are included in every engagement.</p>
+    <a href="../index.html#contact" class="btn btn-primary">Contact Sales</a>
+  </div>
+</section>
+
+<section class="v2-closing">
+  <div class="container">
+    <h2>The internet's address system is changing. The only question is whether you lead or follow.</h2>
+    <p>IPv6Auto makes the transition gradual, reversible, and invisible to your users — so the new internet arrives without anyone noticing the switch.</p>
+    <a href="../index.html" class="cta" style="background:#ffab40;color:#0f2b46;">Back to All Products</a>
+    <a href="mailto:sales@decllc.biz" class="cta-secondary" style="border-color:white;color:white;">Talk to Us</a>
   </div>
 </section>
 
@@ -87,10 +246,11 @@
     </div>
     <div class="footer-links">
       <a href="../index.html#products">Products</a>
-      <a href="../index.html#pricing">Pricing</a>
+      <a href="../index.html#horizon">Horizon</a>
       <a href="../index.html#contact">Contact</a>
     </div>
   </div>
 </footer>
+
 </body>
 </html>

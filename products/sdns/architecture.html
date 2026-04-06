@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>[PRODUCT]-SDNS — Architecture</title>
+  <link rel="stylesheet" href="../../styles.css">
+  <link rel="stylesheet" href="../../extras.css">
+</head>
+<body>
+
+
+<nav>
+  <div class="container">
+    <a href="../../index.html" class="logo">
+      <img src="../../assets/icon-only.jpg" alt="DEC-LLC">
+      <div class="logo-text"><span class="logo-name">DEC-LLC</span><svg class="logo-squiggle" viewBox="0 0 80 6" xmlns="http://www.w3.org/2000/svg"><path d="M0 3 Q10 0, 20 3 Q30 6, 40 3 Q50 0, 60 3 Q70 6, 80 3" stroke="rgba(255,255,255,0.5)" stroke-width="1.5" fill="none"/></svg><span class="logo-slogan">Open Ideas</span></div>
+    </a>
+    <ul>
+      <li><a href="../../index.html#products">Products</a></li>
+      <li><a href="../../index.html#horizon">The Horizon</a></li>
+      <li><a href="../../index.html#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="v2-subnav">
+  <div class="container">
+    <span class="v2-subnav-name">[PRODUCT]-SDNS</span>
+    <a href="index.html">Overview</a>
+    <a href="architecture.html" class="active">Architecture</a>
+    <a href="sovereignty.html">Sovereignty</a>
+    <a href="safety.html">Safer by Design</a>
+    <a href="integration.html">Integration</a>
+    <a href="use-cases.html">Use Cases</a>
+  </div>
+</div>
+
+<!-- Hero -->
+<section class="v2-hero">
+  <div class="container">
+    <div class="v2-tagline">Architecture</div>
+    <h1>How it's built — without the wiring diagram.</h1>
+    <p class="v2-lede">You don't need to know how a car's transmission works to trust that it will get you home. You need to know the brakes are tested, the airbags are real, and the seatbelts aren't decorative. Here's what's built into [PRODUCT]-SDNS and why each piece matters.</p>
+  </div>
+</section>
+
+<!-- The Orchestra Analogy -->
+<section class="v2-arch">
+  <div class="container">
+    <h2>The shape of the thing</h2>
+    <p class="v2-subtitle">If DEC-LLC's other products are domain experts, [PRODUCT]-SDNS is the place they all agree to meet.</p>
+
+    <div class="v2-arch-block">
+      <h3>A concert hall, not a command center</h3>
+      <p>Picture a concert hall. The stage has a violin section, a brass section, a percussion section. Each section has its own experts, its own sheet music, its own way of playing. A conductor stands at the front. The conductor doesn't play any instrument. The conductor holds the score — the single agreed-upon piece of music — and gives cues.</p>
+      <p>[PRODUCT]-SDNS is the conductor's stand. The products on the stage are the sections. The score is your policy. The cues are the coordinated actions that happen across all of them.</p>
+
+      <div class="v2-diagram">
+        <svg viewBox="0 0 700 380" xmlns="http://www.w3.org/2000/svg">
+          <!-- Center conductor -->
+          <circle cx="350" cy="190" r="70" fill="#1d4978" stroke="#0f2b46" stroke-width="3"/>
+          <text x="350" y="185" text-anchor="middle" fill="white" font-size="18" font-weight="bold">[PRODUCT]-SDNS</text>
+          <text x="350" y="205" text-anchor="middle" fill="#87ceeb" font-size="12">the conductor</text>
+
+          <!-- Surrounding sections -->
+          <g>
+            <!-- NIVMIA top-left -->
+            <rect x="60" y="40" width="160" height="70" rx="8" fill="#e8f5e9" stroke="#2e7d32" stroke-width="2"/>
+            <text x="140" y="68" text-anchor="middle" fill="#1b5e20" font-size="16" font-weight="bold">NIVMIA</text>
+            <text x="140" y="88" text-anchor="middle" fill="#388e3c" font-size="11">network section</text>
+            <line x1="200" y1="95" x2="285" y2="165" stroke="#666" stroke-width="2" stroke-dasharray="5,3"/>
+
+            <!-- IVMIA top-right -->
+            <rect x="480" y="40" width="160" height="70" rx="8" fill="#e3f2fd" stroke="#1565c0" stroke-width="2"/>
+            <text x="560" y="68" text-anchor="middle" fill="#0d47a1" font-size="16" font-weight="bold">IVMIA</text>
+            <text x="560" y="88" text-anchor="middle" fill="#1976d2" font-size="11">compute section</text>
+            <line x1="500" y1="95" x2="415" y2="165" stroke="#666" stroke-width="2" stroke-dasharray="5,3"/>
+
+            <!-- OpenUTM bottom-left -->
+            <rect x="60" y="275" width="160" height="70" rx="8" fill="#fff3e0" stroke="#e65100" stroke-width="2"/>
+            <text x="140" y="303" text-anchor="middle" fill="#bf360c" font-size="16" font-weight="bold">OpenUTM</text>
+            <text x="140" y="323" text-anchor="middle" fill="#e65100" font-size="11">security section</text>
+            <line x1="200" y1="290" x2="285" y2="220" stroke="#666" stroke-width="2" stroke-dasharray="5,3"/>
+
+            <!-- VaultSync bottom-right -->
+            <rect x="480" y="275" width="160" height="70" rx="8" fill="#f3e5f5" stroke="#7b1fa2" stroke-width="2"/>
+            <text x="560" y="303" text-anchor="middle" fill="#4a148c" font-size="16" font-weight="bold">VaultSync</text>
+            <text x="560" y="323" text-anchor="middle" fill="#7b1fa2" font-size="11">data section</text>
+            <line x1="500" y1="290" x2="415" y2="220" stroke="#666" stroke-width="2" stroke-dasharray="5,3"/>
+          </g>
+
+          <!-- Arrows: products stay autonomous -->
+          <text x="350" y="370" text-anchor="middle" fill="#555" font-size="11" font-style="italic">Each product stays an expert in its own domain · [PRODUCT]-SDNS coordinates, doesn't dominate</text>
+        </svg>
+        <div class="v2-diagram-caption">[PRODUCT]-SDNS sits at the center as a coordination layer. Products remain experts in their own domains — [PRODUCT]-SDNS provides the shared policy, identity, naming, and audit that crosses between them.</div>
+      </div>
+
+      <div class="v2-metaphor">No one section is "above" the others. The conductor holds the score, but the violinist still decides how to bow. The oboist still tunes the orchestra. [PRODUCT]-SDNS does not take over your other products — it holds the shared context they all agree to.</div>
+    </div>
+  </div>
+</section>
+
+<!-- Five things it holds -->
+<section class="v2-arch" style="background:#f8fafb;">
+  <div class="container">
+    <h2>The five things [PRODUCT]-SDNS holds for you</h2>
+    <p class="v2-subtitle">Every coordination layer has to answer five questions. Here is how [PRODUCT]-SDNS answers each.</p>
+
+    <div class="v2-arch-block">
+      <h3>1. "Who are you?" — The directory</h3>
+      <p>Every action across your infrastructure needs to answer: who is asking? Is it a human employee, a service account, a backup job, a visiting contractor? [PRODUCT]-SDNS is the single place that holds those answers. A user exists once, and every subordinate product trusts [PRODUCT]-SDNS to vouch for them.</p>
+      <div class="v2-metaphor">Like the front desk of a building that issues one badge per person. Every door in the building respects that badge. You don't need a separate badge for the elevator, the parking garage, and the cafeteria.</div>
+    </div>
+
+    <div class="v2-arch-block">
+      <h3>2. "What is that thing called?" — The name service</h3>
+      <p>Your printers, servers, switches, workstations, cameras, and VMs all have names. Those names mean things only if something authoritative says they do. [PRODUCT]-SDNS is that authority, for everything inside your infrastructure.</p>
+      <div class="v2-metaphor">Like the post office for your building — not the public postal service. Internal mail knows which floor, which room, which person. External mail comes in, but inside the building, the routing is yours.</div>
+    </div>
+
+    <div class="v2-arch-block">
+      <h3>3. "Prove you are who you say you are." — The certificate authority</h3>
+      <p>Every encrypted connection between your systems needs a way to verify the other end isn't an imposter. [PRODUCT]-SDNS issues and validates those proofs for your infrastructure — no external certificate authority required.</p>
+      <div class="v2-metaphor">Like the notary public in your own office — your notary can stamp things as genuine without waiting for a government-appointed notary to visit. The stamps are trusted inside your organization because everyone in your organization trusts your notary.</div>
+    </div>
+
+    <div class="v2-arch-block">
+      <h3>4. "What are the rules?" — The policy store</h3>
+      <p>The rules about who can do what, where, and when live in one place. Firewalls, switches, backup jobs, and VM hosts all read from the same rulebook — so a change applied once takes effect everywhere it needs to.</p>
+      <div class="v2-metaphor">Like a building's master floor plan. One architect edits it. Every contractor works from the same copy. You don't have four contractors working from four different blueprints and discovering the discrepancies on demolition day.</div>
+    </div>
+
+    <div class="v2-arch-block">
+      <h3>5. "What happened?" — The audit log</h3>
+      <p>Every change, every login, every policy edit, every certificate rotation is recorded — once, in one place, tamper-evident, timestamp-signed. When someone asks "who changed this on Tuesday?", the answer is a single query.</p>
+      <div class="v2-metaphor">Like the elevator maintenance log that the inspector reads every year. Complete, chronological, signed. The inspector doesn't want four separate logs that might or might not agree with each other.</div>
+    </div>
+  </div>
+</section>
+
+<!-- Security architecture -->
+<section class="v2-arch">
+  <div class="container">
+    <h2>Architecturally safer, on purpose</h2>
+    <p class="v2-subtitle">These are the design decisions we made so that the coordination layer can't become the single point of compromise.</p>
+
+    <div class="v2-layers">
+      <div class="v2-layer">
+        <div class="v2-layer-num">1</div>
+        <div class="v2-layer-body">
+          <h4>Sealed compartments</h4>
+          <p>Every component inside [PRODUCT]-SDNS runs in its own sealed room. If one room catches fire, the others are untouched. A bug in the name service cannot reach the certificate authority. A compromised log reader cannot rewrite the policy store. (In shipbuilding, this is called "watertight bulkheads.")</p>
+        </div>
+      </div>
+
+      <div class="v2-layer">
+        <div class="v2-layer-num">2</div>
+        <div class="v2-layer-body">
+          <h4>Least keys, ever</h4>
+          <p>Every service has a specific set of keys — not the master key. The name service can look up names. It cannot change certificates. The audit log can record events. It cannot approve them. The policy engine can issue rules. It cannot log in as a user. When a key is compromised, only the one door it opens is at risk.</p>
+        </div>
+      </div>
+
+      <div class="v2-layer">
+        <div class="v2-layer-num">3</div>
+        <div class="v2-layer-body">
+          <h4>Every request verified, every time</h4>
+          <p>Inside the coordination layer, no component trusts any other component just because they share a building. Every request between services is verified — same standard as any request from outside. This is the architectural answer to an attacker who has already gotten one foot in the door.</p>
+        </div>
+      </div>
+
+      <div class="v2-layer">
+        <div class="v2-layer-num">4</div>
+        <div class="v2-layer-body">
+          <h4>Tamper-evident history</h4>
+          <p>The audit log is built so that altering a past record is detectable. If an attacker breaks in and tries to erase their tracks, the erasure itself leaves a mark. The history can be checked against itself to prove it hasn't been edited.</p>
+        </div>
+      </div>
+
+      <div class="v2-layer">
+        <div class="v2-layer-num">5</div>
+        <div class="v2-layer-body">
+          <h4>Recovery without dependency</h4>
+          <p>Every [PRODUCT]-SDNS appliance knows how to restore itself from a sealed recovery key that you — and only you — hold. No phone-home required. No support ticket. No vendor portal. If the appliance is wiped, you recover it from the envelope in your safe.</p>
+        </div>
+      </div>
+
+      <div class="v2-layer">
+        <div class="v2-layer-num">6</div>
+        <div class="v2-layer-body">
+          <h4>Updates that don't need the internet</h4>
+          <p>Security updates can arrive from your own internal repository, from a USB key, or from a sealed update image. The appliance does not require cloud connectivity to stay current — which matters for air-gapped deployments, but also for anyone who remembers the last time their "required cloud" was down for six hours.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- The trust boundary -->
+<section class="v2-arch" style="background:#f8fafb;">
+  <div class="container">
+    <h2>Where the trust lines are</h2>
+    <p class="v2-subtitle">Knowing where you have to trust the system and where you don't is half of security.</p>
+
+    <div class="v2-arch-block">
+      <div class="v2-diagram">
+        <svg viewBox="0 0 700 380" xmlns="http://www.w3.org/2000/svg">
+          <!-- Trust boundary box -->
+          <rect x="40" y="30" width="620" height="300" rx="12" fill="none" stroke="#1d4978" stroke-width="3" stroke-dasharray="10,5"/>
+          <text x="350" y="22" text-anchor="middle" fill="#0f2b46" font-size="14" font-weight="bold">YOUR TRUST BOUNDARY (you own everything inside this line)</text>
+
+          <!-- SDNS in center -->
+          <rect x="260" y="140" width="180" height="80" rx="10" fill="#1d4978"/>
+          <text x="350" y="168" text-anchor="middle" fill="white" font-size="15" font-weight="bold">[PRODUCT]-SDNS</text>
+          <text x="350" y="188" text-anchor="middle" fill="#87ceeb" font-size="11">coordination layer</text>
+          <text x="350" y="205" text-anchor="middle" fill="#87ceeb" font-size="11">(your appliance)</text>
+
+          <!-- Four products -->
+          <rect x="80" y="70" width="120" height="55" rx="6" fill="#e8f5e9" stroke="#2e7d32" stroke-width="2"/>
+          <text x="140" y="92" text-anchor="middle" fill="#1b5e20" font-size="13" font-weight="bold">NIVMIA</text>
+          <text x="140" y="110" text-anchor="middle" fill="#388e3c" font-size="10">your appliance</text>
+          <line x1="200" y1="97" x2="260" y2="165" stroke="#1d4978" stroke-width="2"/>
+
+          <rect x="500" y="70" width="120" height="55" rx="6" fill="#e3f2fd" stroke="#1565c0" stroke-width="2"/>
+          <text x="560" y="92" text-anchor="middle" fill="#0d47a1" font-size="13" font-weight="bold">IVMIA</text>
+          <text x="560" y="110" text-anchor="middle" fill="#1976d2" font-size="10">your appliance</text>
+          <line x1="500" y1="97" x2="440" y2="165" stroke="#1d4978" stroke-width="2"/>
+
+          <rect x="80" y="235" width="120" height="55" rx="6" fill="#fff3e0" stroke="#e65100" stroke-width="2"/>
+          <text x="140" y="257" text-anchor="middle" fill="#bf360c" font-size="13" font-weight="bold">OpenUTM</text>
+          <text x="140" y="275" text-anchor="middle" fill="#e65100" font-size="10">your appliance</text>
+          <line x1="200" y1="262" x2="260" y2="195" stroke="#1d4978" stroke-width="2"/>
+
+          <rect x="500" y="235" width="120" height="55" rx="6" fill="#f3e5f5" stroke="#7b1fa2" stroke-width="2"/>
+          <text x="560" y="257" text-anchor="middle" fill="#4a148c" font-size="13" font-weight="bold">VaultSync</text>
+          <text x="560" y="275" text-anchor="middle" fill="#7b1fa2" font-size="10">your appliance</text>
+          <line x1="500" y1="262" x2="440" y2="195" stroke="#1d4978" stroke-width="2"/>
+
+          <!-- External world -->
+          <text x="350" y="365" text-anchor="middle" fill="#c62828" font-size="13" font-weight="bold" font-style="italic">Outside the line: the internet, cloud vendors, third parties — not trusted by default</text>
+        </svg>
+        <div class="v2-diagram-caption">Everything inside the dashed line is yours. [PRODUCT]-SDNS doesn't pull in trust from outside vendors to function. If you disconnect from the internet, the coordination layer keeps running.</div>
+      </div>
+
+      <h3>What's inside the line</h3>
+      <p>Your [PRODUCT]-SDNS appliance, your subordinate product appliances, your employees, your policies, your audit records, your certificates, your name service. All of this runs on your hardware, under your SLA, in your building (or your cloud tenant, if that's where your datacenter lives).</p>
+
+      <h3>What's outside the line</h3>
+      <p>Public internet. Cloud identity providers. Public certificate authorities. Any service you don't own. By default, nothing outside the line is granted authority to change anything inside. If you choose to integrate with an external system, you do it deliberately — not by accident of vendor default settings.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Closing -->
+<section class="v2-closing">
+  <div class="container">
+    <h2>Architecture is the quiet work.</h2>
+    <p>The decisions on this page were made before the first line of code. They are the reason [PRODUCT]-SDNS can survive a compromise of one component, an internet outage, a vendor going dark, or an auditor arriving unannounced.</p>
+    <a href="sovereignty.html" class="cta" style="background:#ffab40;color:#0f2b46;">Why It Works Without the Cloud</a>
+    <a href="safety.html" class="cta-secondary" style="border-color:white;color:white;">What's Coming for Threats</a>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div>
+      <img src="../../assets/icon-only.jpg" alt="DEC-LLC" style="height:56px;margin-bottom:8px;">
+      <p style="font-style:italic;opacity:0.9;margin-bottom:4px;">Open Ideas</p>
+      <p>&copy; 2026 DEC-LLC. All rights reserved.</p>
+    </div>
+    <div class="footer-links">
+      <a href="../../index.html#products">Products</a>
+      <a href="../../index.html#horizon">Horizon</a>
+      <a href="../../index.html#contact">Contact</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

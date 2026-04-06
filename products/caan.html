@@ -3,78 +3,237 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CAAN System Tools — Advanced Network Wizards</title>
+  <title>CAAN Wizards — Complex Networking, Explained As You Build It</title>
   <link rel="stylesheet" href="../styles.css">
+  <link rel="stylesheet" href="../extras.css">
 </head>
 <body>
+
 
 <nav>
   <div class="container">
     <a href="../index.html" class="logo">
       <img src="../assets/icon-only.jpg" alt="DEC-LLC">
       <div class="logo-text"><span class="logo-name">DEC-LLC</span><svg class="logo-squiggle" viewBox="0 0 80 6" xmlns="http://www.w3.org/2000/svg"><path d="M0 3 Q10 0, 20 3 Q30 6, 40 3 Q50 0, 60 3 Q70 6, 80 3" stroke="rgba(255,255,255,0.5)" stroke-width="1.5" fill="none"/></svg><span class="logo-slogan">Open Ideas</span></div>
-      
     </a>
     <ul>
       <li><a href="../index.html#products">Products</a></li>
-      <li><a href="../index.html#pricing">Pricing</a></li>
-      <li><a href="../index.html#opensource">Open Source</a></li>
-      <li><a href="../store.html">Store</a></li>
+      <li><a href="../index.html#why">Why DEC-LLC</a></li>
       <li><a href="../index.html#contact">Contact</a></li>
     </ul>
-    <a href="../store.html" class="nav-cta">Buy Now</a>
   </div>
 </nav>
 
-<section class="hero">
+<section class="v2-hero">
   <div class="container">
-    <h1>CAAN System Tools</h1>
-    <p>Advanced Network Wizards</p>
-    <p style="opacity:0.7;font-size:1rem;">Guided configuration for complex network setups — from lab to enterprise.</p>
-    <a href="../index.html#pricing" class="cta">Start Free Trial</a>
-    <a href="#features" class="cta-secondary">See Features</a>
+    <div class="v2-tagline">Guided Network Configuration</div>
+    <h1>CAAN Wizards</h1>
+    <p class="v2-lede">Network bonding, virtual switches, VPN tunnels, routing policies — the kind of configuration that takes a senior engineer and a stack of documentation. CAAN sits with you and walks through it step by step, explaining every decision along the way. You don't just get a working config. You understand why it works.</p>
+    <div class="v2-cta-row">
+      <a href="#intelligence" class="cta">See What Makes It Different</a>
+      <a href="#capabilities" class="cta-secondary">Capabilities</a>
+    </div>
   </div>
 </section>
 
-<section id="features">
+<!-- The story -->
+<section class="v2-story">
   <div class="container">
-    <h2>Key Capabilities</h2>
-    <p class="subtitle">Simplify Linux networking, OpenVSwitch, bonding, VLANs, routing, and VPN configuration with intelligent wizards.</p>
-    <div class="product-grid">
-      <div class="product-card">
-        <h3>Network Configuration Wizards</h3>
-        <p>Step-by-step guided setup for bonds, bridges, VLANs, routing tables, and firewall rules on Linux hosts.</p>
+    <div class="v2-story-inner">
+      <h2>You need to set up network bonding. The documentation is 47 pages long.</h2>
+      <p>Somewhere in those pages is the answer to your specific situation — two network ports, active-backup mode, on this version of your operating system, with this type of switch on the other end. But finding the right combination of settings means reading all 47 pages, cross-referencing three other documents, and hoping the forum post from 2019 still applies to your current version.</p>
+
+      <p>Or you could copy someone's configuration from the internet and hope it works. It usually does — until it doesn't, and then you're debugging a configuration you don't fully understand, at 2 AM, because a network bond failed and took production offline.</p>
+
+      <div class="v2-metaphor">CAAN is like having an expert colleague sit down with you and walk through the setup together. Not someone who does it for you while you watch — someone who builds it with you, explaining each decision. "We're choosing this mode because your switch supports it and it gives you failover. Here's what would happen if we chose the other mode instead." You finish the session with a working configuration AND the knowledge to maintain it, modify it, or troubleshoot it confidently.</div>
+
+      <p>The difference between CAAN and a script that generates configs automatically is learning. A script gives you a black box that works until it doesn't. CAAN gives you understanding — so when something changes, you know what to adjust and why.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Intelligence -->
+<section id="intelligence" class="v2-benefits">
+  <div class="container">
+    <h2>The intelligence that makes it different</h2>
+    <div class="v2-benefit-grid">
+
+      <div class="v2-benefit-card">
+        <div class="v2-check">&#10003;</div>
+        <h3>Explains as it builds</h3>
+        <p>Every step includes a plain-language explanation of what's being configured and why. Not just "set this value to 1500" but "this controls the maximum size of data that can travel across this link in one piece — 1500 is the standard for most networks, but here's when you'd change it."</p>
       </div>
-      <div class="product-card">
-        <h3>OpenVSwitch Management</h3>
-        <p>Create and manage OVS bridges, flows, tunnels, and mirrors through a clean interface instead of raw ovs-vsctl.</p>
+
+      <div class="v2-benefit-card">
+        <div class="v2-check">&#10003;</div>
+        <h3>Adapts to your environment</h3>
+        <p>CAAN inspects your system before offering options. It knows which network ports you have, what's connected, what your switch supports. The wizard only presents choices that apply to your actual hardware and software — not every possible option in the universe.</p>
       </div>
-      <div class="product-card">
-        <h3>REST API & SDK</h3>
-        <p>Full REST API for automation. Python SDK for integration into CI/CD pipelines and infrastructure-as-code workflows.</p>
+
+      <div class="v2-benefit-card">
+        <div class="v2-check">&#10003;</div>
+        <h3>Prevents common mistakes</h3>
+        <p>CAAN knows the gotchas. If you're about to configure something that will disconnect your remote session, it warns you. If two settings conflict, it explains the conflict before you apply them. The mistakes that send people to forums at midnight get caught during the wizard.</p>
       </div>
-      <div class="product-card">
-        <h3>Template Library</h3>
-        <p>Pre-built templates for common network topologies — datacenter leaf-spine, lab environments, VPN concentrators.</p>
+
+      <div class="v2-benefit-card">
+        <div class="v2-check">&#10003;</div>
+        <h3>Builds confidence, not dependency</h3>
+        <p>The goal isn't to make you dependent on CAAN forever. After walking through a VPN tunnel setup once with explanations, you understand the components well enough to modify it next time — or build the next one from scratch. CAAN teaches you to fish.</p>
       </div>
-      <div class="product-card">
-        <h3>Validation Engine</h3>
-        <p>Validate network configurations before applying. Detect loops, MTU mismatches, and routing conflicts.</p>
+
+      <div class="v2-benefit-card">
+        <div class="v2-check">&#10003;</div>
+        <h3>Automation-ready after you understand</h3>
+        <p>Once you've built something with the wizard and understand how it works, CAAN includes an automation interface for doing it at scale. Build the first one interactively with explanations, then automate the next fifty. You understand what the automation is doing because you did it by hand first.</p>
       </div>
-      <div class="product-card">
-        <h3>Multi-Host Deployment</h3>
-        <p>Push network configurations to multiple hosts simultaneously. Ansible-compatible inventory format.</p>
+
+      <div class="v2-benefit-card">
+        <div class="v2-check">&#10003;</div>
+        <h3>Works with your existing equipment</h3>
+        <p>CAAN doesn't require you to replace anything. It generates configurations that work with the hardware and software you already have. It's a guide for your environment, not a sales pitch for different equipment.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Capabilities -->
+<section id="capabilities" class="v2-arch" style="background:#f8fafb;">
+  <div class="container">
+    <h2>What CAAN walks you through</h2>
+    <p class="v2-subtitle">Each wizard handles one category of network configuration — the kind that usually requires a specialist or hours of documentation diving.</p>
+
+    <div class="v2-layers">
+      <div class="v2-layer">
+        <div class="v2-layer-num">1</div>
+        <div class="v2-layer-body">
+          <h4>Network bonding and teaming</h4>
+          <p>Combine multiple network connections for redundancy or speed. CAAN detects your ports, checks what your switch supports, and recommends the right mode — active-backup for reliability, round-robin for throughput, or dynamic for both.</p>
+        </div>
+      </div>
+
+      <div class="v2-layer">
+        <div class="v2-layer-num">2</div>
+        <div class="v2-layer-body">
+          <h4>Virtual switch configuration</h4>
+          <p>Set up virtual networking for your VMs and containers. CAAN builds the bridge, connects it to the right physical port, and configures traffic isolation — so your virtual machines talk to the network correctly without exposing things they shouldn't.</p>
+        </div>
+      </div>
+
+      <div class="v2-layer">
+        <div class="v2-layer-num">3</div>
+        <div class="v2-layer-body">
+          <h4>VPN tunnel setup</h4>
+          <p>Site-to-site and remote-access tunnels, explained step by step. CAAN handles the encryption settings, the routing, the firewall rules that need to open — and explains why each piece matters so you can troubleshoot if something disconnects later.</p>
+        </div>
+      </div>
+
+      <div class="v2-layer">
+        <div class="v2-layer-num">4</div>
+        <div class="v2-layer-body">
+          <h4>Routing policies</h4>
+          <p>When traffic needs to take different paths based on where it's going or where it came from — that's policy routing. CAAN walks you through the logic: "traffic from the guest network goes out this connection, traffic from the corporate network goes out that one."</p>
+        </div>
+      </div>
+
+      <div class="v2-layer">
+        <div class="v2-layer-num">5</div>
+        <div class="v2-layer-body">
+          <h4>Network segmentation</h4>
+          <p>Dividing your network into secure zones — keeping guest traffic separate from corporate, isolating IoT devices, protecting sensitive servers. CAAN designs the segmentation and generates the configuration, explaining the security rationale at each step.</p>
+        </div>
+      </div>
+
+      <div class="v2-layer">
+        <div class="v2-layer-num">6</div>
+        <div class="v2-layer-body">
+          <h4>Automation interface</h4>
+          <p>After you've used the interactive wizards to understand the configuration, CAAN provides a programmable interface for automation. Integrate with your deployment tools, build templates, deploy configurations at scale — with the confidence that comes from understanding what's being deployed.</p>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<section style="background:linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);color:#fff;text-align:center;">
+<!-- Who it's for -->
+<section class="v2-usecase">
   <div class="container">
-    <h2 style="color:#fff;">Ready to get started with CAAN System Tools?</h2>
-    <p style="opacity:0.8;max-width:500px;margin:12px auto 24px;">Start free with up to 2 hosts. Professional plans from $330/mo per product.</p>
-    <a href="../index.html#pricing" class="cta" style="background:#fff;color:var(--primary);">View Pricing</a>
-    <a href="mailto:sales@decllc.biz" class="cta-secondary">Contact Sales</a>
+    <h2>Who runs CAAN</h2>
+
+    <div class="v2-usecase-block">
+      <div class="v2-persona">The sysadmin who's good at servers but networking isn't their specialty</div>
+      <h3>You've been asked to set up the VPN tunnel. You can figure it out — you just need guidance, not a course.</h3>
+      <p>CAAN meets you where you are. It doesn't assume you're a networking expert, but it doesn't insult your intelligence either. It walks you through the setup with enough explanation to understand what you're doing, enough context to know when to deviate from the defaults, and enough safety checks to prevent the mistakes that would otherwise take hours to diagnose.</p>
+      <div class="v2-outcome"><strong>Result:</strong> Working VPN tunnel in an hour instead of a day. Understanding that sticks, not a config you can't maintain.</div>
+    </div>
+
+    <div class="v2-usecase-block">
+      <div class="v2-persona">The IT team standardizing network configurations</div>
+      <h3>Every office is configured slightly differently because different people set them up.</h3>
+      <p>CAAN's wizards produce consistent, documented configurations every time. Use the interactive wizards to define the standard, then use the automation interface to deploy it across locations. When a new office comes online, the configuration matches every other office — because it was built by the same wizard, not a different person's interpretation of a wiki page.</p>
+      <div class="v2-outcome"><strong>Result:</strong> Consistent configurations across every location. Onboarding new sites goes from days to hours.</div>
+    </div>
+
+    <div class="v2-usecase-block">
+      <div class="v2-persona">The consultant building networks for clients</div>
+      <h3>You need to deliver configurations that the client's team can maintain after you leave.</h3>
+      <p>CAAN's explanations become documentation automatically. When you walk through a wizard with the client watching, they see what was configured and why. The configuration comes with built-in understanding — so the client's team can maintain it, modify it, and troubleshoot it without calling you back.</p>
+      <div class="v2-outcome"><strong>Result:</strong> Handoff that actually works. Clients maintain their own network instead of depending on you permanently.</div>
+    </div>
+
+  </div>
+</section>
+
+<!-- Future-readiness -->
+<section class="v2-tomorrow">
+  <div class="container">
+    <div class="v2-future">
+      <div class="v2-section-label">Ready for what's coming</div>
+      <h2>Network complexity in 2030</h2>
+
+      <div class="v2-future-item">
+        <div class="v2-icon">&#x1F30A;</div>
+        <div>
+          <h4>More devices, more segmentation, more complexity</h4>
+          <p>IoT, building automation, and hybrid work are multiplying the number of network segments organizations need. The demand for complex configurations is growing faster than the supply of people who know how to build them. CAAN closes that gap by making the knowledge accessible, not exclusive.</p>
+        </div>
+      </div>
+
+      <div class="v2-future-item">
+        <div class="v2-icon">&#x1F393;</div>
+        <div>
+          <h4>The networking talent shortage deepens</h4>
+          <p>Senior network engineers are retiring faster than new ones are being trained. Organizations that depend on expertise locked in one person's head are exposed. CAAN transfers that expertise into the tooling — so the knowledge is available to whoever's on shift, not whoever has 20 years of experience.</p>
+        </div>
+      </div>
+
+      <div class="v2-future-item">
+        <div class="v2-icon">&#x1F6E1;</div>
+        <div>
+          <h4>Security mandates require documented configurations</h4>
+          <p>Compliance frameworks increasingly require not just that your network is configured correctly, but that you can prove why each configuration choice was made. CAAN's step-by-step explanations create that documentation trail automatically — every wizard run produces a record of what was configured, why, and by whom.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Pricing teaser -->
+<section style="background:#fff;padding:60px 0;text-align:center;">
+  <div class="container">
+    <h2 style="color:#0f2b46;">Build it right the first time. Understand it forever.</h2>
+    <p style="max-width:700px;margin:0 auto 28px;color:#444;font-size:1.1rem;">CAAN Wizards are included with NIVMIA and available standalone. Interactive wizards are free for common configurations. Advanced wizards and the automation interface are available via subscription.</p>
+    <a href="../index.html#contact" class="btn btn-primary">Contact Sales</a>
+  </div>
+</section>
+
+<section class="v2-closing">
+  <div class="container">
+    <h2>Complex networking shouldn't require a specialist every time.</h2>
+    <p>CAAN puts the expertise in the tool — so your team builds confidently, learns permanently, and automates when they're ready.</p>
+    <a href="../index.html" class="cta" style="background:#ffab40;color:#0f2b46;">Back to All Products</a>
+    <a href="mailto:sales@decllc.biz" class="cta-secondary" style="border-color:white;color:white;">Talk to Us</a>
   </div>
 </section>
 
@@ -87,10 +246,11 @@
     </div>
     <div class="footer-links">
       <a href="../index.html#products">Products</a>
-      <a href="../index.html#pricing">Pricing</a>
+      <a href="../index.html#horizon">Horizon</a>
       <a href="../index.html#contact">Contact</a>
     </div>
   </div>
 </footer>
+
 </body>
 </html>
