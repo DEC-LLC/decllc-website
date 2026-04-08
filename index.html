@@ -334,7 +334,7 @@
       <a href="#products" style="display:block;padding:18px 28px;background:rgba(255,255,255,0.12);border-radius:8px;text-decoration:none;text-align:center;min-width:200px;">
         <span style="color:white;font-size:1.1rem;font-weight:700;">Browse the Appliances</span>
       </a>
-      <a href="mailto:sales@decllc.biz" style="display:block;padding:18px 28px;background:rgba(255,255,255,0.12);border-radius:8px;text-decoration:none;text-align:center;min-width:200px;">
+      <a href="contact.html" style="display:block;padding:18px 28px;background:rgba(255,255,255,0.12);border-radius:8px;text-decoration:none;text-align:center;min-width:200px;">
         <span style="color:white;font-size:1.1rem;font-weight:700;">Talk to Us</span>
       </a>
       <a href="opensource.html" style="display:block;padding:18px 28px;background:rgba(255,255,255,0.12);border-radius:8px;text-decoration:none;text-align:center;min-width:200px;">
@@ -359,24 +359,48 @@
 
 <!-- Contact -->
 <section id="contact" style="background:#f8fafb;padding:60px 0;">
-  <div class="container">
-    <h2 style="text-align:center;color:#0f2b46;font-size:2rem;margin-bottom:32px;">Contact</h2>
-    <div class="contact-info">
-      <div class="contact-item">
-        <h4>Sales</h4>
-        <a href="mailto:sales@decllc.biz">sales@decllc.biz</a>
+  <div class="container" style="max-width:700px;">
+    <h2 style="text-align:center;color:#0f2b46;font-size:2rem;margin-bottom:8px;">Contact</h2>
+    <p style="text-align:center;color:#555;margin-bottom:32px;">Questions, pricing, partnerships, or just want to talk? We'll get back to you within one business day.</p>
+
+    <div id="hp-contact-success" style="display:none;background:#d4edda;color:#155724;padding:16px;border-radius:8px;margin-bottom:20px;text-align:center;font-weight:600;">Message sent. We'll be in touch shortly.</div>
+
+    <form id="hp-contact-form" onsubmit="hpSubmitContact(event)" style="background:white;padding:28px;border-radius:12px;box-shadow:0 2px 12px rgba(0,0,0,0.08);">
+      <div style="display:flex;gap:12px;margin-bottom:12px;flex-wrap:wrap;">
+        <div style="flex:1;min-width:180px;">
+          <label style="display:block;font-weight:600;font-size:0.85rem;margin-bottom:4px;color:#0f2b46;">Name *</label>
+          <input type="text" id="hp-name" required style="width:100%;padding:10px;border-radius:8px;border:1px solid #ddd;font-size:0.95rem;">
+        </div>
+        <div style="flex:1;min-width:180px;">
+          <label style="display:block;font-weight:600;font-size:0.85rem;margin-bottom:4px;color:#0f2b46;">Email *</label>
+          <input type="email" id="hp-email" required style="width:100%;padding:10px;border-radius:8px;border:1px solid #ddd;font-size:0.95rem;">
+        </div>
       </div>
-      <div class="contact-item">
-        <h4>General</h4>
-        <a href="mailto:info@decllc.biz">info@decllc.biz</a>
+      <div style="margin-bottom:12px;">
+        <label style="display:block;font-weight:600;font-size:0.85rem;margin-bottom:4px;color:#0f2b46;">Message *</label>
+        <textarea id="hp-message" required rows="3" style="width:100%;padding:10px;border-radius:8px;border:1px solid #ddd;font-size:0.95rem;resize:vertical;font-family:inherit;"></textarea>
       </div>
-      <div class="contact-item">
-        <h4>Phone</h4>
-        <a href="tel:+12012549971">(201) 254-9971</a>
-      </div>
-    </div>
+      <button type="submit" id="hp-btn" style="width:100%;padding:12px;background:#0f2b46;color:white;border:none;border-radius:8px;font-size:1rem;font-weight:700;cursor:pointer;">Send Message</button>
+    </form>
+    <p style="text-align:center;margin-top:16px;color:#888;font-size:0.9rem;">Or call us: <a href="tel:+12012549971" style="color:#0f2b46;font-weight:600;">(201) 254-9971</a> &nbsp;&middot;&nbsp; <a href="contact.html" style="color:#0f2b46;font-weight:600;">Full contact form</a></p>
   </div>
 </section>
+
+<script>
+function hpSubmitContact(e) {
+  e.preventDefault();
+  var btn = document.getElementById('hp-btn');
+  var form = document.getElementById('hp-contact-form');
+  var ok = document.getElementById('hp-contact-success');
+  btn.disabled = true; btn.textContent = 'Sending...';
+  ok.style.display = 'none';
+  var data = { name: document.getElementById('hp-name').value, email: document.getElementById('hp-email').value, message: document.getElementById('hp-message').value, _subject: 'Website Contact (homepage)' };
+  fetch('https://portal.dec-llc.biz/api/v1/contact', { method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify(data) })
+  .then(function(r){ if(!r.ok) throw ''; return r.json(); }).then(function(){ done(true); })
+  .catch(function(){ fetch('https://formspree.io/f/sales@decllc.biz', { method:'POST', headers:{'Content-Type':'application/json','Accept':'application/json'}, body:JSON.stringify(data) }).then(function(r){ done(r.ok); }).catch(function(){ done(false); }); });
+  function done(s){ btn.disabled=false; btn.textContent='Send Message'; if(s){ ok.style.display='block'; form.reset(); } else { alert('Please email sales@decllc.biz directly.'); } }
+}
+</script>
 
 <footer>
   <div class="container">

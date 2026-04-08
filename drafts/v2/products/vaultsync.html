@@ -9,12 +9,13 @@
 </head>
 <body>
 
+<div class="v2-draft-banner">DRAFT v2 — benefit-oriented rewrite</div>
 
 <nav>
   <div class="container">
     <a href="../index.html" class="logo">
-      <img src="../assets/logo-circle.svg" alt="DEC-LLC">
-      
+      <img src="../assets/icon-only.jpg" alt="DEC-LLC">
+      <div class="logo-text"><span class="logo-name">DEC-LLC</span><svg class="logo-squiggle" viewBox="0 0 80 6" xmlns="http://www.w3.org/2000/svg"><path d="M0 3 Q10 0, 20 3 Q30 6, 40 3 Q50 0, 60 3 Q70 6, 80 3" stroke="rgba(255,255,255,0.5)" stroke-width="1.5" fill="none"/></svg><span class="logo-slogan">Open Ideas</span></div>
     </a>
     <ul>
       <li><a href="../index.html#products">Products</a></li>
@@ -33,14 +34,6 @@
       <a href="#intelligence" class="cta">See What Makes It Different</a>
       <a href="#capabilities" class="cta-secondary">Capabilities</a>
     </div>
-  </div>
-</section>
-
-<!-- Product screenshot -->
-<section style="background:#f5f5f5;padding:40px 0;">
-  <div class="container" style="text-align:center;">
-    <img src="../assets/screenshots/vaultsync-live-dashboard-backup-status.png" alt="VaultSync Live Dashboard — Backup Jobs and History" style="max-width:900px;width:100%;border-radius:8px;box-shadow:0 8px 32px rgba(0,0,0,0.18);">
-    <p style="margin-top:12px;color:#555;font-size:0.95rem;">VaultSync production dashboard — scheduled jobs and recent backup history with real-time status.</p>
   </div>
 </section>
 
@@ -92,8 +85,8 @@
 
       <div class="v2-benefit-card">
         <div class="v2-check">&#10003;</div>
-        <h3>Multi-platform freedom</h3>
-        <p>Because VaultSync is multi-platform capable, your workloads are never tied to a single vendor. VaultSync continuously syncs VMs across different platforms in the background — so if your licensing situation changes, your business priorities shift, or you simply find a better fit, your workloads are already portable. No migration weekend. No downtime. You move when you're ready, on your terms.</p>
+        <h3>VMware lock-in escape</h3>
+        <p>This is the killer feature. VaultSync continuously syncs your ESXi VMs to Proxmox or KVM format in the background. When you're ready to cancel VMware licenses, your VMs are already running on the new platform. No migration weekend. No downtime. Just switch over.</p>
       </div>
 
       <div class="v2-benefit-card">
@@ -168,7 +161,7 @@
 <section class="v2-arch">
   <div class="container">
     <h2>Beyond backup: Assisted HA and Data Clustering</h2>
-    <p class="v2-subtitle">VaultSync doesn't just copy your data somewhere safe. It can also keep live, synchronized copies across sites — so when a site goes dark, the data and the app are already somewhere else, already working, already up to date.</p>
+    <p class="v2-subtitle">VaultSync doesn't just copy your data somewhere safe. It keeps live, synchronized copies across sites — so when a site goes dark, the data is already somewhere else, ready to work.</p>
 
     <div class="v2-arch-block">
       <h3>Assisted High Availability</h3>
@@ -181,17 +174,17 @@
     <div class="v2-arch-block">
       <h3>Data Clustering</h3>
       <p>Some data doesn't just need to survive a disaster — it needs to be available from multiple places at the same time. A retail company with three warehouses needs inventory data at all three. A law firm with two offices needs case files accessible from both. A school district needs student records at every campus.</p>
-      <div class="v2-metaphor">VaultSync's data clustering keeps your backups safe AND can also provide truly synchronized live data across multiple locations — not just copies waiting to be restored, but active, readable, current replicas running alongside your primary. Think of it like your bank account: you check your balance from the app, the ATM, or the branch teller — and it's always the same number. A deposit at any location shows up everywhere instantly. If the ATM network goes down, the branch still has your balance. When the ATMs come back, they catch up. You never wonder which "copy" of your balance is the real one — there's one truth, available everywhere. That's what data clustering does for your business applications. But it's better than just one source of truth — that data the bank depends on, and that you have access to everywhere, is usually sitting in one database with a backup copy somewhere. With VaultSync, that data is in multiple databases at the same time, without the expensive database replication systems, and ready for ANY disaster — even those global threat actors that could turn your bank into their playground.</div>
-      <p>When one location loses connectivity or goes offline, the other locations already have current data. There's no "failover" event because the data was never in just one place. When the offline location comes back online, VaultSync reconciles — catches that location up on everything that changed while it was disconnected, resolves conflicts, and brings the cluster back to consistency. Automatically.</p>
+      <div class="v2-metaphor">VaultSync's data clustering keeps synchronized, verified copies of your critical data across multiple locations — not as backups waiting to be restored, but as live, readable, current copies. Like having the same library card catalog in every branch of your library, updated in real time. A book checked out at one branch shows as unavailable at all the others, instantly.</div>
+      <p>When one location loses connectivity or goes offline, the other locations already have current data. There's no "failover" event because the data was never in just one place. When the offline location comes back, VaultSync reconciles — catches it up on what changed while it was away, resolves conflicts, and brings the cluster back to consistency. Automatically.</p>
       <p>For businesses that have always been told "real HA and data replication requires a six-figure budget and a dedicated DBA" — VaultSync makes it achievable — without the added zeros. Not by cutting corners on the engineering, but by handling the complexity inside the appliance so your team doesn't have to.</p>
     </div>
   </div>
 </section>
 
 <!-- Cross-product integration -->
-<section class="v2-arch" style="background:#fff;">
+<section class="v2-story">
   <div class="container">
-    <div class="v2-arch-block">
+    <div class="v2-story-inner">
       <h3>Backup is only half the story. What happens between backups is the other half.</h3>
       <p>VaultSync's automated restore test runs Tuesday night. It restores your core accounting database to a sandbox, boots it, validates the data, and records the result: clean. Wednesday morning, the report is in your inbox before your coffee. But this time it also says: <em>"Backup size for finance-db-01 increased 340% overnight. IVMIA reports a new 500GB data disk was attached yesterday by jparker. Retention policy impact: your 30-day rolling storage will exceed quota in 9 days."</em></p>
       <p>VaultSync didn't just test the backup — it asked IVMIA <em>"what changed on this machine?"</em>, got a specific answer with a name and a reason, calculated the downstream impact on your storage budget, and told you in time to act. Not a cryptic log entry. A clear explanation with a person, a cause, and a deadline.</p>
@@ -207,10 +200,10 @@
     <h2>Who runs VaultSync</h2>
 
     <div class="v2-usecase-block">
-      <div class="v2-persona">The company rethinking its virtualization strategy</div>
-      <h3>Your licensing costs changed. You want options, but migrating hundreds of VMs sounds like a six-month project.</h3>
+      <div class="v2-persona">The company planning a VMware exit</div>
+      <h3>You want to leave VMware, but migrating 200 VMs sounds like a six-month project.</h3>
       <p>VaultSync's continuous cross-platform sync runs in the background. Your ESXi VMs are silently replicated to Proxmox or KVM format every night. When you're ready to switch, you flip — no migration weekend, no downtime window, no emergency. Cancel the VMware licenses when you're comfortable, not when you're panicking.</p>
-      <div class="v2-outcome"><strong>Result:</strong> Platform change on your schedule, not anyone's renewal deadline. Zero-downtime migration.</div>
+      <div class="v2-outcome"><strong>Result:</strong> VMware exit on your schedule, not VMware's renewal deadline. Zero-downtime migration.</div>
     </div>
 
     <div class="v2-usecase-block">
@@ -276,7 +269,7 @@
 <section style="background:#fff;padding:60px 0;text-align:center;">
   <div class="container">
     <h2 style="color:#0f2b46;">Protect everything. Test everything. Sleep soundly.</h2>
-    <p style="max-width:700px;margin:0 auto 28px;color:#444;font-size:1.1rem;">VaultSync is priced per protected workload. Start with your most critical VMs and expand from there. Cross-platform restore and multi-platform sync are included in every tier.</p>
+    <p style="max-width:700px;margin:0 auto 28px;color:#444;font-size:1.1rem;">VaultSync is priced per protected workload. Start with your most critical VMs and expand from there. Cross-platform restore and VMware escape sync are included in every tier.</p>
     <a href="../index.html#contact" class="btn btn-primary">Contact Sales</a>
   </div>
 </section>
@@ -284,22 +277,22 @@
 <section class="v2-closing">
   <div class="container">
     <h2>A backup you've never tested is a backup you don't have.</h2>
-    <p>VaultSync makes sure every backup is verified, portable, and ready — so "restore from backup" isn't just a plan, nor a prayer. It's a verified truth.</p>
-    <a href="vaultsync-pricing.html" class="cta" style="background:white;color:#0f2b46;">View Pricing</a>
-    <a href="../contact.html" class="cta-secondary" style="border-color:white;color:white;">Talk to Us</a>
+    <p>VaultSync makes sure every backup is verified, portable, and ready — so "restore from backup" is a plan, not a prayer.</p>
+    <a href="../index.html" class="cta" style="background:#ffab40;color:#0f2b46;">Back to All Products</a>
+    <a href="mailto:sales@decllc.biz" class="cta-secondary" style="border-color:white;color:white;">Talk to Us</a>
   </div>
 </section>
 
 <footer>
   <div class="container">
     <div>
-      <img src="../assets/logo-circle.svg" alt="DEC-LLC" style="height:56px;margin-bottom:8px;">
+      <img src="../assets/icon-only.jpg" alt="DEC-LLC" style="height:56px;margin-bottom:8px;">
       <p style="font-style:italic;opacity:0.9;margin-bottom:4px;">Open Ideas</p>
       <p>&copy; 2026 DEC-LLC. All rights reserved.</p>
     </div>
     <div class="footer-links">
       <a href="../index.html#products">Products</a>
-      <a href="../horizon.html">Horizon</a>
+      <a href="../index.html#horizon">Horizon</a>
       <a href="../index.html#contact">Contact</a>
     </div>
   </div>

@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact DEC-LLC</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="extras.css">
+</head>
+<body>
+
+<nav>
+  <div class="container">
+    <a href="index.html" class="logo">
+      <img src="assets/logo-circle.svg" alt="DEC-LLC"><span style="font-weight:800;font-size:1.1rem;letter-spacing:0.05em;margin-left:10px;">DEC-LLC</span>
+    </a>
+    <ul>
+      <li><a href="index.html#products">Products</a></li>
+      <li><a href="opensource.html">Open Source</a></li>
+      <li><a href="index.html#why">Why DEC-LLC</a></li>
+      <li><a href="horizon.html">The Horizon</a></li>
+      <li><a href="index.html#about">About</a></li>
+      <li><a href="store.html">Store</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<section class="v2-hero" style="padding:40px 0 20px;">
+  <div class="container">
+    <h1>Get in Touch</h1>
+    <p class="v2-lede">Questions about our products, pricing, partnerships, or anything else? Send us a message and we'll get back to you within one business day.</p>
+  </div>
+</section>
+
+<section style="background:#f8fafb;padding:60px 0;">
+  <div class="container" style="max-width:700px;">
+
+    <!-- Success banner (hidden by default) -->
+    <div id="contact-success" style="display:none;background:#d4edda;color:#155724;padding:20px;border-radius:8px;margin-bottom:24px;text-align:center;font-weight:600;font-size:1.05rem;">
+      Message sent. We'll get back to you shortly.
+    </div>
+
+    <!-- Error banner (hidden by default) -->
+    <div id="contact-error" style="display:none;background:#f8d7da;color:#721c24;padding:20px;border-radius:8px;margin-bottom:24px;text-align:center;font-weight:600;font-size:1.05rem;">
+      Something went wrong. Please email us directly at <a href="mailto:sales@decllc.biz" style="color:#721c24;">sales@decllc.biz</a>.
+    </div>
+
+    <form id="contact-form" onsubmit="submitContact(event)" style="background:white;padding:36px;border-radius:12px;box-shadow:0 2px 12px rgba(0,0,0,0.08);">
+      <div style="display:flex;gap:16px;margin-bottom:16px;flex-wrap:wrap;">
+        <div style="flex:1;min-width:200px;">
+          <label style="display:block;font-weight:600;font-size:0.9rem;margin-bottom:6px;color:#0f2b46;">Full Name *</label>
+          <input type="text" id="contact-name" required style="width:100%;padding:12px;border-radius:8px;border:1px solid #ddd;font-size:1rem;">
+        </div>
+        <div style="flex:1;min-width:200px;">
+          <label style="display:block;font-weight:600;font-size:0.9rem;margin-bottom:6px;color:#0f2b46;">Company</label>
+          <input type="text" id="contact-company" style="width:100%;padding:12px;border-radius:8px;border:1px solid #ddd;font-size:1rem;">
+        </div>
+      </div>
+
+      <div style="display:flex;gap:16px;margin-bottom:16px;flex-wrap:wrap;">
+        <div style="flex:1;min-width:200px;">
+          <label style="display:block;font-weight:600;font-size:0.9rem;margin-bottom:6px;color:#0f2b46;">Email *</label>
+          <input type="email" id="contact-email" required style="width:100%;padding:12px;border-radius:8px;border:1px solid #ddd;font-size:1rem;">
+        </div>
+        <div style="flex:1;min-width:200px;">
+          <label style="display:block;font-weight:600;font-size:0.9rem;margin-bottom:6px;color:#0f2b46;">Phone (optional)</label>
+          <input type="tel" id="contact-phone" style="width:100%;padding:12px;border-radius:8px;border:1px solid #ddd;font-size:1rem;">
+        </div>
+      </div>
+
+      <div style="margin-bottom:16px;">
+        <label style="display:block;font-weight:600;font-size:0.9rem;margin-bottom:6px;color:#0f2b46;">Subject *</label>
+        <select id="contact-subject" required style="width:100%;padding:12px;border-radius:8px;border:1px solid #ddd;font-size:1rem;background:white;">
+          <option value="">Select a topic...</option>
+          <option value="Product Inquiry">Product Inquiry</option>
+          <option value="Pricing &amp; Licensing">Pricing &amp; Licensing</option>
+          <option value="Partnership">Partnership</option>
+          <option value="Technical Question">Technical Question</option>
+          <option value="Investment Inquiry">Investment Inquiry</option>
+          <option value="Press / Media">Press / Media</option>
+          <option value="Other">Other</option>
+        </select>
+      </div>
+
+      <div style="margin-bottom:20px;">
+        <label style="display:block;font-weight:600;font-size:0.9rem;margin-bottom:6px;color:#0f2b46;">Message *</label>
+        <textarea id="contact-message" required rows="5" style="width:100%;padding:12px;border-radius:8px;border:1px solid #ddd;font-size:1rem;resize:vertical;font-family:inherit;"></textarea>
+      </div>
+
+      <button type="submit" id="contact-btn" style="width:100%;padding:14px;background:#0f2b46;color:white;border:none;border-radius:8px;font-size:1.05rem;font-weight:700;cursor:pointer;">Send Message</button>
+    </form>
+
+    <div style="margin-top:32px;text-align:center;color:#666;">
+      <p style="font-size:0.95rem;">You can also reach us directly:</p>
+      <p style="font-size:0.95rem;">
+        <strong>Sales:</strong> (201) 254-9971 &nbsp;&middot;&nbsp;
+        <strong>Email:</strong> sales@decllc.biz
+      </p>
+      <p style="font-size:0.85rem;color:#999;margin-top:8px;">Based in New York. Serving customers worldwide.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div>
+      <img src="assets/logo-circle.svg" alt="DEC-LLC" style="height:56px;margin-bottom:8px;">
+      <p style="font-style:italic;opacity:0.9;margin-bottom:4px;">Open Ideas</p>
+      <p>&copy; 2026 DEC-LLC. All rights reserved.</p>
+    </div>
+    <div class="footer-links">
+      <a href="index.html#products">Products</a>
+      <a href="horizon.html">Horizon</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+function submitContact(e) {
+  e.preventDefault();
+  var btn = document.getElementById('contact-btn');
+  var form = document.getElementById('contact-form');
+  var successEl = document.getElementById('contact-success');
+  var errorEl = document.getElementById('contact-error');
+
+  btn.disabled = true;
+  btn.textContent = 'Sending...';
+  successEl.style.display = 'none';
+  errorEl.style.display = 'none';
+
+  var data = {
+    name: document.getElementById('contact-name').value,
+    company: document.getElementById('contact-company').value,
+    email: document.getElementById('contact-email').value,
+    phone: document.getElementById('contact-phone').value,
+    subject: document.getElementById('contact-subject').value,
+    message: document.getElementById('contact-message').value,
+    _subject: 'Website Contact: ' + document.getElementById('contact-subject').value,
+  };
+
+  // Primary: Portal API (server-side processing)
+  // Fallback: Formspree (third-party form endpoint)
+  var portalUrl = 'https://portal.dec-llc.biz/api/v1/contact';
+  var formspreeUrl = 'https://formspree.io/f/sales@decllc.biz';
+
+  fetch(portalUrl, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(data),
+  })
+  .then(function(r) {
+    if (!r.ok) throw new Error('Portal unavailable');
+    return r.json();
+  })
+  .then(function() { showResult(true); })
+  .catch(function() {
+    // Fallback to Formspree
+    fetch(formspreeUrl, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify(data),
+    })
+    .then(function(r) {
+      if (!r.ok) throw new Error('Formspree failed');
+      showResult(true);
+    })
+    .catch(function() {
+      showResult(false);
+    });
+  });
+
+  function showResult(ok) {
+    btn.disabled = false;
+    btn.textContent = 'Send Message';
+    if (ok) {
+      successEl.style.display = 'block';
+      form.reset();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    } else {
+      errorEl.style.display = 'block';
+    }
+  }
+}
+</script>
+
+</body>
+</html>
