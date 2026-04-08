@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SDNS — Safer by Design</title>
+  <title>SDNS — Safer Together</title>
   <link rel="stylesheet" href="../../styles.css">
   <link rel="stylesheet" href="../../extras.css">
 </head>
@@ -14,7 +14,7 @@
   <div class="container">
     <a href="../../index.html" class="logo">
       <img src="../../assets/logo-circle.svg" alt="DEC-LLC">
-      
+
     </a>
     <ul>
       <li><a href="../../index.html#products">Products</a></li>
@@ -27,10 +27,10 @@
 <div class="v2-subnav">
   <div class="container">
     <span class="v2-subnav-name">SDNS</span>
-    <a href="index.html">Overview</a>
-    <a href="architecture.html">Architecture</a>
+    <a href="index.html">Vision</a>
+    <a href="architecture.html">How It Works</a>
     <a href="sovereignty.html">Sovereignty</a>
-    <a href="safety.html" class="active">Safer by Design</a>
+    <a href="safety.html" class="active">Safer Together</a>
     <a href="integration.html">Integration</a>
     <a href="use-cases.html">Use Cases</a>
   </div>
@@ -38,22 +38,22 @@
 
 <section class="v2-hero">
   <div class="container">
-    <div class="v2-tagline">Safer by design</div>
+    <div class="v2-tagline">Safer together</div>
     <h1>The safety features aren't features. They're the design.</h1>
-    <p class="v2-lede">A safe building isn't safe because someone added airbags to it. A safe coordination layer isn't safe because someone added a firewall to it. Safety is a property of how the thing is built. Here is what we built in, and which threats each piece answers.</p>
+    <p class="v2-lede">A safe building isn't safe because someone added airbags to it. A safe coordination layer isn't safe because someone added a firewall to it. Safety is a property of how the thing is built. Here are the design principles built into every DEC-LLC product, and which threats each one answers.</p>
   </div>
 </section>
 
 <!-- Defense in depth -->
 <section class="v2-arch">
   <div class="container">
-    <h2>Defense in depth — without the castle language</h2>
+    <h2>Defense in depth &mdash; without the castle language</h2>
     <p class="v2-subtitle">If one defense fails, another catches the fall. And if that one fails, another. Every attacker has to get past every layer.</p>
 
     <div class="v2-arch-block">
-      <p>Old-school security was "build a moat, put a wall inside it, put a keep inside the wall" — outside attackers, inside safety. That model assumes everyone inside is trustworthy and everyone outside isn't. Modern threats don't cooperate with that assumption: attackers get inside (stolen credentials, supply chain, social engineering), and from that point, "everyone inside is trustworthy" becomes a liability.</p>
+      <p>Old-school security was "build a moat, put a wall inside it, put a keep inside the wall" &mdash; outside attackers, inside safety. That model assumes everyone inside is trustworthy and everyone outside isn't. Modern threats don't cooperate with that assumption: attackers get inside (stolen credentials, supply chain, social engineering), and from that point, "everyone inside is trustworthy" becomes a liability.</p>
 
-      <div class="v2-metaphor">Think of an airport instead. Even inside security, passengers can't walk into the cockpit. Gate agents can't access the control tower. Baggage handlers can't reach the tarmac fuel depot. Being "inside" the building is not an access pass — every zone requires its own verification, and every door is logged.</div>
+      <div class="v2-metaphor">Think of an airport instead. Even inside security, passengers can't walk into the cockpit. Gate agents can't access the control tower. Baggage handlers can't reach the tarmac fuel depot. Being "inside" the building is not an access pass &mdash; every zone requires its own verification, and every door is logged.</div>
 
       <div class="v2-diagram">
         <svg viewBox="0 0 700 400" xmlns="http://www.w3.org/2000/svg">
@@ -87,41 +87,41 @@
 <!-- The seven layers -->
 <section class="v2-arch" style="background:#f8fafb;">
   <div class="container">
-    <h2>The seven defenses, in plain language</h2>
+    <h2>Seven design principles, in plain language</h2>
 
     <div class="v2-arch-block">
-      <h3>1. Network boundary — "Only the right doors are open"</h3>
-      <p>Only the specific services your other products need to reach are exposed. Everything else is blocked at the door. An attacker scanning your network finds a narrow, well-defined surface — not a hundred random ports to probe.</p>
+      <h3>1. Network boundary &mdash; "Only the right doors are open"</h3>
+      <p>Only the specific services your products need to reach are exposed. Everything else is blocked at the door. An attacker scanning your network finds a narrow, well-defined surface &mdash; not a hundred random ports to probe.</p>
     </div>
 
     <div class="v2-arch-block">
-      <h3>2. Identity verification — "Everyone shows their ID at every door"</h3>
-      <p>There is no "logged in, now I'm trusted" assumption. Every request — from a user, from a service, from a subordinate product — re-verifies. A stolen credential doesn't stay stolen; every attempt to use it produces a verifiable event.</p>
+      <h3>2. Identity verification &mdash; "Everyone shows their ID at every door"</h3>
+      <p>There is no "logged in, now I'm trusted" assumption. Every request &mdash; from a user, from a service, from a subordinate product &mdash; re-verifies. A stolen credential doesn't stay stolen; every attempt to use it produces a verifiable event.</p>
     </div>
 
     <div class="v2-arch-block">
-      <h3>3. Per-request authorization — "Having a key doesn't mean every door"</h3>
+      <h3>3. Per-request authorization &mdash; "Having a key doesn't mean every door"</h3>
       <p>Authenticated users and services are still authorized per action. A user who can view the audit log can't edit the policy store. A service that can look up names can't rotate certificates. Privilege is scoped tightly at every step, not granted in a lump.</p>
     </div>
 
     <div class="v2-arch-block">
-      <h3>4. Audit and anomaly detection — "Someone is always watching the cameras"</h3>
-      <p>Every action is logged. Unusual patterns — logins at odd hours, policy changes outside change windows, certificate rotations outside schedule — generate alerts. The alerts go to your notification channels, not to a vendor's cloud.</p>
+      <h3>4. Audit and anomaly detection &mdash; "Someone is always watching the cameras"</h3>
+      <p>Every action is logged. Unusual patterns &mdash; logins at odd hours, policy changes outside change windows, certificate rotations outside schedule &mdash; generate alerts. The alerts go to your notification channels, not to a vendor's cloud.</p>
     </div>
 
     <div class="v2-arch-block">
-      <h3>5. Least-privilege isolation — "Each room is separately keyed"</h3>
-      <p>Components inside SDNS are isolated from each other. A bug in one component doesn't grant access to the others. If an attacker compromises the name service, they don't gain the power to issue certificates.</p>
+      <h3>5. Least-privilege isolation &mdash; "Each room is separately keyed"</h3>
+      <p>Components inside each product are isolated from each other. A bug in one component doesn't grant access to the others. If an attacker compromises the name service, they don't gain the power to issue certificates.</p>
     </div>
 
     <div class="v2-arch-block">
-      <h3>6. Tamper-evident records — "The logbook itself is signed"</h3>
-      <p>The audit log is built so that altering past records is detectable. An attacker who compromises the log reader cannot cover their tracks — the erasure itself leaves a mark.</p>
+      <h3>6. Tamper-evident records &mdash; "The logbook itself is signed"</h3>
+      <p>The audit log is built so that altering past records is detectable. An attacker who compromises the log reader cannot cover their tracks &mdash; the erasure itself leaves a mark.</p>
     </div>
 
     <div class="v2-arch-block">
-      <h3>7. Recovery key under your control — "You hold the master override"</h3>
-      <p>Every appliance has a sealed recovery key that restores it to a known-good state. You hold the key. Not DEC-LLC, not a vendor, not a cloud. If the appliance is compromised or corrupted, you recover it from the envelope in your safe — no phone-home, no support ticket, no dependency on anyone.</p>
+      <h3>7. Recovery key under your control &mdash; "You hold the master override"</h3>
+      <p>Every DEC-LLC appliance has a sealed recovery key that restores it to a known-good state. You hold the key. Not DEC-LLC, not a vendor, not a cloud. If the appliance is compromised or corrupted, you recover it from the envelope in your safe &mdash; no phone-home, no support ticket, no dependency on anyone.</p>
     </div>
   </div>
 </section>
@@ -131,13 +131,13 @@
   <div class="container">
     <div class="v2-future">
       <div class="v2-section-label">What we're already building for</div>
-      <h2>The threats that are coming — not the ones you have today</h2>
+      <h2>The threats that are coming &mdash; not the ones you have today</h2>
 
       <div class="v2-future-item">
         <div class="v2-icon">&#x1F916;</div>
         <div>
           <h4>AI attackers that don't sleep</h4>
-          <p>Within a few years, attackers will deploy AI agents that probe, learn, and adapt continuously — no staff turnover, no vacations, no moral qualms. SDNS's per-request authorization, continuous audit, and anomaly detection are designed exactly for this: the assumption that attackers will try a million variations and one of them will succeed on a Tuesday afternoon, so the system needs to catch the one — not just block the 999,999.</p>
+          <p>Within a few years, attackers will deploy AI agents that probe, learn, and adapt continuously &mdash; no staff turnover, no vacations, no moral qualms. Per-request authorization, continuous audit, and anomaly detection are designed exactly for this: the assumption that attackers will try a million variations and one of them will succeed on a Tuesday afternoon, so the system needs to catch the one &mdash; not just block the 999,999.</p>
         </div>
       </div>
 
@@ -145,7 +145,7 @@
         <div class="v2-icon">&#x1F9EC;</div>
         <div>
           <h4>Quantum computers that break today's encryption</h4>
-          <p>When practical quantum computers arrive (timeline: 2030s, possibly earlier), they will break the mathematical problems that protect today's encryption. The defenses that rely on "this would take a million years to break" become "this breaks in an afternoon." You'll need to rotate every key across every system. SDNS's centralized certificate authority is designed for the crypto-rotation event: one place decides, and every subordinate product inherits the new keys in a coordinated push.</p>
+          <p>When practical quantum computers arrive (timeline: 2030s, possibly earlier), they will break the mathematical problems that protect today's encryption. The defenses that rely on "this would take a million years to break" become "this breaks in an afternoon." You'll need to rotate every key across every system. Coordinated certificate management across products is designed for the crypto-rotation event: one decision propagates, and every product inherits the new keys in a coordinated push.</p>
         </div>
       </div>
 
@@ -153,7 +153,7 @@
         <div class="v2-icon">&#x1F4DC;</div>
         <div>
           <h4>Regulations that require proof, not promises</h4>
-          <p>Audit trails are becoming mandatory across more industries every year. The question from the regulator is no longer "do you have security?" — it is "show me the log of who touched this, when." SDNS's tamper-evident history is designed to be the answer to that question. One export. Chronological. Verifiable. Signed.</p>
+          <p>Audit trails are becoming mandatory across more industries every year. The question from the regulator is no longer "do you have security?" &mdash; it is "show me the log of who touched this, when." The tamper-evident history built into every product is designed to be the answer to that question. One export. Chronological. Verifiable. Signed.</p>
         </div>
       </div>
 
@@ -161,7 +161,7 @@
         <div class="v2-icon">&#x1F310;</div>
         <div>
           <h4>Supply-chain attacks on updates</h4>
-          <p>Attackers increasingly target the software update process itself — poison the update, and you poison every consumer of that update. SDNS's update path includes signed packages from your own curated repository, with verification at install time. An update that arrives without the correct signature is refused. You don't have to trust the internet to stay current.</p>
+          <p>Attackers increasingly target the software update process itself &mdash; poison the update, and you poison every consumer of that update. Every DEC-LLC appliance verifies signed packages from your own curated repository at install time. An update that arrives without the correct signature is refused. You don't have to trust the internet to stay current.</p>
         </div>
       </div>
 
@@ -169,7 +169,7 @@
         <div class="v2-icon">&#x1F464;</div>
         <div>
           <h4>Insider compromise</h4>
-          <p>Sometimes the credential stolen is an admin's. Sometimes the action is taken by someone who was trusted and shouldn't have been. SDNS's least-privilege model and continuous audit are designed for this case too: no one person holds a key that bypasses the logs, and no action — even from an admin — is unlogged.</p>
+          <p>Sometimes the credential stolen is an admin's. Sometimes the action is taken by someone who was trusted and shouldn't have been. The least-privilege model and continuous audit built into every product are designed for this case too: no one person holds a key that bypasses the logs, and no action &mdash; even from an admin &mdash; is unlogged.</p>
         </div>
       </div>
     </div>
@@ -179,8 +179,8 @@
 <section class="v2-closing">
   <div class="container">
     <h2>Safety is not a feature. It's a design commitment.</h2>
-    <p>These aren't checkboxes bolted onto a finished product. They are the shape of the thing — chosen before the first line of code, enforced by the architecture, tested on every release.</p>
-    <a href="integration.html" class="cta" style="background:white;color:#0f2b46;">How It Works With Your Other Products</a>
+    <p>These aren't checkboxes bolted onto a finished product. They are the shape of the thing &mdash; chosen before the first line of code, enforced by the architecture, tested on every release.</p>
+    <a href="integration.html" class="cta" style="background:white;color:#0f2b46;">How the Products Work Together</a>
     <a href="use-cases.html" class="cta-secondary" style="border-color:white;color:white;">Real Scenarios</a>
   </div>
 </section>

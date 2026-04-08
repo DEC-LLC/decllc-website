@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SDNS — The Coordination Layer for Your Own Infrastructure</title>
+  <title>SDNS — When Your Infrastructure Works as One</title>
   <link rel="stylesheet" href="../../styles.css">
   <link rel="stylesheet" href="../../extras.css">
 </head>
@@ -14,7 +14,7 @@
   <div class="container">
     <a href="../../index.html" class="logo">
       <img src="../../assets/logo-circle.svg" alt="DEC-LLC">
-      
+
     </a>
     <ul>
       <li><a href="../../index.html#products">Products</a></li>
@@ -29,10 +29,10 @@
 <div class="v2-subnav">
   <div class="container">
     <span class="v2-subnav-name">SDNS</span>
-    <a href="index.html" class="active">Overview</a>
-    <a href="architecture.html">Architecture</a>
+    <a href="index.html" class="active">Vision</a>
+    <a href="architecture.html">How It Works</a>
     <a href="sovereignty.html">Sovereignty</a>
-    <a href="safety.html">Safer by Design</a>
+    <a href="safety.html">Safer Together</a>
     <a href="integration.html">Integration</a>
     <a href="use-cases.html">Use Cases</a>
   </div>
@@ -41,12 +41,12 @@
 <!-- Hero -->
 <section class="v2-hero">
   <div class="container">
-    <div class="v2-tagline">The Coordination Layer</div>
-    <h1>One control plane for every system you run.</h1>
-    <p class="v2-lede">SDNS is the coordination layer for your entire infrastructure — networking, compute, security, backups, identity, certificates, and DNS — all managed from one place, on your hardware, under your authority.</p>
+    <div class="v2-tagline">Software Defined Systems Networking and Storage</div>
+    <h1>Four products. One conversation.</h1>
+    <p class="v2-lede">SDNS is not a product you install. It is what happens when NIVMIA, IVMIA, OpenUTM, and VaultSync start talking to each other &mdash; sharing data, sharing context, and making decisions together that no single product could make alone.</p>
     <div class="v2-cta-row">
-      <a href="architecture.html" class="cta">See the Architecture</a>
-      <a href="sovereignty.html" class="cta-secondary">Why Sovereign Matters</a>
+      <a href="architecture.html" class="cta">How It Works</a>
+      <a href="integration.html" class="cta-secondary">See the Integration</a>
     </div>
   </div>
 </section>
@@ -55,111 +55,103 @@
 <section class="v2-story">
   <div class="container">
     <div class="v2-story-inner">
-      <h2>Think of it as the conductor of your infrastructure orchestra.</h2>
-      <p class="v2-intro">A conductor doesn't own the musicians. Doesn't play the instruments. Doesn't tell the violinist how to hold a bow. What the conductor does is coordinate: tempo, cues, entrances, exits — turning a room of independent virtuosos into one coherent performance.</p>
-      <div class="v2-metaphor">That's what SDNS does for your infrastructure. Your NIVMIA watches the network. Your IVMIA manages your virtual machines. Your OpenUTM guards the perimeter. Your VaultSync protects your data. Each one is an expert in its own domain. SDNS is the one place you look to see them all — and the one place you act to change them all.</div>
-      <p>It is not a management platform that takes control away from your other tools. It is a coordination layer that lets them keep doing what they do best, while giving you a single pane of glass to orchestrate across them.</p>
+      <h2>SDNS is a behavior, not a box.</h2>
+      <p class="v2-intro">Each DEC-LLC product is an expert in its own domain. NIVMIA knows your network. IVMIA knows your virtual machines. OpenUTM guards your perimeter. VaultSync protects your data. Each one runs independently and does its job well.</p>
+      <div class="v2-metaphor">But infrastructure doesn't live in silos. A firewall rule change affects which VMs can talk to which switches. A storage migration changes which backup jobs need to run. A new VLAN on the network means new security groups on the firewall. These cross-cutting decisions happen every day &mdash; and today, a human carries them between dashboards.</div>
+      <p>SDNS is the name for what happens when the products carry those decisions themselves. Through a shared data bus, through AI agents that can reason across domains, and through an event system that lets each product respond to what the others are doing.</p>
 
-      <h3>What "one control plane" actually means for you</h3>
-      <p>Your infrastructure today probably looks like this: one dashboard for your firewall, another for your switches, another for VMware (if you still have it), another for backups, another for DNS, another for identity, and a text file somewhere of your TLS certificates. Every time something needs to change — a new user, a new service, a blocked IP, a rotated certificate — you log into several places and hope nothing falls through the cracks.</p>
-      <p>SDNS replaces that with one place. One login. One audit log. One place to define who can access what. One place to rotate certificates across every system simultaneously. One place to see the full state of your infrastructure — which ends the "whose job is it?" conversation permanently.</p>
+      <h3>What SDNS actually is</h3>
+      <p>It is the <strong>databus</strong> &mdash; a shared data layer where every product publishes what it knows (hosts, networks, assets, workloads, health) and every product can query what the others know.</p>
+      <p>It is the <strong>AI agents</strong> &mdash; local, on-premises intelligence that can reason across all four domains. "Should we migrate this workload?" is not a question any single product can answer. It requires knowledge of network capacity, VM resources, security policy, and backup state. SDNS is where that reasoning happens.</p>
+      <p>It is the <strong>event bus</strong> &mdash; when NIVMIA detects a link failure, OpenUTM can reroute traffic. When IVMIA migrates a VM, VaultSync adjusts its backup targets. When OpenUTM blocks an intrusion, NIVMIA quarantines the switch port. These are not scripted integrations &mdash; they are products that understand each other's events and respond.</p>
 
-      <h3>Why "sovereign" matters</h3>
-      <p>Most management platforms are run by someone else. Your data goes to their cloud. Your identity system belongs to Microsoft or Google. Your certificate authority is maintained by a vendor who can (and does) change the rules on you. If they break, you break. If they go out of business, you rebuild.</p>
-      <p>SDNS is yours. It runs on your hardware. It doesn't phone home. It doesn't need the internet to function. If you unplugged your datacenter from the world tomorrow, your infrastructure would keep coordinating itself — because the coordination authority lives on your own floor.</p>
+      <h3>What SDNS is not</h3>
+      <p>It is not a fifth product. There is no "SDNS appliance" to buy, no "SDNS server" to install, no separate codebase. The databus lives inside each product. The AI agents live inside each product. The event system lives inside each product. SDNS is what emerges when you run them together.</p>
+      <p>Think of it this way: you don't install "harmony" into an orchestra. Harmony is what happens when the musicians listen to each other.</p>
     </div>
   </div>
 </section>
 
-<!-- What it provides -->
+<!-- The three pillars -->
 <section class="v2-benefits">
   <div class="container">
-    <h2>What SDNS is responsible for</h2>
+    <h2>The three things that make SDNS real</h2>
     <div class="v2-benefit-grid">
 
       <div class="v2-benefit-card">
-        <div class="v2-check">✓</div>
-        <h3>Your directory</h3>
-        <p>Who is in your organization, what roles they have, what they are allowed to touch. One place to add a user and have them exist everywhere — not three separate "please create an account in..." tickets.</p>
+        <div class="v2-check">1</div>
+        <h3>The Databus</h3>
+        <p>A shared data contract across all products. Five standard views &mdash; hosts, networks, assets, workloads, health &mdash; that every product publishes and every product can query. When NIVMIA discovers a new switch, IVMIA can see it. When VaultSync finishes a backup, NIVMIA can report it. No custom integrations. No glue code. One data contract.</p>
       </div>
 
       <div class="v2-benefit-card">
-        <div class="v2-check">✓</div>
-        <h3>Your name service</h3>
-        <p>Your own authoritative DNS for your infrastructure. Your printers, servers, cameras, and workstations all have names you control — not names dictated by an outside authority or a cloud vendor's portal.</p>
+        <div class="v2-check">2</div>
+        <h3>Cross-Product AI</h3>
+        <p>Local AI agents &mdash; running on your hardware, not in anyone's cloud &mdash; that can reason across networking, compute, security, and storage simultaneously. They can recommend, advise, and (with your approval) act: migrate a workload, adjust a security group, reroute traffic around a failure. Decisions that used to require a human to correlate four dashboards.</p>
       </div>
 
       <div class="v2-benefit-card">
-        <div class="v2-check">✓</div>
-        <h3>Your certificate authority</h3>
-        <p>Every encrypted connection inside your infrastructure is signed by your certificate authority — not a public one with its own rules, rate limits, and change cycles. Rotate, revoke, re-issue whenever you need to.</p>
-      </div>
-
-      <div class="v2-benefit-card">
-        <div class="v2-check">✓</div>
-        <h3>Your policy</h3>
-        <p>The rules about who can do what, where, when. Written once, enforced everywhere. A policy change in SDNS updates every subordinate system — your firewalls, your switches, your VMs, your backups — in one coordinated push.</p>
-      </div>
-
-      <div class="v2-benefit-card">
-        <div class="v2-check">✓</div>
-        <h3>Your audit log</h3>
-        <p>One tamper-evident record of every action across every system. When the auditor asks "who changed this firewall rule on Tuesday?", you answer in seconds — not by grepping through four different log systems.</p>
-      </div>
-
-      <div class="v2-benefit-card">
-        <div class="v2-check">✓</div>
-        <h3>Your coordinated updates</h3>
-        <p>When one thing needs to change — a password reset, a key rotation, an emergency block — it happens everywhere at once, consistently. No drift. No stale records. No "I thought you did it."</p>
+        <div class="v2-check">3</div>
+        <h3>Event Federation</h3>
+        <p>When something happens in one product, the others can hear it and respond. Not through polling. Not through scheduled syncs. Through real-time events that flow between products. A detected intrusion triggers network isolation. A capacity warning triggers workload rebalancing. A certificate expiration triggers coordinated renewal.</p>
       </div>
 
     </div>
   </div>
 </section>
 
-<!-- Who needs this -->
+<!-- What this means for you -->
 <section class="v2-usecase">
   <div class="container">
-    <h2>Who is SDNS for?</h2>
+    <h2>What this means in practice</h2>
 
     <div class="v2-usecase-block">
-      <div class="v2-persona">The IT director of a 300-person company</div>
-      <h3>You already run three DEC-LLC products, and they're starting to feel like three products.</h3>
-      <p>NIVMIA knows about your switches. IVMIA knows about your VMs. OpenUTM knows about your firewall. But nobody knows about <em>all</em> of them. You want one view, one login, one place to grant access, one place to see what's happening. SDNS is that single place — and when you add VaultSync next quarter, it fits in without ceremony.</p>
-      <div class="v2-outcome"><strong>Outcome:</strong> Your 4 products act like one system, from one screen, with one audit trail.</div>
+      <div class="v2-persona">Today: four dashboards, one human</div>
+      <h3>Your infrastructure sees itself in fragments.</h3>
+      <p>NIVMIA knows a switch port is dropping packets. IVMIA knows a VM is struggling. OpenUTM knows traffic is being rerouted through a backup path. VaultSync knows the backup window is being missed. Four products, four views, four conclusions &mdash; and a human who has to stitch them together to realize: the root cause is a single failing uplink.</p>
     </div>
 
     <div class="v2-usecase-block">
-      <div class="v2-persona">The small business that just got a compliance requirement</div>
-      <h3>An auditor is coming. You need to show control.</h3>
-      <p>Who has admin access? Who logged in last week? Whose password expired? Which certificates expire this quarter? Which firewall rules changed in the last 30 days? Today those answers live in five places. With SDNS they live in one, and the report runs itself.</p>
-      <div class="v2-outcome"><strong>Outcome:</strong> You hand the auditor a single export instead of a scavenger hunt.</div>
+      <div class="v2-persona">With SDNS: one conversation, one conclusion</div>
+      <h3>Your infrastructure sees itself whole.</h3>
+      <p>The databus means every product has the full picture. The AI agent correlates: failing uplink &rarr; degraded VM performance &rarr; rerouted traffic &rarr; missed backup window. It recommends: migrate the affected VMs to a host on a healthy uplink, update the firewall rules to match, and reschedule the backup. One recommendation. One approval. Four products act in concert.</p>
     </div>
+  </div>
+</section>
 
-    <div class="v2-usecase-block">
-      <div class="v2-persona">The school district with a tiny IT team</div>
-      <h3>You cannot afford to log into six systems to add a new teacher.</h3>
-      <p>Today, onboarding a new employee means: create a Microsoft account, create a VPN account, add them to the firewall, give them a wifi certificate, put them in the HR system, and hope nobody forgets a step. SDNS makes it one action — "add user, role = Teacher" — and every downstream system gets the update automatically.</p>
-      <div class="v2-outcome"><strong>Outcome:</strong> What took 40 minutes per new hire takes 60 seconds.</div>
+<!-- The ecosystem -->
+<section class="v2-benefits" style="background:#f8fafb;">
+  <div class="container">
+    <h2>The SDNS ecosystem</h2>
+    <p class="v2-subtitle">The four core products are the foundation. Specialized capabilities extend the conversation.</p>
+
+    <div class="v2-benefit-grid">
+      <div class="v2-benefit-card">
+        <h3>Core Four</h3>
+        <p><strong>NIVMIA</strong> (network), <strong>IVMIA</strong> (compute), <strong>OpenUTM</strong> (security), <strong>VaultSync</strong> (data protection). Each publishes to the databus. Each listens to the event bus. Each hosts AI agents that participate in cross-domain reasoning.</p>
+      </div>
+
+      <div class="v2-benefit-card">
+        <h3>IPv6Auto</h3>
+        <p>Automatic IPv6 addressing and transition management. Runs as an OpenUTM plugin. Publishes address assignments to the databus so NIVMIA and IVMIA see the full dual-stack picture without manual configuration.</p>
+      </div>
+
+      <div class="v2-benefit-card">
+        <h3>FireMigrate</h3>
+        <p>Firewall rule migration between vendors. Reads security policy from one platform, translates and applies it to another. Uses the databus to verify that migrated rules reference real hosts and networks &mdash; not stale entries from a spreadsheet.</p>
+      </div>
     </div>
-
-    <div class="v2-usecase-block">
-      <div class="v2-persona">The nonprofit that lost its cloud budget</div>
-      <h3>Microsoft/Google/AWS raised prices. You need to run on what you own.</h3>
-      <p>You still need directory services, name services, certificate management, coordinated updates, audit logs — the things you used to get by paying someone else. SDNS gives you those capabilities on a server you own, in a closet you control, with no monthly invoice and no vendor rolling out features that break your workflow at their convenience.</p>
-      <div class="v2-outcome"><strong>Outcome:</strong> You replaced a five-figure annual cloud bill with a one-time appliance.</div>
-    </div>
-
+    <p style="margin-top:1.5rem;color:#555;">Future members: credential federation, external identity bridging, certificate lifecycle management &mdash; each delivered as capabilities within existing products, not as separate installations.</p>
   </div>
 </section>
 
 <!-- Closing -->
 <section class="v2-closing">
   <div class="container">
-    <h2>Your infrastructure, under one roof. Still under your authority.</h2>
-    <p>SDNS doesn't replace the tools you already run. It coordinates them — so a room full of specialists plays as an ensemble, not as strangers in the same building.</p>
-    <a href="architecture.html" class="cta" style="background:white;color:#0f2b46;">See How It's Built</a>
-    <a href="safety.html" class="cta-secondary" style="border-color:white;color:white;">Why It's Safer</a>
+    <h2>The whole is greater than the sum of the parts.</h2>
+    <p>You don't buy SDNS. You arrive at it &mdash; by running products that were designed, from the ground up, to work together.</p>
+    <a href="architecture.html" class="cta" style="background:white;color:#0f2b46;">How the Databus Works</a>
+    <a href="use-cases.html" class="cta-secondary" style="border-color:white;color:white;">Real Scenarios</a>
   </div>
 </section>
 

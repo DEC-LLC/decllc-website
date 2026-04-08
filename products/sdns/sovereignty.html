@@ -14,7 +14,7 @@
   <div class="container">
     <a href="../../index.html" class="logo">
       <img src="../../assets/logo-circle.svg" alt="DEC-LLC">
-      
+
     </a>
     <ul>
       <li><a href="../../index.html#products">Products</a></li>
@@ -27,10 +27,10 @@
 <div class="v2-subnav">
   <div class="container">
     <span class="v2-subnav-name">SDNS</span>
-    <a href="index.html">Overview</a>
-    <a href="architecture.html">Architecture</a>
+    <a href="index.html">Vision</a>
+    <a href="architecture.html">How It Works</a>
     <a href="sovereignty.html" class="active">Sovereignty</a>
-    <a href="safety.html">Safer by Design</a>
+    <a href="safety.html">Safer Together</a>
     <a href="integration.html">Integration</a>
     <a href="use-cases.html">Use Cases</a>
   </div>
@@ -40,7 +40,7 @@
   <div class="container">
     <div class="v2-tagline">Independence by design</div>
     <h1>What happens when the cloud you depend on goes dark?</h1>
-    <p class="v2-lede">Most infrastructure today borrows authority from somewhere else. When that somewhere-else has a bad day, so do you. SDNS is built so that the answer to "who does my infrastructure ask for permission?" is: you.</p>
+    <p class="v2-lede">Most infrastructure today borrows authority from somewhere else. When that somewhere-else has a bad day, so do you. DEC-LLC products are built so that the answer to "who does my infrastructure ask for permission?" is: you.</p>
   </div>
 </section>
 
@@ -49,19 +49,19 @@
     <div class="v2-story-inner">
       <h2>The permission problem</h2>
       <p class="v2-intro">Think about how your infrastructure runs today. When a user logs in, who verifies them? Probably Microsoft or Google. When a certificate is issued, who signs it? Probably a public authority. When a name needs resolving, who answers? Probably a cloud DNS. When an update arrives, who decides which packages you can install? Probably the vendor.</p>
-      <p>Every one of those dependencies is an unspoken contract: <em>"I trust this outside party to keep doing their job, on their schedule, under their rules."</em> When the outside party changes terms, raises prices, goes down for a day, or disappears — your infrastructure feels it immediately.</p>
+      <p>Every one of those dependencies is an unspoken contract: <em>"I trust this outside party to keep doing their job, on their schedule, under their rules."</em> When the outside party changes terms, raises prices, goes down for a day, or disappears &mdash; your infrastructure feels it immediately.</p>
 
-      <div class="v2-metaphor">A sovereign nation doesn't ask another country's permission to print its own passports, register its own citizens, or police its own streets. That doesn't mean it's cut off from the world — it means the core functions of governance live inside its own borders. SDNS does the same for your infrastructure's core functions.</div>
+      <div class="v2-metaphor">A sovereign nation doesn't ask another country's permission to print its own passports, register its own citizens, or police its own streets. That doesn't mean it's cut off from the world &mdash; it means the core functions of governance live inside its own borders. Running DEC-LLC products on your own hardware does the same for your infrastructure's core functions.</div>
 
       <h3>What "sovereign" means here (and doesn't)</h3>
       <p>Sovereign is an architectural word, not a political one. It means <strong>the authority to issue, verify, revoke, and audit lives inside your trust boundary.</strong> Nothing about it requires you to be an island. You can still peer with the public internet, still use cloud services for the workloads that make sense there, still rely on external identity for customers or partners. What changes: those external systems become <em>choices</em>, not <em>dependencies</em>.</p>
 
       <h3>Things that keep working when the outside world stops</h3>
       <ul>
-        <li><strong>Employees logging in.</strong> SDNS knows who they are. Microsoft being down doesn't lock them out of your office.</li>
+        <li><strong>Employees logging in.</strong> Your products know who they are. Microsoft being down doesn't lock them out of your office.</li>
         <li><strong>Services talking to each other.</strong> Encrypted connections inside your infrastructure use certificates you issued. A public CA outage doesn't break your internal traffic.</li>
         <li><strong>DNS resolving inside your building.</strong> Your printers, servers, and cameras all answer by name because your name service is yours.</li>
-        <li><strong>Policy enforcement.</strong> Firewalls, switches, and VM hosts read rules from SDNS — not from a cloud configuration portal that requires an API call every time you open a door.</li>
+        <li><strong>Policy enforcement.</strong> Firewalls, switches, and VM hosts read rules from your product appliances &mdash; not from a cloud configuration portal that requires an API call every time you open a door.</li>
         <li><strong>Audit trail.</strong> Your record of who did what is written to your own log, on your own storage, at your own retention policy.</li>
       </ul>
     </div>
@@ -77,24 +77,24 @@
       <div class="v2-problem-card">
         <h3>The day your identity provider had an outage</h3>
         <p>A major cloud identity provider goes down for 6 hours. Employees can't log into the CRM, the VPN, the helpdesk, the wiki, or the backup console. Customer calls pile up. Incidents backlog. Whose fault? Not yours. Whose problem? Entirely yours.</p>
-        <span class="v2-cost">Typical cost: 6 hours × entire workforce idle</span>
+        <span class="v2-cost">Typical cost: 6 hours x entire workforce idle</span>
       </div>
 
       <div class="v2-problem-card">
         <h3>The day the certificate authority changed the rules</h3>
         <p>A public CA quietly shortens certificate lifetimes to 90 days. Now you renew certificates on 800 devices four times a year instead of once. Your team spends a week a month on rotations. You stop asking "why us" and start hoping nothing expires on a holiday weekend.</p>
-        <span class="v2-cost">Typical cost: 4× the previous annual renewal workload</span>
+        <span class="v2-cost">Typical cost: 4x the previous annual renewal workload</span>
       </div>
 
       <div class="v2-problem-card">
         <h3>The day the vendor raised prices</h3>
-        <p>Your cloud directory doubles in cost per user. You have 400 employees. The annual increase is larger than your entire IT hardware budget. You can't negotiate — you can't leave — and switching vendors means rewriting every integration.</p>
+        <p>Your cloud directory doubles in cost per user. You have 400 employees. The annual increase is larger than your entire IT hardware budget. You can't negotiate &mdash; you can't leave &mdash; and switching vendors means rewriting every integration.</p>
         <span class="v2-cost">Typical cost: five- to six-figure annual hostage</span>
       </div>
 
       <div class="v2-problem-card">
         <h3>The day compliance asked "where is this data?"</h3>
-        <p>A regulator asks where your employee directory lives. The answer "Microsoft's cloud, somewhere in Europe" doesn't satisfy the data-residency rule you just got subjected to. You have 90 days to move it. Moving it means rebuilding every integration that relied on it. For financial institutions, this isn't hypothetical — SEC Rule 17a-4, FINRA, and state banking regulations already require specific data-residency and retention controls. Your identity directory, your audit trail, and your certificate authority need to be on infrastructure you control, in a jurisdiction you can point to.</p>
+        <p>A regulator asks where your employee directory lives. The answer "Microsoft's cloud, somewhere in Europe" doesn't satisfy the data-residency rule you just got subjected to. You have 90 days to move it. Moving it means rebuilding every integration that relied on it. For financial institutions, this isn't hypothetical &mdash; SEC Rule 17a-4, FINRA, and state banking regulations already require specific data-residency and retention controls. Your identity directory, your audit trail, and your certificate authority need to be on infrastructure you control, in a jurisdiction you can point to.</p>
         <span class="v2-cost">Typical cost: quarter-of-a-year project to move what should have been yours from the start</span>
       </div>
 
@@ -105,16 +105,16 @@
 <section class="v2-story">
   <div class="container">
     <div class="v2-story-inner">
-      <h2>What SDNS does NOT do</h2>
+      <h2>What sovereignty does NOT mean</h2>
       <p>To be clear about what sovereignty means:</p>
       <ul>
         <li><strong>It does not isolate you.</strong> Email still leaves the building. Websites still resolve public names. Partners still integrate over the internet. Customers still log in through public channels if you want them to.</li>
-        <li><strong>It does not replace every cloud tool.</strong> If AWS is where your workloads belong, keep them there. If Google Workspace is your document store, that's fine. SDNS is about the <em>coordination layer</em> of your own infrastructure, not about winning every choice.</li>
+        <li><strong>It does not replace every cloud tool.</strong> If AWS is where your workloads belong, keep them there. If Google Workspace is your document store, that's fine. The integrated suite is about the <em>coordination layer</em> of your own infrastructure, not about winning every choice.</li>
         <li><strong>It does not mean "no internet required ever."</strong> Updates arrive via the internet by default; they can also arrive from USB media if you're in a high-security or air-gapped environment. You choose.</li>
       </ul>
 
       <h3>The one sentence you can give your board</h3>
-      <div class="v2-callout">"We run our own identity, our own names, our own certificates, and our own policy store — on our own hardware, with no external dependency required to keep our infrastructure operating. If the cloud has a bad day, we don't."</div>
+      <div class="v2-callout">"We run our own identity, our own names, our own certificates, and our own policy store &mdash; on our own hardware, with no external dependency required to keep our infrastructure operating. If the cloud has a bad day, we don't."</div>
     </div>
   </div>
 </section>
@@ -123,7 +123,7 @@
   <div class="container">
     <h2>Choose integration. Don't inherit dependency.</h2>
     <p>Sovereignty isn't about cutting off the world. It's about making the world optional for the functions that keep your infrastructure alive.</p>
-    <a href="safety.html" class="cta" style="background:white;color:#0f2b46;">How It's Safer by Design</a>
+    <a href="safety.html" class="cta" style="background:white;color:#0f2b46;">Safer Together</a>
     <a href="use-cases.html" class="cta-secondary" style="border-color:white;color:white;">Who Needs This</a>
   </div>
 </section>

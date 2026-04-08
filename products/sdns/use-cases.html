@@ -14,7 +14,7 @@
   <div class="container">
     <a href="../../index.html" class="logo">
       <img src="../../assets/logo-circle.svg" alt="DEC-LLC">
-      
+
     </a>
     <ul>
       <li><a href="../../index.html#products">Products</a></li>
@@ -27,10 +27,10 @@
 <div class="v2-subnav">
   <div class="container">
     <span class="v2-subnav-name">SDNS</span>
-    <a href="index.html">Overview</a>
-    <a href="architecture.html">Architecture</a>
+    <a href="index.html">Vision</a>
+    <a href="architecture.html">How It Works</a>
     <a href="sovereignty.html">Sovereignty</a>
-    <a href="safety.html">Safer by Design</a>
+    <a href="safety.html">Safer Together</a>
     <a href="integration.html">Integration</a>
     <a href="use-cases.html" class="active">Use Cases</a>
   </div>
@@ -40,7 +40,7 @@
   <div class="container">
     <div class="v2-tagline">Real scenarios</div>
     <h1>Where SDNS earns its place.</h1>
-    <p class="v2-lede">These aren't hypothetical. They are the everyday moments where having one coordination layer — instead of four disconnected tools — pays for itself.</p>
+    <p class="v2-lede">These aren't hypothetical. They are the everyday moments where having your products working together &mdash; instead of four disconnected tools &mdash; pays for itself.</p>
   </div>
 </section>
 
@@ -51,14 +51,14 @@
     <div class="v2-usecase-block">
       <div class="v2-persona">Without SDNS</div>
       <h3>A new employee joins. It's 9:00 AM.</h3>
-      <p>HR creates the person in the HR system. IT gets an email. IT creates an account in the directory, adds them to the VPN, creates an email mailbox, adds them to the ticketing system, provisions a wifi certificate, grants file server access, adds them to the CRM, and sends the welcome email. Six systems. Forty-five minutes of clicking. One of those steps gets forgotten this week — we won't find out which one until they can't open a ticket.</p>
+      <p>HR creates the person in the HR system. IT gets an email. IT creates an account in the directory, adds them to the VPN, creates an email mailbox, adds them to the ticketing system, provisions a wifi certificate, grants file server access, adds them to the CRM, and sends the welcome email. Six systems. Forty-five minutes of clicking. One of those steps gets forgotten this week &mdash; we won't find out which one until they can't open a ticket.</p>
       <div class="v2-outcome"><strong>Typical pain:</strong> 45 minutes per new hire, inconsistent access across systems, first-day support ticket</div>
     </div>
 
     <div class="v2-usecase-block">
-      <div class="v2-persona">With SDNS</div>
+      <div class="v2-persona">With the integrated suite</div>
       <h3>Same employee. 9:00 AM. Single action.</h3>
-      <p>HR enters the person in the directory. Role: "Account Manager." SDNS broadcasts: this person exists, their role is account-manager, their certificate is issued, their policy is loaded. Every subordinate system updates: firewall lets them in, VPN accepts them, wifi issues their device a certificate, CRM grants them the right permissions. Done in 60 seconds. Consistent across everything.</p>
+      <p>HR enters the person in the directory. Role: "Account Manager." The event propagates through the databus: this person exists, their role is account-manager, their certificate is issued, their policy is loaded. Every connected product updates: the firewall lets them in, VPN accepts them, wifi issues their device a certificate, CRM grants them the right permissions. Done in 60 seconds. Consistent across everything.</p>
       <div class="v2-outcome"><strong>Result:</strong> 60 seconds per hire, consistent access, zero first-day friction</div>
     </div>
   </div>
@@ -71,14 +71,14 @@
     <div class="v2-usecase-block">
       <div class="v2-persona">Without SDNS</div>
       <h3>An employee's last day was Friday.</h3>
-      <p>HR closes their record. IT gets an email. IT disables the directory account — but forgets the VPN database, which is separate. Forgets the firewall rule granting their laptop SSH access to production. Forgets the SaaS apps. The employee's credentials remain active, across multiple systems, for days or weeks. This is one of the most common breach vectors — "ex-employee still had access."</p>
+      <p>HR closes their record. IT gets an email. IT disables the directory account &mdash; but forgets the VPN database, which is separate. Forgets the firewall rule granting their laptop SSH access to production. Forgets the SaaS apps. The employee's credentials remain active, across multiple systems, for days or weeks. This is one of the most common breach vectors &mdash; "ex-employee still had access."</p>
       <div class="v2-outcome"><strong>Typical pain:</strong> inconsistent revocation, residual access, audit findings, potential breach</div>
     </div>
 
     <div class="v2-usecase-block">
-      <div class="v2-persona">With SDNS</div>
+      <div class="v2-persona">With the integrated suite</div>
       <h3>Same event. One click.</h3>
-      <p>HR closes their record. SDNS propagates the revocation to every subordinate system. VPN disconnects. Wifi certificate revoked. Firewall rule withdrawn. SaaS apps notified. Audit log records the full sequence — time-stamped, signed. Next time the auditor asks "when was this person's access removed?" the answer is a single query.</p>
+      <p>HR closes their record. The revocation propagates through the databus to every connected product. VPN disconnects. Wifi certificate revoked. Firewall rule withdrawn. SaaS apps notified. Audit log records the full sequence &mdash; time-stamped, signed. Next time the auditor asks "when was this person's access removed?" the answer is a single query.</p>
       <div class="v2-outcome"><strong>Result:</strong> atomic revocation, complete audit trail, no residual access</div>
     </div>
   </div>
@@ -91,14 +91,14 @@
     <div class="v2-usecase-block">
       <div class="v2-persona">Without SDNS</div>
       <h3>It's October. A public CA announces certificate lifetimes are dropping from 1 year to 90 days.</h3>
-      <p>You have 400 devices with certificates. You have spreadsheets tracking expiration dates. You have email reminders set up — that nobody reads. Every 90 days from now on, someone on your team will spend a full week rotating certificates, remembering which devices got skipped last time, and apologizing to customers who hit expired-certificate errors on the weekend.</p>
+      <p>You have 400 devices with certificates. You have spreadsheets tracking expiration dates. You have email reminders set up &mdash; that nobody reads. Every 90 days from now on, someone on your team will spend a full week rotating certificates, remembering which devices got skipped last time, and apologizing to customers who hit expired-certificate errors on the weekend.</p>
       <div class="v2-outcome"><strong>Typical pain:</strong> 4 weeks of engineer time per year, outages from missed renewals, cascading compliance issues</div>
     </div>
 
     <div class="v2-usecase-block">
-      <div class="v2-persona">With SDNS</div>
+      <div class="v2-persona">With the integrated suite</div>
       <h3>Same announcement. You don't care.</h3>
-      <p>Your internal services use certificates issued by your own authority — SDNS. The rotation schedule is your choice. The process is automated. Public-facing certificates are still issued by a public CA (where appropriate), but those are a small minority of your total. The 90-day change affects a handful of public-facing endpoints, not 400 internal systems.</p>
+      <p>Your internal services use certificates issued by your own authority &mdash; managed through coordinated certificate management across your products. The rotation schedule is your choice. The process is automated. Public-facing certificates are still issued by a public CA (where appropriate), but those are a small minority of your total. The 90-day change affects a handful of public-facing endpoints, not 400 internal systems.</p>
       <div class="v2-outcome"><strong>Result:</strong> certificate fleet rotation becomes a monthly cron job, not a quarterly fire drill</div>
     </div>
   </div>
@@ -116,9 +116,9 @@
     </div>
 
     <div class="v2-usecase-block">
-      <div class="v2-persona">With SDNS</div>
+      <div class="v2-persona">With the integrated suite</div>
       <h3>Same question. Different answer.</h3>
-      <p>"Show me everyone who accessed the customer database last month." One query against SDNS's audit log. Every subordinate system reports into it — time-stamped, signed, tamper-evident. The auditor gets the answer in five minutes. The report is verifiable. Your audit findings go down.</p>
+      <p>"Show me everyone who accessed the customer database last month." One query against the shared audit log. Every connected product reports into it &mdash; time-stamped, signed, tamper-evident. The auditor gets the answer in five minutes. The report is verifiable. Your audit findings go down.</p>
       <div class="v2-outcome"><strong>Result:</strong> audit prep becomes one query, confidence in the report becomes total</div>
     </div>
   </div>
@@ -131,14 +131,14 @@
     <div class="v2-usecase-block">
       <div class="v2-persona">Without SDNS</div>
       <h3>Microsoft identity outage. 6 hours on a Tuesday.</h3>
-      <p>Employees can't log into the VPN, the CRM, the ticketing system, or anything else that federates through the cloud identity. Your own infrastructure — your servers, your switches, your backups — is fine. But your people can't get to any of it. You spend 6 hours fielding "is it just me?" calls.</p>
+      <p>Employees can't log into the VPN, the CRM, the ticketing system, or anything else that federates through the cloud identity. Your own infrastructure &mdash; your servers, your switches, your backups &mdash; is fine. But your people can't get to any of it. You spend 6 hours fielding "is it just me?" calls.</p>
       <div class="v2-outcome"><strong>Typical pain:</strong> 6+ hours of workforce idle, no tools to diagnose or mitigate</div>
     </div>
 
     <div class="v2-usecase-block">
-      <div class="v2-persona">With SDNS</div>
+      <div class="v2-persona">With the integrated suite</div>
       <h3>Same outage. Employees keep working.</h3>
-      <p>Your core identity lives in SDNS. Employees log into your VPN, your internal tools, and your local services just fine — those rely on your sovereign identity. External services (the ones that actually integrate with the cloud identity) are affected, but your core operations continue. You open a ticket with Microsoft and get back to your day. For a trading floor or a financial services firm, those 6 hours of downtime aren't just inconvenient — they're measurable in missed trades, regulatory exposure, and client trust. Sovereign identity means the core of your business never stops because someone else's cloud had a bad day.</p>
+      <p>Your core identity lives on your own product appliances. Employees log into your VPN, your internal tools, and your local services just fine &mdash; those rely on your sovereign identity. External services (the ones that actually integrate with the cloud identity) are affected, but your core operations continue. You open a ticket with Microsoft and get back to your day. For a trading floor or a financial services firm, those 6 hours of downtime aren't just inconvenient &mdash; they're measurable in missed trades, regulatory exposure, and client trust. Sovereign identity means the core of your business never stops because someone else's cloud had a bad day.</p>
       <div class="v2-outcome"><strong>Result:</strong> cloud outages affect fewer systems, workforce stays productive, revenue-critical operations continue uninterrupted</div>
     </div>
   </div>
@@ -156,9 +156,9 @@
     </div>
 
     <div class="v2-usecase-block">
-      <div class="v2-persona">With SDNS</div>
+      <div class="v2-persona">With the integrated suite</div>
       <h3>Same law. Different position.</h3>
-      <p>Your directory runs on a SDNS appliance in your own datacenter in-state. You write a two-sentence compliance attestation: "Our employee directory is stored on appliance X, physically located at address Y." The auditor nods. The law is satisfied. You get back to your actual job.</p>
+      <p>Your directory runs on your DEC-LLC appliances in your own datacenter in-state. You write a two-sentence compliance attestation: "Our employee directory is stored on appliance X, physically located at address Y." The auditor nods. The law is satisfied. You get back to your actual job.</p>
       <div class="v2-outcome"><strong>Result:</strong> data residency becomes a paperwork exercise, not a migration project</div>
     </div>
   </div>
@@ -167,9 +167,9 @@
 <section class="v2-closing">
   <div class="container">
     <h2>These stories are the reason SDNS exists.</h2>
-    <p>Not to sell you an appliance. To remove the class of problem these stories describe — by making the coordination layer something you own, not something you rent.</p>
-    <a href="index.html" class="cta" style="background:white;color:#0f2b46;">Back to Overview</a>
-    <a href="architecture.html" class="cta-secondary" style="border-color:white;color:white;">See the Architecture</a>
+    <p>Not to sell you a separate product. To remove the class of problem these stories describe &mdash; by making the coordination layer something that emerges when your products work together, on hardware you own.</p>
+    <a href="index.html" class="cta" style="background:white;color:#0f2b46;">Back to Vision</a>
+    <a href="architecture.html" class="cta-secondary" style="border-color:white;color:white;">See How It Works</a>
   </div>
 </section>
 
