@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SDNS — Architecture</title>
+  <title>SDNS — How It Works</title>
   <link rel="stylesheet" href="../../styles.css">
   <link rel="stylesheet" href="../../extras.css">
 </head>
@@ -14,7 +14,7 @@
   <div class="container">
     <a href="../../index.html" class="logo">
       <img src="../../assets/logo-circle.svg" alt="DEC-LLC">
-      
+
     </a>
     <ul>
       <li><a href="../../index.html#products">Products</a></li>
@@ -27,10 +27,10 @@
 <div class="v2-subnav">
   <div class="container">
     <span class="v2-subnav-name">SDNS</span>
-    <a href="index.html">Overview</a>
-    <a href="architecture.html" class="active">Architecture</a>
+    <a href="index.html">Vision</a>
+    <a href="architecture.html" class="active">How It Works</a>
     <a href="sovereignty.html">Sovereignty</a>
-    <a href="safety.html">Safer by Design</a>
+    <a href="safety.html">Safer Together</a>
     <a href="integration.html">Integration</a>
     <a href="use-cases.html">Use Cases</a>
   </div>
@@ -39,215 +39,124 @@
 <!-- Hero -->
 <section class="v2-hero">
   <div class="container">
-    <div class="v2-tagline">Architecture</div>
-    <h1>How it's built — without the wiring diagram.</h1>
-    <p class="v2-lede">You don't need to know how a car's transmission works to trust that it will get you home. You need to know the brakes are tested, the airbags are real, and the seatbelts aren't decorative. Here's what's built into SDNS and why each piece matters.</p>
+    <div class="v2-tagline">How It Works</div>
+    <h1>Three mechanisms. No new software to install.</h1>
+    <p class="v2-lede">SDNS is built into the products you already run. The databus, the AI agents, and the event federation are capabilities that exist inside NIVMIA, IVMIA, OpenUTM, and VaultSync. When you run them together, those capabilities connect.</p>
   </div>
 </section>
 
-<!-- The Orchestra Analogy -->
+<!-- The Databus -->
 <section class="v2-arch">
   <div class="container">
-    <h2>The shape of the thing</h2>
-    <p class="v2-subtitle">If DEC-LLC's other products are domain experts, SDNS is the place they all agree to meet.</p>
-
-    <div class="v2-arch-block">
-      <h3>A concert hall, not a command center</h3>
-      <p>Picture a concert hall. The stage has a violin section, a brass section, a percussion section. Each section has its own experts, its own sheet music, its own way of playing. A conductor stands at the front. The conductor doesn't play any instrument. The conductor holds the score — the single agreed-upon piece of music — and gives cues.</p>
-      <p>SDNS is the conductor's stand. The products on the stage are the sections. The score is your policy. The cues are the coordinated actions that happen across all of them.</p>
-
-      <div class="v2-diagram">
-        <svg viewBox="0 0 700 380" xmlns="http://www.w3.org/2000/svg">
-          <!-- Center conductor -->
-          <circle cx="350" cy="190" r="70" fill="#1d4978" stroke="#0f2b46" stroke-width="3"/>
-          <text x="350" y="185" text-anchor="middle" fill="white" font-size="18" font-weight="bold">SDNS</text>
-          <text x="350" y="205" text-anchor="middle" fill="#87ceeb" font-size="12">the conductor</text>
-
-          <!-- Surrounding sections -->
-          <g>
-            <!-- NIVMIA top-left -->
-            <rect x="60" y="40" width="160" height="70" rx="8" fill="#e8f5e9" stroke="#2e7d32" stroke-width="2"/>
-            <text x="140" y="68" text-anchor="middle" fill="#1b5e20" font-size="16" font-weight="bold">NIVMIA</text>
-            <text x="140" y="88" text-anchor="middle" fill="#388e3c" font-size="11">network section</text>
-            <line x1="200" y1="95" x2="285" y2="165" stroke="#666" stroke-width="2" stroke-dasharray="5,3"/>
-
-            <!-- IVMIA top-right -->
-            <rect x="480" y="40" width="160" height="70" rx="8" fill="#e3f2fd" stroke="#1565c0" stroke-width="2"/>
-            <text x="560" y="68" text-anchor="middle" fill="#0d47a1" font-size="16" font-weight="bold">IVMIA</text>
-            <text x="560" y="88" text-anchor="middle" fill="#1976d2" font-size="11">compute section</text>
-            <line x1="500" y1="95" x2="415" y2="165" stroke="#666" stroke-width="2" stroke-dasharray="5,3"/>
-
-            <!-- OpenUTM bottom-left -->
-            <rect x="60" y="275" width="160" height="70" rx="8" fill="#fff3e0" stroke="#e65100" stroke-width="2"/>
-            <text x="140" y="303" text-anchor="middle" fill="#bf360c" font-size="16" font-weight="bold">OpenUTM</text>
-            <text x="140" y="323" text-anchor="middle" fill="#e65100" font-size="11">security section</text>
-            <line x1="200" y1="290" x2="285" y2="220" stroke="#666" stroke-width="2" stroke-dasharray="5,3"/>
-
-            <!-- VaultSync bottom-right -->
-            <rect x="480" y="275" width="160" height="70" rx="8" fill="#f3e5f5" stroke="#7b1fa2" stroke-width="2"/>
-            <text x="560" y="303" text-anchor="middle" fill="#4a148c" font-size="16" font-weight="bold">VaultSync</text>
-            <text x="560" y="323" text-anchor="middle" fill="#7b1fa2" font-size="11">data section</text>
-            <line x1="500" y1="290" x2="415" y2="220" stroke="#666" stroke-width="2" stroke-dasharray="5,3"/>
-          </g>
-
-          <!-- Arrows: products stay autonomous -->
-          <text x="350" y="370" text-anchor="middle" fill="#555" font-size="11" font-style="italic">Each product stays an expert in its own domain · SDNS coordinates, doesn't dominate</text>
-        </svg>
-        <div class="v2-diagram-caption">SDNS sits at the center as a coordination layer. Products remain experts in their own domains — SDNS provides the shared policy, identity, naming, and audit that crosses between them.</div>
-      </div>
-
-      <div class="v2-metaphor">No one section is "above" the others. The conductor holds the score, but the violinist still decides how to bow. The oboist still tunes the orchestra. SDNS does not take over your other products — it holds the shared context they all agree to.</div>
-    </div>
-  </div>
-</section>
-
-<!-- Five things it holds -->
-<section class="v2-arch" style="background:#f8fafb;">
-  <div class="container">
-    <h2>The five things SDNS holds for you</h2>
-    <p class="v2-subtitle">Every coordination layer has to answer five questions. Here is how SDNS answers each.</p>
-
-    <div class="v2-arch-block">
-      <h3>1. "Who are you?" — The directory</h3>
-      <p>Every action across your infrastructure needs to answer: who is asking? Is it a human employee, a service account, a backup job, a visiting contractor? SDNS is the single place that holds those answers. A user exists once, and every subordinate product trusts SDNS to vouch for them.</p>
-      <div class="v2-metaphor">Like the front desk of a building that issues one badge per person. Every door in the building respects that badge. You don't need a separate badge for the elevator, the parking garage, and the cafeteria.</div>
-    </div>
-
-    <div class="v2-arch-block">
-      <h3>2. "What is that thing called?" — The name service</h3>
-      <p>Your printers, servers, switches, workstations, cameras, and VMs all have names. Those names mean things only if something authoritative says they do. SDNS is that authority, for everything inside your infrastructure.</p>
-      <div class="v2-metaphor">Like the post office for your building — not the public postal service. Internal mail knows which floor, which room, which person. External mail comes in, but inside the building, the routing is yours.</div>
-    </div>
-
-    <div class="v2-arch-block">
-      <h3>3. "Prove you are who you say you are." — The certificate authority</h3>
-      <p>Every encrypted connection between your systems needs a way to verify the other end isn't an imposter. SDNS issues and validates those proofs for your infrastructure — no external certificate authority required.</p>
-      <div class="v2-metaphor">Like the notary public in your own office — your notary can stamp things as genuine without waiting for a government-appointed notary to visit. The stamps are trusted inside your organization because everyone in your organization trusts your notary.</div>
-    </div>
-
-    <div class="v2-arch-block">
-      <h3>4. "What are the rules?" — The policy store</h3>
-      <p>The rules about who can do what, where, and when live in one place. Firewalls, switches, backup jobs, and VM hosts all read from the same rulebook — so a change applied once takes effect everywhere it needs to.</p>
-      <div class="v2-metaphor">Like a building's master floor plan. One architect edits it. Every contractor works from the same copy. You don't have four contractors working from four different blueprints and discovering the discrepancies on demolition day.</div>
-    </div>
-
-    <div class="v2-arch-block">
-      <h3>5. "What happened?" — The audit log</h3>
-      <p>Every change, every login, every policy edit, every certificate rotation is recorded — once, in one place, tamper-evident, timestamp-signed. When someone asks "who changed this on Tuesday?", the answer is a single query.</p>
-      <div class="v2-metaphor">Like the elevator maintenance log that the inspector reads every year. Complete, chronological, signed. The inspector doesn't want four separate logs that might or might not agree with each other.</div>
-    </div>
-  </div>
-</section>
-
-<!-- Security architecture -->
-<section class="v2-arch">
-  <div class="container">
-    <h2>Architecturally safer, on purpose</h2>
-    <p class="v2-subtitle">These are the design decisions we made so that the coordination layer can't become the single point of compromise.</p>
-
-    <div class="v2-layers">
-      <div class="v2-layer">
-        <div class="v2-layer-num">1</div>
-        <div class="v2-layer-body">
-          <h4>Sealed compartments</h4>
-          <p>Every component inside SDNS runs in its own sealed room. If one room catches fire, the others are untouched. A bug in the name service cannot reach the certificate authority. A compromised log reader cannot rewrite the policy store. (In shipbuilding, this is called "watertight bulkheads.")</p>
-        </div>
-      </div>
-
-      <div class="v2-layer">
-        <div class="v2-layer-num">2</div>
-        <div class="v2-layer-body">
-          <h4>Least keys, ever</h4>
-          <p>Every service has a specific set of keys — not the master key. The name service can look up names. It cannot change certificates. The audit log can record events. It cannot approve them. The policy engine can issue rules. It cannot log in as a user. When a key is compromised, only the one door it opens is at risk.</p>
-        </div>
-      </div>
-
-      <div class="v2-layer">
-        <div class="v2-layer-num">3</div>
-        <div class="v2-layer-body">
-          <h4>Every request verified, every time</h4>
-          <p>Inside the coordination layer, no component trusts any other component just because they share a building. Every request between services is verified — same standard as any request from outside. This is the architectural answer to an attacker who has already gotten one foot in the door.</p>
-        </div>
-      </div>
-
-      <div class="v2-layer">
-        <div class="v2-layer-num">4</div>
-        <div class="v2-layer-body">
-          <h4>Tamper-evident history</h4>
-          <p>The audit log is built so that altering a past record is detectable. If an attacker breaks in and tries to erase their tracks, the erasure itself leaves a mark. The history can be checked against itself to prove it hasn't been edited.</p>
-        </div>
-      </div>
-
-      <div class="v2-layer">
-        <div class="v2-layer-num">5</div>
-        <div class="v2-layer-body">
-          <h4>Recovery without dependency</h4>
-          <p>Every SDNS appliance knows how to restore itself from a sealed recovery key that you — and only you — hold. No phone-home required. No support ticket. No vendor portal. If the appliance is wiped, you recover it from the envelope in your safe.</p>
-        </div>
-      </div>
-
-      <div class="v2-layer">
-        <div class="v2-layer-num">6</div>
-        <div class="v2-layer-body">
-          <h4>Updates that don't need the internet</h4>
-          <p>Security updates can arrive from your own internal repository, from a USB key, or from a sealed update image. The appliance does not require cloud connectivity to stay current — which matters for air-gapped deployments, but also for anyone who remembers the last time their "required cloud" was down for six hours.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- The trust boundary -->
-<section class="v2-arch" style="background:#f8fafb;">
-  <div class="container">
-    <h2>Where the trust lines are</h2>
-    <p class="v2-subtitle">Knowing where you have to trust the system and where you don't is half of security.</p>
+    <h2>1. The Databus &mdash; shared knowledge</h2>
+    <p class="v2-subtitle">Every product publishes what it knows. Every product can query what the others know.</p>
 
     <div class="v2-arch-block">
       <div class="v2-diagram">
-        <svg viewBox="0 0 700 380" xmlns="http://www.w3.org/2000/svg">
-          <!-- Trust boundary box -->
-          <rect x="40" y="30" width="620" height="300" rx="12" fill="none" stroke="#1d4978" stroke-width="3" stroke-dasharray="10,5"/>
-          <text x="350" y="22" text-anchor="middle" fill="#0f2b46" font-size="14" font-weight="bold">YOUR TRUST BOUNDARY (you own everything inside this line)</text>
+        <svg viewBox="0 0 700 320" xmlns="http://www.w3.org/2000/svg">
+          <!-- Central bus -->
+          <rect x="100" y="140" width="500" height="40" rx="6" fill="#1d4978"/>
+          <text x="350" y="165" text-anchor="middle" fill="white" font-size="15" font-weight="bold">SDNS Databus</text>
 
-          <!-- SDNS in center -->
-          <rect x="260" y="140" width="180" height="80" rx="10" fill="#1d4978"/>
-          <text x="350" y="168" text-anchor="middle" fill="white" font-size="15" font-weight="bold">SDNS</text>
-          <text x="350" y="188" text-anchor="middle" fill="#87ceeb" font-size="11">coordination layer</text>
-          <text x="350" y="205" text-anchor="middle" fill="#87ceeb" font-size="11">(your appliance)</text>
+          <!-- Products above -->
+          <rect x="60" y="40" width="130" height="60" rx="8" fill="#e8f5e9" stroke="#2e7d32" stroke-width="2"/>
+          <text x="125" y="65" text-anchor="middle" fill="#1b5e20" font-size="14" font-weight="bold">NIVMIA</text>
+          <text x="125" y="82" text-anchor="middle" fill="#388e3c" font-size="10">networks, switches</text>
+          <line x1="125" y1="100" x2="125" y2="140" stroke="#2e7d32" stroke-width="2" marker-end="url(#arrow)"/>
 
-          <!-- Four products -->
-          <rect x="80" y="70" width="120" height="55" rx="6" fill="#e8f5e9" stroke="#2e7d32" stroke-width="2"/>
-          <text x="140" y="92" text-anchor="middle" fill="#1b5e20" font-size="13" font-weight="bold">NIVMIA</text>
-          <text x="140" y="110" text-anchor="middle" fill="#388e3c" font-size="10">your appliance</text>
-          <line x1="200" y1="97" x2="260" y2="165" stroke="#1d4978" stroke-width="2"/>
+          <rect x="220" y="40" width="130" height="60" rx="8" fill="#e3f2fd" stroke="#1565c0" stroke-width="2"/>
+          <text x="285" y="65" text-anchor="middle" fill="#0d47a1" font-size="14" font-weight="bold">IVMIA</text>
+          <text x="285" y="82" text-anchor="middle" fill="#1976d2" font-size="10">VMs, hypervisors</text>
+          <line x1="285" y1="100" x2="285" y2="140" stroke="#1565c0" stroke-width="2" marker-end="url(#arrow)"/>
 
-          <rect x="500" y="70" width="120" height="55" rx="6" fill="#e3f2fd" stroke="#1565c0" stroke-width="2"/>
-          <text x="560" y="92" text-anchor="middle" fill="#0d47a1" font-size="13" font-weight="bold">IVMIA</text>
-          <text x="560" y="110" text-anchor="middle" fill="#1976d2" font-size="10">your appliance</text>
-          <line x1="500" y1="97" x2="440" y2="165" stroke="#1d4978" stroke-width="2"/>
+          <rect x="380" y="40" width="130" height="60" rx="8" fill="#fff3e0" stroke="#e65100" stroke-width="2"/>
+          <text x="445" y="65" text-anchor="middle" fill="#bf360c" font-size="14" font-weight="bold">OpenUTM</text>
+          <text x="445" y="82" text-anchor="middle" fill="#e65100" font-size="10">firewalls, security</text>
+          <line x1="445" y1="100" x2="445" y2="140" stroke="#e65100" stroke-width="2" marker-end="url(#arrow)"/>
 
-          <rect x="80" y="235" width="120" height="55" rx="6" fill="#fff3e0" stroke="#e65100" stroke-width="2"/>
-          <text x="140" y="257" text-anchor="middle" fill="#bf360c" font-size="13" font-weight="bold">OpenUTM</text>
-          <text x="140" y="275" text-anchor="middle" fill="#e65100" font-size="10">your appliance</text>
-          <line x1="200" y1="262" x2="260" y2="195" stroke="#1d4978" stroke-width="2"/>
+          <rect x="540" y="40" width="130" height="60" rx="8" fill="#f3e5f5" stroke="#7b1fa2" stroke-width="2"/>
+          <text x="605" y="65" text-anchor="middle" fill="#4a148c" font-size="14" font-weight="bold">VaultSync</text>
+          <text x="605" y="82" text-anchor="middle" fill="#7b1fa2" font-size="10">backups, storage</text>
+          <line x1="605" y1="100" x2="605" y2="140" stroke="#7b1fa2" stroke-width="2" marker-end="url(#arrow)"/>
 
-          <rect x="500" y="235" width="120" height="55" rx="6" fill="#f3e5f5" stroke="#7b1fa2" stroke-width="2"/>
-          <text x="560" y="257" text-anchor="middle" fill="#4a148c" font-size="13" font-weight="bold">VaultSync</text>
-          <text x="560" y="275" text-anchor="middle" fill="#7b1fa2" font-size="10">your appliance</text>
-          <line x1="500" y1="262" x2="440" y2="195" stroke="#1d4978" stroke-width="2"/>
+          <!-- Five views below -->
+          <rect x="80" y="210" width="100" height="40" rx="4" fill="#f0f7ff" stroke="#1d4978" stroke-width="1"/>
+          <text x="130" y="234" text-anchor="middle" fill="#0f2b46" font-size="11">hosts</text>
 
-          <!-- External world -->
-          <text x="350" y="365" text-anchor="middle" fill="#c62828" font-size="13" font-weight="bold" font-style="italic">Outside the line: the internet, cloud vendors, third parties — not trusted by default</text>
+          <rect x="200" y="210" width="100" height="40" rx="4" fill="#f0f7ff" stroke="#1d4978" stroke-width="1"/>
+          <text x="250" y="234" text-anchor="middle" fill="#0f2b46" font-size="11">networks</text>
+
+          <rect x="320" y="210" width="100" height="40" rx="4" fill="#f0f7ff" stroke="#1d4978" stroke-width="1"/>
+          <text x="370" y="234" text-anchor="middle" fill="#0f2b46" font-size="11">assets</text>
+
+          <rect x="440" y="210" width="100" height="40" rx="4" fill="#f0f7ff" stroke="#1d4978" stroke-width="1"/>
+          <text x="490" y="234" text-anchor="middle" fill="#0f2b46" font-size="11">workloads</text>
+
+          <rect x="560" y="210" width="100" height="40" rx="4" fill="#f0f7ff" stroke="#1d4978" stroke-width="1"/>
+          <text x="610" y="234" text-anchor="middle" fill="#0f2b46" font-size="11">health</text>
+
+          <text x="350" y="280" text-anchor="middle" fill="#555" font-size="11" font-style="italic">Five standard views &mdash; every product publishes, every product can query</text>
+          <text x="350" y="298" text-anchor="middle" fill="#555" font-size="11" font-style="italic">REST API: GET /api/v1/databus/{resource} with filtering and pagination</text>
         </svg>
-        <div class="v2-diagram-caption">Everything inside the dashed line is yours. SDNS doesn't pull in trust from outside vendors to function. If you disconnect from the internet, the coordination layer keeps running.</div>
+        <div class="v2-diagram-caption">The databus is a shared data contract &mdash; not a separate service. Each product implements it internally and exposes the same five views through a standard REST API.</div>
       </div>
 
-      <h3>What's inside the line</h3>
-      <p>Your SDNS appliance, your subordinate product appliances, your employees, your policies, your audit records, your certificates, your name service. All of this runs on your hardware, under your SLA, in your building (or your cloud tenant, if that's where your datacenter lives).</p>
+      <p>The databus is not middleware. It is not a message broker. It is a data contract: five views (hosts, networks, assets, workloads, health) that every product agrees to publish. Each product stores its own data in its own database, and exposes it through a standard API. When NIVMIA discovers a new switch, that switch appears in the hosts view. When IVMIA migrates a VM, the workloads view updates. No central server required. No new infrastructure to maintain.</p>
+    </div>
+  </div>
+</section>
 
-      <h3>What's outside the line</h3>
-      <p>Public internet. Cloud identity providers. Public certificate authorities. Any service you don't own. By default, nothing outside the line is granted authority to change anything inside. If you choose to integrate with an external system, you do it deliberately — not by accident of vendor default settings.</p>
+<!-- AI Agents -->
+<section class="v2-arch" style="background:#f8fafb;">
+  <div class="container">
+    <h2>2. Cross-Product AI &mdash; shared reasoning</h2>
+    <p class="v2-subtitle">Local AI agents that can think across networking, compute, security, and storage simultaneously.</p>
+
+    <div class="v2-arch-block">
+      <p>Each product already has its own AI engine &mdash; powered by local Ollama models running on your hardware. No data leaves your network. Each product's AI can analyze its own domain: NIVMIA spots network anomalies, OpenUTM detects security patterns, IVMIA recommends VM placement, VaultSync optimizes backup schedules.</p>
+
+      <p>SDNS is what happens when those AI agents can query each other through the databus. The question changes from "what's wrong in my domain?" to "what's happening across the whole infrastructure?"</p>
+
+      <h3>Quorum decisions</h3>
+      <p>Some decisions require knowledge from multiple domains. "Should we migrate this VM to a different host?" requires understanding of: network bandwidth to the target (NIVMIA), available compute resources (IVMIA), security group membership (OpenUTM), and whether the backup schedule needs adjustment (VaultSync). No single product has all the answers. Through the databus, the AI agents can assemble the full picture and present a coordinated recommendation.</p>
+
+      <p>The human still approves. The AI assembles the context and recommends. But instead of a human spending 30 minutes correlating four dashboards, the AI does it in seconds and presents one recommendation with supporting evidence from all four domains.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Event Federation -->
+<section class="v2-arch">
+  <div class="container">
+    <h2>3. Event Federation &mdash; shared awareness</h2>
+    <p class="v2-subtitle">When something happens in one product, the others hear it and can respond.</p>
+
+    <div class="v2-arch-block">
+      <h3>Real-time cross-product events</h3>
+      <p>Each product publishes events about things that matter to the others. Not every internal event &mdash; only the ones that cross domain boundaries:</p>
+      <ul>
+        <li><strong>NIVMIA detects a link failure</strong> &rarr; OpenUTM adjusts firewall rules for the backup path, IVMIA considers migrating affected VMs, VaultSync reschedules backups that would traverse the failed link.</li>
+        <li><strong>OpenUTM blocks a confirmed intrusion</strong> &rarr; NIVMIA isolates the switch port, IVMIA snapshots the affected VM for forensics, VaultSync verifies backup integrity for the compromised host.</li>
+        <li><strong>IVMIA detects a host running hot</strong> &rarr; NIVMIA checks the network path to alternate hosts, OpenUTM pre-configures security groups for the migration target, VaultSync confirms the target host's backup policy.</li>
+        <li><strong>VaultSync detects backup corruption</strong> &rarr; NIVMIA checks network integrity on the storage path, IVMIA flags the source VM for inspection, OpenUTM logs the event for compliance.</li>
+      </ul>
+
+      <p>These aren't scripted runbooks. They are products that understand each other's vocabulary, published through the event bus, and acted upon by each product's own logic. The cross-product communication happens through the same federation mechanism that already exists for multi-site deployments.</p>
+    </div>
+  </div>
+</section>
+
+<!-- What stays the same -->
+<section class="v2-arch" style="background:#f8fafb;">
+  <div class="container">
+    <div class="v2-arch-block">
+      <h2>What doesn't change</h2>
+      <ul>
+        <li><strong>Every product works standalone.</strong> NIVMIA manages your network today, without IVMIA or OpenUTM or VaultSync. SDNS capabilities activate when products are connected. They don't degrade when they're not.</li>
+        <li><strong>No new infrastructure.</strong> The databus, AI agents, and event system are built into each product. There is no "SDNS server" to deploy, no message broker to maintain, no central point of failure to worry about.</li>
+        <li><strong>Each product upgrades independently.</strong> Versions are loosely coupled. The databus contract is stable across versions. You upgrade NIVMIA without touching IVMIA.</li>
+        <li><strong>Your data stays on your hardware.</strong> AI runs locally on Ollama. Events flow between your own appliances. The databus queries stay on your network. Nothing leaves your trust boundary.</li>
+      </ul>
     </div>
   </div>
 </section>
@@ -255,10 +164,10 @@
 <!-- Closing -->
 <section class="v2-closing">
   <div class="container">
-    <h2>Architecture is the quiet work.</h2>
-    <p>The decisions on this page were made before the first line of code. They are the reason SDNS can survive a compromise of one component, an internet outage, a vendor going dark, or an auditor arriving unannounced.</p>
-    <a href="sovereignty.html" class="cta" style="background:white;color:#0f2b46;">Why It Works Without the Cloud</a>
-    <a href="safety.html" class="cta-secondary" style="border-color:white;color:white;">What's Coming for Threats</a>
+    <h2>No new software. Just new conversations between the software you already run.</h2>
+    <p>SDNS is an architectural decision, not a deployment. The products were built for this from the beginning.</p>
+    <a href="integration.html" class="cta" style="background:white;color:#0f2b46;">See Product Integration</a>
+    <a href="use-cases.html" class="cta-secondary" style="border-color:white;color:white;">Real Scenarios</a>
   </div>
 </section>
 
