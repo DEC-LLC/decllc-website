@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GA-FS vs Cron Scripts — How We Compare</title>
+  <link rel="stylesheet" href="../styles.css">
+  <link rel="stylesheet" href="../extras.css">
+</head>
+<body>
+
+<nav>
+  <div class="container">
+    <a href="../index.html" class="logo">
+      <img src="../assets/logo-circle.svg" alt="DEC-LLC"><span style="font-weight:800;font-size:1.1rem;letter-spacing:0.05em;margin-left:10px;">DEC-LLC</span>
+    </a>
+    <ul>
+      <li><a href="../index.html#products">Products</a></li>
+      <li><a href="../index.html#why">Why DEC-LLC</a></li>
+      <li><a href="../index.html#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<section class="v2-hero" style="padding:60px 0 50px;">
+  <div class="container">
+    <div class="v2-tagline">How We Compare</div>
+    <h1>GA-FS vs Cron Scripts and Hope</h1>
+    <p class="v2-lede">Most teams don't have a "git mirror tool." They have a bash script on a server somewhere, a cron entry nobody remembers writing, and an SSH key that hopefully still works. That's the real competition for GA-FS — not another product, but the duct-taped status quo. Here's what changes when you stop maintaining the script.</p>
+  </div>
+</section>
+
+<!-- The status quo -->
+<section class="v2-story">
+  <div class="container">
+    <div class="v2-story-inner">
+      <h2>Every team that mirrors repos already has a system. It just isn't a system.</h2>
+      <p>It started simply. Someone wrote a bash script that did <code>git clone --mirror; git push --mirror</code> in a loop over a list of repos. They put it in a cron job on the build server. They named it <code>sync-repos.sh</code> and put a one-line comment at the top. That was three years ago.</p>
+      <p>Today, that script has grown. It has a list of repos hardcoded inside it. The SSH key it uses is on the build server's filesystem with mode 0644 because someone needed to debug it once. The cron output goes to <code>/var/log/sync-repos.log</code> which nobody reads unless something explodes. When a repo gets renamed, the script silently fails for that one repo and nobody notices for six weeks. When a new repo gets added, someone has to remember to update the script — and they usually don't.</p>
+      <p>The worst part isn't that the script is bad. The worst part is that <strong>nobody owns it</strong>. The person who wrote it left two years ago. Two other people have edited it. None of them want to touch it now because it's "working" and changing it might break something. So it sits there, syncing repos, until one day it doesn't, and somebody on Slack asks "hey, why is the GitHub mirror three weeks behind?"</p>
+
+      <div class="v2-metaphor">It's the difference between a garden hose duct-taped to a window air conditioner — and central air conditioning with a smart thermostat.</div>
+    </div>
+  </div>
+</section>
+
+<!-- Comparison table -->
+<section class="v2-compare">
+  <div class="container">
+    <h2>Side-by-Side Comparison</h2>
+    <div class="v2-compare-table">
+      <table>
+        <thead>
+          <tr>
+            <th style="width:30%;">Capability</th>
+            <th>Cron + Bash + SSH<br><span style="font-weight:400;font-size:0.8rem;">(what your team uses today)</span></th>
+            <th>GA-FS</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Adding a new repo to sync</td>
+            <td class="v2-no">SSH to the build server, edit the script, hope you don't break the loop, commit to a config repo nobody reviews.</td>
+            <td class="v2-yes">Click "Auto-discover" in the web UI, select the repo, save. Synced on the next cycle.</td>
+          </tr>
+          <tr>
+            <td>Knowing if a sync failed</td>
+            <td class="v2-no">Tail a log file. Maybe. If you remember which one. If logrotate hasn't deleted it.</td>
+            <td class="v2-yes">Failed jobs flagged in red on the dashboard. Per-repo event log. Optional syslog forwarding.</td>
+          </tr>
+          <tr>
+            <td>Sync only specific branches</td>
+            <td class="v2-no">Rewrite the loop to handle refspecs per repo. Probably skip and just mirror everything.</td>
+            <td class="v2-yes">Per-mapping branch filter: <code>main,release/*</code>. Set in the UI, no code change.</td>
+          </tr>
+          <tr>
+            <td>Preventing private code from leaking to public repos</td>
+            <td class="v2-no">Hope nobody accidentally adds a private repo to a public mirror. Find out the hard way if they do.</td>
+            <td class="v2-yes">Private→public sync blocked by default. Admin must explicitly authorize with "I ACCEPT" acknowledgment. Audit trail records who approved what.</td>
+          </tr>
+          <tr>
+            <td>Knowing who set up which sync, when, why</td>
+            <td class="v2-no">Git blame the script. Hope the commit messages are useful. They aren't.</td>
+            <td class="v2-yes">Immutable authorization ledger. Every governance decision recorded with username, timestamp, acknowledgment text.</td>
+          </tr>
+          <tr>
+            <td>Pause syncs during a maintenance window</td>
+            <td class="v2-no">Comment out the cron entry. Remember to uncomment it. Forget. Discover three days later.</td>
+            <td class="v2-yes">Click "Pause" on the worker. Click "Resume" when done. Workers stay registered, just stop picking up work.</td>
+          </tr>
+          <tr>
+            <td>Parallel sync for large repo sets</td>
+            <td class="v2-no">Sequential. Each repo waits for the previous one. 200 repos at 2 minutes each = 6+ hours.</td>
+            <td class="v2-yes">Fork-per-repo. Configurable concurrency (default 4 parallel). 200 repos in &lt;30 minutes.</td>
+          </tr>
+          <tr>
+            <td>Resource awareness</td>
+            <td class="v2-no">None. Will happily clone 50 repos at once and OOM the build server.</td>
+            <td class="v2-yes">Resource governor checks CPU load, memory, and disk before forking. Throttles automatically when the host is under pressure.</td>
+          </tr>
+          <tr>
+            <td>Survives a server reboot</td>
+            <td class="v2-partial">Cron survives. Whatever was running mid-sync is dead. Status of in-flight repos: unknown.</td>
+            <td class="v2-yes">Worker restarts, picks up where it left off. Job state in PostgreSQL. Half-completed clones cleaned up automatically.</td>
+          </tr>
+          <tr>
+            <td>Multi-host sync (more than one server doing the work)</td>
+            <td class="v2-no">Now you have two scripts. And two cron entries. And two log files. And duplicate work because they don't coordinate.</td>
+            <td class="v2-yes">Multiple workers register against the same instance. Each worker handles its own slice. Or run multiple instances and federate via GA-FS Fleet.</td>
+          </tr>
+          <tr>
+            <td>Cost</td>
+            <td class="v2-partial">"Free." Plus the engineer-hours every time it breaks. Plus the cost of the breach when private code leaks.</td>
+            <td class="v2-yes">Open-source core: free. GA-FS Fleet for multi-instance orchestration: contact us.</td>
+          </tr>
+          <tr>
+            <td>What happens when the person who wrote it leaves</td>
+            <td class="v2-no">Nothing changes. Until something changes. Then panic.</td>
+            <td class="v2-yes">It's a product. It has a UI. It has documentation. It has a vendor. The next person can learn it in an hour.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- The honest part -->
+<section class="v2-story" style="background:#f8fafb;">
+  <div class="container">
+    <div class="v2-story-inner">
+      <h2>When the script is fine.</h2>
+      <p>If you have three repos, one mirror direction, no compliance requirements, and the same person who wrote the script still works there — your script is fine. We're not going to pretend GA-FS is the answer to every situation. The script costs you nothing today and probably won't cost you anything tomorrow.</p>
+      <p>But if any of these are true, the script has already become technical debt:</p>
+      <ul style="line-height:1.8;color:#444;font-size:1.05rem;">
+        <li>You have any private repos and any public targets.</li>
+        <li>You sync more than 10 repos.</li>
+        <li>You can't immediately answer "when did this last sync successfully?"</li>
+        <li>You'd struggle to explain the script to a new hire on day one.</li>
+        <li>Your compliance team has never been able to answer "who authorized this data flow?"</li>
+        <li>You've had a sync silently fail and never noticed for more than a week.</li>
+      </ul>
+      <p>If you nodded at any of those, the script is no longer free. It's a liability with deferred cost. GA-FS replaces it with something a new hire can learn in an hour and a compliance auditor can sign off on in a day.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Register interest -->
+<section style="padding:60px 0;">
+  <div class="container" style="text-align:center;">
+    <div style="max-width:700px;margin:0 auto;padding:40px;background:white;border-radius:12px;box-shadow:0 2px 12px rgba(0,0,0,0.06);">
+      <h2 style="color:#0f2b46;margin-bottom:8px;">See GA-FS in Action</h2>
+      <p style="color:#555;margin-bottom:24px;">Get a demo, pricing, and early access. We'll be in touch within one business day.</p>
+      <a href="ga-fs.html#pricing" class="btn btn-primary" style="padding:14px 32px;font-size:1.05rem;">Register Your Interest</a>
+      <p style="margin-top:20px;font-size:0.85rem;color:#888;">Or browse the open source core on <a href="https://github.com/DEC-LLC/git-advanced-multisync" style="color:#1d4978;">GitHub</a>.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div>
+      <img src="../assets/logo-circle.svg" alt="DEC-LLC" style="height:56px;margin-bottom:8px;">
+      <p style="font-style:italic;opacity:0.9;margin-bottom:4px;">Open Ideas</p>
+      <p>&copy; 2026 DEC-LLC. All rights reserved.</p>
+    </div>
+    <div class="footer-links">
+      <a href="../index.html#products">Products</a>
+      <a href="../index.html#why">Why DEC-LLC</a>
+      <a href="../horizon.html">Horizon</a>
+      <a href="../index.html#contact">Contact</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

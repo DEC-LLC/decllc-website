@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scenario: We Just Acquired a Company. Their Network is Different. — DEC-LLC</title>
+  <link rel="stylesheet" href="../styles.css">
+  <link rel="stylesheet" href="../extras.css">
+</head>
+<body>
+
+<nav>
+  <div class="container">
+    <a href="../index.html" class="logo">
+      <img src="../assets/logo-circle.svg" alt="DEC-LLC"><span style="font-weight:800;font-size:1.1rem;letter-spacing:0.05em;margin-left:10px;">DEC-LLC</span>
+    </a>
+    <ul>
+      <li><a href="../index.html#products">Products</a></li>
+      <li><a href="../index.html#why">Why DEC-LLC</a></li>
+      <li><a href="../index.html#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<section class="v2-hero" style="padding:60px 0 50px;">
+  <div class="container">
+    <div class="v2-tagline">Scenario</div>
+    <h1>"We just acquired a company. Their network is different."</h1>
+    <p class="v2-lede">Your team runs Arista. The company you just acquired runs Cisco. There are 47 switches you've never seen before, 12 firewalls from a vendor you don't have on staff, and a backup system that nobody on the acquired side can fully explain. Your CTO wants a unified plan in 30 days. Here's how three different paths play out.</p>
+  </div>
+</section>
+
+<!-- The setup -->
+<section class="v2-story">
+  <div class="container">
+    <div class="v2-story-inner">
+      <h2>The situation, in plain language.</h2>
+      <p>You're the head of infrastructure. Last week the deal closed. You now own:</p>
+      <ul style="line-height:1.8;color:#444;font-size:1.05rem;">
+        <li>47 Cisco switches at 6 sites you've never been to.</li>
+        <li>12 Fortinet firewalls. Your team uses Palo Alto.</li>
+        <li>A VMware cluster that "mostly works." Their last admin left in November.</li>
+        <li>A backup system that runs on a server in someone's office. You have the IP. You don't have the password.</li>
+        <li>2,300 DNS records, 400 firewall rules, and zero documentation.</li>
+      </ul>
+      <p>The CTO wants a 30-day plan. The board wants integration costs. The new sites need IT support starting Monday. You have your existing team and a budget that absolutely will not stretch to "hire 4 senior engineers familiar with Cisco and Fortinet."</p>
+      <p>How do you handle it?</p>
+    </div>
+  </div>
+</section>
+
+<!-- Path 1: Hire consultants -->
+<section style="background:#fff;padding:60px 0;border-top:4px solid #d32f2f;">
+  <div class="container">
+    <div style="max-width:900px;margin:0 auto;">
+      <h2 style="color:#d32f2f;">Path 1: Hire a consultancy.</h2>
+      <p style="font-size:1.05rem;color:#444;line-height:1.8;">You call a Cisco partner and a Fortinet partner. They quote $80,000-$150,000 for a "discovery and integration assessment." The discovery takes 6-10 weeks. They send junior engineers to walk through your sites. They produce a 200-page PDF with diagrams and recommendations.</p>
+      <p style="font-size:1.05rem;color:#444;line-height:1.8;">When the report arrives, you find out that 11 of the switches are at end-of-life and need replacement (more budget), 3 firewall rules are silently broken, and the VMware cluster has 18 orphaned VMs nobody can identify. The recommendation is to standardize on Cisco for the next 5 years (which means buying out your Arista contracts) or migrate everything to Arista (which means a 12-month project).</p>
+      <p style="font-size:1.05rem;color:#444;line-height:1.8;">The PDF gives you data. It does not give you visibility. Three months from now, when something breaks at one of the new sites, you'll be back to googling Cisco IOS commands.</p>
+      <div style="background:#ffebee;border-left:4px solid #d32f2f;padding:16px 20px;margin-top:24px;border-radius:6px;">
+        <strong style="color:#c62828;">Result:</strong> $120K spent, 10 weeks elapsed, no operational change. You still don't know what you actually own.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Path 2: Stitch together SaaS tools -->
+<section style="background:#f8fafb;padding:60px 0;border-top:4px solid #f57c00;">
+  <div class="container">
+    <div style="max-width:900px;margin:0 auto;">
+      <h2 style="color:#f57c00;">Path 2: Stitch together SaaS tools.</h2>
+      <p style="font-size:1.05rem;color:#444;line-height:1.8;">You buy Auvik for network discovery. You buy Veeam for backup. You buy a vendor's cloud-managed firewall console. You buy a "single-pane" dashboard that promises to aggregate everything. Each one is $500-$3,000 a month.</p>
+      <p style="font-size:1.05rem;color:#444;line-height:1.8;">Auvik discovers 38 of the 47 switches (the other 9 don't speak SNMPv3 and the credentials don't work). Veeam can back up the VMware cluster but not the legacy NAS. The cloud firewall console requires you to send all your config data to the vendor's cloud — your CISO blocks it the moment they find out three of the acquired company's applications are PCI-DSS, HIPAA, and SOC 2 regulated and nobody told you. Sending that config data offsite would have been a reportable breach on day one of the integration. The "single pane" dashboard ends up being a fourth pane on the wall.</p>
+      <p style="font-size:1.05rem;color:#444;line-height:1.8;">Your monthly tooling cost goes from "manageable" to "$8,000 a month and climbing." Each tool has its own login, its own alert system, and its own gaps. Your data is now scattered across 4 vendor clouds — and some of it can't move at all because it's tied to the regulated apps you just discovered. Worse, none of your new tools and none of your existing staff know how to back up those legacy systems. So they sit there: critical, regulated, and unbacked, while you wait for somebody to figure it out.</p>
+      <div style="background:#fff3e0;border-left:4px solid #f57c00;padding:16px 20px;margin-top:24px;border-radius:6px;">
+        <strong style="color:#e65100;">Result:</strong> $96K/year recurring, partial coverage, four new dashboards, your network telemetry now lives in four vendor clouds.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Path 3: DEC-LLC -->
+<section style="background:#fff;padding:60px 0;border-top:4px solid #2e7d32;">
+  <div class="container">
+    <div style="max-width:900px;margin:0 auto;">
+      <h2 style="color:#2e7d32;">Path 3: Use the DEC-LLC stack you already run.</h2>
+      <p style="font-size:1.05rem;color:#444;line-height:1.8;">Day 1: You install <a href="nivmia.html" style="color:#1d4978;font-weight:600;">NIVMIA</a> on a small VM at the new HQ. You give it the credentials you have. It logs into every reachable device — Cisco, Fortinet, the legacy switches, the WiFi controllers — and starts cataloging. By the end of the day you have a complete inventory: model, firmware version, last config change, who's logged in. You can ask <em>"why is port 14 on Building 3 switch 2 in trunk mode?"</em> and get an answer in plain English from NIVMIA's intelligent assistant.</p>
+      <p style="font-size:1.05rem;color:#444;line-height:1.8;">Day 3: <a href="ivmia.html" style="color:#1d4978;font-weight:600;">IVMIA</a> finds the VMware cluster, identifies all 18 orphaned VMs, and tells you which ones haven't been touched in 90+ days and can probably go. It also discovers the legacy ESXi host nobody mentioned. Now you know what you actually own.</p>
+      <p style="font-size:1.05rem;color:#444;line-height:1.8;">Day 5: <a href="openutm.html" style="color:#1d4978;font-weight:600;">OpenUTM</a> imports the Fortinet rules and translates them. You can see, side by side, what each rule actually does. The 3 silently broken rules show up immediately. OpenUTM's AI explains the context: <em>"This rule was added 2 years ago to allow a backup vendor that's no longer in use."</em></p>
+      <p style="font-size:1.05rem;color:#444;line-height:1.8;">Day 7: <a href="vaultsync.html" style="color:#1d4978;font-weight:600;">VaultSync</a> takes over the backup story. It absorbs the VMware cluster, the file shares, and even the workstations at the new sites. Tested restore included. The legacy backup server in the office becomes optional.</p>
+      <p style="font-size:1.05rem;color:#444;line-height:1.8;">Day 14: Everything is in one dashboard. Your team uses the existing tools they already know. New hires onboard from the products themselves — the AI explains the company's network history and rule rationale to them. The CTO has a unified view to show the board.</p>
+      <p style="font-size:1.05rem;color:#444;line-height:1.8;">Day 30: You haven't hired a Cisco specialist. You haven't hired a Fortinet specialist. You haven't bought any new hardware. The acquired infrastructure is now a managed extension of your own. The legacy backup system that nobody could run? VaultSync absorbed it without so much as a blink. The three regulated applications — PCI-DSS, HIPAA, SOC 2 — are audited, backed up, restore-tested, and ready for any compliance review. All you did was have a chat with the VaultSync AI and hand it the credentials from the handoff document in the M&amp;A files.</p>
+      <div style="background:#e8f5e9;border-left:4px solid #2e7d32;padding:16px 20px;margin-top:24px;border-radius:6px;">
+        <strong style="color:#2e7d32;">Result:</strong> Same products you already run. Same team. Same dashboard. New infrastructure absorbed. No vendor lock-in. No data leaving your environment. CTO has a presentation for the board by week 2.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Side-by-side -->
+<section class="v2-compare" style="background:#f8fafb;">
+  <div class="container">
+    <h2>The Three Paths, Side by Side</h2>
+    <div class="v2-compare-table">
+      <table>
+        <thead>
+          <tr>
+            <th>Outcome</th>
+            <th>Consultancy</th>
+            <th>SaaS Stack</th>
+            <th>DEC-LLC</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Time to first complete inventory</td>
+            <td class="v2-no">8-10 weeks</td>
+            <td class="v2-partial">2-3 weeks (partial)</td>
+            <td class="v2-yes">Day 1</td>
+          </tr>
+          <tr>
+            <td>Upfront cost</td>
+            <td class="v2-no">$80K-$150K</td>
+            <td class="v2-partial">$0 setup, but...</td>
+            <td class="v2-yes">Existing license expansion</td>
+          </tr>
+          <tr>
+            <td>Recurring cost</td>
+            <td class="v2-yes">None (after report)</td>
+            <td class="v2-no">$8K+/month</td>
+            <td class="v2-yes">No new monthly tools</td>
+          </tr>
+          <tr>
+            <td>Where your data lives</td>
+            <td class="v2-yes">In your environment</td>
+            <td class="v2-no">4 vendor clouds</td>
+            <td class="v2-yes">In your environment</td>
+          </tr>
+          <tr>
+            <td>Coverage of acquired infrastructure</td>
+            <td class="v2-partial">Documented, not managed</td>
+            <td class="v2-partial">~80% (gaps)</td>
+            <td class="v2-yes">Complete</td>
+          </tr>
+          <tr>
+            <td>New tools your team must learn</td>
+            <td class="v2-yes">None</td>
+            <td class="v2-no">4 new dashboards</td>
+            <td class="v2-yes">None — same products</td>
+          </tr>
+          <tr>
+            <td>What happens 6 months later</td>
+            <td class="v2-no">Report on a shelf</td>
+            <td class="v2-no">Tool sprawl, alert fatigue</td>
+            <td class="v2-yes">Steady state</td>
+          </tr>
+          <tr>
+            <td>If we acquire another company next year</td>
+            <td class="v2-no">Hire them again</td>
+            <td class="v2-partial">Add another tool</td>
+            <td class="v2-yes">Repeat the process</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- Why this works -->
+<section class="v2-story">
+  <div class="container">
+    <div class="v2-story-inner">
+      <h2>Why this works.</h2>
+      <p>The DEC-LLC products were built to absorb things they didn't know about. NIVMIA doesn't care if it's a Cisco, an Arista, a Juniper, or a switch from a vendor you've never heard of — if it speaks SSH, SNMP, or a standard API, NIVMIA logs in and starts learning. IVMIA reads VMware, Proxmox, KVM, Hyper-V, and cloud APIs without complaint. OpenUTM imports rules from any major firewall vendor and translates them.</p>
+      <p>The reason this matters during an acquisition is that you don't get to choose what the acquired company runs. You get what they had on the day the deal closed. The tools that survive that moment are the ones that don't ask "what platform is it?" — they ask "what's its IP?"</p>
+      <p>And because the DEC-LLC products share intelligence with each other (we call this <a href="sdns/index.html" style="color:#1d4978;">SDNS</a>), the whole stack benefits from each integration. NIVMIA tells IVMIA which networks the VMs live on. IVMIA tells VaultSync which VMs are critical. OpenUTM uses both signals to understand which firewall rules are actually in use. The integration cost goes down with every product you add.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section style="padding:60px 0;background:#0f2b46;color:#fff;text-align:center;">
+  <div class="container">
+    <h2 style="color:#fff;">Acquisition coming up? Let's talk before the deal closes.</h2>
+    <p style="font-size:1.05rem;max-width:700px;margin:16px auto 32px;color:#cfd8dc;">We'll walk you through what NIVMIA, IVMIA, OpenUTM, and VaultSync would absorb — and what they wouldn't — for your specific situation. No commitment.</p>
+    <a href="../index.html#contact" class="btn btn-primary" style="padding:14px 32px;font-size:1.05rem;background:#1d4978;border:none;">Schedule a Conversation</a>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div>
+      <img src="../assets/logo-circle.svg" alt="DEC-LLC" style="height:56px;margin-bottom:8px;">
+      <p style="font-style:italic;opacity:0.9;margin-bottom:4px;">Open Ideas</p>
+      <p>&copy; 2026 DEC-LLC. All rights reserved.</p>
+    </div>
+    <div class="footer-links">
+      <a href="../index.html#products">Products</a>
+      <a href="../index.html#why">Why DEC-LLC</a>
+      <a href="../horizon.html">Horizon</a>
+      <a href="../index.html#contact">Contact</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

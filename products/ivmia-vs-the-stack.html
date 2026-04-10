@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IVMIA vs The Stack You're Already Paying For — DEC-LLC</title>
+  <link rel="stylesheet" href="../styles.css">
+  <link rel="stylesheet" href="../extras.css">
+</head>
+<body>
+
+<nav>
+  <div class="container">
+    <a href="../index.html" class="logo">
+      <img src="../assets/logo-circle.svg" alt="DEC-LLC"><span style="font-weight:800;font-size:1.1rem;letter-spacing:0.05em;margin-left:10px;">DEC-LLC</span>
+    </a>
+    <ul>
+      <li><a href="../index.html#products">Products</a></li>
+      <li><a href="../index.html#why">Why DEC-LLC</a></li>
+      <li><a href="../index.html#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<section class="v2-hero" style="padding:60px 0 50px;">
+  <div class="container">
+    <div class="v2-tagline">How We Compare</div>
+    <h1>IVMIA vs The Stack You're Already Paying For</h1>
+    <p class="v2-lede">Most companies don't have ONE virtualization management problem. They have FOUR. They run vSphere for production, Proxmox for the lab, AWS for "the cloud thing the marketing team needed last year," and a spreadsheet that lists all the VMs nobody can find a home for. Each one has its own dashboard, its own login, its own bill, and its own blind spots. IVMIA is one product that converges all of them.</p>
+  </div>
+</section>
+
+<!-- The stack -->
+<section class="v2-story">
+  <div class="container">
+    <div class="v2-story-inner">
+      <h2>The stack you're already running. (You may not have noticed.)</h2>
+      <p>Walk through your environment and count the tools that touch virtualization. We'll wait. Most companies in our customer interviews counted 4-7 separate things before they ran out of coffee. Here's the typical list:</p>
+      <ul style="line-height:1.8;color:#444;font-size:1.05rem;">
+        <li><strong>vCenter</strong> — your VMware management plane. Excellent within VMware. Invisible to anything that isn't VMware.</li>
+        <li><strong>Proxmox web UI / Nutanix Prism / Hyper-V Manager</strong> — your "other hypervisor" management for the cluster you bought during the VMware price hike.</li>
+        <li><strong>AWS / Azure / GCP consoles</strong> — three of them, because you have workloads in three clouds and somebody needs to log into each one separately.</li>
+        <li><strong>A cloud cost tool</strong> — CloudHealth, Cloudability, or a homemade Lambda function that emails you a CSV every Monday.</li>
+        <li><strong>A spreadsheet</strong> — the one nobody admits to maintaining, listing the VMs that don't fit anywhere else, last updated four months ago by an intern.</li>
+        <li><strong>A wiki page</strong> — "VM Inventory" with hand-typed entries and a "last reviewed" date from before your tenure.</li>
+        <li><strong>A monitoring tool</strong> — Datadog, New Relic, or an in-house Prometheus stack — which sees CPU and memory but doesn't know about lifecycle or ownership.</li>
+      </ul>
+      <p>Each of these costs money. Each one needs a person who knows how to use it. Each one has gaps the others should cover but don't. And when the CFO asks "how many VMs do we own and what are they costing us?" — you have to open seven things and add the answers up by hand.</p>
+
+      <div class="v2-metaphor">It's like managing a vehicle fleet by walking to each parking lot and writing down the license plates. And then losing half the spreadsheets on your way back to HQ in the wind.</div>
+    </div>
+  </div>
+</section>
+
+<!-- The replacement -->
+<section style="background:#f8fafb;padding:60px 0;">
+  <div class="container">
+    <h2 style="text-align:center;color:#0f2b46;">What IVMIA replaces.</h2>
+    <p class="subtitle" style="text-align:center;">Each of these has been replaced in real customer deployments. Here's what each replacement looks like.</p>
+
+    <div style="max-width:1000px;margin:32px auto;">
+
+      <!-- Replacement 1 -->
+      <div style="background:#fff;border-radius:12px;padding:32px;margin-bottom:24px;box-shadow:0 2px 12px rgba(0,0,0,0.06);">
+        <h3 style="color:#0f2b46;margin-bottom:8px;">On top of VMware <span style="color:#666;font-weight:400;">+</span> Proxmox <span style="color:#666;font-weight:400;">+</span> Nutanix <span style="color:#666;font-weight:400;">+</span> AWS <span style="color:#666;font-weight:400;">+</span> Azure</h3>
+        <p style="color:#444;line-height:1.7;">You keep your existing platforms — that's the actual virtualization, you can't replace it and you shouldn't. What we eliminate is the constant context-switching: opening seven dashboards every morning, logging into three cloud portals, hunting through tabs to find the one VM somebody asked about. IVMIA sits on top of all of them, polls each one continuously, and gives you a single dashboard for the daily operations. Every VM, every host, every cluster, every cloud instance — listed by name, owner, last activity, and cost. You filter by environment, you filter by team, you sort by "VMs nobody has touched in 60 days." The vendor dashboards still exist — open them when you need to do the deep operations they're designed for. The rest of the day, you live with IVMIA.</p>
+        <div style="background:#e3f2fd;border-radius:6px;padding:12px 16px;margin-top:16px;font-size:0.9rem;color:#0d47a1;">
+          <strong>The honest part:</strong> IVMIA handles the day-to-day operations across every platform you connect — inventory, lifecycle, cost, ownership, the questions you ask 50 times a day. The deep specialty workflows (an HA failover test in vCenter, a SAN path reconfiguration, a Nutanix node replacement) we don't fully execute ourselves yet — but we don't leave you stranded either. IVMIA's AI is a trained subject-matter expert on every platform it manages AND on itself AND on the rest of the DEC-LLC stack. Ask it <em>"how do I run an HA failover test on this cluster?"</em> and you get a generated howto specific to your environment, with the exact commands, the order to run them in, the things to watch for, and a ready-to-paste config snippet. The howto is close enough to a real runbook that experienced admins use it as a starting point and only edit.</p>
+          <p style="margin-top:10px;margin-bottom:0;">Inherited a Nutanix cluster from someone who left and never wrote any documentation? IVMIA can teach you. It already knows what's in the cluster (because it's been polling it). It knows Nutanix the platform (because it's a trained subject-matter expert on it). And it knows YOUR specific environment (because it's been watching your other systems too). The new admin doesn't need a Nutanix course and a six-week ramp-up — they need IVMIA and a coffee. That's the multiplier: one product with the institutional knowledge of every system it touches, all in one conversation.
+        </div>
+      </div>
+
+      <!-- Replacement 2 -->
+      <div style="background:#fff;border-radius:12px;padding:32px;margin-bottom:24px;box-shadow:0 2px 12px rgba(0,0,0,0.06);">
+        <h3 style="color:#0f2b46;margin-bottom:8px;">Instead of CloudHealth <span style="color:#666;font-weight:400;">/</span> Cloudability <span style="color:#666;font-weight:400;">/</span> Spot.io <span style="color:#666;font-weight:400;">/</span> a homemade Lambda</h3>
+        <p style="color:#444;line-height:1.7;">IVMIA tracks cost the same way it tracks everything else: by reading the bill. AWS, Azure, GCP — IVMIA pulls the cost line items and ties them back to the actual VMs in your inventory. So instead of "this account costs $14,200/month," you get "these 47 VMs cost $14,200/month, and 12 of them haven't been touched in 30 days." Then it tells you which ones you can probably kill, and asks before doing it.</p>
+        <div style="background:#e3f2fd;border-radius:6px;padding:12px 16px;margin-top:16px;font-size:0.9rem;color:#0d47a1;">
+          <strong>The honest part:</strong> IVMIA isn't a FinOps platform. It doesn't do reserved instance recommendations, savings plan modeling, or cross-account chargeback. It does "what is each VM costing me, and is it worth it." For 80% of teams, that's enough.
+        </div>
+      </div>
+
+      <!-- Replacement 3 -->
+      <div style="background:#fff;border-radius:12px;padding:32px;margin-bottom:24px;box-shadow:0 2px 12px rgba(0,0,0,0.06);">
+        <h3 style="color:#0f2b46;margin-bottom:8px;">Instead of "the spreadsheet" and "the wiki page"</h3>
+        <p style="color:#444;line-height:1.7;">IVMIA discovers VMs automatically and keeps the inventory current without anyone editing anything. Tags, owners, and notes can be added in the IVMIA UI — and they survive when the VM moves from one platform to another. The "VM nobody can find a home for" gets a row immediately, with the date IVMIA first saw it and the date someone last logged into it.</p>
+        <div style="background:#e3f2fd;border-radius:6px;padding:12px 16px;margin-top:16px;font-size:0.9rem;color:#0d47a1;">
+          <strong>The honest part:</strong> Your existing wiki page is probably wrong. IVMIA's first scan will find VMs you forgot about. This is uncomfortable for a week and then very useful forever after.
+        </div>
+      </div>
+
+      <!-- Replacement 4 -->
+      <div style="background:#fff;border-radius:12px;padding:32px;margin-bottom:24px;box-shadow:0 2px 12px rgba(0,0,0,0.06);">
+        <h3 style="color:#0f2b46;margin-bottom:8px;">Instead of "ask the senior engineer who knows the cluster"</h3>
+        <p style="color:#444;line-height:1.7;">When your VMware specialist is on vacation or in a meeting, the rest of the team doesn't have to wait. IVMIA's intelligent assistant answers questions in plain language: <em>"why is this VM tagged production?"</em>, <em>"when was the last time someone logged into vm-build-04?"</em>, <em>"what would happen if I migrated these 8 VMs to the new cluster?"</em>. The senior engineer's knowledge is in the system, not in their head.</p>
+        <div style="background:#e3f2fd;border-radius:6px;padding:12px 16px;margin-top:16px;font-size:0.9rem;color:#0d47a1;">
+          <strong>The honest part:</strong> IVMIA doesn't replace the senior engineer's judgment. It replaces the bottleneck where every question has to go through them. The senior engineer is freed up to do work that actually needs their judgment.
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Side-by-side -->
+<section class="v2-compare">
+  <div class="container">
+    <h2>The Stack vs IVMIA</h2>
+    <div class="v2-compare-table">
+      <table>
+        <thead>
+          <tr>
+            <th style="width:30%;">What you need to know</th>
+            <th>The Stack<br><span style="font-weight:400;font-size:0.8rem;">(vCenter + Prism + 3 clouds + cost tool + spreadsheet + wiki)</span></th>
+            <th>IVMIA</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>How many VMs do we own?</td>
+            <td class="v2-no">Open 6-7 tools and add up the numbers manually.</td>
+            <td class="v2-yes">One number on the dashboard.</td>
+          </tr>
+          <tr>
+            <td>Which VMs aren't being used?</td>
+            <td class="v2-no">Each platform has a different definition of "idle." Reconcile by hand.</td>
+            <td class="v2-yes">Sort by "last activity." Filter by 30/60/90 days.</td>
+          </tr>
+          <tr>
+            <td>How much is each VM costing us?</td>
+            <td class="v2-no">Cloud cost tools see clouds. On-prem costs are estimated. VMs that moved between environments are double-counted.</td>
+            <td class="v2-yes">Cost per VM, regardless of where it lives. On-prem amortized, cloud actual.</td>
+          </tr>
+          <tr>
+            <td>Cross-platform VM migration</td>
+            <td class="v2-no">Each platform has its own export format. Convert by hand. Hope nothing breaks.</td>
+            <td class="v2-yes">IVMIA understands the formats. Pre-flight checks the destination. Coordinates with VaultSync to back up first.</td>
+          </tr>
+          <tr>
+            <td>Who owns this VM?</td>
+            <td class="v2-no">Look in the wiki. The wiki is wrong. Ask in Slack.</td>
+            <td class="v2-yes">Owner field is a first-class attribute. Survives platform migrations. AI flags VMs with no owner.</td>
+          </tr>
+          <tr>
+            <td>What's running on each VM?</td>
+            <td class="v2-no">SSH in. Check. Hope it's still what it was last month.</td>
+            <td class="v2-yes">Last seen processes, services, and resource usage. Continuously updated.</td>
+          </tr>
+          <tr>
+            <td>Number of dashboards your team logs into daily</td>
+            <td class="v2-no">4-7</td>
+            <td class="v2-yes">1</td>
+          </tr>
+          <tr>
+            <td>Overhead/management tools you pay extra for (on top of your platform contracts)</td>
+            <td class="v2-no">2-4 (cost tool, FinOps platform, monitoring add-on, "single pane" dashboard)</td>
+            <td class="v2-yes">1 (IVMIA replaces all of them)</td>
+          </tr>
+          <tr>
+            <td>What happens when an overhead vendor raises prices</td>
+            <td class="v2-no">You pay it, or you migrate, or you do without.</td>
+            <td class="v2-yes">We don't raise prices just because the economy turned. If we ever ask for more, it's because we've shipped you a better product with better features — not because the renewal date came around. Your existing platform contracts (vCenter, Prism, cloud) stay where they are. IVMIA sits on top and converges the view.</td>
+          </tr>
+          <tr>
+            <td>What happens when a <em>platform</em> vendor raises prices</td>
+            <td class="v2-no">Open three spreadsheets. Argue about which workloads can move. Discover next quarter that the move broke something nobody documented.</td>
+            <td class="v2-yes">IVMIA already knows what every workload costs, where it runs, and how it performs. It runs the cost comparison across your platforms — VMware vs Proxmox vs Nutanix vs each cloud — and the resource utilization analysis on every workload. Then it tells you, in one clear answer: <em>this workload is cheaper here, this one is more stable there, this one belongs where it is.</em> On your say-so, IVMIA moves the workloads to the best economic AND business outcome. No spreadsheets, no plans on a wall, no mismanagement and confusion. Clear, concise, and based on what your business actually needs right now.</td>
+          </tr>
+          <tr>
+            <td>Where does your inventory data go?</td>
+            <td class="v2-no">Each cloud-based overhead tool gets a copy of your inventory.</td>
+            <td class="v2-yes">IVMIA runs in your environment. No phone-home. No telemetry. Your data stays put.</td>
+          </tr>
+          <tr>
+            <td>Total annual cost of the overhead layer (mid-sized deployment)</td>
+            <td class="v2-no">$20,000-$60,000+ across all the visibility/cost/dashboard add-ons — and they only give you visibility</td>
+            <td class="v2-yes">Contact for pricing — replaces the entire overhead layer AND adds control, automation, and operational intelligence those tools don't have</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- Honest section -->
+<section class="v2-story" style="background:#f8fafb;">
+  <div class="container">
+    <div class="v2-story-inner">
+      <h2>When NOT to replace your stack.</h2>
+      <p>If you only run one platform — pure VMware shop, pure AWS shop — vCenter or your cloud console is probably enough. IVMIA's value is in the consolidation. If you don't have anything to consolidate, you don't need it.</p>
+      <p>If you have a dedicated FinOps team running CloudHealth or Cloudability with chargeback models, reserved instance recommendations, and cost allocation reports — IVMIA's cost view is simpler than what you have. Stick with the FinOps tool. Use IVMIA for the inventory and lifecycle questions it doesn't answer.</p>
+      <p>If your one senior engineer is going to retire next year and take the institutional knowledge with them — call us before they leave. IVMIA can capture that knowledge while it's still in the room.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section style="padding:60px 0;">
+  <div class="container" style="text-align:center;">
+    <div style="max-width:700px;margin:0 auto;padding:40px;background:white;border-radius:12px;box-shadow:0 2px 12px rgba(0,0,0,0.06);">
+      <h2 style="color:#0f2b46;margin-bottom:8px;">Find out what your stack looks like.</h2>
+      <p style="color:#555;margin-bottom:24px;">We'll do a no-commitment audit: list your existing tools, what each one covers, and what IVMIA would replace. You get the audit either way.</p>
+      <a href="ivmia.html#pricing" class="btn btn-primary" style="padding:14px 32px;font-size:1.05rem;">Register for an Audit</a>
+      <p style="margin-top:20px;font-size:0.85rem;color:#888;">Or read more about <a href="ivmia.html" style="color:#1d4978;">IVMIA</a>.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div>
+      <img src="../assets/logo-circle.svg" alt="DEC-LLC" style="height:56px;margin-bottom:8px;">
+      <p style="font-style:italic;opacity:0.9;margin-bottom:4px;">Open Ideas</p>
+      <p>&copy; 2026 DEC-LLC. All rights reserved.</p>
+    </div>
+    <div class="footer-links">
+      <a href="../index.html#products">Products</a>
+      <a href="../index.html#why">Why DEC-LLC</a>
+      <a href="../horizon.html">Horizon</a>
+      <a href="../index.html#contact">Contact</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
