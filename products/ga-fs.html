@@ -94,6 +94,20 @@
   </div>
 </section>
 
+<!-- Network Reach -->
+<section class="v2-story">
+  <div class="container">
+    <div class="v2-story-inner">
+      <h2>One sync tool can't reach every repo. A fleet can.</h2>
+      <p>Real corporate networks aren't flat. Your GitHub is on the public internet, behind your egress proxy. Your internal GitLab is on the LAN with no route to the outside. Your lab Gitea is on a segregated VLAN behind another firewall. The customer-hosted instance is across a B2B VPN. The secure-enclave GitLab is in a network that can't talk to anything else at all.</p>
+      <p>A single sync tool — SaaS, self-hosted, doesn't matter — sits in <em>one</em> network segment. It can reach some of those repos. The rest are dark to it. This is why most teams end up with three or four separate sync setups, each in a different network zone, each managed by hand, each with no idea the others exist.</p>
+      <p>GA-FS solves this physically. Place a core instance wherever the network can reach the repos. One in the DMZ for GitHub. One on the internal LAN for the corporate GitLab. One in the lab VLAN for the dev Gitea. One inside the secure enclave for the regulated repos. Each core handles only what it can reach — and Fleet sits at the boundary where it can talk to all the cores via a simple REST API. The cores never have to talk to each other directly. Fleet aggregates the view and the governance.</p>
+
+      <div class="v2-metaphor">It's the difference between a security guard who can only see one floor of the building — and a control room with cameras on every floor.</div>
+    </div>
+  </div>
+</section>
+
 <!-- Architecture -->
 <section id="architecture" class="v2-arch" style="background:#f8fafb;">
   <div class="container">
