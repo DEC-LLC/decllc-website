@@ -98,7 +98,7 @@
 <section id="architecture" class="v2-arch" style="background:#f8fafb;">
   <div class="container">
     <h2>Architecture</h2>
-    <p class="v2-subtitle">GA-FS is split into an open source core and a commercial fleet layer. The core handles single-instance sync. Fleet adds multi-instance orchestration.</p>
+    <p class="v2-subtitle">GA-FS is split into an open source core and a commercial fleet layer. The open source core handles limited local and remote syncs as a single instance. Our commercial Fleet product adds advanced capabilities and additional features such as multi-instance orchestration, instance and site rebalancing, and centralized governance. Fleet can manage configurations centrally — or allow local configurations to remain local but visible to other instances in the fleet.</p>
 
     <div class="v2-arch-block">
       <pre style="background:#0f2b46;color:#87ceeb;padding:28px;border-radius:8px;font-size:0.95rem;line-height:1.7;overflow-x:auto;">
@@ -121,17 +121,25 @@ Commercial (GA-FS Fleet)
 <section class="v2-arch">
   <div class="container">
     <h2>Two Editions</h2>
-    <p class="v2-subtitle">The open source core is a fully featured single-instance sync engine. GA-FS Fleet adds multi-instance orchestration for organizations managing repos across teams and sites.</p>
+    <p class="v2-subtitle">The open source core handles limited local and remote syncs as a single instance. The commercial Fleet product adds advanced capabilities and additional features for organizations running multiple instances across teams and sites.</p>
 
     <div class="v2-arch-block">
-      <h3>Open Source (Apache 2.0)</h3>
-      <p>The core sync engine. Fully featured single-instance: web UI, parallel workers, branch filtering, sync governance, syslog. Free forever.</p>
+      <h3>Open Source Core (Apache 2.0)</h3>
+      <p>A fully featured single-instance sync engine. Limited local and remote syncs across GitHub, GitLab, and Gitea. Web UI, parallel workers, branch filtering, sync governance, syslog forwarding. Free forever.</p>
       <p style="margin-top:12px;"><a href="https://github.com/DEC-LLC/git-advanced-multisync" style="color:#1d4978;font-weight:700;">github.com/DEC-LLC/git-advanced-multisync</a></p>
     </div>
 
     <div class="v2-arch-block">
       <h3>GA-FS Fleet (Commercial)</h3>
-      <p>Multi-instance orchestration. Consolidated dashboard, credential management, instance provisioning, Fleet-wide governance policies. For organizations managing multiple sync instances across teams, sites, or environments.</p>
+      <p>Adds advanced capabilities on top of the open source core:</p>
+      <ul style="line-height:1.8;color:#444;margin-top:8px;">
+        <li><strong>Multi-instance orchestration</strong> — manage every core instance from one dashboard</li>
+        <li><strong>Instance and site rebalancing</strong> — move workloads between instances as load shifts or sites grow</li>
+        <li><strong>Centralized configuration</strong> — push provider credentials, sync profiles, and policies to all instances at once</li>
+        <li><strong>Local-but-visible mode</strong> — let local admins keep their own configurations while making them visible (read-only) to the rest of the fleet</li>
+        <li><strong>Cross-instance governance ledger</strong> — every authorization decision across every instance, in one audit trail</li>
+        <li><strong>Fleet binding lock</strong> — once a core is registered, no rogue Fleet can take it over</li>
+      </ul>
     </div>
   </div>
 </section>
