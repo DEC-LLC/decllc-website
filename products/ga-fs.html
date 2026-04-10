@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Git Advanced Fleet Sync — Keep Your Repositories in Sync Across Every Platform</title>
+  <link rel="stylesheet" href="../styles.css">
+  <link rel="stylesheet" href="../extras.css">
+</head>
+<body>
+
+
+<nav>
+  <div class="container">
+    <a href="../index.html" class="logo">
+      <img src="../assets/logo-circle.svg" alt="DEC-LLC">
+
+    </a>
+    <ul>
+      <li><a href="../index.html#products">Products</a></li>
+      <li><a href="../index.html#why">Why DEC-LLC</a></li>
+      <li><a href="../index.html#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<section class="v2-hero">
+  <div class="container">
+    <div class="v2-tagline">Repository Sync &amp; Governance</div>
+    <h1>GA-FS</h1>
+    <p class="v2-lede">Your team has repositories scattered across GitHub, GitLab, and Gitea. Keeping them in sync means scripts, cron jobs, SSH keys, and hoping nobody forgets to push to the other remote. GA-FS replaces all of that with a web UI and parallel workers. One-way mirrors, bidirectional sync, branch filtering, conflict detection — configured from your browser, governed by policy, audited by design.</p>
+    <div class="v2-cta-row">
+      <a href="#architecture" class="cta">See the Architecture</a>
+      <a href="https://github.com/DEC-LLC/git-advanced-multisync" class="cta-secondary">Open Source Core</a>
+    </div>
+  </div>
+</section>
+
+<!-- The Problem -->
+<section class="v2-story">
+  <div class="container">
+    <div class="v2-story-inner">
+      <h2>Your repos are everywhere. Your sync strategy is duct tape.</h2>
+      <p>Teams with repos on multiple Git platforms waste time on manual sync scripts. Someone wrote a cron job two years ago and nobody remembers how it works. When it breaks, nobody notices until a deployment pulls stale code.</p>
+      <p>There's no governance — anyone can accidentally push internal code to a public repo. A single misconfigured remote turns a private codebase into an open one, and you only find out when someone outside the company opens an issue.</p>
+      <p>And there's no visibility. Who synced what, when, why? When something goes wrong, the forensics start with <em>"check the cron logs on that one server"</em> — if the server still exists, and if the logs weren't rotated last week.</p>
+    </div>
+  </div>
+</section>
+
+<!-- How GA-FS Works -->
+<section id="capabilities" class="v2-benefits">
+  <div class="container">
+    <h2>How GA-FS Works</h2>
+    <div class="v2-benefit-grid">
+
+      <div class="v2-benefit-card">
+        <div class="v2-check">&#10003;</div>
+        <h3>Multi-Provider Sync</h3>
+        <p>GitHub, GitLab, Gitea — managed from one dashboard. Add providers, configure credentials, and see every sync relationship in a single view. No more juggling remotes across platforms.</p>
+      </div>
+
+      <div class="v2-benefit-card">
+        <div class="v2-check">&#10003;</div>
+        <h3>Branch-Level Filtering</h3>
+        <p>Sync only <code>main</code>, <code>release/*</code>, not the whole repo. Keep feature branches private, share only what's ready. Filter by pattern — include, exclude, or both.</p>
+      </div>
+
+      <div class="v2-benefit-card">
+        <div class="v2-check">&#10003;</div>
+        <h3>Parallel Workers</h3>
+        <p>Fork-per-repo concurrency with resource-aware scheduling. Sync hundreds of repositories without bottlenecking on a single process. The worker daemon scales to your fleet, not the other way around.</p>
+      </div>
+
+      <div class="v2-benefit-card">
+        <div class="v2-check">&#10003;</div>
+        <h3>Sync Governance</h3>
+        <p>Private-to-public sync is blocked by default. Every authorization is recorded in an immutable ledger. Admins can block specific sync directions, and the system enforces visibility checks before any push leaves the network.</p>
+      </div>
+
+      <div class="v2-benefit-card">
+        <div class="v2-check">&#10003;</div>
+        <h3>Fleet Orchestration</h3>
+        <p>Manage multiple sync instances from one control plane. Register instances, push credentials, enforce fleet-wide governance policies, and view aggregated sync status across every team and site. <em>(Commercial — GA-FS Fleet)</em></p>
+      </div>
+
+      <div class="v2-benefit-card">
+        <div class="v2-check">&#10003;</div>
+        <h3>Debug Taps</h3>
+        <p>tcpdump for git syncs — verify source accessibility and target delivery. When a sync fails, you don't guess. You see exactly what the worker attempted, what the remote returned, and where the pipeline broke.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Architecture -->
+<section id="architecture" class="v2-arch" style="background:#f8fafb;">
+  <div class="container">
+    <h2>Architecture</h2>
+    <p class="v2-subtitle">GA-FS is split into an open source core and a commercial fleet layer. The core handles single-instance sync. Fleet adds multi-instance orchestration.</p>
+
+    <div class="v2-arch-block">
+      <pre style="background:#0f2b46;color:#87ceeb;padding:28px;border-radius:8px;font-size:0.95rem;line-height:1.7;overflow-x:auto;">
+Open Source Core (git-advanced-multisync)
+  Web UI + REST API       Configure providers, profiles, mappings
+  Worker Daemon           Fork-per-repo parallel sync
+  Sync Engine             Clone, check conflicts, push (ff-only/force/reject)
+  Governance              Authorization ledger, admin blocks, visibility checks
+
+Commercial (GA-FS Fleet)
+  Fleet Dashboard         Aggregated view across all instances
+  Instance Manager        Register, provision, health-check
+  Credential Manager      Central token store, push to instances
+  Fleet Binding           Cores lock to one Fleet, audit trail</pre>
+    </div>
+  </div>
+</section>
+
+<!-- Two Editions -->
+<section class="v2-arch">
+  <div class="container">
+    <h2>Two Editions</h2>
+    <p class="v2-subtitle">The open source core is a fully featured single-instance sync engine. GA-FS Fleet adds multi-instance orchestration for organizations managing repos across teams and sites.</p>
+
+    <div class="v2-arch-block">
+      <h3>Open Source (Apache 2.0)</h3>
+      <p>The core sync engine. Fully featured single-instance: web UI, parallel workers, branch filtering, sync governance, syslog. Free forever.</p>
+      <p style="margin-top:12px;"><a href="https://github.com/DEC-LLC/git-advanced-multisync" style="color:#1d4978;font-weight:700;">github.com/DEC-LLC/git-advanced-multisync</a></p>
+    </div>
+
+    <div class="v2-arch-block">
+      <h3>GA-FS Fleet (Commercial)</h3>
+      <p>Multi-instance orchestration. Consolidated dashboard, credential management, instance provisioning, Fleet-wide governance policies. For organizations managing multiple sync instances across teams, sites, or environments.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Pricing -->
+<section id="pricing" style="background:#f8fafb;padding:60px 0;">
+  <div class="container" style="text-align:center;">
+    <h2>Pricing</h2>
+    <p class="subtitle">The open source core is free. GA-FS Fleet is available for organizations managing multiple sync instances.</p>
+    <div style="max-width:600px;margin:32px auto;padding:32px;background:white;border-radius:12px;box-shadow:0 2px 12px rgba(0,0,0,0.06);">
+      <p style="font-size:1.1rem;color:#0f2b46;margin-bottom:16px;"><strong>For pricing, contact us:</strong></p>
+      <p style="color:#555;">Call, email, or use the contact form below. We'll get back to you within one business day.</p>
+      <a href="../index.html#contact" class="btn btn-primary" style="margin-top:16px;">Contact Us for Pricing</a>
+    </div>
+  </div>
+</section>
+
+<!-- Closing -->
+<section class="v2-closing">
+  <div class="container">
+    <h2>Stop duct-taping your repo sync. Govern it.</h2>
+    <p>GA-FS gives you parallel sync, branch filtering, and governance — configured from your browser, audited by design. The open source core is free. Fleet adds orchestration when you need it.</p>
+    <a href="https://github.com/DEC-LLC/git-advanced-multisync" class="cta" style="background:white;color:#0f2b46;">Get the Open Source Core</a>
+    <a href="../index.html#contact" class="cta-secondary" style="border-color:white;color:white;">Talk to Us</a>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div>
+      <img src="../assets/logo-circle.svg" alt="DEC-LLC" style="height:56px;margin-bottom:8px;">
+      <p style="font-style:italic;opacity:0.9;margin-bottom:4px;">Open Ideas</p>
+      <p>&copy; 2026 DEC-LLC. All rights reserved.</p>
+    </div>
+    <div class="footer-links">
+      <a href="../index.html#products">Products</a>
+      <a href="../horizon.html">Horizon</a>
+      <a href="../index.html#contact">Contact</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

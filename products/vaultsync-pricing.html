@@ -43,133 +43,15 @@
   </div>
 </section>
 
-<!-- Tier Cards -->
-<section>
-  <div class="container">
-    <h2>Choose Your Tier</h2>
-    <p class="subtitle">Protect any hypervisor, any platform, any direction. Community is free forever.</p>
-
-    <div class="pricing-grid-5">
-
-      <!-- Community -->
-      <div class="pricing-card">
-        <h3>Community</h3>
-        <div class="price">Free</div>
-        <p style="color:var(--text-muted);">Free forever</p>
-        <ul>
-          <li>2 hypervisor hosts</li>
-          <li>Back up ESXi, KVM, and Proxmox VMs</li>
-          <li>Full and differential backups</li>
-          <li>Built-in deduplication (saves storage)</li>
-          <li>Cross-platform sync between hypervisors</li>
-          <li>Web dashboard</li>
-          <li>Community support (GitHub)</li>
-        </ul>
-        <button class="btn-full btn-primary" style="background:var(--teal);" onclick="window.location.href='../store.html'">Download Free</button>
+<section style="padding:60px 0;">
+  <div class="container" style="text-align:center;">
+    <div style="max-width:700px;margin:0 auto;padding:40px;background:white;border-radius:12px;box-shadow:0 2px 12px rgba(0,0,0,0.06);">
+      <h2 style="color:#0f2b46;margin-bottom:16px;">Contact Us for Pricing</h2>
+      <p style="font-size:1.05rem;color:#555;line-height:1.7;">We offer flexible licensing for organizations of all sizes — from community free tiers to enterprise deployments. For current pricing, contact our team. We'll get back to you within one business day.</p>
+      <div style="margin-top:24px;">
+        <a href="../index.html#contact" class="btn btn-primary" style="padding:14px 32px;font-size:1.05rem;">Contact Us</a>
       </div>
-
-      <!-- Standard -->
-      <div class="pricing-card">
-        <h3>Standard</h3>
-        <div class="price">$49<span>/mo</span></div>
-        <p style="color:var(--teal);font-size:0.85rem;font-weight:700;margin-top:4px;">or $547/yr (save 7%)</p>
-        <p style="color:var(--text-muted);">For small teams</p>
-        <ul>
-          <li>10 backup sources included</li>
-          <li>Buy more: packs of 2, 5, or 10</li>
-          <li>Everything in Community</li>
-          <li>Snapshot-based storage for instant rollback</li>
-          <li>Scheduled retention policies</li>
-          <li>Host configuration backup (ESXi, Proxmox, KVM)</li>
-          <li>Email support, 48hr response</li>
-        </ul>
-        <button class="btn-full btn-primary" onclick="window.location.href='../store.html'">Subscribe</button>
-      </div>
-
-      <!-- Professional -->
-      <div class="pricing-card featured">
-        <h3>Professional</h3>
-        <div class="price">$3,000<span>/yr</span></div>
-        <p style="color:var(--text-muted);">Most popular</p>
-        <ul>
-          <li>20 backup sources included</li>
-          <li>Buy more: packs of 2, 5, or 10 (max 200 per deployment)</li>
-          <li>Everything in Standard</li>
-          <li><strong>Fast incremental backups -- only changed data moves</strong></li>
-          <li><strong>Military-grade encryption at every stage</strong></li>
-          <li><strong>Cloud storage (S3, OCI, Azure, GCP)</strong></li>
-          <li>Near-instant sync between hypervisors (~1 min recovery point)</li>
-          <li>Automated failover and failback</li>
-          <li>Physical Linux server backup</li>
-          <li>REST API and webhook integration</li>
-          <li>Email support, 24hr response</li>
-          <li style="color:var(--text-muted);">Optional support contract: $30,000/yr</li>
-          <li style="color:var(--text-muted);">200+ sources? Call for reseller agreement</li>
-        </ul>
-        <button class="btn-full btn-primary" onclick="window.location.href='../store.html'">Subscribe</button>
-      </div>
-
-      <!-- Enterprise -->
-      <div class="pricing-card">
-        <h3>Enterprise</h3>
-        <div class="price">$1,000<span>/mo</span></div>
-        <p style="color:var(--text-muted);">For large organizations</p>
-        <ul>
-          <li>50 backup sources included</li>
-          <li>Buy more: packs of 10, 20, or 50 (no limit)</li>
-          <li>Or: <strong>site license -- contact us for pricing</strong></li>
-          <li>Annual discount: <strong>$11,160/yr</strong> (save 7%, paid annually)</li>
-          <li>Everything in Professional</li>
-          <li><strong>Hyper-V and VirtualBox support</strong></li>
-          <li><strong>Windows server and workstation backup</strong></li>
-          <li><strong>Enterprise storage array integration (Pure, NetApp, EMC)</strong></li>
-          <li>Continuous replication (under 1 minute recovery point)</li>
-          <li>Cross-platform restore to any cloud (AWS, Azure, GCP)</li>
-          <li>Multi-site disaster recovery orchestration</li>
-          <li>Role-based access and multi-tenant isolation</li>
-          <li>24hr response support</li>
-          <li style="color:var(--primary);font-weight:bold;">Mandatory Year 1 support contract: $70,000/yr</li>
-        </ul>
-        <button class="btn-full btn-primary" onclick="window.location.href='../contact.html'">Contact Sales</button>
-      </div>
-
-      <!-- MSP -->
-      <div class="pricing-card">
-        <h3>MSP</h3>
-        <div class="price">Custom</div>
-        <p style="color:var(--text-muted);">For managed service providers</p>
-        <ul>
-          <li>Everything in Enterprise</li>
-          <li>Per-customer tenant isolation</li>
-          <li>White-label web dashboard</li>
-          <li>Bulk host licensing</li>
-          <li>Named support engineer</li>
-          <li>2hr response support</li>
-          <li>Custom integrations</li>
-        </ul>
-        <button class="btn-full btn-primary" onclick="window.location.href='../contact.html'">Contact Sales</button>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- DEC-LLC Complete Bundle -->
-<section style="background:#f0f7ff;">
-  <div class="container" style="text-align:center;max-width:700px;">
-    <h2>DEC-LLC Complete Bundle</h2>
-    <p class="subtitle">Pair VaultSync with NIVMIA for network visibility, IVMIA for virtualization management, and OpenUTM for perimeter security. One invoice, one support contract.</p>
-    <div class="pricing-card featured" style="max-width:420px;margin:24px auto;">
-      <h3>Complete Bundle</h3>
-      <div class="price">15% off<span> combined monthly</span></div>
-      <p style="color:var(--text-muted);">All four products, one invoice</p>
-      <ul>
-        <li>NIVMIA + IVMIA + VaultSync + OpenUTM</li>
-        <li>Unified cross-product dashboard</li>
-        <li>Shared device and host inventory</li>
-        <li>Single support contract covers everything</li>
-      </ul>
-      <button class="btn-full btn-primary" onclick="window.location.href='../contact.html'">Contact Sales for Bundle Pricing</button>
+      <p style="margin-top:24px;font-size:0.9rem;color:#888;">Or call us directly — our contact information is at the bottom of every page.</p>
     </div>
   </div>
 </section>
