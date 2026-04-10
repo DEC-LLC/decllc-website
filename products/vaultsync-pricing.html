@@ -46,15 +46,81 @@
 <section style="padding:60px 0;">
   <div class="container" style="text-align:center;">
     <div style="max-width:700px;margin:0 auto;padding:40px;background:white;border-radius:12px;box-shadow:0 2px 12px rgba(0,0,0,0.06);">
-      <h2 style="color:#0f2b46;margin-bottom:16px;">Contact Us for Pricing</h2>
-      <p style="font-size:1.05rem;color:#555;line-height:1.7;">We offer flexible licensing for organizations of all sizes — from community free tiers to enterprise deployments. For current pricing, contact our team. We'll get back to you within one business day.</p>
-      <div style="margin-top:24px;">
-        <a href="../index.html#contact" class="btn btn-primary" style="padding:14px 32px;font-size:1.05rem;">Contact Us</a>
+      <h2 style="color:#0f2b46;margin-bottom:8px;">Register Your Interest</h2>
+      <p style="color:#555;margin-bottom:24px;">Get pricing, a demo, and early access to VaultSync. We'll be in touch within one business day.</p>
+      <form id="register-form" onsubmit="submitRegistration(event, 'VaultSync')" style="text-align:left;max-width:500px;margin:0 auto;">
+        <div style="margin-bottom:14px;">
+          <label style="display:block;font-weight:600;font-size:0.9rem;margin-bottom:4px;color:#0f2b46;">Full Name *</label>
+          <input type="text" id="reg-name" required style="width:100%;padding:10px;border-radius:8px;border:1px solid #ddd;font-size:1rem;">
+        </div>
+        <div style="margin-bottom:14px;">
+          <label style="display:block;font-weight:600;font-size:0.9rem;margin-bottom:4px;color:#0f2b46;">Company</label>
+          <input type="text" id="reg-company" style="width:100%;padding:10px;border-radius:8px;border:1px solid #ddd;font-size:1rem;">
+        </div>
+        <div style="margin-bottom:14px;">
+          <label style="display:block;font-weight:600;font-size:0.9rem;margin-bottom:4px;color:#0f2b46;">Email *</label>
+          <input type="email" id="reg-email" required style="width:100%;padding:10px;border-radius:8px;border:1px solid #ddd;font-size:1rem;">
+        </div>
+        <div style="margin-bottom:20px;">
+          <label style="display:block;font-weight:600;font-size:0.9rem;margin-bottom:4px;color:#0f2b46;">Phone (optional)</label>
+          <input type="tel" id="reg-phone" style="width:100%;padding:10px;border-radius:8px;border:1px solid #ddd;font-size:1rem;">
+        </div>
+        <button type="submit" id="reg-submit" class="btn btn-primary" style="width:100%;padding:14px;font-size:1.05rem;">Register</button>
+      </form>
+      <div id="reg-success" style="display:none;margin-top:20px;padding:16px;background:#e8f5e9;border-radius:8px;color:#2e7d32;">
+        <strong>Thank you!</strong> We received your registration and will be in touch within one business day.
       </div>
-      <p style="margin-top:24px;font-size:0.9rem;color:#888;">Or call us directly — our contact information is at the bottom of every page.</p>
+      <p style="margin-top:20px;font-size:0.85rem;color:#888;">Or call us — contact info at the bottom of every page.</p>
     </div>
   </div>
 </section>
+
+<script>
+function submitRegistration(e, product) {
+  e.preventDefault();
+  var btn = document.getElementById('reg-submit');
+  btn.disabled = true;
+  btn.textContent = 'Registering...';
+
+  var data = {
+    product: product,
+    name: document.getElementById('reg-name').value,
+    company: document.getElementById('reg-company').value,
+    email: document.getElementById('reg-email').value,
+    phone: document.getElementById('reg-phone').value,
+    _subject: 'Product Registration: ' + product,
+  };
+
+  var portalUrl = 'https://portal.dec-llc.biz/api/v1/register';
+  var formspreeUrl = 'https://formspree.io/f/sales@decllc.biz';
+
+  fetch(portalUrl, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(data),
+  })
+  .then(function(r) {
+    if (!r.ok) throw new Error('Portal unavailable');
+    showRegSuccess();
+  })
+  .catch(function() {
+    // Fallback to Formspree
+    return fetch(formspreeUrl, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify(data),
+    }).then(function(r) {
+      if (r.ok) showRegSuccess();
+      else { btn.disabled = false; btn.textContent = 'Register'; alert('Registration failed. Please use the contact form at the bottom of the page.'); }
+    });
+  });
+}
+
+function showRegSuccess() {
+  document.getElementById('register-form').style.display = 'none';
+  document.getElementById('reg-success').style.display = 'block';
+}
+</script>
 
 <!-- Feature Comparison -->
 <section style="background:#f8fafb;">
