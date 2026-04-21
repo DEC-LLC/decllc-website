@@ -67,7 +67,7 @@
         <li><strong>Which devices exist?</strong> Today, you tell NIVMIA which devices to watch. Through the databus, the inventory is a shared record &mdash; new devices added to the directory show up in NIVMIA's watch list automatically.</li>
         <li><strong>Which rules should be enforced?</strong> Today, NIVMIA reports drift from a baseline you define. With the integrated suite, the baseline is a shared policy &mdash; and a change to the baseline propagates to every device NIVMIA manages.</li>
       </ul>
-      <div class="v2-metaphor">NIVMIA alone: a building inspector checking every junction box by hand, from a clipboard. Connected: the clipboard is a live document that updates when the building's master plan changes.</div>
+      <div class="v2-metaphor">NIVMIA alone tracks every device, but its inventory, credentials, and baselines sit inside NIVMIA and drift from what the rest of the suite sees. Connected through SDNS, every change &mdash; new devices, rotated credentials, updated baselines &mdash; propagates in both directions, so what NIVMIA enforces matches what IVMIA, OpenUTM, and VaultSync understand.</div>
     </div>
 
     <div class="v2-arch-block">
@@ -78,7 +78,7 @@
         <li><strong>Policy-driven placement.</strong> "This VM contains customer data, so it can only run in the PCI zone" is a rule the shared policy store enforces; IVMIA doesn't have to carry that rule separately.</li>
         <li><strong>Unified certificates for VM-to-VM traffic.</strong> When your VMs talk to each other encrypted, they use certificates issued by your own infrastructure &mdash; not a patchwork of self-signed or per-hypervisor certs.</li>
       </ul>
-      <div class="v2-metaphor">IVMIA alone: a property manager running rental buildings with different tenant policies for each building. Connected: one lease template, one tenant screening process, one rent collection system &mdash; applied consistently across the whole portfolio.</div>
+      <div class="v2-metaphor">IVMIA alone treats each hypervisor platform independently, so naming, ownership, placement rules, and cert issuance have to be authored per platform. Connected through SDNS, a single workload policy applies across every platform IVMIA manages &mdash; VMware, Proxmox, Hyper-V, cloud &mdash; uniformly.</div>
     </div>
 
     <div class="v2-arch-block">
@@ -89,7 +89,7 @@
         <li><strong>Firewall rules reference your policy, not raw IPs.</strong> "HR laptops can reach payroll" is a rule &mdash; not a list of IPs that drift as laptops change.</li>
         <li><strong>Certificates for VPN and management interfaces come from your own CA.</strong> No dependency on public certificate authorities for internal secure connections.</li>
       </ul>
-      <div class="v2-metaphor">OpenUTM alone: a security guard checking each visitor's ID card from a binder. Connected: the binder is kept current by the front desk, so revoked cards stop working the moment they're revoked &mdash; not the next time someone updates the binder.</div>
+      <div class="v2-metaphor">OpenUTM alone enforces firewall and VPN policy against its own local identity store, which has to be kept in sync with the rest of your systems. Connected through SDNS, OpenUTM references the live directory and shared policy, so identity revocations and additions propagate automatically &mdash; not on the next manual sync.</div>
     </div>
 
     <div class="v2-arch-block">
@@ -100,7 +100,7 @@
         <li><strong>Encryption keys rotate with the rest of your infrastructure.</strong> Backup encryption keys are managed through coordinated certificate management &mdash; and they rotate on the schedule your policy defines.</li>
         <li><strong>Restore authorization uses your identity.</strong> A restore request is an action attributed to a specific person from your directory, with approval by whoever your policy designates.</li>
       </ul>
-      <div class="v2-metaphor">VaultSync alone: a bonded photocopier service keeping copies of everything in a warehouse. Connected: the warehouse uses the same retention rules, the same access controls, and the same audit trail as the rest of your infrastructure.</div>
+      <div class="v2-metaphor">VaultSync alone runs on its own schedules, retention rules, and encryption keys, disconnected from the policy the rest of your infrastructure uses. Connected through SDNS, backup cadence, retention, key rotation, and restore authorization all flow from the shared policy &mdash; so backups obey the same rules as the systems they protect.</div>
     </div>
   </div>
 </section>

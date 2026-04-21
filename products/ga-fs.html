@@ -61,7 +61,7 @@
 <section class="v2-story">
   <div class="container">
     <div class="v2-story-inner">
-      <h2>Your repos are everywhere. Your sync strategy is duct tape.</h2>
+      <h2>Your repos are scattered across providers. Your sync strategy isn't keeping up.</h2>
       <p>Teams with repos on multiple Git platforms waste time on manual sync scripts. Someone wrote a cron job two years ago and nobody remembers how it works. When it breaks, nobody notices until a deployment pulls stale code.</p>
       <p>There's no governance — anyone can accidentally push internal code to a public repo. A single misconfigured remote turns a private codebase into an open one, and you only find out when someone outside the company opens an issue.</p>
       <p>And there's no visibility. Who synced what, when, why? When something goes wrong, the forensics start with <em>"check the cron logs on that one server"</em> — if the server still exists, and if the logs weren't rotated last week.</p>
@@ -124,7 +124,7 @@
       <p>A single sync tool — SaaS, self-hosted, doesn't matter — sits in <em>one</em> network segment. It can reach some of those repos. The rest are dark to it. This is why most teams end up with three or four separate sync setups, each in a different network zone, each managed by hand, each with no idea the others exist.</p>
       <p>GA-FS solves this physically. Place a core instance wherever the network can reach the repos. One in the DMZ for GitHub. One on the internal LAN for the corporate GitLab. One in the lab VLAN for the dev Gitea. One inside the secure enclave for the regulated repos. Each core handles only what it can reach — and Fleet sits at the boundary where it can talk to all the cores via a simple REST API. The cores never have to talk to each other directly. Fleet aggregates the view and the governance.</p>
 
-      <div class="v2-metaphor">It's the difference between a security guard who can only see one floor of the building — and a control room with cameras on every floor.</div>
+      <div class="v2-metaphor">A single sync tool can govern only the repos it can reach. A fleet of cores, one in each network zone, governs them all through a shared control plane &mdash; and presents one view of who synced what, when, and why.</div>
     </div>
   </div>
 </section>
