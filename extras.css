@@ -267,8 +267,11 @@ nav ul li.nav-dropdown .nav-submenu li.submenu-divider:first-child {
 .plugin-card .plugin-meta { color: #888; font-size: 0.78rem; }
 
 /* Homepage product-name strip — sits between nav and hero */
-.product-strip { background: #1d4978; border-bottom: 1px solid rgba(135,206,235,0.25); padding: 12px 0; }
-.product-strip .container { display: flex; align-items: center; justify-content: center; gap: 20px; flex-wrap: wrap; }
+.product-strip { background: #1d4978; border-bottom: 1px solid rgba(135,206,235,0.25); padding: 12px 0; text-align: center; }
+.product-strip .container { display: flex !important; align-items: center; justify-content: center !important; gap: 20px; flex-wrap: wrap; }
+/* Scroll anchor offset so clicking a strip badge doesn't land under the sticky nav+strip */
+#product-openutm, #product-ivmia, #product-nivmia, #product-vaultsync { scroll-margin-top: 180px; }
+html { scroll-behavior: smooth; }
 .product-strip-label { color: #87ceeb; font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.14em; }
 .product-strip-badges { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; justify-content: center; }
 .product-strip-badge {
