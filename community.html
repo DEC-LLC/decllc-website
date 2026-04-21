@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>DEC-LLC Community &mdash; Free Editions, Open Source, and Forums</title>
   <link rel="stylesheet" href="styles.css">
-  <link rel="stylesheet" href="extras.css">
+  <link rel="stylesheet" href="extras.css?v=3.4">
 </head>
 <body>
 
@@ -54,7 +54,10 @@
       </li>
       <li><a href="index.html#contact">Contact</a></li>
     </ul>
-    <a href="store.html" class="nav-cta">Buy Now</a>
+    <div class="nav-cta-group">
+      <a href="#register" class="nav-cta nav-cta-free">Start Free</a>
+      <a href="store.html" class="nav-cta">Buy Now</a>
+    </div>
   </div>
 </nav>
 
@@ -91,6 +94,106 @@
     </div>
   </div>
 </section>
+
+<!-- Registration form -->
+<section id="register" style="background:#0f2b46;color:#fff;padding:60px 0;">
+  <div class="container" style="max-width:760px;">
+    <h2 style="color:#fff;text-align:center;font-size:1.8rem;margin-bottom:8px;">Register once. Download anything.</h2>
+    <p style="color:#b7c8dc;text-align:center;max-width:620px;margin:0 auto 28px;">One account on <strong style="color:#87ceeb;">portal.dec-llc.biz</strong> unlocks every Community Edition, forum posting, issue tracking, and update notifications. No credit card, no hidden trial clock, no sales follow-up unless you ask for it.</p>
+
+    <form id="community-register-form" onsubmit="submitCommunityRegister(event)" style="background:#fff;color:#0f2b46;border-radius:12px;padding:28px;max-width:560px;margin:0 auto;box-shadow:0 6px 20px rgba(0,0,0,0.25);">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;">
+        <div>
+          <label style="display:block;font-weight:700;font-size:0.85rem;margin-bottom:4px;">Full name *</label>
+          <input type="text" id="cr-name" required style="width:100%;padding:10px;border-radius:6px;border:1px solid #cbd5e1;font-size:0.95rem;">
+        </div>
+        <div>
+          <label style="display:block;font-weight:700;font-size:0.85rem;margin-bottom:4px;">Company / affiliation</label>
+          <input type="text" id="cr-company" style="width:100%;padding:10px;border-radius:6px;border:1px solid #cbd5e1;font-size:0.95rem;">
+        </div>
+      </div>
+      <div style="margin-top:14px;">
+        <label style="display:block;font-weight:700;font-size:0.85rem;margin-bottom:4px;">Email *</label>
+        <input type="email" id="cr-email" required style="width:100%;padding:10px;border-radius:6px;border:1px solid #cbd5e1;font-size:0.95rem;">
+      </div>
+      <div style="margin-top:14px;">
+        <label style="display:block;font-weight:700;font-size:0.85rem;margin-bottom:6px;">Which products are you interested in? (optional &mdash; helps us guide release notifications)</label>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:6px;font-size:0.88rem;">
+          <label><input type="checkbox" name="product" value="openutm"> DEC OpenUTM</label>
+          <label><input type="checkbox" name="product" value="ivmia"> DEC IVMIA</label>
+          <label><input type="checkbox" name="product" value="nivmia"> DEC NIVMIA</label>
+          <label><input type="checkbox" name="product" value="vaultsync"> DEC VaultSync</label>
+          <label><input type="checkbox" name="product" value="sdns"> DEC SDNS</label>
+          <label><input type="checkbox" name="product" value="opensource"> Open-source tools</label>
+        </div>
+      </div>
+      <div style="margin-top:14px;font-size:0.85rem;color:#374151;">
+        <label><input type="checkbox" id="cr-sales-ok"> Contact me about paid editions or an evaluation (optional &mdash; unchecked means no sales follow-up).</label>
+      </div>
+      <button type="submit" id="cr-submit" style="margin-top:18px;width:100%;background:#0f2b46;color:#fff;border:none;padding:14px;border-radius:8px;font-weight:700;font-size:1rem;cursor:pointer;transition:background 0.15s;">Create my free account</button>
+      <p id="cr-status" style="margin-top:10px;text-align:center;font-size:0.85rem;color:#555;">We'll email the download links and your portal login right after you submit.</p>
+    </form>
+
+    <p style="color:#87ceeb;text-align:center;font-size:0.88rem;margin-top:22px;"><strong>One registration covers all Community downloads.</strong> You do not need a separate account per product.</p>
+  </div>
+</section>
+
+<script>
+function submitCommunityRegister(e) {
+  e.preventDefault();
+  var btn = document.getElementById('cr-submit');
+  var status = document.getElementById('cr-status');
+  btn.disabled = true;
+  btn.textContent = 'Registering...';
+
+  var productBoxes = document.querySelectorAll('#community-register-form input[name="product"]:checked');
+  var products = Array.from(productBoxes).map(function(c) { return c.value; });
+
+  var data = {
+    name: document.getElementById('cr-name').value,
+    company: document.getElementById('cr-company').value,
+    email: document.getElementById('cr-email').value,
+    products_interested: products,
+    sales_ok: document.getElementById('cr-sales-ok').checked,
+    source: 'community_page',
+    _subject: 'Community registration',
+  };
+
+  var portalUrl = 'https://portal.dec-llc.biz/api/v1/register';
+  var formspreeUrl = 'https://formspree.io/f/sales@decllc.biz';
+
+  function success() {
+    btn.textContent = 'Account created — check your email';
+    btn.style.background = '#2e7d32';
+    status.style.color = '#2e7d32';
+    status.innerHTML = 'Registration received! Download links and portal login are on their way to <strong>' + data.email + '</strong>.';
+  }
+  function fail(msg) {
+    btn.disabled = false;
+    btn.textContent = 'Create my free account';
+    status.style.color = '#b71c1c';
+    status.textContent = msg || 'Something went wrong. Please try again or email info@decllc.biz.';
+  }
+
+  fetch(portalUrl, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(data),
+  })
+  .then(function(r) { if (!r.ok) throw new Error('portal'); return r.json(); })
+  .then(success)
+  .catch(function() {
+    // Fallback to Formspree so registrations are never lost if the portal is down
+    fetch(formspreeUrl, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify(data),
+    })
+    .then(function(r) { if (!r.ok) throw new Error('formspree'); success(); })
+    .catch(function() { fail(); });
+  });
+}
+</script>
 
 <!-- Community Editions -->
 <section id="editions" style="padding:60px 0;">
@@ -167,7 +270,7 @@
     </div>
 
     <div style="text-align:center;margin-top:30px;">
-      <a href="store.html#community-signup" class="cta" style="background:#87ceeb;color:#0f2b46;border-color:#87ceeb;">Register for Community Access</a>
+      <a href="#register" class="cta" style="background:#87ceeb;color:#0f2b46;border-color:#87ceeb;">Register for Community Access</a>
     </div>
   </div>
 </section>
@@ -289,7 +392,7 @@
 
     <div style="text-align:center;">
       <a href="https://portal.dec-llc.biz" class="cta" style="background:#87ceeb;color:#0f2b46;border-color:#87ceeb;">Visit portal.dec-llc.biz</a>
-      <a href="store.html#community-signup" class="cta-secondary" style="border-color:#87ceeb;color:#87ceeb;">Register for an Account</a>
+      <a href="#register" class="cta-secondary" style="border-color:#87ceeb;color:#87ceeb;">Register for an Account</a>
     </div>
   </div>
 </section>

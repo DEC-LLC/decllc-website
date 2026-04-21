@@ -266,6 +266,11 @@ nav ul li.nav-dropdown .nav-submenu li.submenu-divider:first-child {
 .plugin-card p { color: #374151; font-size: 0.88rem; margin-bottom: 10px; line-height: 1.5; }
 .plugin-card .plugin-meta { color: #888; font-size: 0.78rem; }
 
+/* Nav CTA group — Start Free + Buy Now together on the right */
+.nav-cta-group { display: flex; gap: 10px; align-items: center; }
+.nav-cta-free { background: #87ceeb !important; color: #0f2b46 !important; }
+.nav-cta-free:hover { background: #a8d8ed !important; }
+
 /* Homepage product-name strip — sits between nav and hero */
 .product-strip { background: #1d4978; border-bottom: 1px solid rgba(135,206,235,0.25); padding: 12px 0; text-align: center; }
 .product-strip .container { display: flex !important; align-items: center; justify-content: center !important; gap: 20px; flex-wrap: wrap; }
