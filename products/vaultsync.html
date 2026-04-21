@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>VaultSync — Backups You Can Actually Restore, To Any Platform</title>
+  <title>DEC VaultSync — Backups You Can Actually Restore, To Any Platform</title>
   <link rel="stylesheet" href="../styles.css">
   <link rel="stylesheet" href="../extras.css">
 </head>
@@ -27,11 +27,43 @@
 <section class="v2-hero">
   <div class="container">
     <div class="v2-tagline">Backup &amp; Recovery</div>
-    <h1>VaultSync</h1>
-    <p class="v2-lede">You have backups. Somewhere. Probably. When was the last time you tested a restore? VaultSync backs up your VMs, servers, workstations, network configs, and mobile devices — then proves they can be restored. To the same platform or a completely different one. Encrypted. Tested. Automatically.</p>
+    <h1>DEC VaultSync &mdash; Cross-platform backup and restore orchestration</h1>
+
+    <div class="at-a-glance">
+      <div class="product-category">Cross-platform backup, restore, sync, and assisted-HA orchestration &mdash; for any device, any storage, any hypervisor</div>
+      <dl>
+        <dt>What it is</dt>
+        <dd>A Linux-based data-mobility and protection appliance that backs up, restores, syncs, and orchestrates assisted high-availability across every tier of a customer's data estate &mdash; from iPhones and home NAS units to Pure Storage SANs, from VMware / Proxmox / KVM virtual workloads to Docker and Kubernetes container volumes. One appliance for backup, restore, cross-platform migration, bidirectional sync, and assisted HA failover &mdash; regardless of what runs underneath.</dd>
+        <dt>Handles</dt>
+        <dd>
+          <strong>Endpoints:</strong> iPhone / iPad / Android mobile devices, Windows / Linux / macOS workstations.<br>
+          <strong>Storage:</strong> home NAS (Synology, QNAP, TrueNAS), enterprise SAN (Pure Storage, NetApp, Dell EMC, iSCSI / FC / NVMe-oF).<br>
+          <strong>Virtualization &amp; containers:</strong> libvirt / KVM, Proxmox VE, VMware ESXi, Microsoft Hyper-V, Docker volumes, Kubernetes PVCs.<br>
+          <strong>Network configs:</strong> via NIVMIA integration.<br>
+          <strong>Targets:</strong> Azure Blob, Oracle OCI, S3-compatible, Proxmox Backup Server, local disk, tape.
+        </dd>
+        <dt>Does</dt>
+        <dd>Scheduled encrypted snapshots with changed-block tracking; automated restore-testing; cross-platform restore (VMware &rarr; Proxmox in one operation); cross-platform <em>bidirectional sync</em> across heterogeneous storage; assisted HA state-sync orchestration between active/standby pairs regardless of platform; air-gapped immutable backups; ransomware-survivable isolated backup plane; tamper-evident audit trail.</dd>
+        <dt>Architecture</dt>
+        <dd>Core&ndash;subcore topology (deployable with or without agents). One VaultSync appliance protects a single site. Multiple appliances federate so a central core orchestrates backup, sync, and assisted HA across many subcores at different sites.</dd>
+        <dt>Deployment</dt>
+        <dd>Linux-based appliance. On-prem bare metal, on-prem VM, or cloud appliance VM. Catalog DB, scheduler, encryption engine bundled. Federation-ready for multi-site.</dd>
+        <dt>Editions</dt>
+        <dd>Community (free) &middot; Standard &middot; Professional &middot; Enterprise &middot; Platinum &middot; Signature. <a href="vaultsync-editions.html">See edition comparison &rarr;</a></dd>
+        <dt>Designed for</dt>
+        <dd>Head of Infrastructure, Head of Compliance, DR teams who need <em>proven</em> restore &mdash; not just backup jobs.</dd>
+      </dl>
+    </div>
+
+    <p class="v2-lede">You have backups. Somewhere. Probably. When was the last time you tested a restore? VaultSync backs up your VMs, servers, workstations, network configs, and mobile devices &mdash; then proves they can be restored. To the same platform or a completely different one. Encrypted. Tested. Automatically.</p>
     <div class="v2-cta-row">
       <a href="#intelligence" class="cta">See What Makes It Different</a>
       <a href="#capabilities" class="cta-secondary">Capabilities</a>
+      <a href="case-studies.html#vaultsync" class="cta-secondary">Customer Case Study</a>
+    </div>
+
+    <div style="background:#dcecf7;border-left:4px solid #87ceeb;border-radius:4px;padding:16px 20px;margin-top:20px;font-size:0.92rem;color:#0f2b46;">
+      <strong>Customer reference &mdash; Hidden City Solutions:</strong> DEC VaultSync detected drive-decay on two production NAS systems, produced a consequence report and cost analysis, and executed the remediation end-to-end without archive loss. <a href="case-studies.html" style="color:#0f2b46;font-weight:700;">Read the full case study &rarr;</a>
     </div>
   </div>
 </section>
@@ -173,7 +205,7 @@
     <div class="v2-arch-block">
       <h3>Assisted High Availability</h3>
       <p>Traditional HA requires identical hardware at both sites, matching cluster configurations, expensive shared storage, and a team of specialists to maintain it. Most small and mid-size organizations can't afford that — so they don't have HA at all. They have backups and a prayer.</p>
-      <div class="v2-metaphor">VaultSync's Assisted HA is different. Think of it like having a fully furnished apartment across town that mirrors your house. Every night — or every hour, or continuously — VaultSync updates that apartment with everything that changed at home. The furniture is arranged the same way. The fridge is stocked. The lights work. If your house becomes uninhabitable, you don't rebuild from boxes in a storage unit. You walk into the apartment and keep living.</div>
+      <div class="v2-metaphor">VaultSync's Assisted HA works differently. It keeps a continuously updated copy of your critical workloads at a secondary location &mdash; on whatever hardware, hypervisor, or cloud platform you already have. The copy is a current, ready-to-run replica, not a cold backup waiting to be restored. When the primary site goes down, bringing the secondary up is a single action rather than a multi-day rebuild.</div>
       <p>VaultSync continuously syncs your critical workloads to a secondary site — which can be a different hypervisor, a different location, even a different platform entirely. VMware primary, Proxmox secondary. Physical server primary, cloud VM secondary. When the primary goes down, the synced copy is current, tested, and ready. Your team brings it online — or, integrated with the DEC-LLC ecosystem, the system brings it online for you based on the priority you already set.</p>
       <p>No matching hardware required. No shared storage fabric. No vendor lock-in at the secondary site. Just a continuously-synced, ready-to-run copy of the workloads that matter most.</p>
     </div>
@@ -181,7 +213,7 @@
     <div class="v2-arch-block">
       <h3>Data Clustering</h3>
       <p>Some data doesn't just need to survive a disaster — it needs to be available from multiple places at the same time. A retail company with three warehouses needs inventory data at all three. A law firm with two offices needs case files accessible from both. A school district needs student records at every campus.</p>
-      <div class="v2-metaphor">VaultSync's data clustering keeps your backups safe AND can also provide truly synchronized live data across multiple locations — not just copies waiting to be restored, but active, readable, current replicas running alongside your primary. Think of it like your bank account: you check your balance from the app, the ATM, or the branch teller — and it's always the same number. A deposit at any location shows up everywhere instantly. If the ATM network goes down, the branch still has your balance. When the ATMs come back, they catch up. You never wonder which "copy" of your balance is the real one — there's one truth, available everywhere. That's what data clustering does for your business applications. But it's better than just one source of truth — that data the bank depends on, and that you have access to everywhere, is usually sitting in one database with a backup copy somewhere. With VaultSync, that data is in multiple databases at the same time, without the expensive database replication systems, and ready for ANY disaster — even those global threat actors that could turn your bank into their playground.</div>
+      <div class="v2-metaphor">VaultSync's data clustering keeps the same dataset live and writable at every location &mdash; not copied one way, but active and current on every site at once. An update made anywhere is visible everywhere. When a site loses connectivity, the others keep working from current data, and the disconnected site reconciles automatically when it rejoins. This is the kind of active-active replication enterprise database vendors typically charge six figures to deliver &mdash; built into the appliance.</div>
       <p>When one location loses connectivity or goes offline, the other locations already have current data. There's no "failover" event because the data was never in just one place. When the offline location comes back online, VaultSync reconciles — catches that location up on everything that changed while it was disconnected, resolves conflicts, and brings the cluster back to consistency. Automatically.</p>
       <p>For businesses that have always been told "real HA and data replication requires a six-figure budget and a dedicated DBA" — VaultSync makes it achievable — without the added zeros. Not by cutting corners on the engineering, but by handling the complexity inside the appliance so your team doesn't have to.</p>
     </div>

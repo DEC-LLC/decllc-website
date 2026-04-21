@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DEC IVMIA — Platform Plugins</title>
+  <link rel="stylesheet" href="../styles.css">
+  <link rel="stylesheet" href="../extras.css">
+</head>
+<body>
+
+<nav>
+  <div class="container">
+    <a href="../index.html" class="logo">
+      <img src="../assets/logo-circle.svg" alt="DEC-LLC">
+    </a>
+    <ul>
+      <li class="nav-dropdown">
+        <a href="../index.html#products">Products</a>
+        <ul class="nav-submenu">
+          <li class="submenu-divider">Core Four</li>
+          <li><a href="openutm.html">DEC OpenUTM</a></li>
+          <li><a href="ivmia.html">DEC IVMIA</a></li>
+          <li><a href="nivmia.html">DEC NIVMIA</a></li>
+          <li><a href="vaultsync.html">DEC VaultSync</a></li>
+          <li class="submenu-divider">Plugins &amp; Extensions</li>
+          <li><a href="openutm-plugins.html">OpenUTM plugins</a></li>
+          <li><a href="ivmia-plugins.html">IVMIA platform plugins</a></li>
+          <li><a href="nivmia-plugins.html">NIVMIA vendor plugins</a></li>
+          <li><a href="vaultsync-plugins.html">VaultSync source &amp; target plugins</a></li>
+          <li class="submenu-divider">Other Products</li>
+          <li><a href="ga-fs.html">DEC GA-FS</a></li>
+          <li class="submenu-divider">Cross-Product</li>
+          <li><a href="sdns/index.html">DEC SDNS &mdash; AI Quorum</a></li>
+        </ul>
+      </li>
+      <li><a href="case-studies.html">Case Studies</a></li>
+      <li><a href="../index.html#why">Why DEC-LLC</a></li>
+      <li><a href="../index.html#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<section class="v2-hero">
+  <div class="container">
+    <div class="v2-tagline">IVMIA Platform Plugins</div>
+    <h1>DEC IVMIA &mdash; Platform Plugins</h1>
+    <p class="v2-lede">IVMIA orchestrates workloads across every virtualization, container, and bare-metal platform your team runs. Each plugin translates IVMIA's normalized workload model into the platform's native API &mdash; so a VM moves from VMware to Proxmox, a container lifts from Docker to Kubernetes, or a Windows 11 desktop gets rebuilt on an Incus host, all through the same orchestration surface.</p>
+    <div class="v2-cta-row">
+      <a href="ivmia.html" class="cta">Back to IVMIA</a>
+      <a href="ivmia-editions.html" class="cta-secondary">Editions &amp; Pricing</a>
+    </div>
+  </div>
+</section>
+
+<section class="v2-arch">
+  <div class="container">
+    <h2 style="text-align:center;">Hypervisor plugins</h2>
+    <p class="v2-subtitle" style="text-align:center;">The virtualization platforms IVMIA treats as peer targets &mdash; any workload can start on one and migrate to another.</p>
+
+    <div class="plugin-grid">
+
+      <div class="plugin-card">
+        <span class="badge-sku">Shipping</span>
+        <h4>libvirt / KVM</h4>
+        <div class="subtitle">The Linux-native baseline</div>
+        <p>libvirt-API. Full VM lifecycle, storage-pool orchestration, snapshots, live-migration between libvirt hosts, and the reference target for cross-platform conversions.</p>
+      </div>
+
+      <div class="plugin-card">
+        <span class="badge-sku">Shipping</span>
+        <h4>Proxmox VE</h4>
+        <div class="subtitle">Proxmox cluster orchestration</div>
+        <p>Proxmox REST-API. VM and LXC lifecycle, HA-group awareness, storage-backend modeling (ZFS / Ceph / LVM / NFS), backup integration that dovetails with VaultSync.</p>
+      </div>
+
+      <div class="plugin-card">
+        <span class="badge-sku">Shipping</span>
+        <h4>VMware ESXi &amp; vCenter</h4>
+        <div class="subtitle">vSphere-managed estates</div>
+        <p>vSphere REST-API + SDK. Host / cluster / DRS awareness, vMotion orchestration, VMDK snapshot &amp; clone. Coexists with vCenter &mdash; IVMIA does not require replacing it.</p>
+      </div>
+
+      <div class="plugin-card">
+        <span class="badge-sku">Shipping</span>
+        <h4>Microsoft Hyper-V</h4>
+        <div class="subtitle">Windows Server virtualization</div>
+        <p>WMI + PowerShell remoting. VM lifecycle, live-migration, VHDX snapshot, checkpoint management, and Cluster Shared Volume awareness for failover-cluster deployments.</p>
+      </div>
+
+      <div class="plugin-card">
+        <span class="badge-sku">Shipping</span>
+        <h4>VirtualBox</h4>
+        <div class="subtitle">Desktop / lab virtualization</div>
+        <p>VBoxManage + SDK. Covers the labs, developer workstations, and training environments where VirtualBox persists &mdash; so those workloads are visible to the same orchestrator as the datacenter fleet.</p>
+      </div>
+
+      <div class="plugin-card">
+        <span class="badge-sku">Shipping</span>
+        <h4>Incus</h4>
+        <div class="subtitle">LXD-successor system containers</div>
+        <p>Incus REST-API. System-container and VM orchestration, cluster awareness, storage-pool modeling. The go-to target when a team wants container density with VM isolation.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="v2-arch" style="background:#f8fafb;">
+  <div class="container">
+    <h2 style="text-align:center;">Container &amp; orchestrator plugins</h2>
+    <p class="v2-subtitle" style="text-align:center;">Container workloads treated as first-class citizens, not an afterthought.</p>
+
+    <div class="plugin-grid">
+
+      <div class="plugin-card">
+        <span class="badge-sku">Shipping</span>
+        <h4>Docker</h4>
+        <div class="subtitle">Docker Engine &amp; Compose</div>
+        <p>Docker Engine API + Compose-file parsing. Container lifecycle, volume orchestration, network modeling, and the bridge between a Compose project and an IVMIA-managed workload.</p>
+      </div>
+
+      <div class="plugin-card">
+        <span class="badge-sku">Shipping</span>
+        <h4>Podman</h4>
+        <div class="subtitle">Rootless / rootful container engine</div>
+        <p>Podman REST-API + systemd-unit integration. Quadlet awareness, pod orchestration, and rootless-namespace modeling.</p>
+      </div>
+
+      <div class="plugin-card">
+        <span class="badge-sku">Shipping</span>
+        <h4>Kubernetes</h4>
+        <div class="subtitle">Workload placement &amp; migration</div>
+        <p>Kubernetes API-server integration. Treats namespaces / Deployments / StatefulSets as IVMIA workloads, mediates cross-cluster migration, and coordinates persistent-volume movement with VaultSync.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="v2-arch">
+  <div class="container">
+    <h2 style="text-align:center;">OS / bare-metal plugins</h2>
+    <p class="v2-subtitle" style="text-align:center;">Physical servers and workstations managed through the same orchestrator as the virtualized fleet &mdash; so &ldquo;rebuild this machine&rdquo; and &ldquo;migrate this VM&rdquo; are the same workflow.</p>
+
+    <div class="plugin-grid">
+
+      <div class="plugin-card">
+        <span class="badge-sku">Shipping</span>
+        <h4>Linux</h4>
+        <div class="subtitle">Agent or agentless</div>
+        <p>Covers RHEL / Rocky / Alma / Ubuntu / Debian / SUSE / Arch. Inventory, config drift, workload definition, and P2V / V2P conversion paths.</p>
+      </div>
+
+      <div class="plugin-card">
+        <span class="badge-sku">Shipping</span>
+        <h4>Windows 11 / Server</h4>
+        <div class="subtitle">Desktop + server Windows</div>
+        <p>WMI + WinRM. Windows 11 desktops and Windows Server fleets treated as IVMIA workloads &mdash; including P2V capture and restore on any supported hypervisor target.</p>
+      </div>
+
+      <div class="plugin-card">
+        <span class="badge-sku">Shipping</span>
+        <h4>macOS</h4>
+        <div class="subtitle">Apple-silicon &amp; Intel workstations</div>
+        <p>SSH + MDM-aware plugin. Workstation inventory, config posture, and integration with the VaultSync mobile / workstation source plugin for backup and restore.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="v2-arch" style="background:#f8fafb;">
+  <div class="container">
+    <h2 style="text-align:center;">Cloud plugins &mdash; roadmap</h2>
+    <div class="plugin-grid">
+      <div class="plugin-card">
+        <span class="badge-sku">Roadmap</span>
+        <h4>AWS EC2 / EKS</h4>
+        <div class="subtitle">Shape-aware workload placement</div>
+        <p>Treats EC2 instances and EKS workloads as IVMIA targets so the same lift-and-shift surface covers on-prem and AWS.</p>
+      </div>
+
+      <div class="plugin-card">
+        <span class="badge-sku">Roadmap</span>
+        <h4>Microsoft Azure</h4>
+        <div class="subtitle">VM / AKS integration</div>
+        <p>Azure Resource Manager integration for VM and AKS workloads, paired with VaultSync's Azure Blob target.</p>
+      </div>
+
+      <div class="plugin-card">
+        <span class="badge-sku">Roadmap</span>
+        <h4>Google Cloud (GCE / GKE)</h4>
+        <div class="subtitle">Compute &amp; Kubernetes</div>
+        <p>GCE VM + GKE cluster plugin for teams with cross-cloud orchestration requirements.</p>
+      </div>
+
+      <div class="plugin-card">
+        <span class="badge-sku">Roadmap</span>
+        <h4>Oracle Cloud (OCI)</h4>
+        <div class="subtitle">Compute &amp; OKE</div>
+        <p>OCI compute + OKE integration, paired with VaultSync's native OCI Object Storage target.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="v2-arch">
+  <div class="container">
+    <h2 style="text-align:center;">Plugin architecture</h2>
+    <p class="v2-subtitle" style="text-align:center;">Every platform plugin implements IVMIA's workload-model interface: <em>inventory, lifecycle, snapshot, migrate, telemetry</em>. That is what lets a workload defined once be started on any supported platform and moved between them &mdash; and it is what connects IVMIA to VaultSync (backup), NIVMIA (network state), and OpenUTM (policy) without a separate integration layer.</p>
+    <div class="v2-cta-row" style="justify-content:center;">
+      <a href="ivmia.html" class="cta">Back to DEC IVMIA</a>
+      <a href="../index.html#contact" class="cta-secondary">Request a platform plugin</a>
+    </div>
+  </div>
+</section>
+
+<section class="v2-closing">
+  <div class="container">
+    <h2>Workloads outlive the platform they were born on.</h2>
+    <p>IVMIA plugins are what make &ldquo;we're moving off VMware&rdquo; or &ldquo;we're consolidating on Proxmox&rdquo; a scheduled migration instead of a multi-quarter project.</p>
+    <a href="../index.html" class="cta" style="background:white;color:#0f2b46;">Back to All Products</a>
+    <a href="../index.html#contact" class="cta-secondary" style="border-color:white;color:white;">Talk to Us</a>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div>
+      <img src="../assets/logo-circle.svg" alt="DEC-LLC" style="height:56px;margin-bottom:8px;">
+      <p style="font-style:italic;opacity:0.9;margin-bottom:4px;">Open Ideas</p>
+      <p>&copy; 2026 DEC-LLC. All rights reserved.</p>
+    </div>
+    <div class="footer-links">
+      <a href="../index.html#products">Products</a>
+      <a href="../horizon.html">Horizon</a>
+      <a href="../index.html#contact">Contact</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

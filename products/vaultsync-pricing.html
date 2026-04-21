@@ -3,188 +3,160 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>VaultSync Pricing — DEC-LLC</title>
+  <title>DEC VaultSync Pricing &mdash; Community to Signature</title>
   <link rel="stylesheet" href="../styles.css">
   <link rel="stylesheet" href="../extras.css">
   <style>
-    .pricing-grid-5 { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 18px; max-width: 1200px; margin: 0 auto; }
+    .pricing-grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; max-width: 1100px; margin: 0 auto; }
+    .pricing-card .price-note { font-size: 0.75rem; color: #888; margin-top: -6px; }
+    .pricing-card .btn-full { text-decoration: none; display: block; background: #0f2b46; color: #fff; padding: 12px; border-radius: 8px; font-weight: 700; text-align: center; margin-top: 14px; }
+    .pricing-card .btn-full.muted { background: #e9f1fb; color: #0f2b46; }
+    .pricing-card.enterprise-tier { border-color: #446d9c; }
+    .tier-block-header { text-align:center; margin: 40px 0 20px; color: #0f2b46; font-size: 1.25rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; }
   </style>
 </head>
 <body>
-
 <nav>
   <div class="container">
-    <a href="../index.html" class="logo">
-      <img src="../assets/logo-circle.svg" alt="DEC-LLC"><span style="font-weight:800;font-size:1.1rem;letter-spacing:0.05em;margin-left:10px;">DEC-LLC</span>
-    </a>
+    <a href="../index.html" class="logo"><img src="../assets/logo-circle.svg" alt="DEC-LLC"><span style="font-weight:800;font-size:1.1rem;letter-spacing:0.05em;margin-left:10px;">DEC-LLC</span></a>
     <ul>
       <li><a href="../index.html#products">Products</a></li>
+      <li><a href="case-studies.html">Case Studies</a></li>
       <li><a href="../index.html#why">Why DEC-LLC</a></li>
       <li><a href="../index.html#contact">Contact</a></li>
     </ul>
   </div>
 </nav>
 
-<!-- Hero -->
-<section class="v2-hero" style="padding:60px 0 50px;">
+<section class="v2-hero" style="padding:60px 0 30px;">
   <div class="container">
-    <div class="v2-tagline">Backup and Disaster Recovery</div>
-    <h1>VaultSync Pricing</h1>
-    <p class="v2-lede">Back up every virtual machine across every hypervisor. Restore anywhere. Sleep well knowing your infrastructure can recover from anything.</p>
-  </div>
-</section>
-
-<!-- Intro -->
-<section class="v2-story" style="padding:40px 0 20px;">
-  <div class="container">
-    <div class="v2-story-inner" style="text-align:center;">
-      <p class="v2-intro">Start free with two hosts and full backup capabilities. Scale when your environment grows. Every tier gets the same core backup engine and deduplication -- you're choosing how many hosts to protect and how fast your recovery needs to be.</p>
+    <div class="v2-tagline">Backup &amp; Recovery</div>
+    <h1>DEC VaultSync Pricing</h1>
+    <p class="v2-lede">Community proves restore works on one workload. Professional and above run at scale, to any cloud, with verified cross-platform restore. Enterprise tiers add SLA-backed support and managed-service options.</p>
+    <div class="v2-cta-row">
+      <a href="vaultsync.html" class="cta-secondary">&larr; Back to DEC VaultSync</a>
+      <a href="vaultsync-editions.html" class="cta">Full Edition Comparison &rarr;</a>
     </div>
   </div>
 </section>
 
-<section style="padding:60px 0;">
-  <div class="container" style="text-align:center;">
-    <div style="max-width:700px;margin:0 auto;padding:40px;background:white;border-radius:12px;box-shadow:0 2px 12px rgba(0,0,0,0.06);">
-      <h2 style="color:#0f2b46;margin-bottom:8px;">Register Your Interest</h2>
-      <p style="color:#555;margin-bottom:24px;">Get pricing, a demo, and early access to VaultSync. We'll be in touch within one business day.</p>
-      <form id="register-form" onsubmit="submitRegistration(event, 'VaultSync')" style="text-align:left;max-width:500px;margin:0 auto;">
-        <div style="margin-bottom:14px;">
-          <label style="display:block;font-weight:600;font-size:0.9rem;margin-bottom:4px;color:#0f2b46;">Full Name *</label>
-          <input type="text" id="reg-name" required style="width:100%;padding:10px;border-radius:8px;border:1px solid #ddd;font-size:1rem;">
-        </div>
-        <div style="margin-bottom:14px;">
-          <label style="display:block;font-weight:600;font-size:0.9rem;margin-bottom:4px;color:#0f2b46;">Company</label>
-          <input type="text" id="reg-company" style="width:100%;padding:10px;border-radius:8px;border:1px solid #ddd;font-size:1rem;">
-        </div>
-        <div style="margin-bottom:14px;">
-          <label style="display:block;font-weight:600;font-size:0.9rem;margin-bottom:4px;color:#0f2b46;">Email *</label>
-          <input type="email" id="reg-email" required style="width:100%;padding:10px;border-radius:8px;border:1px solid #ddd;font-size:1rem;">
-        </div>
-        <div style="margin-bottom:20px;">
-          <label style="display:block;font-weight:600;font-size:0.9rem;margin-bottom:4px;color:#0f2b46;">Phone (optional)</label>
-          <input type="tel" id="reg-phone" style="width:100%;padding:10px;border-radius:8px;border:1px solid #ddd;font-size:1rem;">
-        </div>
-        <button type="submit" id="reg-submit" class="btn btn-primary" style="width:100%;padding:14px;font-size:1.05rem;">Register</button>
-      </form>
-      <div id="reg-success" style="display:none;margin-top:20px;padding:16px;background:#e8f5e9;border-radius:8px;color:#2e7d32;">
-        <strong>Thank you!</strong> We received your registration and will be in touch within one business day.
+<section style="background:#fff;padding:40px 0;">
+  <div class="container">
+
+    <div class="tier-block-header">Self-serve tiers</div>
+    <div class="pricing-grid-3">
+
+      <div class="pricing-card">
+        <h3>Community</h3>
+        <div class="price">Free</div>
+        <div class="price-note">Forever</div>
+        <ul>
+          <li>5 protected workloads</li>
+          <li>libvirt source only</li>
+          <li>Core engine (vaultsync-core + borg)</li>
+          <li>Proxmox Backup Server + local disk + tape targets</li>
+          <li>Manual restore-testing</li>
+          <li>Community forum support</li>
+        </ul>
+        <a href="../contact.html" class="btn-full muted">Download Free</a>
       </div>
-      <p style="margin-top:20px;font-size:0.85rem;color:#888;">Or call us — contact info at the bottom of every page.</p>
+
+      <div class="pricing-card">
+        <h3>Standard</h3>
+        <div class="price">from $2K <span>/ yr</span></div>
+        <div class="price-note">Per deployment</div>
+        <ul>
+          <li>25 protected workloads</li>
+          <li>All hypervisor sources (libvirt, Proxmox, VMware, Hyper-V)</li>
+          <li>Changed-block tracking</li>
+          <li>Full encryption at rest + in transit</li>
+          <li>Scheduled restore-testing</li>
+          <li>Email support, business hours</li>
+        </ul>
+        <a href="../contact.html" class="btn-full">Request Quote</a>
+      </div>
+
+      <div class="pricing-card featured">
+        <h3>Professional</h3>
+        <div class="price">from $15K <span>/ yr</span></div>
+        <div class="price-note">Per deployment</div>
+        <ul>
+          <li>Unlimited workloads</li>
+          <li>Cloud targets (Azure, OCI, S3, GCP)</li>
+          <li>Cross-platform restore (VMware &rarr; Proxmox, etc.)</li>
+          <li>Multi-site federation</li>
+          <li>Tamper-evident audit trail</li>
+          <li>Next-business-day SLA</li>
+        </ul>
+        <a href="../contact.html" class="btn-full">Request Quote</a>
+      </div>
+
     </div>
+
+    <div class="tier-block-header" style="margin-top:60px;">Enterprise platform tiers</div>
+    <div class="pricing-grid-3">
+
+      <div class="pricing-card enterprise-tier">
+        <h3>Enterprise</h3>
+        <div class="price">$300K <span>/ yr</span></div>
+        <div class="price-note">Per product</div>
+        <ul>
+          <li>Unlimited everything</li>
+          <li>Cross-platform bidirectional sync across heterogeneous storage</li>
+          <li>Assisted HA state-sync orchestration</li>
+          <li>Air-gapped immutable backups</li>
+          <li>Email + live chat, business hours</li>
+          <li><strong>24-hour email SLA</strong></li>
+        </ul>
+        <a href="../contact.html" class="btn-full">Contact Sales</a>
+      </div>
+
+      <div class="pricing-card enterprise-tier">
+        <h3>Platinum</h3>
+        <div class="price">$500K <span>/ yr</span></div>
+        <div class="price-note">Per product</div>
+        <ul>
+          <li>Everything in Enterprise</li>
+          <li>White-glove onboarding</li>
+          <li><strong>24/7 phone + live-person support</strong></li>
+          <li><strong>24-hour SLA on any channel</strong></li>
+          <li>Priority escalation path</li>
+        </ul>
+        <a href="../contact.html" class="btn-full">Contact Sales</a>
+      </div>
+
+      <div class="pricing-card enterprise-tier">
+        <h3>Signature</h3>
+        <div class="price">$1M+ <span>/ yr</span></div>
+        <div class="price-note">Per product</div>
+        <ul>
+          <li>Everything in Platinum</li>
+          <li><strong>Dedicated team</strong></li>
+          <li><strong>Partial managed-service</strong> option</li>
+          <li><strong>6-hour response SLA</strong></li>
+          <li>Custom roadmap alignment</li>
+        </ul>
+        <a href="../contact.html" class="btn-full">Contact Sales</a>
+      </div>
+
+    </div>
+
+    <p style="text-align:center;margin-top:40px;color:#555;font-size:0.95rem;max-width:800px;margin-left:auto;margin-right:auto;">
+      All pricing in USD, billed annually. Multi-year and multi-product bundles available. <a href="vaultsync-editions.html" style="color:#0f2b46;font-weight:700;">See the full edition comparison &rarr;</a>
+    </p>
+
   </div>
 </section>
 
-<script>
-function submitRegistration(e, product) {
-  e.preventDefault();
-  var btn = document.getElementById('reg-submit');
-  btn.disabled = true;
-  btn.textContent = 'Registering...';
-
-  var data = {
-    product: product,
-    name: document.getElementById('reg-name').value,
-    company: document.getElementById('reg-company').value,
-    email: document.getElementById('reg-email').value,
-    phone: document.getElementById('reg-phone').value,
-    _subject: 'Product Registration: ' + product,
-  };
-
-  var portalUrl = 'https://portal.dec-llc.biz/api/v1/register';
-  var formspreeUrl = 'https://formspree.io/f/sales@decllc.biz';
-
-  fetch(portalUrl, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify(data),
-  })
-  .then(function(r) {
-    if (!r.ok) throw new Error('Portal unavailable');
-    showRegSuccess();
-  })
-  .catch(function() {
-    // Fallback to Formspree
-    return fetch(formspreeUrl, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-      body: JSON.stringify(data),
-    }).then(function(r) {
-      if (r.ok) showRegSuccess();
-      else { btn.disabled = false; btn.textContent = 'Register'; alert('Registration failed. Please use the contact form at the bottom of the page.'); }
-    });
-  });
-}
-
-function showRegSuccess() {
-  document.getElementById('register-form').style.display = 'none';
-  document.getElementById('reg-success').style.display = 'block';
-}
-</script>
-
-<!-- Feature Comparison -->
-<section style="background:#f8fafb;">
+<section style="background:#0f2b46;color:#fff;padding:50px 0;text-align:center;">
   <div class="container">
-    <h2>Feature Comparison</h2>
-    <table style="width:100%;border-collapse:collapse;background:#fff;border-radius:8px;overflow:hidden;box-shadow:0 1px 3px rgba(0,0,0,0.1);">
-      <thead>
-        <tr style="background:var(--primary);color:#fff;">
-          <th style="padding:12px;text-align:left;">Capability</th>
-          <th style="padding:12px;text-align:center;">Community</th>
-          <th style="padding:12px;text-align:center;">Standard</th>
-          <th style="padding:12px;text-align:center;">Professional</th>
-          <th style="padding:12px;text-align:center;">Enterprise</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr><td style="padding:10px;">ESXi, KVM, and Proxmox backup</td><td style="text-align:center;">&#10003;</td><td style="text-align:center;">&#10003;</td><td style="text-align:center;">&#10003;</td><td style="text-align:center;">&#10003;</td></tr>
-        <tr style="background:#f9f9f9;"><td style="padding:10px;">Full and differential backups</td><td style="text-align:center;">&#10003;</td><td style="text-align:center;">&#10003;</td><td style="text-align:center;">&#10003;</td><td style="text-align:center;">&#10003;</td></tr>
-        <tr><td style="padding:10px;">Built-in deduplication</td><td style="text-align:center;">&#10003;</td><td style="text-align:center;">&#10003;</td><td style="text-align:center;">&#10003;</td><td style="text-align:center;">&#10003;</td></tr>
-        <tr style="background:#f9f9f9;"><td style="padding:10px;">Web dashboard</td><td style="text-align:center;">&#10003;</td><td style="text-align:center;">&#10003;</td><td style="text-align:center;">&#10003;</td><td style="text-align:center;">&#10003;</td></tr>
-        <tr><td style="padding:10px;">Cross-platform sync between hypervisors</td><td style="text-align:center;">&#10003;</td><td style="text-align:center;">&#10003;</td><td style="text-align:center;">&#10003;</td><td style="text-align:center;">&#10003;</td></tr>
-        <tr style="background:#f9f9f9;"><td style="padding:10px;">Snapshot-based storage and instant rollback</td><td style="text-align:center;">&mdash;</td><td style="text-align:center;">&#10003;</td><td style="text-align:center;">&#10003;</td><td style="text-align:center;">&#10003;</td></tr>
-        <tr><td style="padding:10px;">Host configuration backup</td><td style="text-align:center;">&mdash;</td><td style="text-align:center;">&#10003;</td><td style="text-align:center;">&#10003;</td><td style="text-align:center;">&#10003;</td></tr>
-        <tr style="background:#f9f9f9;"><td style="padding:10px;">Fast incremental backups (only changed data)</td><td style="text-align:center;">&mdash;</td><td style="text-align:center;">&mdash;</td><td style="text-align:center;">&#10003;</td><td style="text-align:center;">&#10003;</td></tr>
-        <tr><td style="padding:10px;">Military-grade encryption at every stage</td><td style="text-align:center;">&mdash;</td><td style="text-align:center;">&mdash;</td><td style="text-align:center;">&#10003;</td><td style="text-align:center;">&#10003;</td></tr>
-        <tr style="background:#f9f9f9;"><td style="padding:10px;">Cloud storage (S3, OCI, Azure, GCP)</td><td style="text-align:center;">&mdash;</td><td style="text-align:center;">&mdash;</td><td style="text-align:center;">&#10003;</td><td style="text-align:center;">&#10003;</td></tr>
-        <tr><td style="padding:10px;">Near-instant sync (~1 min recovery point)</td><td style="text-align:center;">&mdash;</td><td style="text-align:center;">&mdash;</td><td style="text-align:center;">&#10003;</td><td style="text-align:center;">&#10003;</td></tr>
-        <tr style="background:#f9f9f9;"><td style="padding:10px;">Automated failover and failback</td><td style="text-align:center;">&mdash;</td><td style="text-align:center;">&mdash;</td><td style="text-align:center;">&#10003;</td><td style="text-align:center;">&#10003;</td></tr>
-        <tr><td style="padding:10px;">Physical Linux server backup</td><td style="text-align:center;">&mdash;</td><td style="text-align:center;">&mdash;</td><td style="text-align:center;">&#10003;</td><td style="text-align:center;">&#10003;</td></tr>
-        <tr style="background:#f9f9f9;"><td style="padding:10px;">Hyper-V and VirtualBox support</td><td style="text-align:center;">&mdash;</td><td style="text-align:center;">&mdash;</td><td style="text-align:center;">&mdash;</td><td style="text-align:center;">&#10003;</td></tr>
-        <tr><td style="padding:10px;">Windows server and workstation backup</td><td style="text-align:center;">&mdash;</td><td style="text-align:center;">&mdash;</td><td style="text-align:center;">&mdash;</td><td style="text-align:center;">&#10003;</td></tr>
-        <tr style="background:#f9f9f9;"><td style="padding:10px;">Enterprise storage array integration</td><td style="text-align:center;">&mdash;</td><td style="text-align:center;">&mdash;</td><td style="text-align:center;">&mdash;</td><td style="text-align:center;">&#10003;</td></tr>
-        <tr><td style="padding:10px;">Cross-platform restore to any cloud</td><td style="text-align:center;">&mdash;</td><td style="text-align:center;">&mdash;</td><td style="text-align:center;">&mdash;</td><td style="text-align:center;">&#10003;</td></tr>
-        <tr style="background:#f9f9f9;"><td style="padding:10px;">Continuous replication (under 1 min recovery point)</td><td style="text-align:center;">&mdash;</td><td style="text-align:center;">&mdash;</td><td style="text-align:center;">&mdash;</td><td style="text-align:center;">&#10003;</td></tr>
-      </tbody>
-    </table>
-  </div>
-</section>
-
-<!-- CTA -->
-<section class="v2-closing">
-  <div class="container">
-    <h2>Start protecting your infrastructure today</h2>
-    <p>Community edition is free forever. No credit card, no time limit. Upgrade when you need faster recovery, cloud storage, or enterprise platform support.</p>
-    <a href="../store.html" class="cta" style="background:white;color:#0f2b46;">Download Community</a>
-    <a href="../contact.html" class="cta-secondary" style="border-color:white;color:white;">Contact Sales</a>
-  </div>
-</section>
-
-<footer>
-  <div class="container">
-    <div>
-      <img src="../assets/logo-circle.svg" alt="DEC-LLC" style="height:56px;margin-bottom:8px;">
-      <p>&copy; 2026 DEC-LLC. All rights reserved.</p>
-    </div>
-    <div class="footer-links">
-      <a href="../index.html#products">Products</a>
-      <a href="vaultsync.html">VaultSync</a>
-      <a href="../store.html">Store</a>
-      <a href="../index.html#contact">Contact</a>
-      <a href="mailto:info@decllc.biz">info@decllc.biz</a>
+    <h2 style="color:#fff;">Ready to talk?</h2>
+    <p style="color:#b7c8dc;">Start free with the Community edition. Contact sales for everything else.</p>
+    <div style="margin-top:20px;">
+      <a href="../contact.html" style="background:#87ceeb;color:#0f2b46;padding:14px 28px;border-radius:8px;text-decoration:none;font-weight:700;display:inline-block;">Contact Sales</a>
     </div>
   </div>
-</footer>
+</section>
 
 </body>
 </html>

@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DEC VaultSync — Source &amp; Target Plugins</title>
+  <link rel="stylesheet" href="../styles.css">
+  <link rel="stylesheet" href="../extras.css">
+</head>
+<body>
+
+<nav>
+  <div class="container">
+    <a href="../index.html" class="logo">
+      <img src="../assets/logo-circle.svg" alt="DEC-LLC">
+    </a>
+    <ul>
+      <li class="nav-dropdown">
+        <a href="../index.html#products">Products</a>
+        <ul class="nav-submenu">
+          <li class="submenu-divider">Core Four</li>
+          <li><a href="openutm.html">DEC OpenUTM</a></li>
+          <li><a href="ivmia.html">DEC IVMIA</a></li>
+          <li><a href="nivmia.html">DEC NIVMIA</a></li>
+          <li><a href="vaultsync.html">DEC VaultSync</a></li>
+          <li class="submenu-divider">Plugins &amp; Extensions</li>
+          <li><a href="openutm-plugins.html">OpenUTM plugins</a></li>
+          <li><a href="ivmia-plugins.html">IVMIA platform plugins</a></li>
+          <li><a href="nivmia-plugins.html">NIVMIA vendor plugins</a></li>
+          <li><a href="vaultsync-plugins.html">VaultSync source &amp; target plugins</a></li>
+          <li class="submenu-divider">Other Products</li>
+          <li><a href="ga-fs.html">DEC GA-FS</a></li>
+          <li class="submenu-divider">Cross-Product</li>
+          <li><a href="sdns/index.html">DEC SDNS &mdash; AI Quorum</a></li>
+        </ul>
+      </li>
+      <li><a href="case-studies.html">Case Studies</a></li>
+      <li><a href="../index.html#why">Why DEC-LLC</a></li>
+      <li><a href="../index.html#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<section class="v2-hero">
+  <div class="container">
+    <div class="v2-tagline">VaultSync Plugin Ecosystem</div>
+    <h1>DEC VaultSync &mdash; Source &amp; Target Plugins</h1>
+    <p class="v2-lede">VaultSync is built around a simple idea: <em>any source, any target, any direction</em>. That only works because every device, storage platform, and cloud provider is a plugin. Source plugins read data safely (consistent snapshots, change-tracking, zero-copy where available). Target plugins write data durably (encryption, immutability, integrity verification). Mix and match to compose backup, restore, cross-platform migration, bidirectional sync, and HA state-sync.</p>
+    <div class="v2-cta-row">
+      <a href="vaultsync.html" class="cta">Back to VaultSync</a>
+      <a href="vaultsync-editions.html" class="cta-secondary">Editions &amp; Pricing</a>
+    </div>
+  </div>
+</section>
+
+<section class="v2-arch">
+  <div class="container">
+    <h2 style="text-align:center;">Source plugins &mdash; the things you protect</h2>
+    <p class="v2-subtitle" style="text-align:center;">What VaultSync reads from. Each source plugin handles consistency, change-tracking, and permission scoping appropriate to that platform.</p>
+
+    <div class="plugin-grid">
+
+      <div class="plugin-card">
+        <span class="badge-sku">Shipping</span>
+        <h4>Mobile devices</h4>
+        <div class="subtitle">iPhone, iPad, Android</div>
+        <p>Encrypted per-device backup: photos, contacts, messages, app-data where permitted by the OS. Consent-based, end-to-end encrypted, with per-device restore that works across OS versions.</p>
+      </div>
+
+      <div class="plugin-card">
+        <span class="badge-sku">Shipping</span>
+        <h4>Workstations</h4>
+        <div class="subtitle">Windows, Linux, macOS</div>
+        <p>Agent-based snapshot capture (VSS on Windows, LVM / ZFS / Btrfs on Linux, APFS on macOS). Full-disk images for P2V restore or file-level selective restore.</p>
+      </div>
+
+      <div class="plugin-card">
+        <span class="badge-sku">Shipping</span>
+        <h4>Home / SMB NAS</h4>
+        <div class="subtitle">Synology, QNAP, TrueNAS</div>
+        <p>Read-side integration with each NAS's native snapshot APIs. Incremental-forever snapshots, dataset-level scoping, and BTRFS / ZFS send-stream efficiency where the NAS supports it.</p>
+      </div>
+
+      <div class="plugin-card">
+        <span class="badge-sku">Shipping</span>
+        <h4>Enterprise SAN</h4>
+        <div class="subtitle">Pure, NetApp, Dell EMC</div>
+        <p>iSCSI / FC / NVMe-oF initiators + native snapshot-API integration per vendor. Off-host backup via snapshot-mount so production I/O is untouched during capture.</p>
+      </div>
+
+      <div class="plugin-card">
+        <span class="badge-sku">Shipping</span>
+        <h4>Hypervisor VMs</h4>
+        <div class="subtitle">Via IVMIA platform plugins</div>
+        <p>libvirt/KVM, Proxmox VE, VMware ESXi, Hyper-V, VirtualBox, Incus &mdash; VaultSync consumes workload snapshots from IVMIA, so the same set of hypervisors that orchestrate workloads also back them up, without a second agent.</p>
+      </div>
+
+      <div class="plugin-card">
+        <span class="badge-sku">Shipping</span>
+        <h4>Container volumes</h4>
+        <div class="subtitle">Docker, Podman, Kubernetes PVCs</div>
+        <p>Volume snapshot + consistency-hook integration. For Kubernetes, coordinates with CSI snapshot providers so stateful workloads (databases, message queues) capture quiesced.</p>
+      </div>
+
+      <div class="plugin-card">
+        <span class="badge-sku">Shipping</span>
+        <h4>Network device configs</h4>
+        <div class="subtitle">Via NIVMIA vendor plugins</div>
+        <p>Every network device NIVMIA manages becomes a backup source. Versioned, signed, and restorable configurations for switches, routers, firewalls, and SD-WAN edges &mdash; through the same vendor plugins.</p>
+      </div>
+
+      <div class="plugin-card">
+        <span class="badge-sku">Shipping</span>
+        <h4>Databases</h4>
+        <div class="subtitle">Postgres, MySQL/MariaDB, MSSQL</div>
+        <p>Quiesced-snapshot or native-dump plugins depending on engine. Point-in-time restore coordination for Postgres WAL, MySQL binlog, and MSSQL transaction logs.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="v2-arch" style="background:#f8fafb;">
+  <div class="container">
+    <h2 style="text-align:center;">Target plugins &mdash; where it lands</h2>
+    <p class="v2-subtitle" style="text-align:center;">Where VaultSync writes. Every target supports encryption-at-rest, integrity verification, and immutability / WORM where the target itself does.</p>
+
+    <div class="plugin-grid">
+
+      <div class="plugin-card">
+        <span class="badge-sku">Shipping</span>
+        <h4>Azure Blob Storage</h4>
+        <div class="subtitle">Hot / cool / archive tiers</div>
+        <p>Native Blob SDK integration, tier-aware placement, immutability policies (legal-hold and time-based). Multi-region replication awareness for DR.</p>
+      </div>
+
+      <div class="plugin-card">
+        <span class="badge-sku">Shipping</span>
+        <h4>Oracle Cloud Object Storage (OCI)</h4>
+        <div class="subtitle">Standard + Archive tiers</div>
+        <p>First-class OCI integration with retention-rule and legal-hold policies. Paired with IVMIA's OCI plugin when full cross-cloud orchestration is required.</p>
+      </div>
+
+      <div class="plugin-card">
+        <span class="badge-sku">Shipping</span>
+        <h4>S3-compatible object storage</h4>
+        <div class="subtitle">AWS S3, MinIO, Ceph RGW, Wasabi, Backblaze B2</div>
+        <p>Generic S3 target covering every S3-API-compatible endpoint. Object-lock support where the target offers it, lifecycle-policy coordination, multi-endpoint resiliency.</p>
+      </div>
+
+      <div class="plugin-card">
+        <span class="badge-sku">Shipping</span>
+        <h4>Proxmox Backup Server</h4>
+        <div class="subtitle">PBS-native target</div>
+        <p>Content-addressed dedupe, encrypted at rest, verified restore. First-class target for Proxmox-heavy estates and mixed environments that want PBS's dedupe efficiency.</p>
+      </div>
+
+      <div class="plugin-card">
+        <span class="badge-sku">Shipping</span>
+        <h4>Local disk / NAS share</h4>
+        <div class="subtitle">NFS, SMB, iSCSI, local block</div>
+        <p>Direct-attached or networked filesystem targets. Encryption-at-rest and integrity-checking handled by VaultSync so the underlying storage does not need to be trusted.</p>
+      </div>
+
+      <div class="plugin-card">
+        <span class="badge-sku">Shipping</span>
+        <h4>Tape</h4>
+        <div class="subtitle">LTO-8, LTO-9 libraries</div>
+        <p>Library and drive orchestration, barcode-aware placement, immutable long-retention vaulting for regulated workloads and ransomware-survivable air-gap copies.</p>
+      </div>
+
+      <div class="plugin-card">
+        <span class="badge-sku">Shipping</span>
+        <h4>Another VaultSync</h4>
+        <div class="subtitle">Vault-to-vault replication</div>
+        <p>Target a remote VaultSync appliance directly &mdash; encrypted, resumable, bandwidth-throttled. The primary pattern for DR-site replication and for federated multi-site deployments.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="v2-arch">
+  <div class="container">
+    <h2 style="text-align:center;">Composition: what source + target combinations make possible</h2>
+    <p class="v2-subtitle" style="text-align:center;">The value of the plugin model is that every source can write to every target. Here are the common compositions.</p>
+
+    <div class="plugin-grid">
+      <div class="plugin-card">
+        <h4>Backup</h4>
+        <p><em>Any source &rarr; any durable target.</em> Scheduled, encrypted, integrity-verified. Automated restore-testing on cadence.</p>
+      </div>
+      <div class="plugin-card">
+        <h4>Cross-platform restore</h4>
+        <p><em>VMware snapshot &rarr; Proxmox target; Hyper-V snapshot &rarr; libvirt target.</em> Restore a workload to a completely different hypervisor in one operation.</p>
+      </div>
+      <div class="plugin-card">
+        <h4>Bidirectional sync</h4>
+        <p><em>Two sources, treated as peers.</em> Heterogeneous storage staying in step &mdash; NAS to cloud, SAN to NAS, site A to site B.</p>
+      </div>
+      <div class="plugin-card">
+        <h4>HA state-sync orchestration</h4>
+        <p><em>Active source, standby target, continuous replication.</em> VaultSync coordinates the state-sync leg of an assisted-HA topology.</p>
+      </div>
+      <div class="plugin-card">
+        <h4>Air-gap / immutability</h4>
+        <p><em>Tape or object-locked cloud target.</em> Ransomware-survivable copy that the production side cannot modify or delete.</p>
+      </div>
+      <div class="plugin-card">
+        <h4>Device retirement</h4>
+        <p><em>Workstation or mobile source &rarr; archive target.</em> Verified off-ramp when a user leaves or a device is replaced, with encrypted long-retention hold.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="v2-arch" style="background:#f8fafb;">
+  <div class="container">
+    <h2 style="text-align:center;">Plugin architecture</h2>
+    <p class="v2-subtitle" style="text-align:center;">Every source plugin implements <em>capture, verify, stream</em>. Every target plugin implements <em>receive, verify, finalize</em>. Every plugin is signed, versioned, and hot-loadable &mdash; so new backends arrive without replacing the appliance. Cross-product coordination (IVMIA workloads, NIVMIA device configs) happens through the plugin manifest, not a side channel.</p>
+    <div class="v2-cta-row" style="justify-content:center;">
+      <a href="vaultsync.html" class="cta">Back to DEC VaultSync</a>
+      <a href="../index.html#contact" class="cta-secondary">Request a source or target plugin</a>
+    </div>
+  </div>
+</section>
+
+<section class="v2-closing">
+  <div class="container">
+    <h2>Your backup plan is only as good as the things it can read and write.</h2>
+    <p>VaultSync's plugin model is how we keep the promise: any source, any target, any direction, no surprises on restore day.</p>
+    <a href="../index.html" class="cta" style="background:white;color:#0f2b46;">Back to All Products</a>
+    <a href="../index.html#contact" class="cta-secondary" style="border-color:white;color:white;">Talk to Us</a>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div>
+      <img src="../assets/logo-circle.svg" alt="DEC-LLC" style="height:56px;margin-bottom:8px;">
+      <p style="font-style:italic;opacity:0.9;margin-bottom:4px;">Open Ideas</p>
+      <p>&copy; 2026 DEC-LLC. All rights reserved.</p>
+    </div>
+    <div class="footer-links">
+      <a href="../index.html#products">Products</a>
+      <a href="../horizon.html">Horizon</a>
+      <a href="../index.html#contact">Contact</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

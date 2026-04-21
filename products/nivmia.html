@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>NIVMIA — Your Entire Network, From a Single Seat</title>
+  <title>DEC NIVMIA — Your Entire Network, From a Single Seat</title>
   <link rel="stylesheet" href="../styles.css">
   <link rel="stylesheet" href="../extras.css">
 </head>
@@ -27,11 +27,37 @@
 <section class="v2-hero">
   <div class="container">
     <div class="v2-tagline">Network Infrastructure</div>
-    <h1>NIVMIA</h1>
-    <p class="v2-lede">Forty switches from six vendors. One dashboard. NIVMIA watches your entire network — every switch, router, firewall, and access point — and tells you what's happening, what changed, and what's about to break. In plain language your whole team can understand.</p>
+    <h1>DEC NIVMIA &mdash; Network Infrastructure &amp; Vendor-agnostic Multi-platform Inventory &amp; Analysis</h1>
+
+    <div class="at-a-glance">
+      <div class="product-category">Multi-vendor network orchestration: inventory, ACL &amp; traffic management, migration, cost / capacity analytics, and AI-assisted operations across 16 platforms</div>
+      <dl>
+        <dt>What it is</dt>
+        <dd>A Linux-based network orchestration appliance that inventories every switch, router, firewall, and access point across 16 vendor platforms &mdash; captures their configurations into a git-tracked vault, detects drift, orchestrates ACL and traffic policy across the fleet, automates cross-vendor migrations, forecasts capacity, attributes cost and chargeback per device, and uses AI to audit configurations, plan operations, and explain changes in plain English.</dd>
+        <dt>Handles</dt>
+        <dd>Cisco IOS / IOS-XE / NX-OS, Arista EOS, Aruba AOS-S, Juniper JunOS, TRENDnet, TP-Link, MokerLink, D-Link, Netgear, Ubiquiti UniFi, FortiGate, Palo Alto PAN-OS, OPNsense, pfSense, Cisco SD-WAN, firewalld &mdash; via SSH, SNMP, telnet, and vendor API.</dd>
+        <dt>Does</dt>
+        <dd>Nightly device config capture; golden-copy tagging; drift detection; switch ACL and traffic orchestration; migration automation across vendor platforms; AI-assisted analyses; AI-assisted configuration audit, operations, and migration; AI-assisted plain-English change explanations; compliance and health reporting; VLAN / interface / route / security-rule inventory; cost optimization and chargeback per device; capacity forecasting; Prometheus + Grafana telemetry; 8 default alert rules.</dd>
+        <dt>Architecture</dt>
+        <dd>Core&ndash;subcore topology (deployable with or without agents). One NIVMIA core handles a single site or organization. Multiple NIVMIA appliances federate so a central core orchestrates many subcores across sites, regions, or tenants.</dd>
+        <dt>Deployment</dt>
+        <dd>Linux-based appliance. On-prem bare metal, on-prem VM, or cloud appliance VM. PostgreSQL-backed (26 tables, 33 views across 4 schemas). ECDSA-signed license gating.</dd>
+        <dt>Editions</dt>
+        <dd>Community (free) &middot; Standard &middot; Professional &middot; Enterprise &middot; Platinum &middot; Signature. <a href="nivmia-editions.html">See edition comparison &rarr;</a></dd>
+        <dt>Designed for</dt>
+        <dd>Head of Network, NOC leads, MSPs managing 10&ndash;1000+ devices from multiple vendors.</dd>
+      </dl>
+    </div>
+
+    <p class="v2-lede">Forty switches from six vendors. One dashboard. NIVMIA watches your entire network &mdash; every switch, router, firewall, and access point &mdash; and tells you what's happening, what changed, and what's about to break. In plain language your whole team can understand.</p>
     <div class="v2-cta-row">
       <a href="#intelligence" class="cta">See What Makes It Different</a>
       <a href="#capabilities" class="cta-secondary">Capabilities</a>
+      <a href="case-studies.html#nivmia" class="cta-secondary">Customer Case Study</a>
+    </div>
+
+    <div style="background:#dcecf7;border-left:4px solid #87ceeb;border-radius:4px;padding:16px 20px;margin-top:20px;font-size:0.92rem;color:#0f2b46;">
+      <strong>Customer reference &mdash; DEC-LLC:</strong> NIVMIA caught STP variance across a multi-vendor (Cisco / TP-Link / TRENDnet) switch fleet, planned the remediation, provided live troubleshooting support, and produced a quantitative cost-benefit analysis for the cross-site VPN upgrade. <a href="case-studies.html" style="color:#0f2b46;font-weight:700;">Read the full case study &rarr;</a>
     </div>
   </div>
 </section>

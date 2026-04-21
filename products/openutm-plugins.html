@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DEC OpenUTM — Plugin Ecosystem</title>
+  <link rel="stylesheet" href="../styles.css">
+  <link rel="stylesheet" href="../extras.css">
+</head>
+<body>
+
+<nav>
+  <div class="container">
+    <a href="../index.html" class="logo">
+      <img src="../assets/logo-circle.svg" alt="DEC-LLC">
+    </a>
+    <ul>
+      <li class="nav-dropdown">
+        <a href="../index.html#products">Products</a>
+        <ul class="nav-submenu">
+          <li class="submenu-divider">Core Four</li>
+          <li><a href="openutm.html">DEC OpenUTM</a></li>
+          <li><a href="ivmia.html">DEC IVMIA</a></li>
+          <li><a href="nivmia.html">DEC NIVMIA</a></li>
+          <li><a href="vaultsync.html">DEC VaultSync</a></li>
+          <li class="submenu-divider">Plugins &amp; Extensions</li>
+          <li><a href="openutm-plugins.html">OpenUTM plugins</a></li>
+          <li><a href="ivmia-plugins.html">IVMIA platform plugins</a></li>
+          <li><a href="nivmia-plugins.html">NIVMIA vendor plugins</a></li>
+          <li><a href="vaultsync-plugins.html">VaultSync source &amp; target plugins</a></li>
+          <li class="submenu-divider">Other Products</li>
+          <li><a href="ga-fs.html">DEC GA-FS</a></li>
+          <li class="submenu-divider">Cross-Product</li>
+          <li><a href="sdns/index.html">DEC SDNS &mdash; AI Quorum</a></li>
+        </ul>
+      </li>
+      <li><a href="case-studies.html">Case Studies</a></li>
+      <li><a href="../index.html#why">Why DEC-LLC</a></li>
+      <li><a href="../index.html#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<section class="v2-hero">
+  <div class="container">
+    <div class="v2-tagline">OpenUTM Plugin Ecosystem</div>
+    <h1>DEC OpenUTM &mdash; Plugins &amp; Extensions</h1>
+    <p class="v2-lede">DEC OpenUTM is a complete UTM appliance on its own. The plugin ecosystem is how we extend it &mdash; first-party commercial plugins that add platform-specific capability, and community plugins that broaden coverage. Every plugin is signed, auditable, and drops into the same rule-explanation and policy-engine pipeline that the core appliance runs on.</p>
+    <div class="v2-cta-row">
+      <a href="openutm.html" class="cta">Back to OpenUTM</a>
+      <a href="openutm-editions.html" class="cta-secondary">Editions &amp; Pricing</a>
+    </div>
+  </div>
+</section>
+
+<section class="v2-arch">
+  <div class="container">
+    <h2 style="text-align:center;">Commercial plugins &mdash; shipped and supported by DEC-LLC</h2>
+    <p class="v2-subtitle" style="text-align:center;">Premium SKUs that run on top of OpenUTM Professional or higher. Each is available standalone or bundled.</p>
+
+    <div class="plugin-grid">
+
+      <div class="plugin-card">
+        <span class="badge-sku premium">Premium SKU</span>
+        <h4>DEC FireMigrate</h4>
+        <div class="subtitle">Cross-vendor firewall migration</div>
+        <p>Reads configurations from Astaro UTM, OPNsense, pfSense, Palo Alto PAN-OS, Sophos XGS, Cisco ASA, FortiGate, and firewalld &mdash; translates the rules, objects, NAT, and routing into the target platform's syntax while preserving intent, and emits a deploy-ready configuration plus a verification report.</p>
+        <p class="plugin-meta">Licensed per migration project &middot; <a href="firemigrate.html">Product page &rarr;</a></p>
+      </div>
+
+      <div class="plugin-card">
+        <span class="badge-sku premium">Premium SKU</span>
+        <h4>DEC IPv6Auto</h4>
+        <div class="subtitle">IPv6 transition &amp; dual-stack automation</div>
+        <p>Automates IPv6 rollout alongside existing IPv4: address-plan generation, prefix delegation, RA / DHCPv6 policies, dual-stack NAT64 / DNS64, firewall-rule mirroring across v4 and v6, and drift detection so the two stacks stay in step as the network changes.</p>
+        <p class="plugin-meta">$6K/yr subscription or $10K perpetual &middot; <a href="ipv6auto.html">Product page &rarr;</a></p>
+      </div>
+
+      <div class="plugin-card">
+        <span class="badge-sku premium">Premium SKU</span>
+        <h4>OpenUTM Threat-Intel Connectors</h4>
+        <div class="subtitle">Commercial feed integration</div>
+        <p>Ingests paid threat-intel feeds (CrowdStrike, Recorded Future, Mandiant, Cisco Talos enterprise tiers) and translates indicators into OpenUTM block-lists, IDS signatures, and reverse-proxy WAF rules &mdash; with automatic de-duplication and age-out.</p>
+        <p class="plugin-meta">Add-on to Professional+ &middot; feed licenses not included</p>
+      </div>
+
+      <div class="plugin-card">
+        <span class="badge-sku premium">Premium SKU</span>
+        <h4>OpenUTM Cyber Posture Auditor</h4>
+        <div class="subtitle">External firewall &amp; host-ACL audit</div>
+        <p>Reads configurations from upstream perimeter firewalls and host-level ACLs across the environment. Scores posture against CIS benchmarks and NIST 800-53 controls, surfaces drift between declared policy and observed state, and feeds findings back into the OpenUTM policy engine.</p>
+        <p class="plugin-meta">Included in Platinum; add-on below that tier</p>
+      </div>
+
+      <div class="plugin-card">
+        <span class="badge-sku premium">Premium SKU</span>
+        <h4>OpenUTM SD-WAN Plugin</h4>
+        <div class="subtitle">SD-WAN orchestration on OpenUTM gateways</div>
+        <p>Turns a federation of OpenUTM appliances into an SD-WAN fabric: path selection, application-aware steering, WAN-link SLA monitoring, automatic failover between IPsec / WireGuard / MPLS underlays. Works alongside NIVMIA's multi-vendor SD-WAN plugin so the fabric can span DEC gateways and third-party SD-WAN edges.</p>
+        <p class="plugin-meta">Enterprise+ add-on</p>
+      </div>
+
+      <div class="plugin-card">
+        <span class="badge-sku premium">Premium SKU</span>
+        <h4>OpenUTM Zero-Trust Broker</h4>
+        <div class="subtitle">Identity-aware access gateway</div>
+        <p>Fronts internal applications with an identity-aware proxy: OIDC / SAML / device-posture checks, per-request authorization, session recording for privileged access. Replaces a separate ZTNA product for teams that already run OpenUTM at the edge.</p>
+        <p class="plugin-meta">Enterprise+ add-on</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="v2-arch" style="background:#f8fafb;">
+  <div class="container">
+    <h2 style="text-align:center;">Community &amp; bundled plugins</h2>
+    <p class="v2-subtitle" style="text-align:center;">Free, open-source, first-party. Ship with every edition including Community.</p>
+
+    <div class="plugin-grid">
+
+      <div class="plugin-card">
+        <span class="badge-sku community">Community</span>
+        <h4>Rule-Explainer</h4>
+        <div class="subtitle">AI-assisted &ldquo;why does this rule exist?&rdquo;</div>
+        <p>The core rule-explanation engine exposed as a reusable plugin hook. Any rule in any layer &mdash; packet filter, NAT, WAF, reverse-proxy &mdash; can be queried for a human-readable rationale plus the history of who added and last touched it.</p>
+      </div>
+
+      <div class="plugin-card">
+        <span class="badge-sku community">Community</span>
+        <h4>BGP / OSPF Telemetry Exporter</h4>
+        <div class="subtitle">FRR session &amp; route-table observability</div>
+        <p>Exposes FRR routing state as Prometheus metrics and structured events: neighbor status, route-table size, flap counts, withdrawn routes. Drops into any dashboarding stack &mdash; no dashboard prescribed.</p>
+      </div>
+
+      <div class="plugin-card">
+        <span class="badge-sku community">Community</span>
+        <h4>VPN Session Inspector</h4>
+        <div class="subtitle">Per-user / per-tunnel visibility</div>
+        <p>Unified view across IPsec, WireGuard, OpenVPN, Tailscale, and custom-SSL VPNs. Shows who is connected, from where, via which protocol, how long, and what they're reaching &mdash; without terminating TLS.</p>
+      </div>
+
+      <div class="plugin-card">
+        <span class="badge-sku community">Community</span>
+        <h4>Kea / BIND Integration</h4>
+        <div class="subtitle">DHCP + DNS authoring from one policy</div>
+        <p>Unifies Kea DHCPv4 / DHCPv6 and BIND9 DNS so reservations, forward, and reverse records are authored together. Eliminates the common failure mode where DHCP and DNS drift out of sync after subnet changes.</p>
+      </div>
+
+      <div class="plugin-card">
+        <span class="badge-sku community">Community</span>
+        <h4>HAProxy L4/L7 Plugin</h4>
+        <div class="subtitle">Load-balancing &amp; reverse-proxy glue</div>
+        <p>Drives HAProxy from the same policy engine that authors firewall rules, so &ldquo;allow clients to reach the API&rdquo; becomes one declaration that provisions the firewall, the NAT, and the load-balancer together.</p>
+      </div>
+
+      <div class="plugin-card">
+        <span class="badge-sku community">Community</span>
+        <h4>Policy Drift Detector</h4>
+        <div class="subtitle">Declared vs. observed state</div>
+        <p>Continuously compares the live nftables / FRR / HAProxy configuration against the declared policy. Flags manual edits, vendor-driven changes, and post-incident band-aids that were never rolled back.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="v2-arch">
+  <div class="container">
+    <h2 style="text-align:center;">Build-your-own plugins</h2>
+    <p class="v2-subtitle" style="text-align:center;">OpenUTM exposes a signed-plugin SDK so customers can extend the policy engine, add inspection modules, or integrate bespoke threat feeds without forking the appliance. Plugin manifests, signing keys, and the audit pipeline are documented in the Developer Handbook shipped with every Professional+ license.</p>
+    <div class="v2-cta-row" style="justify-content:center;">
+      <a href="openutm.html" class="cta">Back to DEC OpenUTM</a>
+      <a href="../index.html#contact" class="cta-secondary">Ask about a custom plugin</a>
+    </div>
+  </div>
+</section>
+
+<section class="v2-closing">
+  <div class="container">
+    <h2>A firewall is only as useful as the ecosystem around it.</h2>
+    <p>Every plugin on this page runs through the same policy engine and audit trail as the core appliance &mdash; no second-class citizens, no sidecar products that drift out of compliance.</p>
+    <a href="../index.html" class="cta" style="background:white;color:#0f2b46;">Back to All Products</a>
+    <a href="../index.html#contact" class="cta-secondary" style="border-color:white;color:white;">Talk to Us</a>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div>
+      <img src="../assets/logo-circle.svg" alt="DEC-LLC" style="height:56px;margin-bottom:8px;">
+      <p style="font-style:italic;opacity:0.9;margin-bottom:4px;">Open Ideas</p>
+      <p>&copy; 2026 DEC-LLC. All rights reserved.</p>
+    </div>
+    <div class="footer-links">
+      <a href="../index.html#products">Products</a>
+      <a href="../horizon.html">Horizon</a>
+      <a href="../index.html#contact">Contact</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DEC NIVMIA — Vendor Platform Plugins</title>
+  <link rel="stylesheet" href="../styles.css">
+  <link rel="stylesheet" href="../extras.css">
+</head>
+<body>
+
+<nav>
+  <div class="container">
+    <a href="../index.html" class="logo">
+      <img src="../assets/logo-circle.svg" alt="DEC-LLC">
+    </a>
+    <ul>
+      <li class="nav-dropdown">
+        <a href="../index.html#products">Products</a>
+        <ul class="nav-submenu">
+          <li class="submenu-divider">Core Four</li>
+          <li><a href="openutm.html">DEC OpenUTM</a></li>
+          <li><a href="ivmia.html">DEC IVMIA</a></li>
+          <li><a href="nivmia.html">DEC NIVMIA</a></li>
+          <li><a href="vaultsync.html">DEC VaultSync</a></li>
+          <li class="submenu-divider">Plugins &amp; Extensions</li>
+          <li><a href="openutm-plugins.html">OpenUTM plugins</a></li>
+          <li><a href="ivmia-plugins.html">IVMIA platform plugins</a></li>
+          <li><a href="nivmia-plugins.html">NIVMIA vendor plugins</a></li>
+          <li><a href="vaultsync-plugins.html">VaultSync source &amp; target plugins</a></li>
+          <li class="submenu-divider">Other Products</li>
+          <li><a href="ga-fs.html">DEC GA-FS</a></li>
+          <li class="submenu-divider">Cross-Product</li>
+          <li><a href="sdns/index.html">DEC SDNS &mdash; AI Quorum</a></li>
+        </ul>
+      </li>
+      <li><a href="case-studies.html">Case Studies</a></li>
+      <li><a href="../index.html#why">Why DEC-LLC</a></li>
+      <li><a href="../index.html#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<section class="v2-hero">
+  <div class="container">
+    <div class="v2-tagline">NIVMIA Vendor Plugins</div>
+    <h1>DEC NIVMIA &mdash; Vendor Platform Plugins</h1>
+    <p class="v2-lede">NIVMIA is vendor-neutral because the hard work happens inside the plugins. Each plugin speaks one network vendor's native API or CLI, normalizes it into NIVMIA's platform-agnostic model, and translates policy back down to the vendor's own syntax. Add a plugin &rarr; that entire fleet becomes a first-class citizen in the orchestrator. Today: 16 platforms shipped, 2 more in beta.</p>
+    <div class="v2-cta-row">
+      <a href="nivmia.html" class="cta">Back to NIVMIA</a>
+      <a href="nivmia-editions.html" class="cta-secondary">Editions &amp; Pricing</a>
+    </div>
+  </div>
+</section>
+
+<section class="v2-arch">
+  <div class="container">
+    <h2 style="text-align:center;">Enterprise &amp; carrier platforms</h2>
+    <p class="v2-subtitle" style="text-align:center;">The vendors you already run in production. Each plugin covers configuration, inventory, telemetry, and change-orchestration.</p>
+
+    <div class="plugin-grid">
+
+      <div class="plugin-card">
+        <span class="badge-sku">Shipping</span>
+        <h4>Cisco IOS / IOS-XE</h4>
+        <div class="subtitle">Catalyst, ISR, ASR, cBR</div>
+        <p>Full NETCONF / RESTCONF where available, CLI-over-SSH fallback. Config parsing, interface inventory, VLAN / VRF topology discovery, and compliant change-windows via orchestrated commit rollback.</p>
+      </div>
+
+      <div class="plugin-card">
+        <span class="badge-sku">Shipping</span>
+        <h4>Cisco NX-OS</h4>
+        <div class="subtitle">Nexus data-center switching</div>
+        <p>VXLAN / EVPN fabric discovery, VPC peer awareness, port-channel orchestration, and fabric-wide drift detection. Integrates with DCNM / NDFC where present but does not require it.</p>
+      </div>
+
+      <div class="plugin-card">
+        <span class="badge-sku">Shipping</span>
+        <h4>Arista EOS</h4>
+        <div class="subtitle">eAPI + CLI orchestration</div>
+        <p>Native eAPI integration. MLAG awareness, VXLAN / EVPN fabric coverage, CloudVision-optional (works with or without). Streaming telemetry consumed where available.</p>
+      </div>
+
+      <div class="plugin-card">
+        <span class="badge-sku">Shipping</span>
+        <h4>Juniper JunOS</h4>
+        <div class="subtitle">MX, EX, QFX, SRX</div>
+        <p>NETCONF-first. Commit-confirmed / rollback-on-fail orchestration, hierarchical-config awareness, routing-instance and security-zone modeling for SRX.</p>
+      </div>
+
+      <div class="plugin-card">
+        <span class="badge-sku">Shipping</span>
+        <h4>Aruba AOS-S / AOS-CX</h4>
+        <div class="subtitle">HPE Aruba switching</div>
+        <p>Both legacy AOS-S and modern AOS-CX. REST-API for CX, CLI-over-SSH for older AOS-S. Unified VLAN / ACL / PoE management across mixed-generation Aruba estates.</p>
+      </div>
+
+      <div class="plugin-card">
+        <span class="badge-sku">Shipping</span>
+        <h4>FortiGate (FortiOS)</h4>
+        <div class="subtitle">Fortinet firewall / SD-WAN</div>
+        <p>FortiOS REST-API. Policy-table management, address / service objects, IPsec / SSL-VPN tunnel orchestration, SD-WAN rule modeling. Coexists with FortiManager where present.</p>
+      </div>
+
+      <div class="plugin-card">
+        <span class="badge-sku">Shipping</span>
+        <h4>Palo Alto PAN-OS</h4>
+        <div class="subtitle">NGFW / Panorama</div>
+        <p>XML-API and REST-API. Security / NAT / decryption policies, address &amp; service objects, device-group and template-stack awareness for Panorama. Commit-validate before deploy.</p>
+      </div>
+
+      <div class="plugin-card">
+        <span class="badge-sku">Shipping</span>
+        <h4>Cisco Viptela SD-WAN</h4>
+        <div class="subtitle">vManage-orchestrated fabrics</div>
+        <p>Reads and writes through vManage REST-API. Template / device-config modeling, policy-list lifecycle, site / device inventory. Pairs with the OpenUTM SD-WAN plugin for hybrid fabrics.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="v2-arch" style="background:#f8fafb;">
+  <div class="container">
+    <h2 style="text-align:center;">Open-source &amp; SMB platforms</h2>
+    <p class="v2-subtitle" style="text-align:center;">The vendors that show up everywhere &mdash; labs, branch offices, MSP-managed SMB, homelab, and the OT segments nobody likes to talk about.</p>
+
+    <div class="plugin-grid">
+
+      <div class="plugin-card">
+        <span class="badge-sku">Shipping</span>
+        <h4>OPNsense</h4>
+        <div class="subtitle">Open-source firewall / router</div>
+        <p>Native API integration. Interface / VLAN / firewall-rule orchestration, NAT, IPsec / WireGuard / OpenVPN tunnels, HAProxy package awareness.</p>
+      </div>
+
+      <div class="plugin-card">
+        <span class="badge-sku">Shipping</span>
+        <h4>pfSense / pfSense Plus</h4>
+        <div class="subtitle">Open-source + Netgate commercial</div>
+        <p>Config-XML parsing plus the pfSense REST-API package. Alias / rule / schedule orchestration, gateway &amp; routing-group modeling, multi-WAN support.</p>
+      </div>
+
+      <div class="plugin-card">
+        <span class="badge-sku">Shipping</span>
+        <h4>firewalld</h4>
+        <div class="subtitle">Linux host-level firewall</div>
+        <p>DBus-backed zone / service / rule orchestration for Linux hosts running firewalld. Useful for host-level ACLs that complement a perimeter firewall &mdash; and the audit plugin for OpenUTM feeds off the same data.</p>
+      </div>
+
+      <div class="plugin-card">
+        <span class="badge-sku">Shipping</span>
+        <h4>Ubiquiti UniFi</h4>
+        <div class="subtitle">UniFi OS gateways, switches, APs</div>
+        <p>UniFi Controller / UniFi OS API. Network / WLAN profile orchestration, switch-port modeling, site-to-site VPN, and topology discovery across multi-site UniFi estates.</p>
+      </div>
+
+      <div class="plugin-card">
+        <span class="badge-sku">Shipping</span>
+        <h4>Netgear Smart / Managed</h4>
+        <div class="subtitle">GS / MS / M4xxx lines</div>
+        <p>Web-API + CLI fallback. VLAN, PoE, LAG, and ACL orchestration for the managed / smart-managed Netgear product lines that show up heavily in SMB and branch environments.</p>
+      </div>
+
+      <div class="plugin-card">
+        <span class="badge-sku">Shipping</span>
+        <h4>TP-Link Omada / Jetstream</h4>
+        <div class="subtitle">Omada controller + standalone</div>
+        <p>Omada Controller API for managed fleets, per-device CLI fallback for standalone Jetstream switches. VLAN / SSID / ACL orchestration with Omada site awareness.</p>
+      </div>
+
+      <div class="plugin-card">
+        <span class="badge-sku">Shipping</span>
+        <h4>D-Link Managed</h4>
+        <div class="subtitle">DGS / DXS managed series</div>
+        <p>CLI-over-SSH orchestration with screen-scrape normalization. Covers VLAN, LAG, ACL, and port-security on the managed D-Link lines that persist in manufacturing and education.</p>
+      </div>
+
+      <div class="plugin-card">
+        <span class="badge-sku">Shipping</span>
+        <h4>TRENDnet Managed</h4>
+        <div class="subtitle">Web-managed industrial / SMB</div>
+        <p>HTTP-API + CLI. VLAN, PoE, QoS orchestration on TRENDnet's managed lines &mdash; common in small-industrial and education deployments.</p>
+      </div>
+
+      <div class="plugin-card">
+        <span class="badge-sku">Shipping</span>
+        <h4>MokerLink Managed</h4>
+        <div class="subtitle">Budget managed 2.5G / 10G</div>
+        <p>Normalized orchestration for MokerLink's managed 2.5G and 10G lines. Common in prosumer / small-office uplinks where 10G arrived before the budget for Cisco or Arista.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="v2-arch">
+  <div class="container">
+    <h2 style="text-align:center;">In beta / roadmap</h2>
+    <div class="plugin-grid">
+      <div class="plugin-card">
+        <span class="badge-sku">Beta</span>
+        <h4>Extreme Networks EXOS</h4>
+        <div class="subtitle">Switching &amp; wireless</div>
+        <p>REST-API integration in beta. VLAN, LAG, policy-based routing, and wireless-controller orchestration.</p>
+      </div>
+
+      <div class="plugin-card">
+        <span class="badge-sku">Beta</span>
+        <h4>Mikrotik RouterOS</h4>
+        <div class="subtitle">RouterOS v7 API</div>
+        <p>Beta plugin for RouterOS 7's REST API. Common in ISP / WISP deployments and small enterprises.</p>
+      </div>
+
+      <div class="plugin-card">
+        <span class="badge-sku">Beta</span>
+        <h4>Nokia SR OS (Service Router)</h4>
+        <div class="subtitle">Carrier-grade routing</div>
+        <p>NETCONF-first plugin under active development for carrier and large-enterprise deployments.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="v2-arch" style="background:#f8fafb;">
+  <div class="container">
+    <h2 style="text-align:center;">How the plugin architecture works</h2>
+    <p class="v2-subtitle" style="text-align:center;">Every vendor plugin implements the same NIVMIA interface &mdash; <em>inventory, config-read, config-write, telemetry, change-orchestration</em> &mdash; so a fleet-wide policy is authored once and translated to each vendor's native syntax at deploy time. New plugins are signed, versioned, and hot-loadable into a running core without a full reinstall.</p>
+    <div class="v2-cta-row" style="justify-content:center;">
+      <a href="nivmia.html" class="cta">Back to DEC NIVMIA</a>
+      <a href="../index.html#contact" class="cta-secondary">Request a vendor plugin</a>
+    </div>
+  </div>
+</section>
+
+<section class="v2-closing">
+  <div class="container">
+    <h2>Your network runs more than one vendor. Your orchestrator should too.</h2>
+    <p>NIVMIA plugins are how you keep the vendor-neutral promise without giving up the features your team already depends on.</p>
+    <a href="../index.html" class="cta" style="background:white;color:#0f2b46;">Back to All Products</a>
+    <a href="../index.html#contact" class="cta-secondary" style="border-color:white;color:white;">Talk to Us</a>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div>
+      <img src="../assets/logo-circle.svg" alt="DEC-LLC" style="height:56px;margin-bottom:8px;">
+      <p style="font-style:italic;opacity:0.9;margin-bottom:4px;">Open Ideas</p>
+      <p>&copy; 2026 DEC-LLC. All rights reserved.</p>
+    </div>
+    <div class="footer-links">
+      <a href="../index.html#products">Products</a>
+      <a href="../horizon.html">Horizon</a>
+      <a href="../index.html#contact">Contact</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

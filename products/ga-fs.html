@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Git Advanced Fleet Sync — Keep Your Repositories in Sync Across Every Platform</title>
+  <title>DEC GA-FS — Git Advanced Fleet Sync — Keep Your Repositories in Sync Across Every Platform</title>
   <link rel="stylesheet" href="../styles.css">
   <link rel="stylesheet" href="../extras.css">
 </head>
@@ -27,8 +27,29 @@
 <section class="v2-hero">
   <div class="container">
     <div class="v2-tagline">Repository Sync &amp; Governance</div>
-    <h1>GA-FS</h1>
-    <p class="v2-lede">Your team has repositories scattered across GitHub, GitLab, and Gitea. Keeping them in sync means scripts, cron jobs, SSH keys, and hoping nobody forgets to push to the other remote. GA-FS replaces all of that with a web UI and parallel workers. One-way mirrors, bidirectional sync, branch filtering, conflict detection — configured from your browser, governed by policy, audited by design.</p>
+    <h1>DEC GA-FS &mdash; Git Advanced Fleet Sync</h1>
+
+    <div class="at-a-glance">
+      <div class="product-category">Multi-platform Git synchronization with cross-platform policy enforcement, supply-chain verification, SBOM capture, and signed-commit validation</div>
+      <dl>
+        <dt>What it is</dt>
+        <dd>A policy-governed Git mirror and sync engine with an open-source single-node core and a commercial Fleet edition for multi-instance orchestration. Replaces ad-hoc scripts and cron jobs with parallel workers, a web UI, cross-platform policy enforcement, supply-chain verification, and an immutable audit ledger.</dd>
+        <dt>Handles</dt>
+        <dd>GitHub, GitLab, Gitea, Bitbucket over SSH or HTTPS. Branches, tags, notes, and arbitrary refspecs. Private-to-public sync is gated and ledgered by default.</dd>
+        <dt>Does</dt>
+        <dd>Parallel worker-driven mirror sync (one-way or bidirectional); branch / tag / notes refspec filtering; <strong>cross-platform policy enforcement</strong> (same policy applied consistently across multiple Git hosts); <strong>supply-chain verification</strong> on incoming refs; <strong>SBOM capture</strong> per commit and per release tag; <strong>signed-commit validation</strong> (GPG + Sigstore); fast-forward-only enforcement on protected branches; conflict detection; private-to-public authorization ledger; per-repo and per-mirror audit trail. <em>Dependency-graph attestation, release-provenance sealing, and pipeline coordination are on the roadmap (target 2027).</em></dd>
+        <dt>Architecture</dt>
+        <dd>Core&ndash;subcore topology (deployable with or without agents). The OSS core is a single-node sync engine. GA-FS Fleet runs a central core that federates many subcore sync instances across teams, regions, or tenants &mdash; shared policy, central audit plane.</dd>
+        <dt>Deployment</dt>
+        <dd>OSS core runs anywhere Python runs. GA-FS Fleet is a Linux-based appliance (on-prem bare metal, VM, or cloud appliance VM) coordinating multiple sync instances across teams and sites.</dd>
+        <dt>Editions</dt>
+        <dd>Open-source core (free) &middot; Fleet Enterprise. <a href="ga-fs-editions.html">See edition comparison &rarr;</a></dd>
+        <dt>Designed for</dt>
+        <dd>Head of Platform Engineering, VP Engineering, SRE leads managing mirror relationships between internal and external Git platforms who need governance + auditability.</dd>
+      </dl>
+    </div>
+
+    <p class="v2-lede">Your team has repositories scattered across GitHub, GitLab, and Gitea. Keeping them in sync means scripts, cron jobs, SSH keys, and hoping nobody forgets to push to the other remote. GA-FS replaces all of that with a web UI and parallel workers. One-way mirrors, bidirectional sync, branch filtering, conflict detection &mdash; configured from your browser, governed by policy, audited by design.</p>
     <div class="v2-cta-row">
       <a href="#architecture" class="cta">See the Architecture</a>
       <a href="https://github.com/DEC-LLC/git-advanced-multisync" class="cta-secondary">Open Source Core</a>

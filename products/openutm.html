@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>OpenUTM — A Firewall That Knows Why Its Rules Exist</title>
+  <title>DEC OpenUTM — A Firewall That Knows Why Its Rules Exist</title>
   <link rel="stylesheet" href="../styles.css">
   <link rel="stylesheet" href="../extras.css">
 </head>
@@ -27,8 +27,31 @@
 <section class="v2-hero">
   <div class="container">
     <div class="v2-tagline">Unified Threat Management</div>
-    <h1>OpenUTM</h1>
-    <p class="v2-lede">A firewall that doesn't just block threats — it knows why every rule exists, can explain its own configuration to your newest team member, and turns your security posture from tribal knowledge into permanent institutional knowledge.</p>
+    <h1>DEC OpenUTM &mdash; Open Unified Threat Management</h1>
+
+    <div class="at-a-glance">
+      <div class="product-category">Edge router, VPN concentrator, WAF / reverse proxy, DNS / DHCP, IDS / IPS, and AI-assisted cybersec policy engine &mdash; in one open-source appliance</div>
+      <dl>
+        <dt>What it is</dt>
+        <dd>A production-grade Linux-based UTM appliance &mdash; edge router, VPN concentrator, WAF / reverse proxy, DNS / DHCP, IDS / IPS, and policy engine &mdash; built on nftables + FRR with AI-assisted rule explanation, AI-driven cybersec policy automation, and external firewall / host ACL cybersecurity posture audit. Ships as an ISO; deploys to bare metal, VM, or cloud appliance VM.</dd>
+        <dt>Handles</dt>
+        <dd>Stateful packet filtering (nftables), NAT, BGP / OSPF / static routing (FRR), IPsec + WireGuard + OpenVPN + Tailscale + custom-SSL VPNs, Kea DHCPv4/v6, BIND9 DNS, HAProxy L4/L7 load balancing, WAF and reverse proxy, IDS / IPS, VLAN / VRF / zone segmentation. External audit coverage for upstream firewalls and host-level ACLs.</dd>
+        <dt>Does</dt>
+        <dd>Edge routing and VPN concentration; DNS and DHCP services; WAF and reverse-proxy termination; IDS / IPS; zone-agnostic rule authoring backed by an explainable policy engine; AI-assisted rule explanation (<em>"why does this rule exist?"</em>); AI-driven cybersec policy automation (<em>proposed rules, risk scoring, drift detection</em>); external firewall and host ACL cybersecurity posture audit; first-party plugin ecosystem for extending everything.</dd>
+        <dt>Scale</dt>
+        <dd>Single appliance &rarr; HA pair &rarr; federated site-to-site mesh. <strong>25 Gbps capable today; 40 Gbps target Q1 2027; 100 Gbps target Q3 2027.</strong></dd>
+        <dt>Architecture</dt>
+        <dd>Core&ndash;subcore topology (deployable with or without agents). A single OpenUTM appliance is a complete gateway. Multiple appliances federate so a central core manages many subcores across sites, segments, or tenants.</dd>
+        <dt>Deployment</dt>
+        <dd>Linux-based appliance. On-prem bare metal, on-prem VM, or cloud appliance VM.</dd>
+        <dt>Editions</dt>
+        <dd>Community (free) &middot; Standard &middot; Professional &middot; Enterprise &middot; Platinum &middot; Signature. <a href="openutm-editions.html">See edition comparison &rarr;</a></dd>
+        <dt>Designed for</dt>
+        <dd>Head of Security, Head of Network Infrastructure, MSP firewall teams.</dd>
+      </dl>
+    </div>
+
+    <p class="v2-lede">A firewall that doesn't just block threats &mdash; it knows why every rule exists, can explain its own configuration to your newest team member, and turns your security posture from tribal knowledge into permanent institutional knowledge.</p>
     <div class="v2-cta-row">
       <a href="#intelligence" class="cta">The Intelligent Difference</a>
       <a href="#capabilities" class="cta-secondary">Capabilities</a>
@@ -89,7 +112,7 @@
       <div class="v2-benefit-card">
         <div class="v2-check">✓</div>
         <h3>Runs wherever you need it, and answers only to you</h3>
-        <p>No subscription trap. No phone-home telemetry you can't control. Not your vendor. Not a specialist. YOU — in YOUR language. OpenUTM answers to the person running it. You install it, you own it, and it keeps working when you have other things to worry about.</p>
+        <p>No subscription trap. Not your vendor. Not a specialist. YOU &mdash; in YOUR language. OpenUTM answers to the person running it. You install it, you own it, and it keeps working when you have other things to worry about.</p>
       </div>
 
       <div class="v2-benefit-card">

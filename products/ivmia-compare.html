@@ -38,7 +38,7 @@
       <p>VMware vCenter manages VMware. That's its job and it does it well. But if you also run Proxmox in a lab, KVM on a few bare-metal servers, or Docker for containerized workloads, vCenter can't see them. You end up with two or three management tools, each with its own dashboard, its own alerting, and its own blind spots. Nutanix Prism is the same story for Nutanix clusters -- excellent within its ecosystem, invisible outside it. Turbonomic (now IBM) takes a broader view but at $50,000+/year, it's priced for Fortune 500 budgets.</p>
       <p>IVMIA was built from the ground up to be platform-neutral. It connects to ESXi, Proxmox, KVM, Hyper-V, Docker, Kubernetes, Incus, and VirtualBox using each platform's native APIs and SSH -- no agents required. Every workload, regardless of where it runs, appears in one universal dashboard with normalized metrics. You see your entire virtualization estate in one place.</p>
 
-      <div class="v2-metaphor">Imagine having a separate electricity meter for every brand of appliance in your building. That's what managing virtualization with vendor-specific tools feels like. IVMIA is one meter for the whole building.</div>
+      <div class="v2-metaphor">Vendor-specific tools make sense only as long as your estate stays with one vendor. The moment you add a second hypervisor, a container platform, or a cloud VM, they become blind spots. IVMIA was designed for the reality that most teams already run more than one platform &mdash; and the number keeps going up, not down.</div>
     </div>
   </div>
 </section>

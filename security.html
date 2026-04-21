@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Security at DEC-LLC &mdash; Hardening, Disclosure, and Compliance Posture</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="extras.css">
+</head>
+<body>
+
+<nav>
+  <div class="container">
+    <a href="index.html" class="logo"><img src="assets/logo-circle.svg" alt="DEC-LLC"><span style="font-weight:800;font-size:1.1rem;letter-spacing:0.05em;margin-left:10px;">DEC-LLC</span></a>
+    <ul>
+      <li><a href="index.html#products">Products</a></li>
+      <li><a href="products/case-studies.html">Case Studies</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="security.html">Security</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<section class="v2-hero">
+  <div class="container">
+    <div class="v2-tagline">Security &amp; Compliance</div>
+    <h1>How DEC-LLC thinks about security, disclosure, and compliance.</h1>
+    <p class="v2-lede">Every DEC-LLC appliance ships with identical security hardening at every edition. We do not paywall protection. This page explains our security posture, how to report a vulnerability responsibly, and how we approach compliance certifications.</p>
+  </div>
+</section>
+
+<section style="background:#fff;padding:60px 0;">
+  <div class="container" style="max-width:900px;">
+
+    <h2 style="color:#0f2b46;">Security posture</h2>
+    <ul style="color:#374151;font-size:1rem;line-height:1.7;">
+      <li><strong>Identical hardening across editions.</strong> Community, Standard, Professional, Enterprise, Platinum, Signature &mdash; the appliance image is the same. The license file gates capabilities and support, not security controls.</li>
+      <li><strong>Signed releases.</strong> Every release is signed by a DEC-LLC release key (ECDSA-P-256 + SHA-256). The pubkey ships with every appliance; the private key never leaves DEC-LLC's signing infrastructure.</li>
+      <li><strong>Defense-in-depth.</strong> SELinux-enforcing profiles, immutable system partitions, tamper-evident audit trails, integrity baselines with SHA-256 manifest verification.</li>
+      <li><strong>Local-AI by design.</strong> All AI inference runs locally on the appliance (Ollama-backed). Customer data never traverses DEC-LLC infrastructure.</li>
+      <li><strong>No call-home dependency.</strong> Appliances run whether or not they can reach DEC-LLC. Licensing, analytics, and telemetry are off by default and customer-configurable when enabled.</li>
+    </ul>
+
+    <h2 style="color:#0f2b46;margin-top:40px;">Reporting a vulnerability</h2>
+    <p style="color:#374151;font-size:1rem;line-height:1.7;">We welcome responsible disclosure. If you have found a vulnerability in any DEC-LLC product or on <code>dec-llc.biz</code> infrastructure:</p>
+    <ul style="color:#374151;font-size:1rem;line-height:1.7;">
+      <li><strong>Email:</strong> <a href="mailto:security@dec-llc.biz">security@dec-llc.biz</a></li>
+      <li><strong>PGP:</strong> <em>key and fingerprint pending publication</em> &mdash; please send plain-text email in the interim and we will coordinate an encrypted channel on response.</li>
+      <li><strong>Response target:</strong> acknowledgement within <strong>2 business days</strong>, triage within <strong>5 business days</strong>, fix timeline communicated within <strong>10 business days</strong>.</li>
+      <li><strong>Safe harbor:</strong> Good-faith security research against your own deployment or a test tenant will not result in legal action. Please do not attack production customer infrastructure.</li>
+    </ul>
+    <p style="color:#374151;font-size:1rem;line-height:1.7;">A <code>/.well-known/security.txt</code> advertises the above on every DEC-LLC web property.</p>
+
+    <h2 style="color:#0f2b46;margin-top:40px;">Compliance certification posture</h2>
+    <p style="color:#374151;font-size:1rem;line-height:1.7;">We take compliance certifications seriously &mdash; which is why we <strong>do not speculatively pursue them ahead of committed customer demand</strong>. Each certification below is a 12&ndash;24 month engagement that requires dedicated audit budget and infrastructure-under-scope. We begin that work when an enterprise customer with a certification requirement contracts with us and the certification is written into the engagement.</p>
+    <p style="color:#374151;font-size:1rem;line-height:1.7;">Under active customer evaluation we are happy to:</p>
+    <ul style="color:#374151;font-size:1rem;line-height:1.7;">
+      <li>Share draft policy packages and control-evidence inventories under NDA</li>
+      <li>Pre-populate audit artifacts (risk register, access-control matrix, change-management runbook)</li>
+      <li>Schedule the certification engagement to start alongside the pilot</li>
+    </ul>
+
+    <h3 style="color:#0f2b46;margin-top:28px;">Roadmap &mdash; engaged when a customer commits</h3>
+    <table class="editions-table" style="margin-top:12px;">
+      <thead>
+        <tr>
+          <th>Certification</th>
+          <th>Status</th>
+          <th>Typical customer driver</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>SOC 2 Type I</td><td>Scoped; ready to engage</td><td>SaaS / enterprise procurement requirement</td></tr>
+        <tr><td>SOC 2 Type II</td><td>Follows Type I by 12 months</td><td>SaaS / enterprise procurement requirement</td></tr>
+        <tr><td>ISO 27001</td><td>Scoped; ready to engage</td><td>International enterprise procurement</td></tr>
+        <tr><td>CMMC Level 2</td><td>Scoped; ready to engage</td><td>Federal contractor / DoD supply chain</td></tr>
+        <tr><td>FedRAMP Moderate</td><td>Evaluating &mdash; major infra + ops commitment</td><td>Federal direct deployment</td></tr>
+      </tbody>
+    </table>
+    <p style="color:#374151;font-size:0.95rem;line-height:1.6;margin-top:12px;font-style:italic;">Certifications require revenue to fund the audit cycle and dedicated infrastructure to hold the control boundary. We're transparent about the sequencing: revenue first, certification committed alongside the customer contracting for it, audit engagement starts at contract signing. That way the certification corresponds to a real control environment being exercised by a real customer &mdash; not a shelf document produced ahead of demand.</p>
+
+    <h2 style="color:#0f2b46;margin-top:40px;">Security artifacts available under NDA</h2>
+    <ul style="color:#374151;font-size:1rem;line-height:1.7;">
+      <li>SBOM (Software Bill of Materials) per release</li>
+      <li>Architecture + threat-model documentation per product</li>
+      <li>Penetration-test summaries (once engaged)</li>
+      <li>Incident-response playbook</li>
+      <li>Recovery-key custody procedures</li>
+    </ul>
+    <p style="color:#374151;font-size:1rem;line-height:1.7;">Request: <a href="mailto:security@dec-llc.biz">security@dec-llc.biz</a></p>
+
+  </div>
+</section>
+
+</body>
+</html>

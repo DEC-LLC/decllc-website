@@ -47,7 +47,7 @@
 
       <p>Migrating those rules by hand means reading each one, understanding what it does, figuring out how to express the same thing in the new platform's format, and hoping you didn't miss anything. For a large firewall, that's weeks of work. For a critical one, it's weeks of anxiety.</p>
 
-      <div class="v2-metaphor">FireMigrate is a moving company for your firewall. It packs everything — every rule, every object, every group, every routing decision — labels every box so you know what's inside, ships it to the new house, and unpacks it so everything works on arrival. The furniture is arranged the same way. The lights turn on. The doors lock. You walk in and it feels like home, even though the building is completely different.</div>
+      <div class="v2-metaphor">FireMigrate reads your current configuration in full &mdash; every rule, object, address group, NAT entry, and routing policy &mdash; and rebuilds the equivalent on the target platform. Rule order is preserved. Dependencies are resolved. Anything that can't be translated cleanly is flagged rather than silently dropped, so nothing quietly disappears in the move.</div>
 
       <p>The critical difference is that FireMigrate doesn't just translate syntax. It preserves intent. It understands what each rule was trying to accomplish — "allow the sales team to reach the CRM" — and makes sure the translated rule accomplishes the same thing on the new platform, even if the platforms express rules completely differently.</p>
     </div>

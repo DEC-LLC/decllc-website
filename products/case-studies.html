@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DEC-LLC Customer Case Studies &mdash; Real Deployments, Real Outcomes</title>
+  <link rel="stylesheet" href="../styles.css">
+  <link rel="stylesheet" href="../extras.css">
+</head>
+<body>
+
+<nav>
+  <div class="container">
+    <a href="../index.html" class="logo">
+      <img src="../assets/logo-circle.svg" alt="DEC-LLC">
+      <span style="font-weight:800;font-size:1.1rem;letter-spacing:0.05em;margin-left:10px;">DEC-LLC</span>
+    </a>
+    <ul>
+      <li><a href="../index.html#products">Products</a></li>
+      <li><a href="../index.html#why">Why DEC-LLC</a></li>
+      <li><a href="case-studies.html">Case Studies</a></li>
+      <li><a href="../index.html#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<section class="v2-hero">
+  <div class="container">
+    <div class="v2-tagline">Customer Case Studies</div>
+    <h1>Real deployments. Real outcomes. Real data.</h1>
+    <p class="v2-lede">How customers have used DEC-LLC products to catch problems before they became outages, plan remediations with quantitative rigor, and execute infrastructure change with confidence. Two deployments below &mdash; both with full consequence reports, cost analyses, and post-execution verification.</p>
+  </div>
+</section>
+
+<!-- Case Study 1: Hidden City / VaultSync -->
+<section style="background:#fff;padding:60px 0;">
+  <div class="container" style="max-width:900px;">
+    <div style="display:flex;align-items:center;gap:16px;margin-bottom:12px;">
+      <span style="background:#e9f1fb;color:#0f2b46;padding:5px 14px;border-radius:20px;font-size:0.82rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;">DEC VaultSync</span>
+      <span style="color:#666;font-size:0.9rem;">Customer: Hidden City Solutions</span>
+    </div>
+    <h2 style="color:#0f2b46;font-size:1.8rem;margin-bottom:8px;">Drive-decay detected on two production NAS systems &mdash; remediated end-to-end without data loss.</h2>
+    <p style="color:#555;font-size:1rem;margin-bottom:24px;"><em>Engineering document archive, redundant multi-vendor NAS. VaultSync detected progressive storage-media decay, produced a consequence report, built and executed the remediation.</em></p>
+
+    <h3 style="color:#0f2b46;margin-top:28px;">The situation</h3>
+    <p>Hidden City Solutions runs document archives holding mission-critical engineering reference material across two separate NAS systems &mdash; different vendors, different generations, configured in a redundancy pair. Archives are cold-storage-frequency but hot-recall-critical: infrequent access, but when they're needed, they are needed immediately.</p>
+
+    <h3 style="color:#0f2b46;margin-top:28px;">What DEC VaultSync did</h3>
+    <ul>
+      <li><strong>Detected drive decay on both NAS systems</strong> during routine automated verification passes &mdash; <em>progressive bit-decay detected before application-layer errors surfaced</em>.</li>
+      <li><strong>Generated a consequence report:</strong> which archive paths were at risk, probability of cascading failure within the redundancy set, mean-time-to-data-loss estimates under each scenario.</li>
+      <li><strong>Cost analysis:</strong> repair / replace / rebuild options with capital-expense estimates and projected operational cost deltas.</li>
+      <li><strong>Remediation plan:</strong> prioritized replacement schedule, spare-inventory requirements, cutover windows, risk envelope during the transition, rollback path if the migration stalled.</li>
+      <li><strong>Capacity planning &amp; failure-mode modeling:</strong> forward-looking capacity curves and cascading-failure scenarios for the post-remediation deployment.</li>
+      <li><strong>Executed the plan when spares were available:</strong> snapshot-before-migration, cross-platform validation of every archive tree, remediation, post-migration integrity sweep, and release to production.</li>
+    </ul>
+
+    <h3 style="color:#0f2b46;margin-top:28px;">Outcome</h3>
+    <ul>
+      <li>Drive decay caught <strong>before any application-layer data loss</strong>.</li>
+      <li>Two NAS systems replaced end-to-end, with <strong>zero archive loss</strong> and zero rollback events.</li>
+      <li>Capacity + failure-mode baseline now established for the new deployment &mdash; future decisions have a reference-model to work from.</li>
+      <li>Engineering reference material remained continuously accessible to the team throughout the remediation.</li>
+    </ul>
+
+    <p style="margin-top:28px;color:#555;font-size:0.92rem;"><em>"We knew we had redundancy. What we didn't have was advance warning before one side started to go. VaultSync caught it, told us exactly what was at stake, and then actually executed the fix when the spares arrived."</em> &mdash; Hidden City Solutions engineering.</p>
+
+    <div style="margin-top:28px;padding-top:24px;border-top:1px solid #e5e7eb;">
+      <a href="vaultsync.html" class="btn btn-primary">Learn about DEC VaultSync &rarr;</a>
+      <a href="vaultsync-editions.html" class="btn btn-outline" style="margin-left:12px;">See VaultSync Editions</a>
+    </div>
+  </div>
+</section>
+
+<!-- Case Study 2: DEC-LLC / NIVMIA -->
+<section style="background:#f8fafb;padding:60px 0;">
+  <div class="container" style="max-width:900px;">
+    <div style="display:flex;align-items:center;gap:16px;margin-bottom:12px;">
+      <span style="background:#e9f1fb;color:#0f2b46;padding:5px 14px;border-radius:20px;font-size:0.82rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;">DEC NIVMIA</span>
+      <span style="color:#666;font-size:0.9rem;">Customer: DEC-LLC internal infrastructure</span>
+    </div>
+    <h2 style="color:#0f2b46;font-size:1.8rem;margin-bottom:8px;">STP variance caught and corrected on a multi-vendor switch fleet &mdash; plus quantitative justification for the VPN backbone upgrade.</h2>
+    <p style="color:#555;font-size:1rem;margin-bottom:24px;"><em>DEC-LLC's own internal multi-site network. NIVMIA detected STP inconsistencies across Cisco, TP-Link, and TRENDnet switches, then produced a cost / benefit model for the cross-site VPN upgrade that supports backup traffic.</em></p>
+
+    <h3 style="color:#0f2b46;margin-top:28px;">The situation</h3>
+    <p>DEC-LLC's internal network runs production and lab workloads across multiple sites connected by a site-to-site VPN. After a previous switch refresh, intermittent latency began appearing on cross-site backup windows &mdash; sporadic enough to be hard to reproduce, persistent enough to jeopardize backup SLAs.</p>
+
+    <h3 style="color:#0f2b46;margin-top:28px;">What DEC NIVMIA did</h3>
+    <ul>
+      <li><strong>Caught the root cause:</strong> nightly config capture + drift detection flagged <strong>Spanning Tree Protocol variance</strong> between switches &mdash; inconsistent root-bridge priorities and port-cost mismatches introduced during a prior replacement, across three different vendors (Cisco IOS, TP-Link, TRENDnet).</li>
+      <li><strong>AI-assisted change explanation:</strong> NIVMIA walked engineers through exactly which historical change introduced each mismatch, in plain English, without requiring anyone to reconstruct git history by hand.</li>
+      <li><strong>Implementation planning support:</strong> NIVMIA produced the remediation plan &mdash; which STP values to set on which switches, in which order, with rollback notes &mdash; and provided <strong>live troubleshooting support</strong> during the change window.</li>
+      <li><strong>Cost / benefit analysis for the VPN upgrade:</strong> NIVMIA modeled the cross-site VPN infrastructure &mdash; current throughput, backup-window utilization, projected load as the environment grows, upgrade scenarios (throughput / HA topology / cost-per-scenario) with quantitative justification for procurement.</li>
+    </ul>
+
+    <h3 style="color:#0f2b46;margin-top:28px;">Outcome</h3>
+    <ul>
+      <li>STP variance resolved; cross-site forwarding stable, backup windows now meet SLA without anomaly.</li>
+      <li>Institutional memory preserved: <strong>"why is this switch configured this way?"</strong> now answers itself inside NIVMIA, accessible to every engineer &mdash; not bottlenecked on one person.</li>
+      <li>VPN upgrade path scoped with a defensible cost / benefit model &mdash; procurement approval obtained on the first review cycle.</li>
+      <li>Time from first anomaly to full remediation: <strong>under two weeks</strong>, with the VPN plan delivered as a follow-on.</li>
+    </ul>
+
+    <p style="margin-top:28px;color:#555;font-size:0.92rem;"><em>"The STP fix would have cost us multiple weekends of elimination debugging. NIVMIA got us to the root cause in a single query, planned the remediation, and then went further &mdash; it gave us the quantitative model we needed to justify the VPN upgrade."</em> &mdash; DEC-LLC network operations.</p>
+
+    <div style="margin-top:28px;padding-top:24px;border-top:1px solid #e5e7eb;">
+      <a href="nivmia.html" class="btn btn-primary">Learn about DEC NIVMIA &rarr;</a>
+      <a href="nivmia-editions.html" class="btn btn-outline" style="margin-left:12px;">See NIVMIA Editions</a>
+    </div>
+  </div>
+</section>
+
+<!-- Case Study 3: DEC-LLC / IVMIA -->
+<section style="background:#fff;padding:60px 0;">
+  <div class="container" style="max-width:900px;">
+    <div style="display:flex;align-items:center;gap:16px;margin-bottom:12px;">
+      <span style="background:#e9f1fb;color:#0f2b46;padding:5px 14px;border-radius:20px;font-size:0.82rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;">DEC IVMIA</span>
+      <span style="color:#666;font-size:0.9rem;">Customer: DEC-LLC internal infrastructure</span>
+    </div>
+    <h2 style="color:#0f2b46;font-size:1.8rem;margin-bottom:8px;">VM fleet rebalanced across 18 hypervisor platforms &mdash; power consumption optimized, UPS stress eliminated.</h2>
+    <p style="color:#555;font-size:1rem;margin-bottom:24px;"><em>127+ VMs running across an 18-platform lab/production estate. IVMIA profiled per-VM power consumption, produced a placement plan validated against UPS load capacity per rack, and orchestrated the rebalance end-to-end.</em></p>
+
+    <h3 style="color:#0f2b46;margin-top:28px;">The situation</h3>
+    <p>As the DEC-LLC development and QA footprint grew, VM density climbed across hypervisor hosts in the lab racks. Power draw trended up quarter over quarter. Two UPS units began operating closer to their load thresholds than the operations team was comfortable with &mdash; not failing, but reducing the runtime margin if grid power dropped.</p>
+
+    <h3 style="color:#0f2b46;margin-top:28px;">What DEC IVMIA did</h3>
+    <ul>
+      <li><strong>Profiled per-VM power consumption</strong> using host metrics gathered via IPMI, iDRAC, libvirt, and vendor APIs across the fleet &mdash; attributed watts to individual VMs rather than just hosts.</li>
+      <li><strong>Identified the inefficient-placement pattern:</strong> high-power VMs clustered on the same subset of hosts; idle / rarely-used VMs running on already-loaded hosts; some workloads sitting on older, less-power-efficient hardware when newer hardware was underutilized.</li>
+      <li><strong>Produced a placement plan</strong> with projected power savings per individual migration &mdash; ranked by impact and validated against <strong>UPS load capacity per rack</strong> so no single failure domain ended up overloaded.</li>
+      <li><strong>Orchestrated the rebalance end-to-end:</strong> cross-platform migrations (including hypervisor-to-hypervisor where warranted) executed as a scheduled sequence, live-migration where supported, planned cutovers otherwise, with per-step verification.</li>
+    </ul>
+
+    <h3 style="color:#0f2b46;margin-top:28px;">Outcome</h3>
+    <ul>
+      <li>Per-rack power consumption rebalanced &mdash; no rack running close to its UPS threshold any longer.</li>
+      <li>Overall lab power draw reduced through better consolidation onto the more efficient hardware and identification of genuinely idle workloads.</li>
+      <li>UPS runtime margin restored to comfortable levels &mdash; grid-disruption tolerance recovered without adding battery capacity.</li>
+      <li>Zero customer-visible downtime during the rebalance.</li>
+      <li>Baseline power-attribution model now in place for future placement decisions.</li>
+    </ul>
+
+    <p style="margin-top:28px;color:#555;font-size:0.92rem;"><em>"The UPS pressure wasn't an outage &mdash; it was something everyone was aware of and nobody had time to fix. IVMIA produced the plan with real per-VM power data, validated it against our actual UPS capacity per rack, and ran the migrations. It was one of those efficiency wins that pays back indefinitely."</em> &mdash; DEC-LLC operations.</p>
+
+    <div style="margin-top:28px;padding-top:24px;border-top:1px solid #e5e7eb;">
+      <a href="ivmia.html" class="btn btn-primary">Learn about DEC IVMIA &rarr;</a>
+      <a href="ivmia-editions.html" class="btn btn-outline" style="margin-left:12px;">See IVMIA Editions</a>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section style="background:#0f2b46;color:#fff;padding:50px 0;text-align:center;">
+  <div class="container">
+    <h2 style="color:#fff;">Ready to see what DEC-LLC can do in your environment?</h2>
+    <p style="color:#b7c8dc;">Start with a Community Edition on your own hardware. Scale up when the first real answer earns it.</p>
+    <div style="margin-top:22px;">
+      <a href="../contact.html" style="background:#87ceeb;color:#0f2b46;padding:14px 28px;border-radius:8px;text-decoration:none;font-weight:700;display:inline-block;">Contact Sales</a>
+      <a href="../index.html#products" style="background:rgba(255,255,255,0.12);color:#fff;padding:14px 28px;border-radius:8px;text-decoration:none;font-weight:700;display:inline-block;margin-left:12px;">Browse Products</a>
+    </div>
+  </div>
+</section>
+
+</body>
+</html>

@@ -17,25 +17,50 @@
       
     </a>
     <ul>
-      <li><a href="#products">Products</a></li>
+      <li class="nav-dropdown">
+        <a href="#products">Products</a>
+        <ul class="nav-submenu">
+          <li class="submenu-divider">Core Four</li>
+          <li><a href="products/openutm.html">DEC OpenUTM &mdash; firewall / UTM</a></li>
+          <li><a href="products/ivmia.html">DEC IVMIA &mdash; virtualization / workloads</a></li>
+          <li><a href="products/nivmia.html">DEC NIVMIA &mdash; multi-vendor network</a></li>
+          <li><a href="products/vaultsync.html">DEC VaultSync &mdash; backup / restore / sync</a></li>
+          <li class="submenu-divider">Plugins &amp; Extensions</li>
+          <li><a href="products/openutm-plugins.html">OpenUTM plugins</a></li>
+          <li><a href="products/ivmia-plugins.html">IVMIA platform plugins</a></li>
+          <li><a href="products/nivmia-plugins.html">NIVMIA vendor plugins</a></li>
+          <li><a href="products/vaultsync-plugins.html">VaultSync source &amp; target plugins</a></li>
+          <li class="submenu-divider">Other Products</li>
+          <li><a href="products/ga-fs.html">DEC GA-FS &mdash; Git Advanced Fleet Sync</a></li>
+          <li class="submenu-divider">Cross-Product</li>
+          <li><a href="products/sdns/index.html">DEC SDNS &mdash; AI Quorum</a></li>
+        </ul>
+      </li>
+      <li><a href="products/case-studies.html">Case Studies</a></li>
+      <li><a href="community.html">Community</a></li>
       <li><a href="opensource.html">Open Source</a></li>
+      <li><a href="#whitepapers">Whitepapers</a></li>
       <li><a href="#why">Why DEC-LLC</a></li>
       <li><a href="horizon.html">The Horizon</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="../../store.html">Store</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="security.html">Security</a></li>
+      <li><a href="store.html">Store</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
-    <a href="../../store.html" class="nav-cta">Buy Now</a>
+    <a href="store.html" class="nav-cta">Buy Now</a>
   </div>
 </nav>
 
 <!-- Hero -->
 <section class="v2-hero">
   <div class="container">
-    <h1>Infrastructure that understands itself — and gets smarter every day.</h1>
-    <p class="v2-lede">DEC-LLC builds appliances that watch over your network, your servers, your security, and your data — learning your environment, explaining themselves to your team, and working together so your infrastructure runs as one.</p>
+    <div class="v2-tagline" style="color:#87ceeb;text-transform:uppercase;letter-spacing:0.12em;font-weight:700;font-size:1.02rem;margin-bottom:14px;">Vendor-neutral infrastructure orchestration</div>
+    <h1>Infrastructure that understands itself &mdash; and gets smarter every day.</h1>
+    <p class="v2-lede">DEC-LLC builds appliances for <strong>network, virtualization, storage, backup, and firewall</strong> infrastructure &mdash; one vendor-neutral orchestration stack that works across Cisco, VMware, Proxmox, Azure, Pure Storage, and every other platform your team already depends on. Open-source at the core, appliance at the edge, AI-assisted throughout.</p>
     <div class="v2-cta-row">
       <a href="#products" class="cta">See What We Do</a>
+      <a href="community.html" class="cta" style="background:#87ceeb;color:#0f2b46;border-color:#87ceeb;">Start Free with Community Editions</a>
+      <a href="products/case-studies.html" class="cta-secondary">Customer Case Studies</a>
       <a href="horizon.html" class="cta-secondary">What's Coming</a>
     </div>
   </div>
@@ -238,8 +263,8 @@
       <h2>The problem isn't your team or your tech. It's the gaps between your tools.</h2>
       <p>Most IT trouble doesn't start with a hacker. It starts in the space between systems that were never built to talk to each other. A firewall change nobody told the network team about. A backup that silently stopped working because a credential rotated. A switch that's been reporting problems — on a dashboard that nobody opens because it's the fifth dashboard in the stack.</p>
       <p>Your team isn't missing things because they're careless. They're missing things because they're asked to watch a dozen tools that don't share a single conversation, keep a single log, or agree on a single version of the truth.</p>
-      <div class="v2-metaphor">Think of our appliances as a building's quiet night crew — the ones who walk every floor, test every alarm, rotate every key, and check every valve while everyone else sleeps. By the time the morning shift arrives, the problems from last night are already solved, documented, and in the logbook.</div>
-      <p>We build five appliances that do exactly this — for your network, your servers, your firewall, your backups, and your ability to move between clouds without asking permission. They run under your authority &mdash; in your rack, your cloud, your colo, wherever your infrastructure lives &mdash; with no phone-home required, and they keep doing their job when the threats on the other side of the wire get stranger than they are today.</p>
+      <div class="v2-metaphor">Our appliances do the continuous, documented work that usually lives in one engineer's head &mdash; recording every change, verifying every backup, explaining every rule, and watching every device &mdash; so the knowledge stops being tribal and becomes something the whole team can search.</div>
+      <p>We build five appliances that do exactly this &mdash; for your network, your servers, your firewall, your backups, and your ability to move between clouds without asking permission. They run under your authority, in your rack, your cloud, your colo, wherever your infrastructure lives, and they keep doing their job when the threats on the other side of the wire get stranger than they are today.</p>
     </div>
   </div>
 </section>
@@ -247,74 +272,164 @@
 <!-- Products -->
 <section id="products" style="background:#f8fafb;padding:60px 0;">
   <div class="container">
-    <h2 style="text-align:center;color:#0f2b46;font-size:2rem;margin-bottom:12px;">Eight Products. One Philosophy.</h2>
-    <p class="subtitle" style="text-align:center;">Each one solves a problem you already have. Each one is ready for the problem you'll have in five years.</p>
+    <h2 style="text-align:center;color:#0f2b46;font-size:2rem;margin-bottom:12px;">Four Core Products. One Orchestration Philosophy.</h2>
+    <p class="subtitle" style="text-align:center;">Firewall, virtualization, network, and backup &mdash; each a standalone product, each with its own plugin ecosystem, each vendor-neutral by design. Without the core four, there is no AI Quorum. With them, you get a coordinated control plane that works across Cisco, VMware, Proxmox, Azure, Pure Storage, and every other platform in your rack.</p>
+    <p class="subtitle" style="text-align:center;font-size:0.9rem;color:#555;margin-top:6px;"><em>Looking for GA-FS, plugin SKUs (DEC FireMigrate, DEC IPv6Auto), or the SDNS AI Quorum? See the <strong>Products</strong> menu above.</em></p>
 
-    <div class="product-grid">
+    <div class="product-grid product-grid-2x2">
+
+      <div class="product-card">
+        <div class="icon">&#x1F6E1;</div>
+        <h3><span class="acronym">DEC OpenUTM</span><span class="expansion">Open Unified Threat Management</span></h3>
+        <div class="tagline">Edge router, VPN concentrator, WAF / reverse proxy, DNS / DHCP, IDS / IPS, and AI-assisted cybersec policy engine &mdash; in one open-source appliance</div>
+        <ul class="sticker-list">
+          <li><strong>Handles:</strong> nftables, FRR (BGP/OSPF/static), IPsec + WireGuard + OpenVPN + Tailscale + custom-SSL VPNs, Kea DHCPv4/v6, BIND9 DNS, HAProxy, WAF, IDS/IPS, VLAN/VRF/zone segmentation</li>
+          <li><strong>Does:</strong> edge routing and VPN concentration; DNS + DHCP services; WAF and reverse proxy; IDS / IPS; zone-agnostic policy engine; AI-assisted rule explanation; AI-driven cybersec policy automation; external firewall and host ACL cybersecurity posture audit; first-party plugin ecosystem</li>
+          <li><strong>Scale:</strong> 25 Gbps capable &middot; 40 Gbps target Q1 2027 &middot; 100 Gbps target Q3 2027</li>
+          <li><strong>Architecture:</strong> core&ndash;subcore topology (with or without agents) &mdash; from a single-site gateway to federated multi-site mesh</li>
+          <li><strong>Deploys:</strong> Linux-based appliance ISO on bare metal, VM, or cloud appliance VM</li>
+        </ul>
+        <div class="card-ctas">
+          <a href="products/openutm.html" class="btn btn-primary">Learn More</a>
+          <a href="products/openutm-pricing.html" class="btn btn-outline">Pricing</a>
+          <a href="products/openutm-editions.html" class="btn btn-outline">Editions</a>
+        </div>
+      </div>
 
       <div class="product-card">
         <div class="icon">&#x1F504;</div>
-        <h3>IVMIA</h3>
-        <div class="tagline">Every computer you own, on one screen.</div>
-        <p>Your virtualization bill doubled. Your clusters were set up before the team expanded. Half your VMs might be idle — but nobody can tell you which half. IVMIA sees every virtual machine, every hypervisor, every cloud instance — from one dashboard. It shows you who's using what, which VMs are orphaned, which are critical, and gives you the power to move workloads between platforms — telling you how to save money on your clouds and on-prem or hosted systems, and safeguard those systems from CPU, memory, and disk bottlenecks without incurring fees or even downtime.</p>
-        <a href="products/ivmia.html" class="btn btn-primary">Learn More</a> <a href="products/ivmia-pricing.html" class="btn btn-outline" style="margin-left:8px;">Pricing</a>
+        <h3><span class="acronym">DEC IVMIA</span><span class="expansion">Infrastructure &amp; Virtualization Management, Inventory &amp; Analytics</span></h3>
+        <div class="tagline">Multi-platform physical servers, workstations, hypervisor and container orchestration, and workload management &mdash; one appliance, every platform</div>
+        <ul class="sticker-list">
+          <li><strong>Handles:</strong> libvirt/KVM, Proxmox VE, VMware ESXi, Microsoft Hyper-V, VirtualBox, Docker, Podman, Incus, Kubernetes, Windows 11, Linux, and macOS</li>
+          <li><strong>Does:</strong> unified inventory and cross-platform workload management; workload orchestration across hypervisors, containers, and physical / workstation endpoints; migration automation; cost optimization and chargeback attribution per VM / host / workload; idle and orphaned resource identification; capacity forecasting; AI-assisted platform comparison; health metrics (CPU / memory / disk / temp)</li>
+          <li><strong>Architecture:</strong> core&ndash;subcore topology (with or without agents) &mdash; from a single site to federated multi-site fleets</li>
+          <li><strong>Deploys:</strong> Linux-based on-prem or cloud appliance</li>
+        </ul>
+        <div class="card-ctas">
+          <a href="products/ivmia.html" class="btn btn-primary">Learn More</a>
+          <a href="products/ivmia-pricing.html" class="btn btn-outline">Pricing</a>
+          <a href="products/ivmia-editions.html" class="btn btn-outline">Editions</a>
+        </div>
       </div>
 
       <div class="product-card">
         <div class="icon">&#x1F5A7;</div>
-        <h3>NIVMIA</h3>
-        <div class="tagline">Your network, from a single seat.</div>
-        <p>You have 40 switches from 6 vendors. When someone says "the wifi is slow in Building 3," you open four dashboards to find out why. NIVMIA logs into every device, every night, and tells you what changed, what's drifting, and what's about to fail — in plain English. <em>"Port 14 on 10GSwitch-2 has been dropping 8% of packets for three days."</em> New staff and interns can ask the system why something is configured the way it is and get a clear answer — so your senior people don't have to stop what they're doing to explain it.</p>
-        <a href="products/nivmia.html" class="btn btn-primary">Learn More</a> <a href="products/nivmia-pricing.html" class="btn btn-outline" style="margin-left:8px;">Pricing</a>
-      </div>
-
-      <div class="product-card">
-        <div class="icon">&#x1F6E1;</div>
-        <h3>OpenUTM</h3>
-        <div class="tagline">A firewall that knows why its rules exist — and can teach your new hire.</div>
-        <p>Every firewall accumulates rules that nobody remembers the context for. Your lead engineer just got promoted — or is heads-down on the new acquisition. The junior analyst needs to take over. OpenUTM is intelligent: ask it <em>"why is port 8443 open to 10.5.0.0/24?"</em> and it tells you — the context, the ticket, the reason. When new staff arrive, the system itself becomes the onboarding. Company knowledge stops being bottlenecked in one person and becomes something the whole team can access, permanently.</p>
-        <a href="products/openutm.html" class="btn btn-primary">Learn More</a> <a href="products/openutm-pricing.html" class="btn btn-outline" style="margin-left:8px;">Pricing</a>
+        <h3><span class="acronym">DEC NIVMIA</span><span class="expansion">Network Infrastructure &amp; Vendor-agnostic Multi-platform Inventory &amp; Analysis</span></h3>
+        <div class="tagline">Multi-vendor network orchestration: inventory, ACL &amp; traffic management, migration, cost / capacity analytics, and AI-assisted operations across 16 platforms</div>
+        <ul class="sticker-list">
+          <li><strong>Handles:</strong> 16 vendor platforms &mdash; Cisco IOS/IOS-XE/NX-OS, Arista EOS, Aruba AOS-S, Juniper JunOS, TRENDnet, TP-Link, MokerLink, D-Link, Netgear, Ubiquiti UniFi, FortiGate, Palo Alto PAN-OS, OPNsense/pfSense, Cisco SD-WAN, firewalld</li>
+          <li><strong>Does:</strong> nightly device config capture (SSH/SNMP/telnet/API); git-tracked config vault with golden-copy tagging and drift detection; switch ACL and traffic orchestration; migration automation across vendor platforms; AI-assisted analyses; AI-assisted configuration audit, operations, and migration; AI-assisted plain-English change explanations; cost optimization and chargeback per device; capacity forecasting</li>
+          <li><strong>Architecture:</strong> core&ndash;subcore topology (with or without agents) &mdash; from a single site to federated multi-site fleets</li>
+          <li><strong>Deploys:</strong> Linux-based on-prem or cloud appliance</li>
+        </ul>
+        <div class="card-ctas">
+          <a href="products/nivmia.html" class="btn btn-primary">Learn More</a>
+          <a href="products/nivmia-pricing.html" class="btn btn-outline">Pricing</a>
+          <a href="products/nivmia-editions.html" class="btn btn-outline">Editions</a>
+        </div>
       </div>
 
       <div class="product-card">
         <div class="icon">&#x1F512;</div>
-        <h3>VaultSync</h3>
-        <div class="tagline">Backups you can actually restore — to any platform.</div>
-        <p>You have backups. Probably. Somewhere. When was the last time anyone tested a restore? Would they survive a ransomware attack that targets the backup server too? VaultSync backs up your VMs, servers, workstations, network configs, and company phones — encrypted, tested, and restorable to a completely different platform if the one you're on goes dark. If any vendor changes their terms tomorrow, you restore to a different platform and keep going.</p>
-        <a href="products/vaultsync.html" class="btn btn-primary">Learn More</a> <a href="products/vaultsync-pricing.html" class="btn btn-outline" style="margin-left:8px;">Pricing</a>
+        <h3><span class="acronym">DEC VaultSync</span><span class="expansion">Cross-platform backup, restore, sync, and assisted-HA orchestration</span></h3>
+        <div class="tagline">One appliance for backup, restore, cross-platform migration, bidirectional sync, and assisted HA &mdash; across any device, any storage, any hypervisor</div>
+        <ul class="sticker-list">
+          <li><strong>Handles:</strong> iPhone / iPad / Android mobiles, Windows / Linux / macOS workstations, home NAS (Synology, QNAP, TrueNAS), enterprise SAN (Pure Storage, NetApp, Dell EMC, iSCSI / FC / NVMe-oF), hypervisor VMs (libvirt/KVM, Proxmox VE, VMware ESXi, Hyper-V), container volumes (Docker, Kubernetes PVCs), network device configs (via NIVMIA). Targets: Azure Blob, Oracle OCI, S3-compatible, Proxmox Backup Server, local disk, tape.</li>
+          <li><strong>Does:</strong> scheduled encrypted snapshots, automated restore-testing, cross-platform restore (VMware &rarr; Proxmox in one operation), cross-platform bidirectional sync (across heterogeneous storage), assisted HA state-sync orchestration, air-gapped immutable backups, ransomware-survivable backup plane, tamper-evident audit trail</li>
+          <li><strong>Architecture:</strong> core&ndash;subcore topology (with or without agents) &mdash; single-site appliance or central core federating many subcores across sites</li>
+          <li><strong>Deploys:</strong> Linux-based on-prem or cloud appliance</li>
+        </ul>
+        <div class="card-ctas">
+          <a href="products/vaultsync.html" class="btn btn-primary">Learn More</a>
+          <a href="products/vaultsync-pricing.html" class="btn btn-outline">Pricing</a>
+          <a href="products/vaultsync-editions.html" class="btn btn-outline">Editions</a>
+        </div>
       </div>
 
-      <div class="product-card">
-        <div class="icon">&#x1F500;</div>
-        <h3>GA-FS</h3>
-        <div class="tagline">Keep your repos in sync — governed by policy.</div>
-        <p>Your repositories are scattered across GitHub, GitLab, and Gitea. GA-FS syncs them automatically with parallel workers, branch filtering, and conflict detection. Private-to-public sync is blocked by default — every authorization is recorded in an immutable ledger. The open source core handles single-instance sync. GA-FS Fleet adds multi-instance orchestration for organizations managing repos across teams and sites.</p>
-        <a href="products/ga-fs.html" class="btn btn-primary">Learn More</a> <a href="products/ga-fs.html#pricing" class="btn btn-outline" style="margin-left:8px;">Pricing</a>
-      </div>
+    </div><!-- /.product-grid.product-grid-2x2 -->
 
-      <div class="product-card">
-        <h3>SDNS</h3>
-        <div class="tagline">When your products work as one.</div>
-        <p>SDNS &mdash; Software Defined Systems Networking and Storage &mdash; is not a product you buy. It's what happens when two or more DEC-LLC products are connected: a shared databus, cross-product AI agents, and event federation that turn separate tools into a single coordinated infrastructure. Add a user once and they exist everywhere. Rotate a key once and every product inherits it. The coordination layer isn't something you install &mdash; it emerges when the suite talks to each other.</p>
-        <a href="products/sdns/index.html" class="btn btn-primary">Learn More</a>
+    <!-- Ecosystem teaser strip below the core four -->
+    <div style="max-width:1100px;margin:40px auto 0;padding:24px;background:#fff;border-radius:8px;border:1px solid #e5e7eb;">
+      <h3 style="color:#0f2b46;font-size:1.15rem;margin-bottom:8px;text-align:center;">The ecosystem around the core four</h3>
+      <p style="color:#555;font-size:0.92rem;text-align:center;margin-bottom:18px;">Each core product supports a plugin architecture. Commercial plugin SKUs include <strong>DEC FireMigrate</strong> (cross-vendor firewall migration), <strong>DEC IPv6Auto</strong> (IPv6 transition), and 16+ network-vendor plugins for DEC NIVMIA. Additional standalone products like <strong>DEC GA-FS</strong> (Git Advanced Fleet Sync) live in the <em>Other Products</em> category. The <strong>DEC SDNS AI Quorum</strong> is the cross-product coordination SKU that activates when two or more of the core four run together.</p>
+      <div style="display:flex;gap:12px;flex-wrap:wrap;justify-content:center;">
+        <a href="products/openutm-plugins.html" class="btn btn-outline" style="font-size:0.85rem;">OpenUTM Plugins</a>
+        <a href="products/ivmia-plugins.html" class="btn btn-outline" style="font-size:0.85rem;">IVMIA Platform Plugins</a>
+        <a href="products/nivmia-plugins.html" class="btn btn-outline" style="font-size:0.85rem;">NIVMIA Vendor Plugins</a>
+        <a href="products/vaultsync-plugins.html" class="btn btn-outline" style="font-size:0.85rem;">VaultSync Source/Target Plugins</a>
+        <a href="products/ga-fs.html" class="btn btn-outline" style="font-size:0.85rem;">DEC GA-FS</a>
+        <a href="products/sdns/index.html" class="btn btn-outline" style="font-size:0.85rem;">DEC SDNS (AI Quorum)</a>
       </div>
+    </div>
+  </div>
+</section>
 
-      <div class="product-card">
-        <div class="icon">&#x1F310;</div>
-        <h3>IPv6Auto</h3>
-        <div class="tagline">Move to the new internet without breaking the old one.</div>
-        <p>The old internet is running out of addresses. The new one (IPv6) is already required by US federal agencies and rolling toward everyone else. Most organizations haven't started. IPv6Auto migrates your network without downtime, rewrites your firewall rules for the new addressing, verifies everything works, and leaves you compliant — while the old addresses keep working until you're ready to let them go.</p>
-        <a href="products/ipv6auto.html" class="btn btn-primary">Learn More</a>
-      </div>
+<!-- By the numbers -->
+<section id="numbers" style="background:#0f2b46;color:#fff;padding:50px 0;">
+  <div class="container">
+    <h2 style="text-align:center;color:#fff;font-size:1.6rem;margin-bottom:8px;">By the numbers</h2>
+    <p style="text-align:center;color:#87ceeb;font-size:0.95rem;margin-bottom:32px;">Product catalog depth &middot; infrastructure under DEC-LLC management &middot; engineering depth on the core team</p>
 
-      <div class="product-card">
-        <div class="icon">&#x1F525;</div>
-        <h3>FireMigrate</h3>
-        <div class="tagline">Replace your firewall without rewriting your rules.</div>
-        <p>Your firewall vendor got acquired, raised prices, or reached end-of-life. The replacement means translating thousands of rules by hand — which means risk, which means nobody wants to do it, which means you're stuck. FireMigrate reads your existing configuration, translates it to the new platform's language, verifies the translation, and hands you a working result. The migration that used to take months takes days.</p>
-        <a href="products/firemigrate.html" class="btn btn-primary">Learn More</a>
-      </div>
+    <div style="color:#87ceeb;font-size:0.78rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:14px;text-align:center;">Catalog breadth</div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(170px, 1fr));gap:20px;max-width:1100px;margin:0 auto 36px;text-align:center;">
+      <div><div style="font-size:2.2rem;font-weight:900;color:#fff;">8</div><div style="font-size:0.85rem;color:#b7c8dc;">Products in the catalog</div></div>
+      <div><div style="font-size:2.2rem;font-weight:900;color:#fff;">16</div><div style="font-size:0.85rem;color:#b7c8dc;">Network vendor platforms (DEC NIVMIA)</div></div>
+      <div><div style="font-size:2.2rem;font-weight:900;color:#fff;">9</div><div style="font-size:0.85rem;color:#b7c8dc;">Hypervisor / container platforms (DEC IVMIA)</div></div>
+      <div><div style="font-size:2.2rem;font-weight:900;color:#fff;">5</div><div style="font-size:0.85rem;color:#b7c8dc;">VPN types (DEC OpenUTM)</div></div>
+      <div><div style="font-size:2.2rem;font-weight:900;color:#fff;">6</div><div style="font-size:0.85rem;color:#b7c8dc;">Edition tiers per core product</div></div>
+      <div><div style="font-size:2.2rem;font-weight:900;color:#fff;">$0</div><div style="font-size:0.85rem;color:#b7c8dc;">Community tier, forever</div></div>
+    </div>
 
+    <div style="color:#87ceeb;font-size:0.78rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:14px;text-align:center;">Dogfood &mdash; infrastructure DEC-LLC runs on its own products</div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(170px, 1fr));gap:20px;max-width:1100px;margin:0 auto 36px;text-align:center;">
+      <div><div style="font-size:2.2rem;font-weight:900;color:#fff;">12</div><div style="font-size:0.85rem;color:#b7c8dc;">Switches</div></div>
+      <div><div style="font-size:2.2rem;font-weight:900;color:#fff;">7</div><div style="font-size:0.85rem;color:#b7c8dc;">Routers</div></div>
+      <div><div style="font-size:2.2rem;font-weight:900;color:#fff;">10</div><div style="font-size:0.85rem;color:#b7c8dc;">Firewalls (4 prod / 6 lab)</div></div>
+      <div><div style="font-size:2.2rem;font-weight:900;color:#fff;">12</div><div style="font-size:0.85rem;color:#b7c8dc;">Physical servers</div></div>
+      <div><div style="font-size:2.2rem;font-weight:900;color:#fff;">18</div><div style="font-size:0.85rem;color:#b7c8dc;">Virtualization platforms</div></div>
+      <div><div style="font-size:2.2rem;font-weight:900;color:#fff;">127+</div><div style="font-size:0.85rem;color:#b7c8dc;">Production / lab VMs</div></div>
+      <div><div style="font-size:2.2rem;font-weight:900;color:#fff;">100</div><div style="font-size:0.85rem;color:#b7c8dc;">IoT devices</div></div>
+    </div>
+
+    <div style="color:#87ceeb;font-size:0.78rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:14px;text-align:center;">Engineering depth</div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(170px, 1fr));gap:20px;max-width:1100px;margin:0 auto;text-align:center;">
+      <div><div style="font-size:2.2rem;font-weight:900;color:#fff;">65</div><div style="font-size:0.85rem;color:#b7c8dc;">Combined engineering years on the core team (40 + 25)</div></div>
+      <div><div style="font-size:2.2rem;font-weight:900;color:#fff;">2010</div><div style="font-size:0.85rem;color:#b7c8dc;">Year founded</div></div>
+      <div><div style="font-size:2.2rem;font-weight:900;color:#fff;">~1.2M</div><div style="font-size:0.85rem;color:#b7c8dc;">Lines of production source code across the catalog</div></div>
+      <div><div style="font-size:2.2rem;font-weight:900;color:#fff;">~2.7M</div><div style="font-size:0.85rem;color:#b7c8dc;">Lines total: code + docs + infrastructure-as-code</div></div>
+    </div>
+
+    <p style="text-align:center;color:#b7c8dc;font-size:0.82rem;margin-top:28px;font-style:italic;">Every DEC-LLC product runs in our own racks before it reaches a customer. Every case study on the site is a real deployment outcome.</p>
+  </div>
+</section>
+
+<!-- Whitepapers -->
+<section id="whitepapers" style="background:#f8fafb;padding:60px 0;">
+  <div class="container" style="max-width:1100px;">
+    <h2 style="text-align:center;color:#0f2b46;font-size:1.8rem;margin-bottom:12px;">Whitepapers</h2>
+    <p style="text-align:center;color:#555;margin-bottom:32px;">Deeper reading on the architecture, philosophy, and AI posture behind DEC-LLC products.</p>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(240px, 1fr));gap:20px;">
+      <a href="whitepapers/ai-domain-awareness.html" style="display:block;background:#fff;padding:22px;border-radius:8px;text-decoration:none;border-left:4px solid #446d9c;box-shadow:0 2px 6px rgba(0,0,0,.06);">
+        <div style="color:#446d9c;font-size:0.78rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:6px;">Whitepaper</div>
+        <h3 style="color:#0f2b46;font-size:1.1rem;margin-bottom:8px;">AI Domain Awareness</h3>
+        <p style="color:#555;font-size:0.9rem;line-height:1.5;">How DEC-LLC's local-AI agents learn a customer's specific infrastructure, not a vendor-aggregated model &mdash; and why that matters for security, analysis, and advisory.</p>
+      </a>
+      <a href="whitepapers/infrastructure-analysis.html" style="display:block;background:#fff;padding:22px;border-radius:8px;text-decoration:none;border-left:4px solid #446d9c;box-shadow:0 2px 6px rgba(0,0,0,.06);">
+        <div style="color:#446d9c;font-size:0.78rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:6px;">Whitepaper</div>
+        <h3 style="color:#0f2b46;font-size:1.1rem;margin-bottom:8px;">Infrastructure Analysis</h3>
+        <p style="color:#555;font-size:0.9rem;line-height:1.5;">The analytical foundation behind DEC IVMIA and DEC NIVMIA &mdash; inventory, drift, cost attribution, and capacity forecasting for multi-vendor fleets.</p>
+      </a>
+      <a href="whitepapers/customer-first-philosophy.html" style="display:block;background:#fff;padding:22px;border-radius:8px;text-decoration:none;border-left:4px solid #446d9c;box-shadow:0 2px 6px rgba(0,0,0,.06);">
+        <div style="color:#446d9c;font-size:0.78rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:6px;">Whitepaper</div>
+        <h3 style="color:#0f2b46;font-size:1.1rem;margin-bottom:8px;">Customer-First Philosophy</h3>
+        <p style="color:#555;font-size:0.9rem;line-height:1.5;">Why DEC-LLC products answer to the person running them &mdash; not to a vendor cloud, not to a subscription dashboard, not to telemetry you didn't sign up for.</p>
+      </a>
+      <a href="whitepapers/sdns-architecture.html" style="display:block;background:#fff;padding:22px;border-radius:8px;text-decoration:none;border-left:4px solid #446d9c;box-shadow:0 2px 6px rgba(0,0,0,.06);">
+        <div style="color:#446d9c;font-size:0.78rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:6px;">Whitepaper</div>
+        <h3 style="color:#0f2b46;font-size:1.1rem;margin-bottom:8px;">SDNS Architecture</h3>
+        <p style="color:#555;font-size:0.9rem;line-height:1.5;">How DEC-LLC products coordinate when two or more are deployed together &mdash; shared databus, unified identity, event federation, cross-product AI.</p>
+      </a>
     </div>
   </div>
 </section>
