@@ -35,6 +35,7 @@
 
     <h2 style="color:#0f2b46;">Security posture</h2>
     <ul style="color:#374151;font-size:1rem;line-height:1.7;">
+      <li><strong>Zero-Trust enforcement (DEC OpenUTM).</strong> Every uplink on an OpenUTM appliance is evaluated equally by the AI-assisted policy engine. No direction is implicitly trusted &mdash; traffic moving between internal segments is inspected with the same rigor as traffic arriving from the Internet. LAN and WAN are architectural facts, not trust boundaries.</li>
       <li><strong>Identical hardening across editions.</strong> Community, Standard, Professional, Enterprise, Platinum, Signature &mdash; the appliance image is the same. The license file gates capabilities and support, not security controls.</li>
       <li><strong>Signed releases.</strong> Every release is signed by a DEC-LLC release key (ECDSA-P-256 + SHA-256). The pubkey ships with every appliance; the private key never leaves DEC-LLC's signing infrastructure.</li>
       <li><strong>Defense-in-depth.</strong> SELinux-enforcing profiles, immutable system partitions, tamper-evident audit trails, integrity baselines with SHA-256 manifest verification.</li>
