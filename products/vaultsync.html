@@ -40,7 +40,7 @@
           <strong>Storage:</strong> home NAS (Synology, QNAP, TrueNAS), enterprise SAN (Pure Storage, NetApp, Dell EMC, iSCSI / FC / NVMe-oF).<br>
           <strong>Virtualization &amp; containers:</strong> libvirt / KVM, Proxmox VE, VMware ESXi, Microsoft Hyper-V, Docker volumes, Kubernetes PVCs.<br>
           <strong>Network configs:</strong> via NIVMIA integration.<br>
-          <strong>Targets:</strong> Azure Blob, Oracle OCI, S3-compatible, Proxmox Backup Server, local disk, tape.
+          <strong>Targets:</strong> Azure Blob, Oracle OCI, S3-compatible, Proxmox Backup Server, local disk, tape, or a different hypervisor platform (restore a VMware VM onto Proxmox, a Hyper-V VM onto KVM, etc.) &mdash; the foundational any-source / any-target capability.
         </dd>
         <dt>Does</dt>
         <dd>Scheduled encrypted snapshots with changed-block tracking; automated restore-testing; cross-platform restore (VMware &rarr; Proxmox in one operation); cross-platform <em>bidirectional sync</em> across heterogeneous storage; assisted HA state-sync orchestration between active/standby pairs regardless of platform; air-gapped immutable backups; ransomware-survivable isolated backup plane; tamper-evident audit trail.</dd>
