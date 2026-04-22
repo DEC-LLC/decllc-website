@@ -40,8 +40,8 @@
 <section class="v2-hero">
   <div class="container">
     <div class="v2-tagline">How It Works</div>
-    <h1>Three mechanisms. No new software to install.</h1>
-    <p class="v2-lede">SDNS is built into the products you already run. The databus, the AI agents, and the event federation are capabilities that exist inside NIVMIA, IVMIA, OpenUTM, and VaultSync. When you run them together, those capabilities connect.</p>
+    <h1>Three mechanisms. Four specialists. One Quorum.</h1>
+    <p class="v2-lede">SDNS is the meta-control plane framework built into the four specialist products you run. The databus, the AI Quorum, and the event federation are capabilities that exist inside NIVMIA, IVMIA, OpenUTM, and VaultSync &mdash; each running its own local-inference AI in its own specialty. When you run them together, those capabilities connect and the Quorum emerges.</p>
   </div>
 </section>
 
@@ -109,18 +109,18 @@
 <!-- AI Agents -->
 <section class="v2-arch" style="background:#f8fafb;">
   <div class="container">
-    <h2>2. Cross-Product AI &mdash; shared reasoning</h2>
-    <p class="v2-subtitle">Local AI agents that can think across networking, compute, security, and storage simultaneously.</p>
+    <h2>2. The AI Quorum &mdash; shared reasoning across specialties</h2>
+    <p class="v2-subtitle">Four specialist AIs, each running local inference in its own specialty, reaching consensus across networking, compute, security, and data protection.</p>
 
     <div class="v2-arch-block">
-      <p>Each product already has its own AI engine &mdash; powered by Ollama models running alongside each product, under your control. No data leaves your environment. Each product's AI can analyze its own domain: NIVMIA spots network anomalies, OpenUTM detects security patterns, IVMIA recommends VM placement, VaultSync optimizes backup schedules.</p>
+      <p>Each product runs its own local-inference AI &mdash; powered by Ollama models on each appliance, under your control. Customer data never leaves the appliance. Each specialist AI analyzes its own specialty: NIVMIA spots network anomalies, OpenUTM detects security patterns, IVMIA recommends VM placement, VaultSync optimizes backup schedules.</p>
 
-      <p>SDNS is what happens when those AI agents can query each other through the databus. The question changes from "what's wrong in my domain?" to "what's happening across the whole infrastructure?"</p>
+      <p>SDNS is where those four specialists reach a Quorum through the databus. The question changes from "what's wrong in my specialty?" to "what's happening across the whole infrastructure?"</p>
 
-      <h3>Quorum decisions</h3>
-      <p>Some decisions require knowledge from multiple domains. "Should we migrate this VM to a different host?" requires understanding of: network bandwidth to the target (NIVMIA), available compute resources (IVMIA), security group membership (OpenUTM), and whether the backup schedule needs adjustment (VaultSync). No single product has all the answers. Through the databus, the AI agents can assemble the full picture and present a coordinated recommendation.</p>
+      <h3>Decisions that cross domains</h3>
+      <p>Some decisions require knowledge from more than one specialty. "Should we migrate this VM to a different host?" requires understanding of: network bandwidth to the target (NIVMIA), available compute resources (IVMIA), security group membership (OpenUTM), and whether the backup schedule needs adjustment (VaultSync). No single product has all the answers. Through the databus, the four AIs assemble the full picture and reach a coordinated recommendation &mdash; the Quorum is where that question gets answered.</p>
 
-      <p>The human still approves. The AI assembles the context and recommends. But instead of a human spending 30 minutes correlating four dashboards, the AI does it in seconds and presents one recommendation with supporting evidence from all four domains.</p>
+      <p>The human still approves. The Quorum assembles the context and recommends. But instead of a human spending 30 minutes correlating four dashboards, the four AIs do it in seconds and present one recommendation with supporting evidence from every specialty.</p>
     </div>
   </div>
 </section>
@@ -133,7 +133,7 @@
 
     <div class="v2-arch-block">
       <h3>Real-time cross-product events</h3>
-      <p>Each product publishes events about things that matter to the others. Not every internal event &mdash; only the ones that cross domain boundaries:</p>
+      <p>Each product publishes events about things that matter to the others. Not every internal event &mdash; only the ones that cross domains:</p>
       <ul>
         <li><strong>NIVMIA detects a link failure</strong> &rarr; OpenUTM adjusts firewall rules for the backup path, IVMIA considers migrating affected VMs, VaultSync reschedules backups that would traverse the failed link.</li>
         <li><strong>OpenUTM blocks a confirmed intrusion</strong> &rarr; NIVMIA isolates the switch port, IVMIA snapshots the affected VM for forensics, VaultSync verifies backup integrity for the compromised host.</li>
@@ -164,8 +164,8 @@
 <!-- Closing -->
 <section class="v2-closing">
   <div class="container">
-    <h2>No new software. Just new conversations between the software you already run.</h2>
-    <p>SDNS is an architectural decision, not a deployment. The products were built for this from the beginning.</p>
+    <h2>Architectural, not feature-deep.</h2>
+    <p>SDNS is a property of how the four specialist products were designed together &mdash; a pattern built for federation, local inference throughout, and cross-domain consensus from the first line of code.</p>
     <a href="integration.html" class="cta" style="background:white;color:#0f2b46;">See Product Integration</a>
     <a href="use-cases.html" class="cta-secondary" style="border-color:white;color:white;">Real Scenarios</a>
   </div>

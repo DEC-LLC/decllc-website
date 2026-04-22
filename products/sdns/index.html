@@ -41,9 +41,9 @@
 <!-- Hero -->
 <section class="v2-hero">
   <div class="container">
-    <div class="v2-tagline">Software Defined Systems Networking and Storage</div>
-    <h1>Four products. One conversation.</h1>
-    <p class="v2-lede">SDNS is not a product you install. It is what happens when NIVMIA, IVMIA, OpenUTM, and VaultSync start talking to each other &mdash; sharing data, sharing context, and making decisions together that no single product could make alone.</p>
+    <div class="v2-tagline">The meta-control plane &mdash; an AI Quorum for multi-vendor infrastructure</div>
+    <h1>Four specialists. One conversation.</h1>
+    <p class="v2-lede">DEC SDNS is the meta-control plane that sits above NIVMIA, IVMIA, OpenUTM, and VaultSync &mdash; four specialist products, each running its own local-inference AI in its own specialty. SDNS is where the four AIs reach decisions that cross domains, which no single product can make alone. <em>"Is this VM safe to migrate?"</em> needs bandwidth, compute, security-group, and backup-chain knowledge at once. The Quorum is where that question gets answered.</p>
     <div class="v2-cta-row">
       <a href="architecture.html" class="cta">How It Works</a>
       <a href="integration.html" class="cta-secondary">See the Integration</a>
@@ -55,18 +55,18 @@
 <section class="v2-story">
   <div class="container">
     <div class="v2-story-inner">
-      <h2>SDNS is a behavior, not a box.</h2>
-      <p class="v2-intro">Each DEC-LLC product is an expert in its own domain. NIVMIA knows your network. IVMIA knows your virtual machines. OpenUTM guards your perimeter. VaultSync protects your data. Each one runs independently and does its job well.</p>
-      <div class="v2-metaphor">But infrastructure doesn't live in silos. A firewall rule change affects which VMs can talk to which switches. A storage migration changes which backup jobs need to run. A new VLAN on the network means new security groups on the firewall. These cross-cutting decisions happen every day &mdash; and today, a human carries them between dashboards.</div>
-      <p>SDNS is the name for what happens when the products carry those decisions themselves. Through a shared data bus, through AI agents that can reason across domains, and through an event system that lets each product respond to what the others are doing.</p>
+      <h2>SDNS is the meta-control plane &mdash; federation, not orchestration.</h2>
+      <p class="v2-intro">Each DEC-LLC product is a specialist in its own specialty. NIVMIA knows your network. IVMIA knows your virtual machines. OpenUTM guards your perimeter. VaultSync protects your data. Each one runs its own local-inference AI, independently, and does its job well.</p>
+      <div class="v2-metaphor">But infrastructure doesn't live in silos. A firewall rule change affects which VMs can talk to which switches. A storage migration changes which backup jobs need to run. A new VLAN on the network means new security groups on the firewall. These decisions that cross domains happen every day &mdash; and today, a human carries them between dashboards.</div>
+      <p>SDNS is the shared data contract that lets the four specialist AIs talk to each other and reach a Quorum. Through a shared databus, through AI agents that can reason across domains, and through an event system that lets each product respond to what the others are doing &mdash; specialists stay sovereign in their specialty, and the boundary gets crossed by agreement.</p>
 
       <h3>What SDNS actually is</h3>
       <p>It is the <strong>databus</strong> &mdash; a shared data layer where every product publishes what it knows (hosts, networks, assets, workloads, health) and every product can query what the others know.</p>
-      <p>It is the <strong>AI agents</strong> &mdash; intelligence that runs alongside your products and reasons across all four domains. "Should we migrate this workload?" is not a question any single product can answer. It requires knowledge of network capacity, VM resources, security policy, and backup state. SDNS is where that reasoning happens.</p>
+      <p>It is the <strong>AI Quorum</strong> &mdash; four specialist AIs, each running local inference on its own appliance, reasoning together across networking, compute, security, and data protection. "Should we migrate this workload?" is not a question any single product can answer. It requires knowledge of network capacity, VM resources, security policy, and backup state. The Quorum is where that question gets answered.</p>
       <p>It is the <strong>event bus</strong> &mdash; when NIVMIA detects a link failure, OpenUTM can reroute traffic. When IVMIA migrates a VM, VaultSync adjusts its backup targets. When OpenUTM blocks an intrusion, NIVMIA quarantines the switch port. These are not scripted integrations &mdash; they are products that understand each other's events and respond.</p>
 
       <h3>What SDNS is not</h3>
-      <p>It is not a fifth product. There is no "SDNS appliance" to buy, no "SDNS server" to install, no separate codebase. The databus lives inside each product. The AI agents live inside each product. The event system lives inside each product. SDNS is what emerges when you run them together.</p>
+      <p>SDNS doesn't override the specialists &mdash; each product owns its specialty. There is no message broker, no central server, no customer data leaving the appliance. The databus lives inside each product. The AI agents run local on each appliance. The event system lives inside each product. SDNS is the framework that emerges when you run them together.</p>
       <p>Think of it this way: you don't install "harmony" into an orchestra. Harmony is what happens when the musicians listen to each other.</p>
     </div>
   </div>
@@ -86,8 +86,8 @@
 
       <div class="v2-benefit-card">
         <div class="v2-check">2</div>
-        <h3>Cross-Product AI</h3>
-        <p>AI agents that run wherever your products run &mdash; under your control, not a third party's &mdash; and reason across networking, compute, security, and storage simultaneously. They can recommend, advise, and (with your approval) act: migrate a workload, adjust a security group, reroute traffic around a failure. Decisions that used to require a human to correlate four dashboards.</p>
+        <h3>The AI Quorum</h3>
+        <p>Four specialist AIs &mdash; each running local inference on its own appliance, under your control, not a third party's &mdash; reaching consensus across networking, compute, security, and data protection simultaneously. They can recommend, advise, and (with your approval) act: migrate a workload, adjust a security group, reroute traffic around a failure. Decisions that used to require a human to correlate four dashboards.</p>
       </div>
 
       <div class="v2-benefit-card">
@@ -114,7 +114,7 @@
     <div class="v2-usecase-block">
       <div class="v2-persona">With SDNS: one conversation, one conclusion</div>
       <h3>Your infrastructure sees itself whole.</h3>
-      <p>The databus means every product has the full picture. The AI agent correlates: failing uplink &rarr; degraded VM performance &rarr; rerouted traffic &rarr; missed backup window. It recommends: migrate the affected VMs to a host on a healthy uplink, update the firewall rules to match, and reschedule the backup. One recommendation. One approval. Four products act in concert.</p>
+      <p>The databus means every product has the full picture. The Quorum correlates across specialties: failing uplink &rarr; degraded VM performance &rarr; rerouted traffic &rarr; missed backup window. It recommends: migrate the affected VMs to a host on a healthy uplink, update the firewall rules to match, and reschedule the backup. One recommendation. One approval. Four specialists act in concert.</p>
     </div>
   </div>
 </section>
@@ -128,7 +128,7 @@
     <div class="v2-benefit-grid">
       <div class="v2-benefit-card">
         <h3>Core Four</h3>
-        <p><strong>NIVMIA</strong> (network), <strong>IVMIA</strong> (compute), <strong>OpenUTM</strong> (security), <strong>VaultSync</strong> (data protection). Each publishes to the databus. Each listens to the event bus. Each hosts AI agents that participate in cross-domain reasoning.</p>
+        <p><strong>NIVMIA</strong> (network), <strong>IVMIA</strong> (compute), <strong>OpenUTM</strong> (security), <strong>VaultSync</strong> (data protection). Each publishes to the databus. Each listens to the event bus. Each runs its own local-inference AI in its own specialty, and each participates in the Quorum when a decision crosses domains.</p>
       </div>
 
       <div class="v2-benefit-card">
@@ -148,8 +148,8 @@
 <!-- Closing -->
 <section class="v2-closing">
   <div class="container">
-    <h2>The whole is greater than the sum of the parts.</h2>
-    <p>You don't buy SDNS. You arrive at it &mdash; by running products that were designed, from the ground up, to work together.</p>
+    <h2>Architectural, not feature-deep.</h2>
+    <p>The Quorum isn't a feature bolted onto a product &mdash; it's a property of how the four specialists were designed together. Forty years of infrastructure engineering sits under the surface.</p>
     <a href="architecture.html" class="cta" style="background:white;color:#0f2b46;">How the Databus Works</a>
     <a href="use-cases.html" class="cta-secondary" style="border-color:white;color:white;">Real Scenarios</a>
   </div>
