@@ -1,0 +1,6 @@
+Contact: mailto:security@dec-llc.biz
+Encryption: https://dec-llc.biz/security/dec-llc-security-pubkey.asc
+Preferred-Languages: en
+Canonical: https://dec-llc.biz/.well-known/security.txt
+Expires: 2027-04-28T00:00:00Z
+Policy: https://dec-llc.biz/security.html
