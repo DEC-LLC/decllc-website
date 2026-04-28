@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DEC QDX: Post-Quantum Multi-Channel Quorum Transport — DEC-LLC Whitepaper</title>
+  <meta name="description" content="DEC QDX is DEC-LLC's post-quantum, multi-channel quorum transport. NIST FIPS-203/204 native, threshold k-of-n delivery across heterogeneous media, DPU-offloaded reassembly. Federal-procurement-eligible under the rolling NIST PQC mandate.">
+  <link rel="stylesheet" href="../styles.css">
+  <style>
+    .wp-hero { background: linear-gradient(135deg, var(--primary) 0%, #0a3a6b 100%); color: #fff; padding: 80px 0 60px; text-align: center; }
+    .wp-hero h1 { font-size: 2.4rem; font-weight: 900; margin-bottom: 12px; letter-spacing: -0.02em; }
+    .wp-hero .wp-meta { opacity: 0.8; font-size: 0.95rem; margin-bottom: 8px; }
+    .wp-hero .wp-subtitle { font-size: 1.15rem; opacity: 0.85; max-width: 750px; margin: 0 auto; }
+    .wp-body { max-width: 800px; margin: 0 auto; padding: 48px 24px 80px; }
+    .wp-body h2 { font-size: 1.6rem; font-weight: 800; color: var(--primary); margin: 48px 0 16px; text-align: left; }
+    .wp-body h3 { font-size: 1.2rem; font-weight: 700; color: var(--primary-light); margin: 32px 0 12px; }
+    .wp-body p { color: var(--text); font-size: 1.05rem; line-height: 1.8; margin-bottom: 16px; }
+    .wp-body ul, .wp-body ol { margin: 0 0 20px 24px; color: var(--text); font-size: 1.05rem; line-height: 1.8; }
+    .wp-body li { margin-bottom: 8px; }
+    .wp-body blockquote { border-left: 4px solid var(--accent); padding: 16px 24px; margin: 24px 0; background: #f0f7ff; border-radius: 0 8px 8px 0; }
+    .wp-body blockquote p { color: var(--primary); font-weight: 600; margin-bottom: 0; }
+    .wp-body code { background: #f0f0f5; color: var(--primary); padding: 2px 6px; border-radius: 4px; font-size: 0.92em; }
+    .wp-body table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 0.95rem; }
+    .wp-body th { background: var(--primary); color: #fff; padding: 12px 16px; text-align: left; font-weight: 700; }
+    .wp-body td { padding: 10px 16px; border-bottom: 1px solid var(--border); vertical-align: top; }
+    .wp-body tr:hover td { background: #f0f7ff; }
+    .wp-callout { background: linear-gradient(135deg, #e3f2fd 0%, #f0f7ff 100%); border: 2px solid var(--accent); border-radius: var(--radius); padding: 24px 28px; margin: 32px 0; }
+    .wp-callout h4 { color: var(--accent-dark); font-size: 1.1rem; margin-bottom: 8px; }
+    .wp-callout p { margin-bottom: 0; }
+    .wp-back { display: inline-block; margin: 20px 0; color: var(--accent); font-weight: 600; text-decoration: none; }
+  </style>
+</head>
+<body>
+
+<!-- Navigation -->
+<nav>
+  <div class="container">
+    <a href="../index.html" class="logo">
+      <img src="../assets/logo-circle.svg" alt="DEC-LLC">
+      <span style="font-weight:800;font-size:1.1rem;letter-spacing:0.05em;margin-left:10px;">DEC-LLC</span>
+    </a>
+    <ul>
+      <li><a href="../index.html#products">Products</a></li>
+      <li><a href="../index.html#pricing">Pricing</a></li>
+      <li><a href="../index.html#opensource">Open Source</a></li>
+      <li><a href="../index.html#about">About</a></li>
+      <li><a href="../store.html">Store</a></li>
+      <li><a href="../index.html#contact">Contact</a></li>
+    </ul>
+    <a href="../store.html" class="nav-cta">Buy Now</a>
+  </div>
+</nav>
+
+<!-- Hero -->
+<section class="wp-hero">
+  <div class="container">
+    <p class="wp-meta">DEC-LLC Whitepaper &mdash; April 2026</p>
+    <h1>DEC QDX &mdash; Post-Quantum Multi-Channel Quorum Transport</h1>
+    <p class="wp-subtitle">The wire protocol every DEC-LLC product speaks. NIST FIPS-203 / FIPS-204 native. Threshold delivery across heterogeneous media. DPU-offloaded reassembly. Federal-procurement-eligible by construction.</p>
+  </div>
+</section>
+
+<!-- Body -->
+<div class="wp-body">
+
+  <a href="../index.html" class="wp-back">&larr; Back to DEC-LLC</a>
+
+  <h2>What QDX is, in one paragraph</h2>
+
+  <p>DEC QDX is DEC-LLC's proprietary post-quantum, multi-channel quorum transport. Every DEC-LLC product communicates over QDX. It splits each application payload across <code>n</code> independent channels &mdash; a satellite link, a fiber pair, an RF mesh, a free-space optical relay, a LoRa segment, terrestrial IP, even a unidirectional data diode &mdash; with the property that any threshold <code>k</code> of those <code>n</code> channels suffices to reconstruct the original payload. Each channel runs its own negotiated cipher suite, all of them built on NIST-FIPS-203 (ML-KEM) and FIPS-204 (ML-DSA) post-quantum primitives. Reassembly is offloaded to data-processing-unit (DPU) silicon, with BlueField-2 supported today and a BlueField-3 path documented.</p>
+
+  <blockquote><p>Most secure transports protect a single link with a single cipher. QDX protects a session by spreading it across many links and many ciphers, designed so that the session survives the failure of either.</p></blockquote>
+
+  <h2>Why QDX exists</h2>
+
+  <p>Three forces converged.</p>
+
+  <p>The first is the <strong>NIST post-quantum migration timeline</strong>. NIST's standardized PQC primitives (FIPS-203 ML-KEM, FIPS-204 ML-DSA) are now the federal-procurement default, with phased mandates rolling through 2025&ndash;2030. Most existing transports &mdash; TLS, IPsec, QUIC, Noise &mdash; are being PQC-retrofitted by hybrid extension. QDX took a different bet: design PQC-native from inception, so the migration is not a future engineering cycle but a foundational property.</p>
+
+  <p>The second is <strong>multi-medium operational reality</strong>. Federal, satellite, defense, energy-utility, and federated-trust customers do not operate on a single network. A satellite operator might have line-of-sight RF, satellite uplink, and ground-fiber concurrently &mdash; each with different latency, different reliability, and different threat models. A modern enterprise has on-premises fiber, multi-WAN to several carriers, cellular failover, and increasingly Starlink-class satellite fallback. Single-link transports treat this diversity as a redundancy problem to be solved at a higher layer (BGP, SD-WAN, route convergence). QDX treats it as a delivery property to be solved at the transport layer itself.</p>
+
+  <p>The third is <strong>cryptographic single-point-of-failure risk</strong>. A future cryptanalytic break against any one widely-deployed primitive &mdash; AES, ChaCha20, ECDH, ML-KEM &mdash; becomes a session-compromise event for any protocol that is single-suite per session. QDX's per-channel suite selection means the same session uses different primitives on different channels. Breaking the protocol requires breaking <code>k</code> distinct primitives, not one.</p>
+
+  <h2>How it works</h2>
+
+  <h3>Threshold split</h3>
+
+  <p>The sender takes an application payload <code>P</code>, encrypts it once with an AEAD cipher under a per-payload data key <code>DK</code> to produce ciphertext <code>C</code>, then performs two operations: a Rabin Information-Dispersal Algorithm (IDA) over <code>C</code> producing <code>n</code> shards, and a Shamir secret-sharing of <code>DK</code> producing <code>n</code> key-shares. Any <code>k</code>-subset of {shard, key-share} pairs is sufficient to recover <code>DK</code> (via Shamir reconstruction) and <code>C</code> (via IDA inverse), then to AEAD-open <code>C</code> back to <code>P</code>. The threshold parameters <code>(k, n)</code> are negotiated at session setup based on the channel set the peers have available.</p>
+
+  <h3>Per-channel cipher suites</h3>
+
+  <p>Each channel selects one cipher suite from the session's negotiated table. The v1 suite catalogue:</p>
+
+  <table>
+    <tr><th>Suite</th><th>KEM</th><th>AEAD</th><th>Target</th></tr>
+    <tr><td><code>QDX-1-HYBRID-AESGCM</code></td><td>X25519 + ML-KEM-768</td><td>AES-256-GCM</td><td>Default. FIPS-friendly. DPU-inline-accelerated.</td></tr>
+    <tr><td><code>QDX-2-HYBRID-XCHACHA</code></td><td>X25519 + ML-KEM-768</td><td>XChaCha20-Poly1305</td><td>Software path. ARM, embedded, no-AES-NI hardware.</td></tr>
+    <tr><td><code>QDX-3-PURE-PQC</code></td><td>ML-KEM-1024 (no classical)</td><td>AES-256-GCM-SIV</td><td>Paranoid. No classical fallback. Misuse-resistant AEAD.</td></tr>
+    <tr><td><code>QDX-4-FAST-BULK</code></td><td>X25519 + ML-KEM-768</td><td>AEGIS-256</td><td>Throughput-maximized. Modern x86.</td></tr>
+  </table>
+
+  <p>The point of having multiple suites is not to confuse the operator. It is to give each channel a primitive choice appropriate to its hardware and threat model, so that a future cryptanalytic break against (for example) AES-GCM does not cascade into a session-compromise on every channel at once.</p>
+
+  <h3>DPU-offloaded reassembly</h3>
+
+  <p>On the receiver, scatter-gather collection across channels, per-channel chain verification, threshold reconstruction, and AEAD opening run on a BlueField-2 data-processing-unit. The application sees a single clean reassembled stream via DMA. CPU overhead on the host is negligible. A BlueField-3 upgrade path is scaffolded and documented; the same protocol runs on either generation of silicon.</p>
+
+  <h3>Capability negotiation</h3>
+
+  <p>QDX peers and existing HTTP+HMAC peers interoperate. At session setup, each side declares which transports it speaks. Existing customers running HTTP+HMAC continue to do so; PQC-capable peers upgrade transparently when both sides advertise QDX. There is no flag day for customer migration.</p>
+
+  <h2>What it survives</h2>
+
+  <ul>
+    <li><strong>Jamming of up to <code>n &minus; k</code> channels.</strong> If 5 of 8 channels are jammed and 3 remain (with <code>k = 3</code>), delivery proceeds without retransmission.</li>
+    <li><strong>MITM replay on a minority subset of channels.</strong> Replay on fewer than <code>k</code> channels does not yield reconstruction; replay on <code>k</code> or more is detected by the per-channel chain hashes and the AEAD authentication tag binding the transcript.</li>
+    <li><strong>Single-primitive cryptanalytic break.</strong> A break on any one primitive (AES-GCM, XChaCha, AEGIS, ML-KEM) compromises only the channels using that primitive. Sibling channels using different primitives continue to deliver authenticated material.</li>
+    <li><strong>Channel-level network failures.</strong> A satellite outage, fiber cut, or RF interference event removes channels from the active set without breaking the session. New channels can be added mid-session via in-band capability re-negotiation.</li>
+  </ul>
+
+  <h2>Status today</h2>
+
+  <p>The QDX core is shipping as an M1 prototype: a 12-crate Rust workspace, <strong>267 tests passing</strong>, with the bundled <code>make demo</code> currently delivering 20 of 20 trial sessions at 100% payload integrity. The protocol specification, threat model, key-schedule documentation, and integration guides are written and version-controlled. PQC-native is not aspirational &mdash; it is the running code.</p>
+
+  <h2>Year-1 milestone &mdash; path-agility router</h2>
+
+  <p>The seed round funds the operational productization of QDX into the routing layer. A path-agility router module integrates into <a href="../products/nivmia.html">DEC NIVMIA</a> and <a href="../products/openutm.html">DEC OpenUTM</a>, using:</p>
+
+  <ul>
+    <li><strong>OSPF (or IS-IS)</strong> for multipath discovery within an autonomous system &mdash; the router learns the full topology and the available alternate paths between any pair of endpoints.</li>
+    <li><strong>SR-MPLS or SRv6</strong> for path dictation per channel &mdash; the router encodes the chosen path into the data-plane header so each QDX channel takes the operator's intended route. Both back-ends are first-class. Commercial enterprises still operating on IPv4 with MPLS WANs use SR-MPLS; federal, satellite, and cloud-native deployments use SRv6.</li>
+  </ul>
+
+  <p>QDX's channel abstraction is back-end-agnostic: QDX says <em>"send channel 2 via path B"</em> and the router module picks the encoding. The single-IP path remains the default for non-multi-path deployments &mdash; the router is an opt-in capability for customers whose networks support it.</p>
+
+  <h2>Why this matters commercially</h2>
+
+  <ul>
+    <li><strong>Federal-procurement-eligible by construction.</strong> Under the rolling NIST PQC mandate, federal agencies and federal subcontractors are required to migrate cryptographic primitives to FIPS-203 / FIPS-204 standards. DEC-LLC's stack is already there. Most competitors are mid-retrofit.</li>
+    <li><strong>Satellite, defense, energy-utility, and federated-trust deployments</strong> &mdash; environments where single-link delivery is not sufficient and multi-medium operation is the assumption &mdash; have a transport that fits their threat model out of the box.</li>
+    <li><strong>Cryptographic survivability</strong> against a single-primitive break is a property no other commercial transport offers today. Any future cryptanalytic surprise becomes a channel-level concern, not a session-level one.</li>
+    <li><strong>Customer-data-sovereignty</strong> compounds with the rest of the DEC-LLC stack: AI inference is local, telemetry is local, transport is post-quantum-secure end-to-end with no third-party cipher in the path.</li>
+  </ul>
+
+  <div class="wp-callout">
+    <h4>Bottom line</h4>
+    <p>QDX is the engineered foundation that lets the rest of the DEC-LLC stack make a credible claim to operating in regulated, federated-trust, and adversarial-medium environments. It is shipping today, not promised.</p>
+  </div>
+
+  <a href="../index.html" class="wp-back">&larr; Back to DEC-LLC</a>
+
+</div>
+
+</body>
+</html>
